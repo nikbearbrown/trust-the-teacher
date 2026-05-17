@@ -1,0 +1,102 @@
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="480" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Title II-A funds: how the $2.2 billion is actually directed (2022–23)</text>
+
+  <!-- Subtitle -->
+  <text x="350" y="56" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">SETDA survey of 24 state agencies and 76 local agencies, reported November 2025</text>
+
+  <!-- Top panel: how Title II-A is spent (60% on PD) -->
+  <text x="48" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714">Share of Title II-A spending</text>
+
+  <!-- Horizontal stacked bar, total width 600 from x=48 to x=648 -->
+  <rect x="48" y="104" width="600" height="44" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <!-- ~60% professional development -->
+  <rect x="48" y="104" width="360" height="44" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <line x1="408" y1="104" x2="408" y2="148" stroke="#1a1714" stroke-width="1"/>
+  <text x="228" y="130" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Professional development</text>
+  <text x="228" y="144" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">~ 60%</text>
+  <text x="528" y="130" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">Other allowable uses</text>
+  <text x="528" y="144" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">~ 40%</text>
+
+  <!-- Second panel: state-level prioritization -->
+  <text x="48" y="184" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714">States prioritizing Title II-A for technology-enabled PD</text>
+
+  <!-- 50 dots representing states, 9 dark filled, 41 outline -->
+  <!-- 10 columns x 5 rows; x start 48, gap 60, dot r=10 -->
+  <g>
+    <!-- Row 1 (9 dark + 1 light = "9 prioritize") - keep 9 filled, 41 outline -->
+    <circle cx="60" cy="220" r="10" fill="#1a1714"/>
+    <circle cx="120" cy="220" r="10" fill="#1a1714"/>
+    <circle cx="180" cy="220" r="10" fill="#1a1714"/>
+    <circle cx="240" cy="220" r="10" fill="#1a1714"/>
+    <circle cx="300" cy="220" r="10" fill="#1a1714"/>
+    <circle cx="360" cy="220" r="10" fill="#1a1714"/>
+    <circle cx="420" cy="220" r="10" fill="#1a1714"/>
+    <circle cx="480" cy="220" r="10" fill="#1a1714"/>
+    <circle cx="540" cy="220" r="10" fill="#1a1714"/>
+    <circle cx="600" cy="220" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+
+    <!-- Rows 2-5: all outline -->
+    <circle cx="60" cy="252" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="120" cy="252" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="180" cy="252" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="240" cy="252" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="300" cy="252" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="360" cy="252" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="420" cy="252" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="480" cy="252" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="540" cy="252" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="600" cy="252" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+
+    <circle cx="60" cy="284" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="120" cy="284" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="180" cy="284" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="240" cy="284" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="300" cy="284" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="360" cy="284" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="420" cy="284" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="480" cy="284" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="540" cy="284" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="600" cy="284" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+
+    <circle cx="60" cy="316" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="120" cy="316" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="180" cy="316" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="240" cy="316" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="300" cy="316" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="360" cy="316" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="420" cy="316" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="480" cy="316" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="540" cy="316" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="600" cy="316" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+
+    <circle cx="60" cy="348" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="120" cy="348" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="180" cy="348" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="240" cy="348" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="300" cy="348" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="360" cy="348" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="420" cy="348" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="480" cy="348" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="540" cy="348" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <circle cx="600" cy="348" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  </g>
+
+  <!-- Legend -->
+  <circle cx="60" cy="392" r="10" fill="#1a1714"/>
+  <text x="80" y="396" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">9 states prioritize Title II-A for technology-enabled professional learning</text>
+  <circle cx="60" cy="416" r="10" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="80" y="420" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">41 states do not</text>
+
+  <!-- Bottom caption -->
+  <line x1="48" y1="436" x2="652" y2="436" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="350" y="456" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">The federal funding stream exists. The technical authority to use it for sustained AI-specific PD exists.</text>
+  <text x="350" y="472" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Source: SETDA, Improving Professional Learning Systems to Better Support Today's Educators (Nov 2025).</text>
+</svg>

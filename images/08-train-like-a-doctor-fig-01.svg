@@ -1,0 +1,86 @@
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="480" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">The three-layer infrastructure: what medicine built, what teaching has</text>
+
+  <!-- Column headers -->
+  <text x="160" y="68" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Layer</text>
+  <text x="380" y="68" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">U.S. Medicine</text>
+  <text x="580" y="68" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">U.S. Teaching</text>
+  <line x1="48" y1="76" x2="652" y2="76" stroke="#1a1714" stroke-width="0.8"/>
+
+  <!-- Stack: three layers from bottom (compliance) to top (credential) -->
+  <!-- Layer 3 (top): Credential -->
+  <rect x="40" y="92" width="240" height="100" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="160" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">3. Credentialed competence</text>
+  <text x="160" y="138" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Post-experience specialization,</text>
+  <text x="160" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">university-issued, formal assessment</text>
+  <text x="160" y="174" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Evidence: highest leverage; high stakes</text>
+
+  <rect x="288" y="92" width="184" height="100" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="380" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">MOC / specialty boards</text>
+  <text x="380" y="138" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">e.g. ABFM 5-year cycle:</text>
+  <text x="380" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">60 cert points, 200 CME credits,</text>
+  <text x="380" y="166" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">25 quarterly knowledge questions</text>
+  <text x="380" y="184" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Universal across specialties</text>
+
+  <rect x="480" y="92" width="184" height="100" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="572" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Almost empty</text>
+  <text x="572" y="138" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">National Board cert reaches</text>
+  <text x="572" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">roughly 3% of teachers.</text>
+  <text x="572" y="166" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">No at-scale AI credential.</text>
+  <text x="572" y="184" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Purdue / UNI / NIE nascent</text>
+
+  <!-- Layer 2 (middle): Coaching -->
+  <rect x="40" y="200" width="240" height="100" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="160" y="224" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">2. Sustained coaching</text>
+  <text x="160" y="246" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Peer practitioner cycles,</text>
+  <text x="160" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">embedded in actual classrooms</text>
+  <text x="160" y="282" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Evidence: Kraft d=0.49 instr / 0.18 ach</text>
+
+  <rect x="288" y="200" width="184" height="100" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="380" y="224" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">ACCME activity infrastructure</text>
+  <text x="380" y="246" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">247K accredited activities (2023);</text>
+  <text x="380" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">68M learner interactions;</text>
+  <text x="380" y="274" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">$3.7B reported income (2024)</text>
+  <text x="380" y="292" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Independently audited</text>
+
+  <rect x="480" y="200" width="184" height="100" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="572" y="224" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Effectively absent</text>
+  <text x="572" y="246" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Coaching exists as research</text>
+  <text x="572" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">artifact; no national audit;</text>
+  <text x="572" y="274" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">no parallel to ACCME</text>
+  <text x="572" y="292" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Finland's tutoropettaja exists</text>
+
+  <!-- Layer 1 (bottom): Compliance -->
+  <rect x="40" y="308" width="240" height="100" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="160" y="332" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">1. Clock-hour compliance</text>
+  <text x="160" y="354" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Mandatory hours per renewal cycle;</text>
+  <text x="160" y="368" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">box-checking floor</text>
+  <text x="160" y="390" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Evidence: Yoon 2007 — &lt;14 h null on its own</text>
+
+  <rect x="288" y="308" width="184" height="100" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="380" y="332" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">State CME for licensure</text>
+  <text x="380" y="354" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">20–50 hours per year typical;</text>
+  <text x="380" y="368" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">content mandates added over time</text>
+  <text x="380" y="382" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">(opioid, suicide, implicit bias)</text>
+  <text x="380" y="400" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Content-update mechanism exists</text>
+
+  <rect x="480" y="308" width="184" height="100" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="572" y="332" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Per-school PD hours</text>
+  <text x="572" y="354" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Renewal every 5 years;</text>
+  <text x="572" y="368" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">August demos count.</text>
+  <text x="572" y="382" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">No content mandate for AI.</text>
+  <text x="572" y="400" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Update mechanism unused</text>
+
+  <!-- Bottom caption -->
+  <line x1="48" y1="424" x2="652" y2="424" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="350" y="444" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Medicine built three layers across fifty years. Teaching has, at scale, the one that does not work.</text>
+  <text x="350" y="462" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Sources: ACCME 2023 Annual Data Report; ABFM 5-Year Cycle; Yoon et al. (2007); Kraft, Blazar, &amp; Hogan (2018).</text>
+</svg>

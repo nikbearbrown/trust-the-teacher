@@ -14,6 +14,9 @@ What makes this a story about AI and teacher training rather than a story about 
 
 This chapter names that pattern. Then it refuses the easy conclusion.
 
+![Four independent harms converging on the same low-income student population](images/11-the-equity-argument-fig-01.png)
+*Figure 11.01 — Four harms compounding on the same population*
+
 ---
 
 ## Four harms, landing together
@@ -24,11 +27,25 @@ The first is the disciplinary surge. The sixteen percent figure from Figlio and 
 
 The second is the internet that was the phone. The Pew Research Center's most recent measurement finds that about a third of adults in households earning under $30,000 a year are smartphone-dependent — they have a phone, no home broadband subscription. The comparable figure for households over $100,000 is four percent. Common Sense Media puts the K-12 homework gap at roughly fifteen to sixteen million students. For one in four students from low-income households, the phone is not a distraction device. It is a hotspot. [*verify: "one in four students" slides between population universes — Pew's adult under-$30K is ~33%; K-12 Dive's no-home-internet for low-income households with children is 22%; CSM's homework gap is 15-16M students. Recommend pinning to the K-12 Dive 22% figure (correct student population) or rewording.*] The school's 1:1 Chromebook does not connect to the internet without a connection, and the phone was the connection. The ban removes the distraction from school hours. It also removes the household's path to the internet at 3:00 p.m. Then, on September 30, 2025, the FCC's Order on Reconsideration removed off-premises Wi-Fi hotspots and school-bus Wi-Fi from E-Rate eligibility. Districts and libraries had requested $42.6 million for hotspots and $15.3 million for bus Wi-Fi in FY2025; 1,762 libraries had applied. The state legislatures took the device. The FCC took the substitute. Nobody was coordinating. The students in the overlap are the ones for whom the device was infrastructure rather than convenience.
 
+The gradient by income is the part the policy debate keeps eliding. The Pew measurements line up the dependence by household-income band, and the shape of the dependence is monotonic.
+
+| Household income | Smartphone-dependent (no home broadband) | Has home broadband |
+|---|---|---|
+| Under $30,000 | ~28% (Pew 2024 adult sample; ~33% in earlier waves) | ~57% |
+| $30,000–$74,999 | ~12% | ~78% |
+| $75,000–$99,999 | ~7% | ~89% |
+| $100,000 and above | ~4% | ~96% |
+
+The phone is not a distraction device in the under-$30K column. It is the household's connection to the internet. The bell-to-bell ban removes the device from school hours; the September 30, 2025 FCC Order on Reconsideration removed the hotspot and school-bus Wi-Fi substitute from E-Rate eligibility in the same policy window.
+
 The third is training inequity stacked on teacher-quality inequity. The SETDA report on Title II-A spending, published in November 2025 from surveys of twenty-four state education agencies and seventy-six local education agencies, found that over sixty percent of the federal stream was spent on professional development — and that only nine states formally prioritized it for educator technology and AI training. Fewer than forty percent of districts used any of the stream for technology-related professional learning at all. SETDA has a name for what this produces: the *digital design divide* — the gap between districts whose teachers get the planning time and coaching infrastructure to actually use AI in lessons and the districts that buy the device and call it done. The gap correlates with district resources. This arrives not on a flat field but on top of an existing teacher-quality distribution that decades of research — Dan Goldhaber and colleagues in Washington State, Charles Clotfelter, Helen Ladd, and Jacob Vigdor in statewide North Carolina end-of-course data — have established is already tilted against disadvantaged students. The teachers most likely to receive AI training were already, on average, the more experienced, more credentialed, lower-turnover practitioners. The teachers least likely to receive it were the less experienced, the higher-turnover, the more burned out. New inequality compounding old inequality. This is not an edge case. It is the structure.
 
 The fourth is cognitive offloading in the rooms where scaffolding was thinnest. Hamsa Bastani and colleagues' 2024 PNAS paper on roughly a thousand Turkish high school students is the cleanest causal evidence we have on what happens when a generative AI tool is deployed without structure. Three arms: control, GPT without guidance, GPT Tutor with pedagogical scaffolding. The unscaffolded GPT arm produced a seventeen percent *decrement* in independent exam performance relative to control — students who had used the tool freely did worse on the test than students who hadn't used it at all. The scaffolded GPT Tutor arm produced gains of one hundred twenty-seven percent on the practice measures. Bastani's own pre-registered moderator analysis found limited statistically significant heterogeneity in the unassisted harm by student characteristics — meaning the paper does not directly show that the harm falls harder on low-income students. I want to be precise about what I am inferring, and I want to name the inference as an inference, because the equity chapter cannot afford to overstate what the data show.
 
 The chain of inference looks like this. Bastani shows an average harm from unguided access. A separate line of research — Evans and Schamberg's 2009 PNAS paper on childhood poverty and working memory, Blair and Raver's program of work on poverty, chronic stress, and the development of executive function — establishes that the self-regulatory systems that would allow a student to resist the in-tool shortcut are, on average, more developed in children who grew up in lower-stress households. A third line — cognitive science on how fluent, frictionless answers produce the feeling of learning without the underlying schema construction — identifies the mechanism by which the shortcut is harmful. The three legs together produce the inference: the student least equipped to resist the unguided tool is the student whose executive function has been most strained by chronic stress. The inference is sound. It is three steps, not one. The chapter says so out loud so the reader can examine each link rather than take the conclusion on faith.
+
+![Three-step causal chain from low SES through chronic stress to reduced self-regulation and vulnerability to unguided AI shortcuts](images/11-the-equity-argument-fig-02.png)
+*Figure 11.02 — The causal chain to vulnerability: SES through executive function*
 
 Four harms. Not the same harm, not from the same actor, not coordinated by anyone. Landing on overlapping populations. Compounding. *Compounding* is not metaphor here; it is the empirical pattern of independent harms summing on a population whose capacity to absorb them was already below the mean before any of them arrived. This is the structural shape of every harm this book has documented. Nobody designed the combined outcome. Nobody is accountable for it. The students absorb the sum.
 
@@ -42,9 +59,22 @@ The in-domain proof is the Wang, Ribeiro, Robinson, Loeb, and Demszky Tutor CoPi
 
 Lower-rated tutors disproportionately work in under-resourced settings. They are the less-experienced, less-credentialed practitioners that programs running on thin margins can afford. The Tutor CoPilot finding is the clearest available demonstration of what happens when you pair AI with the practitioner at the bottom of the skill distribution rather than the top. The tool levels the floor.
 
+![Bar chart of Tutor CoPilot gains by tercile: bottom +9pp middle +4pp top about +1pp showing the floor-lifting pattern](images/11-the-equity-argument-fig-03.png)
+*Figure 11.03 — Tutor CoPilot: the catch-up shape by tutor-rating tercile*
+
 The same shape appears in the customer-support literature. Brynjolfsson, Li, and Raymond's *Generative AI at Work* — 5,179 agents, a year of staggered rollout, published in the *Quarterly Journal of Economics* — found an average fourteen percent productivity gain, approximately thirty-four percent for the bottom quartile of pre-AI performance, near zero at the top. The AI was not helping the expert. The AI was doing for the new hire what five years of experience had done for the top performer — surfacing the right move, in the moment, before she had built the intuition to find it herself.
 
 The same shape again in Kang Lan and Ruijie Ban's 2025 meta-analysis of precision-agriculture technology adoption: eighty-five empirical studies, 1,472 farm observations, gains concentrated in farms operating below the efficiency frontier with near-zero returns to farms already at the top. The Fiechter, Schnitkey, and Langemeier panel of 570 Kansas farms over twenty-one years found it in a single sentence: *less efficient farms gain the most from precision agriculture technology.* Three professions, one shape. The tool lifts the bottom. The tool has almost nothing to offer the people who were already at the frontier.
+
+The same shape appears in three independent literatures, each with its own data, its own outcome variable, its own measurement instrument. Treat the consistency as the finding.
+
+| Domain | Sample | Gain at the bottom (below frontier) | Gain at the top (already at frontier) |
+|---|---|---|---|
+| Tutoring (Wang, Ribeiro, Robinson, Loeb & Demszky 2024 — Tutor CoPilot RCT) | 900 tutors, ~1,000 K-12 students, Title I district | +9 percentage points in mastery for students with lower-rated tutors | Near zero for students with higher-rated tutors |
+| Customer service (Brynjolfsson, Li & Raymond 2023 — *Generative AI at Work*) | 5,179 agents, year of staggered rollout, QJE | ~34% productivity gain for bottom-quartile pre-AI performers | Near zero for top-quartile performers |
+| Precision agriculture (Lan & Ban 2025 meta-analysis; Fiechter et al. Kansas panel) | 85 empirical studies; 1,472 farm observations; 570 Kansas farms over 21 years | Gains concentrated in farms operating below the efficiency frontier | Near-zero returns for farms already at the top |
+
+Three professions, one shape. The tool lifts the bottom. It has almost nothing to offer the people who were already at the frontier.
 
 This is the finding the equity argument requires. Not that AI is good for disadvantaged students in the abstract. Not that AI is a free equalizer. That a specific deployment pattern — trained practitioner using AI as instrument, with the largest gains going to the practitioner furthest from the frontier — fits the evidence across multiple independent literatures. The inference to teaching follows the same logic the book has been making from Chapter 5 onward. The teacher who would gain the most from sustained AI training is the teacher in the under-resourced school. The student who would gain the most from her trained, AI-supported practice is the student in her classroom.
 

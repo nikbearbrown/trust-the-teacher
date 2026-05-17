@@ -1,0 +1,101 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="36" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Five deployments of the same LLM — same model, different effect</text>
+
+  <!-- Spectrum axis -->
+  <line x1="56" y1="64" x2="644" y2="64" stroke="#1a1714" stroke-width="1"/>
+  <line x1="56" y1="60" x2="56" y2="68" stroke="#1a1714" stroke-width="1"/>
+  <line x1="644" y1="60" x2="644" y2="68" stroke="#1a1714" stroke-width="1"/>
+  <text x="56" y="56" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="start">No teacher presence</text>
+  <text x="644" y="56" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">No teacher presence</text>
+
+  <!-- Panel 1 -->
+  <rect x="48" y="92" width="112" height="200" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="104" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">1. Unguided</text>
+  <text x="104" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">ChatGPT, no scaffold</text>
+  <!-- icons: student + model only -->
+  <circle cx="80" cy="170" r="10" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="80" y="174" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">S</text>
+  <rect x="116" y="160" width="20" height="20" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="126" y="174" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">M</text>
+  <line x1="90" y1="170" x2="116" y2="170" stroke="#1a1714" stroke-width="1"/>
+  <text x="104" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">No teacher</text>
+  <text x="104" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-weight="bold" fill="#1a1714" text-anchor="middle">Exam: −17%</text>
+  <text x="104" y="282" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">(Bastani GPT Base)</text>
+
+  <!-- Panel 2 -->
+  <rect x="168" y="92" width="112" height="200" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="224" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">2. Scaffolded</text>
+  <text x="224" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">teacher system prompt</text>
+  <circle cx="200" cy="170" r="10" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="200" y="174" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">S</text>
+  <rect x="236" y="160" width="20" height="20" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="246" y="174" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">M</text>
+  <line x1="210" y1="170" x2="236" y2="170" stroke="#1a1714" stroke-width="1"/>
+  <text x="224" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Teacher (asynchronous,</text>
+  <text x="224" y="212" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">via the prompt)</text>
+  <text x="224" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-weight="bold" fill="#1a1714" text-anchor="middle">Exam: ~0%</text>
+  <text x="224" y="282" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">(Bastani GPT Tutor)</text>
+
+  <!-- Panel 3 -->
+  <rect x="288" y="92" width="112" height="200" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="344" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">3. Teacher-in-loop</text>
+  <text x="344" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">approves model output</text>
+  <circle cx="316" cy="180" r="10" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="316" y="184" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">S</text>
+  <rect x="356" y="170" width="20" height="20" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="366" y="184" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">M</text>
+  <circle cx="344" cy="148" r="10" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <text x="344" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#fdfcfb" text-anchor="middle">T</text>
+  <line x1="326" y1="180" x2="356" y2="180" stroke="#1a1714" stroke-width="1"/>
+  <line x1="344" y1="158" x2="344" y2="168" stroke="#1a1714" stroke-width="1"/>
+  <text x="344" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Teacher reviews</text>
+  <text x="344" y="232" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">each message</text>
+  <text x="344" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-weight="bold" fill="#1a1714" text-anchor="middle">DeepMind × Eedi</text>
+
+  <!-- Panel 4 -->
+  <rect x="408" y="92" width="112" height="200" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="464" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">4. Copilot</text>
+  <text x="464" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">teacher talks to student</text>
+  <circle cx="436" cy="180" r="10" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="436" y="184" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">S</text>
+  <circle cx="476" cy="180" r="10" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <text x="476" y="184" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#fdfcfb" text-anchor="middle">T</text>
+  <rect x="484" y="148" width="20" height="20" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="494" y="162" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">M</text>
+  <line x1="446" y1="180" x2="466" y2="180" stroke="#1a1714" stroke-width="1"/>
+  <line x1="484" y1="168" x2="476" y2="172" stroke="#1a1714" stroke-width="1"/>
+  <text x="464" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Model whispers;</text>
+  <text x="464" y="232" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">teacher answers</text>
+  <text x="464" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-weight="bold" fill="#1a1714" text-anchor="middle">Tutor CoPilot</text>
+
+  <!-- Panel 5 -->
+  <rect x="528" y="92" width="116" height="200" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="586" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">5. Replacement</text>
+  <text x="586" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">no human in loop</text>
+  <circle cx="560" cy="170" r="10" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="560" y="174" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">S</text>
+  <rect x="596" y="160" width="20" height="20" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="606" y="174" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">M</text>
+  <line x1="570" y1="170" x2="596" y2="170" stroke="#1a1714" stroke-width="1"/>
+  <text x="586" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">No teacher</text>
+  <text x="586" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-weight="bold" fill="#1a1714" text-anchor="middle">Negative effect</text>
+  <text x="586" y="282" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">(press-release favorite)</text>
+
+  <!-- Legend at bottom -->
+  <text x="56" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">S = student   M = model   T = teacher</text>
+
+  <!-- Hump arrow at bottom showing teacher presence rising and falling -->
+  <text x="350" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Teacher presence rises across panels 1→4, collapses again in 5</text>
+  <path d="M 104 380 Q 350 320 586 380" fill="none" stroke="#1a1714" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- Caption -->
+  <text x="350" y="406" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Same press release. Different effect sign. The press release does not distinguish them.</text>
+</svg>

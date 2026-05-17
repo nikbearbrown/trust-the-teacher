@@ -1,0 +1,105 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="36" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Title II-A federal teacher-training funds: where the dollars do not go</text>
+  <text x="350" y="54" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">SETDA, November 2025 — funding gap underneath the educational-purposes exemption</text>
+
+  <!-- Panel A: Stacked bar — share of LEAs using Title II-A for tech-related PD -->
+  <text x="180" y="88" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Panel A — Local education agencies</text>
+  <text x="180" y="102" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">% using Title II-A for technology PD</text>
+
+  <!-- Axis -->
+  <line x1="80" y1="320" x2="280" y2="320" stroke="#1a1714" stroke-width="1"/>
+  <line x1="80" y1="120" x2="80" y2="320" stroke="#1a1714" stroke-width="1"/>
+  <text x="74" y="124" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">100%</text>
+  <text x="74" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">50%</text>
+  <text x="74" y="320" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">0%</text>
+
+  <!-- Bar 1: Tech PD (<40%) -->
+  <rect x="110" y="200" width="60" height="120" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <text x="140" y="194" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">&lt;40%</text>
+  <text x="140" y="338" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Tech PD</text>
+
+  <!-- Bar 2: Non-tech PD (>60%) -->
+  <rect x="200" y="120" width="60" height="200" fill="#c8c4c0" stroke="#1a1714" stroke-width="1"/>
+  <text x="230" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">&gt;60%</text>
+  <text x="230" y="338" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Non-tech PD</text>
+
+  <!-- Divider -->
+  <line x1="340" y1="84" x2="340" y2="376" stroke="#8a8480" stroke-width="0.5"/>
+
+  <!-- Panel B: 9 of 50 states -->
+  <text x="520" y="88" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Panel B — State priorities (50 states)</text>
+  <text x="520" y="102" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Title II-A explicitly prioritized for technology instruction</text>
+
+  <!-- 50 dots in 5 rows x 10 cols, first 9 filled, rest hollow -->
+  <!-- Layout: dot diameter 14, spacing 24, starting x=400, y=140 -->
+  <!-- Row 1 -->
+  <circle cx="400" cy="160" r="7" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="424" cy="160" r="7" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="448" cy="160" r="7" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="472" cy="160" r="7" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="496" cy="160" r="7" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="520" cy="160" r="7" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="544" cy="160" r="7" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="568" cy="160" r="7" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="592" cy="160" r="7" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="616" cy="160" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <!-- Row 2 -->
+  <circle cx="400" cy="188" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="424" cy="188" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="448" cy="188" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="472" cy="188" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="496" cy="188" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="520" cy="188" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="544" cy="188" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="568" cy="188" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="592" cy="188" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="616" cy="188" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <!-- Row 3 -->
+  <circle cx="400" cy="216" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="424" cy="216" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="448" cy="216" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="472" cy="216" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="496" cy="216" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="520" cy="216" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="544" cy="216" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="568" cy="216" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="592" cy="216" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="616" cy="216" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <!-- Row 4 -->
+  <circle cx="400" cy="244" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="424" cy="244" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="448" cy="244" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="472" cy="244" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="496" cy="244" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="520" cy="244" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="544" cy="244" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="568" cy="244" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="592" cy="244" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="616" cy="244" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <!-- Row 5 -->
+  <circle cx="400" cy="272" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="424" cy="272" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="448" cy="272" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="472" cy="272" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="496" cy="272" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="520" cy="272" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="544" cy="272" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="568" cy="272" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="592" cy="272" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="616" cy="272" r="7" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+
+  <!-- Annotation -->
+  <text x="510" y="310" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">9 of 50 states prioritize technology PD</text>
+  <text x="510" y="324" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">41 do not</text>
+
+  <!-- Caption -->
+  <text x="350" y="402" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">The exemption is a delegation to a workforce. The workforce has not been funded for the delegation.</text>
+</svg>

@@ -1,0 +1,102 @@
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="480" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="36" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Title II-A spending: what the &gt;60% PD allocation actually buys</text>
+  <text x="350" y="54" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">SETDA Nov 2025 + Kraft 2018 coaching meta-analysis</text>
+
+  <!-- Top panel: what Title II-A PD spend actually buys -->
+  <text x="56" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714">Panel A — Form of PD that the federal dollars actually fund</text>
+
+  <!-- Stacked horizontal bar from x=64 to x=636 -->
+  <rect x="64" y="104" width="280" height="32" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <text x="204" y="124" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#fdfcfb" text-anchor="middle">One-day workshops</text>
+  <rect x="344" y="104" width="160" height="32" fill="#8a8480" stroke="#1a1714" stroke-width="1"/>
+  <text x="424" y="124" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#fdfcfb" text-anchor="middle">Vendor walkthroughs</text>
+  <rect x="504" y="104" width="80" height="32" fill="#c8c4c0" stroke="#1a1714" stroke-width="1"/>
+  <text x="544" y="124" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">Designated</text>
+  <text x="544" y="136" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">"AI person"</text>
+  <rect x="584" y="104" width="52" height="32" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="610" y="124" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Sustained</text>
+  <text x="610" y="136" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">coaching</text>
+
+  <!-- Annotation arrow to sustained -->
+  <line x1="610" y1="152" x2="610" y2="176" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="610" y="194" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">the form Kraft</text>
+  <text x="610" y="208" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">finds works</text>
+  <text x="610" y="222" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-weight="bold" fill="#1a1714" text-anchor="middle">(d = 0.49)</text>
+
+  <!-- Bottom panel: 9 of 50 states -->
+  <text x="56" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714">Panel B — Which states prioritize Title II-A for technology instruction</text>
+
+  <!-- 50 dots in 5 rows x 10 cols -->
+  <!-- Row 1 -->
+  <circle cx="80" cy="294" r="8" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="108" cy="294" r="8" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="136" cy="294" r="8" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="164" cy="294" r="8" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="192" cy="294" r="8" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="220" cy="294" r="8" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="248" cy="294" r="8" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="276" cy="294" r="8" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="304" cy="294" r="8" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="332" cy="294" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <!-- Row 2 -->
+  <circle cx="80" cy="324" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="108" cy="324" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="136" cy="324" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="164" cy="324" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="192" cy="324" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="220" cy="324" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="248" cy="324" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="276" cy="324" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="304" cy="324" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="332" cy="324" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <!-- Row 3 -->
+  <circle cx="80" cy="354" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="108" cy="354" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="136" cy="354" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="164" cy="354" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="192" cy="354" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="220" cy="354" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="248" cy="354" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="276" cy="354" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="304" cy="354" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="332" cy="354" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <!-- Row 4 -->
+  <circle cx="80" cy="384" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="108" cy="384" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="136" cy="384" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="164" cy="384" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="192" cy="384" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="220" cy="384" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="248" cy="384" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="276" cy="384" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="304" cy="384" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="332" cy="384" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <!-- Row 5 -->
+  <circle cx="80" cy="414" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="108" cy="414" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="136" cy="414" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="164" cy="414" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="192" cy="414" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="220" cy="414" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="248" cy="414" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="276" cy="414" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="304" cy="414" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="332" cy="414" r="8" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+
+  <!-- Annotation -->
+  <text x="500" y="324" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">9 of 50 states prioritize</text>
+  <text x="500" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Title II-A for technology PD</text>
+  <text x="500" y="362" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">&lt;40% of local agencies use these</text>
+  <text x="500" y="376" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">funds for any technology-related PD</text>
+
+  <!-- Caption -->
+  <text x="350" y="462" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">The federal infrastructure designed to fund the highest-leverage investment is funding the appearance of that investment.</text>
+</svg>

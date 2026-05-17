@@ -1,0 +1,70 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Bastani et al. (PNAS 2025): practice gains vs. exam outcomes by condition</text>
+
+  <!-- Plot frame -->
+  <line x1="96" y1="72" x2="96" y2="296" stroke="#8a8480" stroke-width="1"/>
+  <line x1="96" y1="184" x2="640" y2="184" stroke="#1a1714" stroke-width="1.2"/>
+
+  <!-- y-axis labels: percentage change relative to control -->
+  <text x="88" y="80" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">+60%</text>
+  <line x1="92" y1="76" x2="640" y2="76" stroke="#c8c4c0" stroke-width="0.5"/>
+  <text x="88" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">+40%</text>
+  <line x1="92" y1="112" x2="640" y2="112" stroke="#c8c4c0" stroke-width="0.5"/>
+  <text x="88" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">+20%</text>
+  <line x1="92" y1="148" x2="640" y2="148" stroke="#c8c4c0" stroke-width="0.5"/>
+  <text x="88" y="188" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">0</text>
+  <text x="88" y="224" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">−20%</text>
+  <line x1="92" y1="220" x2="640" y2="220" stroke="#c8c4c0" stroke-width="0.5"/>
+  <text x="88" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">−40%</text>
+  <line x1="92" y1="256" x2="640" y2="256" stroke="#c8c4c0" stroke-width="0.5"/>
+
+  <text x="40" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle" transform="rotate(-90 40 180)">Change vs. no-AI control</text>
+
+  <!-- Scale: 0% at y=184; +60% at y=76 (108 px); so 1.8 px / 1% -->
+  <!-- Three groups, 2 bars each. Group centers at x=200, 384, 568; bar width 56 each; gap between paired bars 8 -->
+  <!-- Group 1 (No-AI control): practice 0, exam 0 (zero bars; show baseline marker) -->
+  <line x1="172" y1="180" x2="228" y2="180" stroke="#1a1714" stroke-width="1"/>
+  <line x1="172" y1="188" x2="228" y2="188" stroke="#1a1714" stroke-width="1"/>
+  <text x="200" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">baseline</text>
+
+  <!-- Group 2 (GPT-Base): practice +48 (-> 86.4 px, top y=97.6); exam -17 (-> 30.6 px, top y=214.6) -->
+  <!-- Bar 1: practice  -->
+  <rect x="356" y="98" width="28" height="86" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="370" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">+48%</text>
+  <text x="370" y="316" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">practice</text>
+  <!-- Bar 2: exam (below baseline) -->
+  <rect x="384" y="184" width="28" height="31" fill="#1a1714" stroke="#1a1714" stroke-width="1"/>
+  <text x="398" y="232" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">−17%</text>
+  <text x="398" y="316" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">exam</text>
+
+  <!-- Group 3 (GPT-Tutor): practice +30 (-> 54 px), exam +0 (zero) -->
+  <rect x="540" y="130" width="28" height="54" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="554" y="122" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">+30%</text>
+  <text x="554" y="316" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">practice</text>
+  <line x1="568" y1="180" x2="596" y2="180" stroke="#1a1714" stroke-width="1"/>
+  <line x1="568" y1="188" x2="596" y2="188" stroke="#1a1714" stroke-width="1"/>
+  <text x="582" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">~0%</text>
+  <text x="582" y="316" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">exam</text>
+
+  <!-- Condition labels -->
+  <text x="200" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">No-AI control</text>
+  <text x="384" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">GPT-Base (unguided)</text>
+  <text x="568" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">GPT-Tutor (scaffolded)</text>
+
+  <!-- Legend / annotation -->
+  <rect x="96" y="362" width="14" height="14" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="116" y="374" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">Practice-session correct-answer rate</text>
+  <rect x="316" y="362" width="14" height="14" fill="#1a1714" stroke="#1a1714" stroke-width="1"/>
+  <text x="336" y="374" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">Closed-book exam score</text>
+
+  <!-- Caption -->
+  <text x="350" y="402" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">~1,000 Turkish high-school students, grades 9–11; pre-registered RCT. Source: Bastani et al., PNAS 122(26), 2025.</text>
+</svg>

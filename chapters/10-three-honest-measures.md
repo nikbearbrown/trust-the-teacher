@@ -28,6 +28,9 @@ Uttl and colleagues found three problems. The small-sample studies had the large
 
 After proper weighting, bias correction, and re-extraction: the SET-learning correlation in the multisection literature is approximately zero. Student evaluations explain at most one percent of the variance in student learning outcomes. After controlling for the well-documented effect of expected grade on ratings, the correlation tips slightly negative.
 
+![Bar chart of multisection-study correlations Cohen 1981 0.43 Feldman 1989 0.33 Uttl 2017 near zero Uttl Cnudde 2019 0.06 showing drift toward zero with methodological correction](images/10-three-honest-measures-fig-01.png)
+*Figure 10.01 — The SET–learning correlation drifts to zero as methodology tightens*
+
 The defenders' rebuttals have each been examined. A 2019 follow-up by Uttl and Cnudde, published in *PeerJ*, looked at the same literature for conflicts of interest. The pattern is visible in the data, following exactly the pattern of pharmaceutical-funded drug trials. Studies with identifiable ties to SET vendors reported large positive correlations. Studies without them reported correlations near zero. Research published before 1981 — when the vendors were establishing their market — showed correlations around $r = 0.31$. Research published after, as independent replication accumulated, showed correlations near $r = 0.06$. The historical evidence that student evaluations measure learning was, in substantial part, produced by the people selling the instruments. This is the pharmaceutical-funder effect, ported into educational measurement, never named as such by the field that adopted the result.
 
 The instrument does not fail because it is poorly engineered. The IDEA instrument developed at Kansas State, the ETS SIR II — these are psychometrically defensible at what they actually measure, which is whether the student was satisfied, whether they felt respected, whether they liked the course at the moment it ended. The well-engineered versions of this instrument measure satisfaction reliably. The problem is not engineering. The problem is that satisfaction and learning are different things, that the institution is using the first as a proxy for the second, and that the literature now tells us the proxy is broken.
@@ -52,6 +55,15 @@ Both outcomes, for the same reason. The discomfort of being asked to actually un
 
 If the Air Force Academy had used introductory calculus evaluations for tenure, it would have systematically promoted the instructors who were hurting long-run learning and dismissed the ones producing it. This is not a hypothetical inference about what might happen. This is what the data say would have happened, to that population of instructors, in that setting, under that measurement rule.
 
+The pattern is the inversion stated in the simplest possible table — instructor type by what students earned in the first course, what they earned in the follow-on, and what they wrote on the evaluation form.
+
+| Instructor type | Calc I grade (this course) | Calc II grade (downstream) | Student evaluation rating |
+|---|---|---|---|
+| Less-experienced instructors (taught to the test of this course) | Higher | Lower | Higher |
+| Experienced PhD-holding faculty (taught for transfer) | Lower | Higher | Lower |
+
+The student evaluations tracked the first-course grades, not the downstream performance. The instructors with the worse ratings were producing the better long-run learning.
+
 The problem compounds when the instructor being measured is teaching with a philosophy that this book has been calling AI+1 — one who knows when to refuse the easier path, when to insist that the student do the cognitive work that the AI tool is offering to do for her, when to make the room harder in the precisely calibrated way that produces understanding rather than fluency. That instructor is the Carrell-West experienced PhD professor at scale. Student evaluations will penalize her for that practice. A tenure system built on those evaluations will not merely fail to identify her. It will select against her.
 
 ---
@@ -63,6 +75,9 @@ The Carrell-West finding is about teaching style. A separate literature — equa
 In 2015, Lillian MacNell, Adam Driscoll, and Andrea Hunt published a study in *Innovative Higher Education* with a design elegant enough to be worth describing in detail. An online graduate course with two assistant instructors. Each instructor taught one section under a male name and one section under a female name. Students never saw the instructor; all interaction was text-based. The same person, using the same words, returning the same feedback at the same time — but half the students thought the instructor was male and half thought the instructor was female.
 
 Students rated the perceived-male identity significantly higher on nearly every dimension. The dimension that should have been impossible to bias was promptness of feedback — feedback returned at literally the same times by both perceived identities. Students rated the perceived-male instructor higher on promptness anyway. A man was rated better for the same act, performed by the same person, at the same moment in time.
+
+![Diagram of the MacNell Driscoll Hunt 2015 name-swap experiment with two instructors each appearing under male and female perceived identities and the rating differentials including promptness](images/10-three-honest-measures-fig-02.png)
+*Figure 10.02 — The name-swap experiment: same instructor, same words, different ratings*
 
 The sample is small — one course, forty-three students. The replication did the rest of the work.
 
@@ -155,6 +170,24 @@ This is the gap the third measure fills. And it is the only one of the three mea
 Without growth measurement, the AI investment documented in Chapter 8 has no defensible basis for differential compensation. The state cannot pay teachers to develop AI+1 capability if it has no instrument capable of distinguishing the teacher who has developed it from the teacher who attended the same workshop and has not. The dividend documented in surveys of teacher AI use — teachers using AI weekly report saving roughly six weeks per school year — will continue flowing to the teachers who arrived already fluent, while the teachers in under-resourced schools who received the same training save nothing. The dividend will compound the inequities it was supposed to address, because the system has no mechanism to recognize the capability it is trying to reward.
 
 The third measure is the most important of the three because it is the precondition. The first two improve the existing measurement system. The third creates the future of the system — the infrastructure for paying teachers to develop, the basis for credentialing AI+1 practice, the audit trail that lets a state or district know whether its training investment is producing anything. Without it, this book's argument can be made. It cannot be built at scale.
+
+The three measures together replace the single instrument the field has been overusing. None of them alone is sufficient. None of them is the satisfaction survey rebranded.
+
+| Dimension | Measure 1: Student Wellbeing | Measure 2: Student Learning Gains | Measure 3: Teacher Learning and Improvement |
+|---|---|---|---|
+| What it measures | Relational climate; whether students felt respected and intellectually supported at the moment the course ended | Distance the section traveled in mastery between pre-test and post-test, relative to where it began | Whether the teacher's practice changed in response to professional development, and what evidence backs the claim |
+| How to assess | Student perception survey (existing IDEA / SIR II / local instruments), open-ended comments preserved | Pre-post assessment on common, externally constructed items; section-level reporting of gain | Annual or biennial documented cycle: identified growth area, PD engaged, evidence of practice change (observation, artifacts, peer review, video) |
+| Source or instrument | Existing satisfaction surveys, used for what they reliably measure | Department-built common assessments with external blind grading; Carrell-West design | Charlotte Danielson Framework, Marzano Focused Model, Wieman-Gilbert Teaching Practices Inventory, COPUS — the pieces exist; the integrated system has not been built |
+| Who does the rating | Students (formative feedback to teacher; aggregated for department-level climate monitoring) | External graders for the common items; pre/post comparison run at section level | Peer coaches + administrators + the teacher's documented portfolio; modeled on medical Maintenance of Certification |
+| Forbidden use | Individual scores as primary input to contract renewal, tenure, salary, or promotion | Individual-teacher year-over-year decisions on noisy single-section estimates | Treating attendance at PD as evidence of practice change — the failure mode of the current system |
+
+The pieces of the three-measure framework already exist, in different countries and different states. None of them is the complete system.
+
+| Model | Scope | What it measures | Evidence base |
+|---|---|---|---|
+| Finland FINEEC (Finnish Education Evaluation Centre) | National; oversees evaluation of education at all levels, with the DigiErko program for digital pedagogy | School-level evaluation, system-level evaluation, professional credentialing of teachers in digital pedagogy — the third-measure analog | Sample-based national assessments rather than census high-stakes testing; DigiErko cohort validated as a credentialing layer |
+| Tennessee TEAM | Statewide K-12 evaluation framework since 2011 | Student-growth measures via TVAAS value-added on state tests, combined with classroom observations using a validated rubric | Held for 15 years; demonstrates a student-learning-gains measure is operationally workable at state scale |
+| MET Project (Gates Foundation) | 7 districts, ~3,000 volunteer teachers, 2010–2013 | Three measures combined: value-added scores from state tests, classroom observations (multiple protocols including Danielson), student perception surveys | Year-two random reassignment confirmed the composite predicted subsequent learning; no single measure performed well alone; even the composite had substantial measurement error |
 
 ---
 

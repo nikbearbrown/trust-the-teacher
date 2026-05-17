@@ -1,0 +1,74 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Common bile duct injury rate per 1,000 cholecystectomies, 1988–2010</text>
+
+  <!-- Plot frame -->
+  <!-- y-axis -->
+  <line x1="96" y1="72" x2="96" y2="328" stroke="#8a8480" stroke-width="1"/>
+  <!-- x-axis -->
+  <line x1="96" y1="328" x2="640" y2="328" stroke="#8a8480" stroke-width="1"/>
+
+  <!-- Grid lines (light) at y values: 0,1,2,3,4,5 -->
+  <line x1="96" y1="328" x2="640" y2="328" stroke="#c8c4c0" stroke-width="0.5"/>
+  <line x1="96" y1="280" x2="640" y2="280" stroke="#c8c4c0" stroke-width="0.5"/>
+  <line x1="96" y1="232" x2="640" y2="232" stroke="#c8c4c0" stroke-width="0.5"/>
+  <line x1="96" y1="184" x2="640" y2="184" stroke="#c8c4c0" stroke-width="0.5"/>
+  <line x1="96" y1="136" x2="640" y2="136" stroke="#c8c4c0" stroke-width="0.5"/>
+  <line x1="96" y1="88" x2="640" y2="88" stroke="#c8c4c0" stroke-width="0.5"/>
+
+  <!-- y-axis labels (0..5 per 1,000) -->
+  <text x="88" y="332" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">0</text>
+  <text x="88" y="284" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">1</text>
+  <text x="88" y="236" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">2</text>
+  <text x="88" y="188" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">3</text>
+  <text x="88" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">4</text>
+  <text x="88" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">5</text>
+
+  <!-- y-axis title -->
+  <text x="40" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle" transform="rotate(-90 40 200)">Injuries per 1,000 operations</text>
+
+  <!-- x-axis ticks (year labels): 1988,1992,1996,2000,2004,2008 -->
+  <text x="96" y="348" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">1988</text>
+  <text x="200" y="348" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">1992</text>
+  <text x="304" y="348" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">1996</text>
+  <text x="408" y="348" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">2000</text>
+  <text x="512" y="348" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">2004</text>
+  <text x="616" y="348" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">2008</text>
+
+  <!-- Baseline reference: 2 per 1,000 (open procedure) -->
+  <line x1="96" y1="232" x2="640" y2="232" stroke="#8a8480" stroke-width="0.8" stroke-dasharray="4 3"/>
+  <text x="632" y="226" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">Open-procedure baseline: 2 per 1,000</text>
+
+  <!-- Data points (open era: pre-1990, then laparoscopic adoption begins around 1990) -->
+  <!-- (1988, 2.0), (1990, 2.1) — open era baseline -->
+  <!-- Spike: (1992, 4.6), (1994, 5.0), (1996, 4.2) — early laparoscopic era -->
+  <!-- Decline: (1998, 3.4), (2000, 2.8), (2004, 2.4), (2008, 2.1), (2010, 2.0) -->
+  <polyline points="96,232 148,229 200,140 252,112 304,158 356,206 408,242 460,254 512,266 564,278 616,282"
+            stroke="#1a1714" stroke-width="2" fill="none"/>
+
+  <!-- Point markers -->
+  <circle cx="96" cy="232" r="3" fill="#1a1714"/>
+  <circle cx="200" cy="140" r="3" fill="#1a1714"/>
+  <circle cx="252" cy="112" r="3" fill="#1a1714"/>
+  <circle cx="408" cy="242" r="3" fill="#1a1714"/>
+  <circle cx="564" cy="278" r="3" fill="#1a1714"/>
+
+  <!-- Annotation: laparoscopic adoption -->
+  <line x1="200" y1="120" x2="200" y2="76" stroke="#8a8480" stroke-width="0.8"/>
+  <text x="200" y="68" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Spike: ~5 per 1,000</text>
+
+  <!-- Annotation: box-trainer curriculum -->
+  <line x1="408" y1="248" x2="408" y2="300" stroke="#8a8480" stroke-width="0.8"/>
+  <text x="408" y="316" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Box-trainer curriculum mandated</text>
+
+  <!-- Caption -->
+  <text x="350" y="384" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">The instrument did not change. The training did. The injury rate followed the training, not the instrument.</text>
+  <text x="350" y="402" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Sources: Southern Surgeons Club (1995); Annals of Surgery (2001); Cook et al. JAMA (2011) for curriculum framing.</text>
+</svg>

@@ -26,6 +26,9 @@ This chapter is about a number, and about what the number can and cannot carry.
 <!-- FACT-CHECK FLAG: see factchecks/06-the-ai-dividend-assertions.md. 5.9 hours / 2,232 teachers / RAND ATP all CONFIRMED against Gallup-Walton "Teaching for Tomorrow" (2025). Minor: Gallup itself uses a 37.4-week school year (not 36) — the difference is small and the "six weeks" result holds either way, but note the discrepancy. -->
 The number is 5.9. It is the mean number of hours per week that weekly AI-using teachers reported saving in a Walton Family Foundation–Gallup survey released in 2025, drawn from 2,232 U.S. public K-12 teachers across the RAND American Teacher Panel — the strongest available nationally representative sample of American educators. Translate 5.9 hours per week against a 36-week academic calendar and you get roughly six full school weeks per year. The headline writes itself, and has written itself across roughly four hundred press summaries that have done exactly what press summaries do: taken the number and left the method behind.
 
+![Horizontal bar chart showing the 5.9 hours of teacher time saved per week by AI, broken down across nine non-overlapping task categories from the Gallup-Walton 2025 Teaching for Tomorrow report: lesson preparation (~1.0 h), grading and feedback (~0.9 h), developing assessments (~0.8 h), administrative tasks (~0.7 h), differentiating instruction (~0.6 h), parent communication (~0.6 h), analyzing student data (~0.5 h), professional development (~0.5 h), and other tasks (~0.3 h), summing to 5.9 hours per week.](images/06-the-ai-dividend-fig-01.png)
+*Figure 6.01 — Where the 5.9 hours come from*
+
 The method is what makes the number defensible, so the method belongs on the page.
 
 Gallup asked weekly AI-using teachers to estimate, task by task, across nine non-overlapping work categories, how many hours AI saves or adds per week. The categories were designed so the same hour cannot appear twice — *preparing to teach* and *developing assessments* are different cells, and a saving in one cannot also register as a saving in the other. Per-teacher totals were summed across all nine categories. Then — and this is the move that converts a self-report into a number worth using — outliers were trimmed at the 2.5th and 97.5th percentiles before the mean was taken. The teacher claiming to save eighty hours a week and the teacher claiming AI has cost her twenty: both removed. What remains is the central ninety-five percent of the distribution, averaged. This is standard procedure for exactly this kind of data and exactly the procedure you want to see applied.
@@ -44,6 +47,18 @@ The Education Endowment Foundation's *ChatGPT in Lesson Preparation* trial ran a
 
 The lesson-preparation finding is a 31 percent reduction. ChatGPT teachers spent 56.2 minutes per week on lesson and resource preparation. Control teachers spent 81.5 minutes. The 25.3-minute difference is not large in absolute terms. But it survived randomization. It is not a self-reported estimate of a typical week. It is a measured, causally identified difference between two groups of teachers who were, by design, otherwise equivalent.
 
+| Design element | Specification |
+|---|---|
+| Publishing body | Education Endowment Foundation, December 2024 |
+| Sample | 259 teachers across 68 secondary schools in England |
+| Subject | Science, Years 7–8 (ages 11–13) |
+| Intervention arm | ChatGPT access plus a structured implementation guide (34 schools) |
+| Control arm | Lesson preparation as usual, no ChatGPT (34 schools) |
+| Outcome 1: preparation time | Treatment 56.2 min/week vs. control 81.5 min/week — a 31% reduction (25.3 min saved) |
+| Outcome 2: quality | Blind panel of 5 science teachers scored 30 lesson resources across clarity, engagement, age-appropriateness, scientific accuracy — no statistically significant difference on any dimension |
+| Outcome 3: workload perceptions | Self-reported, directionally favorable to treatment but smaller than the time effect |
+| Headline finding | Time falls. Quality, as the panel could measure it, holds. |
+
 More important than the time finding is the quality finding, because the quality finding is where the most obvious objection goes to die. If teachers are producing materials faster because AI is generating the materials, the materials are presumably worse. <!-- FACT-CHECK FLAG: see factchecks/06-the-ai-dividend-assertions.md. The EEF panel was five science teachers, but not all five were "experienced" — per the EEF report, three were experienced (20+ years, head of science or KS3 lead) and two were earlier-career (one early career teacher). Soften to "five-teacher panel of science teachers" or "five science teachers (three experienced, two earlier-career)." Four scoring dimensions and no-significant-difference finding are correct. -->
 A blind panel of five experienced science teachers scored thirty lesson resources — fifteen from the ChatGPT condition, fifteen from control — across clarity, engagement, age-appropriateness, and scientific accuracy. They found no statistically significant quality difference on any dimension. The time went down. The quality, as the panel could measure it, held.
 
@@ -59,6 +74,9 @@ Now hold the two pieces of evidence together, because together is the only way t
 
 The question the Gallup data raises and cannot answer is what happens to the recovered time. <!-- FACT-CHECK FLAG: see factchecks/06-the-ai-dividend-assertions.md. The 60% / 60% / 57% figures may be transposed relative to the Gallup report — the report indicates ~57% report improved grading/feedback and ~61% report better insights about student learning/data. Pin to exact Gallup figures. -->
 Sixty percent of weekly AI-using teachers say they have more time for improving teaching and learning. Sixty percent say they have more time for individualized feedback and support. Fifty-seven percent report better insights into student learning data.
+
+![Three horizontal bars showing the share of weekly AI-using teachers who report each reinvestment of reclaimed time: 61% report more time for improving teaching and learning, 57% report more time for individualized feedback and support, and 57% report better insights into student learning data; caption notes these are self-reported intentions, not measured behavior change.](images/06-the-ai-dividend-fig-02.png)
+*Figure 6.02 — Where the reclaimed time goes, by teacher self-report*
 
 But *say* is doing considerable work in those sentences. A teacher reporting that she now has more time for individualized feedback is not the same as a teacher who is actually providing it at a measurably different rate in ways students can detect. The chain from recovered time to better teaching to better learning has three links, and the Gallup survey reliably tests only the first. For the second link — for the claim that recovered time can move a specific, measurable dimension of teaching quality — there is a different body of research entirely, and it comes from a Stanford lab that began by asking a question so simple it sounds obvious.
 
@@ -116,6 +134,9 @@ The default productivity story runs like this: AI gives teachers a twenty-five p
 The teaching practices with the highest measured effect sizes on student learning — feedback, teacher-student relationships, responsive questioning, collective efficacy — do not scale by adding students. They scale by adding depth per student. They happen inside the relational space between this teacher and these twenty-seven kids. The class-size literature gives a usable ceiling: roughly twenty-five to thirty students before the relational mechanism begins to degrade. Above that threshold, the teacher who would be providing individualized feedback is instead managing a room. Below it, she can run the mechanism. AI does not change that ceiling. AI does not allow one teacher to run twenty-five-student feedback loops with sixty students present.
 
 What AI allows is for one teacher to do more *inside the thirty she already has.*
+
+![Two stacked horizontal bars comparing a traditional teaching week with an AI-assisted teaching week, illustrative composite using NEA, Gallup-Walton, and EEF data. Traditional week segments: 22 hours instruction, 7 hours lesson prep, 6 hours grading, 6 hours admin, 4 hours parent communication, 2 hours intervention, 7 hours other. AI-assisted week: same 22 hours instruction, 5 hours prep, 4 hours grading, 5 hours admin, 4 hours communication, 5 hours intervention, 2 hours enrichment, 7 hours other. Arrows show roughly 5 hours subtracted from prep, grading, and admin, then redistributed into intervention and enrichment within the same total hours.](images/06-the-ai-dividend-fig-03.png)
+*Figure 6.03 — The within-thirty argument: same total hours, same students, deeper work*
 
 Call this the within-thirty argument. The dividend is reinvested in depth, not in scale. The Arkansas teacher's daily intervention slot and enrichment slot are within-thirty reinvestments. Same kids. Same room. More of the work that only she can do. The standard productivity story says AI saves teachers time so they can teach more students. This chapter inverts it. AI saves teachers time so they can teach the students they already have more fully. Same kids. Same room. More of the work only she can do.
 

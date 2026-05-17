@@ -18,6 +18,9 @@ On Thursday afternoon she runs an AI-assisted formative check — a quiz generat
 
 That is one week. None of it is exotic.
 
+![Five-day grid showing what AI handles and what the teacher handles each day of an AI+1 classroom week](images/12-the-teacher-this-book-is-arguing-for-fig-01.png)
+*Figure 12.01 — One week in the AI+1 classroom: what AI handles, what the teacher handles*
+
 The differentiation tool is one of half a dozen platforms — Diffit, MagicSchool, a direct Claude prompt — that take a primary source and return reading-level-adjusted versions in under a minute. The formative tool is in the same family as Khanmigo and the Eedi platform. <!-- FACT-CHECK FLAG: d ≈ 0.82 classroom-discussion figure is stable in Hattie editions but should be pinned to specific MetaX retrieval date or Visible Learning: The Sequel (2023). MetaX has had recent recalibrations across other influences. -->The structured discussion protocol is older than any of this — it is the "classroom discussion" effect that sits at *d* ≈ 0.82 in the Hattie meta-analysis, which has been near the top of the rankings for a decade waiting for teachers who had the time to design it. And the Tuesday move with Marcus is the oldest move in teaching. It is what *teaching* meant before the word had to compete with *content delivery.*
 
 ---
@@ -33,6 +36,15 @@ The pattern is not aspirational. It is what the AI dividend, when there is one, 
 Marcus himself is not hypothetical. He is the classroom-level expression of the Bastani finding — the seventeen-percent closed-book performance drop that students in the unguided AI condition produced after practice sessions they predicted would help them. Marcus produces correct answers he cannot defend because the fluent practice he did with the tool did not encode anything his teacher can build on. The AI built the symptom. The teacher reads it. That asymmetry is what the whole book has been about.
 
 She is also not a composite who exists in abundant supply. She exists in fragments. <!-- FACT-CHECK FLAG: "A 2024 Edutopia profile" and "a district fellows cohort" are not named. Khanmigo Puerto Rico pilot is real (see Ch. 8 fact-check) but is name-only. Name the specific Edutopia profile and the fellows cohort, or soften framing. -->A 2024 Edutopia profile here. A district fellows cohort there. A Khanmigo pilot in Puerto Rico. A handful of grade-level teams whose principal protected ninety minutes a week of common planning time and put a coach in the building. The fragments are real. The infrastructure that would produce her at scale — in every district, every grade, every subject — is the work that remains. What follows is that work, broken by who is responsible for which piece of it.
+
+The work that remains breaks down by who is responsible for which piece of it. Each audience has three things to do.
+
+| Audience | First action | Second action | Third action |
+|---|---|---|---|
+| Policymakers | Define the educational exemption operationally — write language that distinguishes AI extending student thinking from AI substituting for it | Fund teacher AI training through Title II-A at a 70/30 ratio — at least 70% of any AI-related federal expenditure to sustained PD, no more than 30% to hardware and licensing | Add teacher learning and improvement to every state evaluation framework — integrate the student-growth measure (Tennessee) with the practice-goal measure (Massachusetts) |
+| District leaders | Pair the bell-to-bell phone ban with funded, supervised quality technology access during school hours — close the substitute gap the FCC opened | Adopt the three-measure evaluation framework — student wellbeing, learning gains, teacher learning and improvement, each used for what it can defensibly do | Stop buying unused licenses (~67% sit idle); redirect to coaching cycles and a district-level data analyst seat |
+| School leaders | Train teachers in AI the way any professional is trained in a new tool — protected 90-minute weekly common planning time + coach in the building two days a month | Build collective teacher efficacy through PLCs and norming, not through workshops — debug effective practice across grade-level teams, year over year | Stop treating AI training as separate from subject-matter training — organize subject-specific, grade-specific, coaching-anchored development |
+| Teachers | Treat AI output the way a clinician treats a lab result — design assignments where the fluency the AI provides is not the assessment (closed-book moments, defended explanations, oral follow-ups) | Spend the dividend on relationship — teacher-student relationships sit at *d* ≈ 0.72 in the meta-analysis; the Tuesday with Marcus is the classroom expression of that finding | Use the dividend to design the protocol you have been meaning to design for two years — one item off the list every quarter |
 
 ---
 
@@ -145,6 +157,19 @@ That is the state of things. It is also the sentence the book has been building 
 Singapore put three words on a wall in 2004 — *Teach Less, Learn More* — and built a curriculum redesign beneath them. Finland wrote two — *phenomenon-based* — and rebuilt a national curriculum around them. Slogans work when the structural commitments beneath them are real. The book's three sentences — trust the teacher, train the teacher, measure what matters — are a directive if the four sections above this one get built, and wallpaper if they do not. That choice belongs to every person reading this, at whatever scale they operate.
 
 On Tuesday morning, the teacher heard the wrong note in Marcus's reasoning. She sat down. She asked the question four different ways. She got an honest wrong answer she could teach from. That moment — the one the algorithm cannot produce, the legislature cannot mandate, and the platform cannot replace — is the moment the book has been arguing for. The conditions that make it possible at scale are not mysterious. They are funded coaching cycles, protected planning time, evaluation that sees the work, training that respects the subject and the grade and the room. None of these is new. All of them are absent at the scale the evidence demands.
+
+The conditions that make the AI+1 classroom possible are not mysterious. They are also not present at scale.
+
+| Condition the AI+1 classroom requires | What the median U.S. district currently has |
+|---|---|
+| Funded coaching cycles — one tutor teacher per building, one section of load coverage, the rest in structured coaching with colleagues (Kraft, Blazar & Hogan 2018: *d* ≈ 0.49 on practice) | August vendor demonstrations and half-day workshops — the form of PD the Yoon evidence says does not move practice below ~14 contact hours |
+| Protected planning time — 90 minutes a week of grade-level common planning, defended against schedule pressure | Common planning time scheduled away by the next testing window or compliance demand |
+| Evaluation that sees the work — three honest measures: student wellbeing, learning gains, teacher learning and improvement | A satisfaction survey plus a once-yearly walk-through — neither captures the Tuesday with Marcus, the Wednesday discussion, or the Thursday reorganization |
+| Sustained subject-specific training — seventh-grade humanities, AP physics, K-2 phonics versions built by people who teach those subjects with AI | Generic district-wide AI workshops led by vendors with no grade or subject anchoring |
+| Building-level coherence and admin backing — principals who read the lesson plans and back the teacher's call when a parent phones | AUPs that route every contextual decision to the principal's office without preparation for the call |
+
+![Three directives Trust the teacher Train the teacher Measure what matters each linked to the chapter that earns it](images/12-the-teacher-this-book-is-arguing-for-fig-02.png)
+*Figure 12.02 — Three sentences, three chapters: what the directive rests on*
 
 The teacher is already in the room. The work that remains is to build what she needs to do her job.
 

@@ -1,0 +1,92 @@
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="480" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Where the 5.9 hours come from: AI-saved time per task category, per week</text>
+
+  <!-- Horizontal bar chart -->
+  <!-- y starts at 70, each row ~36px tall, bar height 22 -->
+  <!-- x-axis from 240 to 600 (max ~1.2 hours), so 360 px = 1.2 hours -> 300 px per hour -->
+
+  <!-- Axis line -->
+  <line x1="240" y1="68" x2="240" y2="380" stroke="#1a1714" stroke-width="1"/>
+  <line x1="240" y1="380" x2="640" y2="380" stroke="#8a8480" stroke-width="1"/>
+
+  <!-- Grid -->
+  <line x1="300" y1="68" x2="300" y2="380" stroke="#c8c4c0" stroke-width="0.5"/>
+  <line x1="360" y1="68" x2="360" y2="380" stroke="#c8c4c0" stroke-width="0.5"/>
+  <line x1="420" y1="68" x2="420" y2="380" stroke="#c8c4c0" stroke-width="0.5"/>
+  <line x1="480" y1="68" x2="480" y2="380" stroke="#c8c4c0" stroke-width="0.5"/>
+  <line x1="540" y1="68" x2="540" y2="380" stroke="#c8c4c0" stroke-width="0.5"/>
+  <line x1="600" y1="68" x2="600" y2="380" stroke="#c8c4c0" stroke-width="0.5"/>
+
+  <!-- x-axis labels: hours per week -->
+  <text x="240" y="396" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0</text>
+  <text x="300" y="396" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.2</text>
+  <text x="360" y="396" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.4</text>
+  <text x="420" y="396" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.6</text>
+  <text x="480" y="396" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.8</text>
+  <text x="540" y="396" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">1.0</text>
+  <text x="600" y="396" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">1.2</text>
+
+  <text x="420" y="414" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">Hours saved per week</text>
+
+  <!-- Bars (9 categories), heights of bars approximate slot per category. 300 px = 1 hour -->
+  <!-- 1. Preparing lessons / lesson planning ~ 1.0 -->
+  <rect x="240" y="74" width="300" height="22" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="232" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Lesson preparation</text>
+  <text x="548" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">1.0 h</text>
+
+  <!-- 2. Grading + giving feedback ~ 0.9 -->
+  <rect x="240" y="108" width="270" height="22" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="232" y="124" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Grading &amp; feedback</text>
+  <text x="518" y="124" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">0.9 h</text>
+
+  <!-- 3. Developing assessments ~ 0.8 -->
+  <rect x="240" y="142" width="240" height="22" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="232" y="158" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Developing assessments</text>
+  <text x="488" y="158" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">0.8 h</text>
+
+  <!-- 4. Administrative tasks ~ 0.7 -->
+  <rect x="240" y="176" width="210" height="22" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="232" y="192" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Administrative tasks</text>
+  <text x="458" y="192" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">0.7 h</text>
+
+  <!-- 5. Differentiating instruction ~ 0.6 -->
+  <rect x="240" y="210" width="180" height="22" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="232" y="226" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Differentiating instruction</text>
+  <text x="428" y="226" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">0.6 h</text>
+
+  <!-- 6. Parent / family communication ~ 0.6 -->
+  <rect x="240" y="244" width="180" height="22" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="232" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Parent communication</text>
+  <text x="428" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">0.6 h</text>
+
+  <!-- 7. Analyzing student data ~ 0.5 -->
+  <rect x="240" y="278" width="150" height="22" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="232" y="294" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Analyzing student data</text>
+  <text x="398" y="294" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">0.5 h</text>
+
+  <!-- 8. Professional development ~ 0.5 -->
+  <rect x="240" y="312" width="150" height="22" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="232" y="328" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Professional development</text>
+  <text x="398" y="328" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">0.5 h</text>
+
+  <!-- 9. Other tasks ~ 0.3 -->
+  <rect x="240" y="346" width="90" height="22" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="232" y="362" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Other tasks</text>
+  <text x="338" y="362" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">0.3 h</text>
+
+  <!-- Total -->
+  <line x1="240" y1="430" x2="640" y2="430" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="232" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="end">Total (trimmed mean)</text>
+  <text x="248" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714">5.9 hours per week ≈ 6 school weeks per year</text>
+
+  <!-- Caption -->
+  <text x="350" y="470" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Source: Walton Family Foundation &amp; Gallup, Teaching for Tomorrow (2025); n = 2,232 U.S. K-12 teachers, RAND ATP. Per-category figures are approximate.</text>
+</svg>

@@ -1,11 +1,16 @@
 # Chapter 1: The Ban
 
+*Why removing the phone was right, what removing the phone alone cannot do, and who pays when we stop there*
+
 The pouch closes with a sound like a zipper, which is what it is. Magnetic, orange, the size of a paperback. A Florida seventh-grader drops her phone inside, the attendant passes a wand over it to confirm the seal, and that's it. The phone is still on her hip. She can feel its weight through the fabric all day. She just can't get to it. Not until the bell rings at 2:45, when the pouch opens again and the phone comes back into her hand and the school day, in some important sense, is over.
 
 This is the policy. A billion-dollar industry grew up around it. Twenty-two states passed some version of it in 2025 alone.
 <!-- FACT-CHECK FLAG: OUTDATED FRAMING — 22 states in 2025 is correct, but reconcile with the "thirty-three states" header on line 37 (Kansas became #33 in March 2026 per Ballotpedia). See factchecks/01-the-ban-assertions.md -->
 New York spent $29 million on pouches and the infrastructure to manage them. Los Angeles spent $5.2 million. Houston allocated $800,000.
 <!-- FACT-CHECK FLAG: UNVERIFIED — Houston $800,000 allocation not directly confirmed in single source. See factchecks/01-the-ban-assertions.md --> The political coalition that built this wave spans left and right, urban and rural, teachers' unions and parent groups who agree on almost nothing else. It is, by any ordinary measure, a successful piece of education policy.
+
+![Paired bar chart of suspension-rate change by demographic subgroup, showing a +16% year-one spike for Black students against ~0% for White and Hispanic peers, with all groups returning toward baseline in year two](images/01-the-ban-fig-01.png)
+*Figure 1.01 — The aggregate verdict was good; the distributional verdict, in year one, was not*
 
 The suspension numbers for Black students in that Florida district rose sixteen percent in year one.
 
@@ -24,6 +29,9 @@ Let's be precise about what the evidence supports, because the public conversati
 The first question: do personal smartphones disrupt learning during the school day? The answer is yes, and the evidence is solid. Researchers Louis-Philippe Beland and Richard Murphy studied ninety-one English secondary schools, tracking sixteen-year-olds before and after phone bans took effect. Test scores rose by about 6.4 percent of a standard deviation. Unimpressive? Consider who drove the result: students in the bottom quintile gained 14.23 percent — more than double the average. The students who were struggling most before the ban gained the most when the phone left the room.
 
 Sit with that for a moment, because it's doing structural work. The students least able to resist distraction, least scaffolded at home, most subject to the ambient pull of a notification — those students, specifically, are the ones the phone ban helps most when it removes the phone from their hand. This is a *progressive* finding at the level of in-classroom learning. The ban closes the gap. It levels up the students who are farthest behind.
+
+![Timeline of one school day from 8 a.m. to 3 p.m., with 51 small dots scattered above the axis marking individual phone pickups, and class-period bands shaded beneath the axis to show where 23% of notifications arrive](images/01-the-ban-fig-02.png)
+*Figure 1.02 — The median teenager's attention auction, hour by hour*
 
 The Common Sense Media 2023 *Constant Companion* study filled in the mechanical picture. The median teenager was picking up the phone fifty-one times a day during school hours.
 <!-- FACT-CHECK FLAG: UNVERIFIED — "51 pickups during school hours" specific figure not surfaced in CSM press materials. See factchecks/01-the-ban-assertions.md -->
@@ -52,6 +60,17 @@ There is the instructional-time-only model — phone banned during class but ava
 
 There are states that issued guidance and left the substance to districts — Connecticut, Maine, Minnesota, Washington. There are states that required every district to have *some* policy without specifying what the policy must be.
 
+| State | Year | Model | Devices covered | Exemption language | Who authorizes |
+|---|---|---|---|---|---|
+| Florida (HB 379, expanded 2025) | 2023 / 2025 | Bell-to-bell | Wireless communications devices | "unless directed to do so by a teacher for educational purposes" | Teacher |
+| New York (Phone-Free Schools Law) | 2025 | Bell-to-bell | Smartphones and personal communication devices | "by a teacher, principal, or the school district for a specific educational purpose" | Teacher / principal / district |
+| Indiana (SB 78) | 2026 (eff. July 1, 2026) | Bell-to-bell with device-source transition (2028) | Personal communication devices | Teacher-directed educational use, narrowing to school-supplied devices after July 1, 2028 | Teacher |
+| Connecticut | 2025 | District-choice (guidance) | Determined locally | Determined locally | District |
+| Maine | 2025 | District-choice (guidance) | Determined locally | Determined locally | District |
+| Minnesota | 2024 | District-choice (mandate-the-policy) | Determined locally | Determined locally | District |
+| Washington | 2025 | District-choice (guidance) | Determined locally | Determined locally | District |
+| California (AB 3216) | 2024 (district deadline July 1, 2026) | Mandate-the-policy | Smartphones | "when a teacher or administrator of the school grants permission to a pupil" | Teacher or administrator |
+
 Most parents, most reporters, and most legislators use "phone ban" to mean "phones are not allowed at school." This is almost never what the law actually says. Almost every American phone-ban statute contains a phrase like "except for educational purposes," or "except when authorized by a teacher," or "except for documented medical or IEP-related need." The exemption is structural, not incidental. It is not a loophole someone found; it was written in deliberately, because the legislators understood that a device with no educational exceptions would be absurd. The teacher who could not be trusted to keep phones away from her students at 9:15 a.m. is now trusted, with no additional support, to decide what counts as an educational purpose at 10:30.
 
 We will come back to that exemption. It is, I will argue, the most consequential paragraph in every phone ban ever passed — and it is the paragraph nobody has tried to fill with anything.
@@ -63,6 +82,14 @@ We will come back to that exemption. It is, I will argue, the most consequential
 The ban is facially neutral. The same Yondr pouch closes on the wealthy student and the student on free lunch. There is something appealing in this — a policy that doesn't sort by income, that holds the line for everyone, that treats the room as a room.
 
 Here is the fact underneath the feeling.
+
+| Household income | Smartphone-only internet | Home broadband | No home internet |
+|---|---|---|---|
+| Under $30,000 | ~27% | ~57% | ~16% |
+| $30,000–$74,999 | ~15% | ~80% | ~5% |
+| $75,000–$99,999 | ~9% | ~89% | ~2% |
+| $100,000 and above | ~6% | ~93% | ~1% |
+| All households | ~16% | ~80% | ~4% |
 
 The National Center for Education Statistics, drawing on the American Community Survey, reports that roughly six percent of three- to eighteen-year-olds have no home internet of any kind.
 <!-- FACT-CHECK FLAG: UNVERIFIED — specific NCES table not directly pulled. See factchecks/01-the-ban-assertions.md -->
@@ -80,6 +107,9 @@ This is what progressive-in-the-classroom and regressive-at-the-household-level 
 ---
 
 ## Two subtractions, one household, nobody adding them up
+
+![Two-layer timeline showing state phone-ban enactments stacked above a 2020–2026 axis (Florida 2023, California/Ohio/Louisiana 2024, New York/Texas/Arkansas and fifteen more 2025) and the E-Rate hotspot funding arc below (2020 baseline, 2024 expansion, September 30 2025 FCC 25-63 rescission), with a collision box at the bottom naming the denied requests](images/01-the-ban-fig-03.png)
+*Figure 1.03 — The double subtraction: state and federal cuts converging on the same household*
 
 In September 2025, on a 2–1 vote, the Federal Communications Commission adopted an Order on Reconsideration that removed off-premises Wi-Fi hotspots and school-bus Wi-Fi from E-Rate eligibility. E-Rate is the federal program that subsidizes internet connectivity for schools and libraries, funded through the Universal Service Fund. The 2024 expansion under the previous FCC had added off-premises connectivity — the hotspot programs designed to follow students home — to the program's scope. The 2025 majority read the same authorizing statute differently and rolled it back.
 
@@ -112,6 +142,13 @@ It was not the variable that determined what the new law said.
 
 ## The $5.2 million that was not spent on teachers
 
+| District | Year | Procurement spend | Per-pupil cost (approx.) | Equivalent in sustained teacher PD (≈$2,500/teacher/yr) |
+|---|---|---|---|---|
+| New York City | 2025–26 | $29,000,000 | ~$32 | ~11,600 teachers |
+| Los Angeles Unified | 2023–24 | $5,200,000 | ~$13 | ~2,080 teachers |
+| Houston ISD | 2025–26 | $800,000 | ~$4 | ~320 teachers |
+| Cincinnati Public Schools (grades 7–12) | 2024–25 | ~$500,000 | ~$30 | ~200 teachers |
+
 The Los Angeles Unified School District spent $5.2 million on Yondr pouches in 2023–24. Within months, students were using magnets purchased on Amazon to pop the pouches open. Some carried cheap backup phones that went into the pouch while their real phone stayed in a pocket. Some simply banged the pouch against a desk until the magnetic seal gave. Houston allocated $800,000 for phone storage. Cincinnati spent roughly half a million on pouches for grades 7–12 and reported durability problems within the first year.
 <!-- FACT-CHECK FLAG: UNVERIFIED — Cincinnati ~$500K figure and durability documentation not surfaced in single source. See factchecks/01-the-ban-assertions.md -->
 
@@ -130,6 +167,17 @@ A rule written into statute is, among other things, a statement about who can be
 This statement, applied to teachers and technology, has a defensible reading. Teacher technology decisions have been historically inconsistent and sometimes disastrous. The variance between the kindergarten teacher who lets students watch YouTube during morning meeting and the chemistry teacher who uses Khan Academy as a supplement to a demanding lesson is enormous, and a floor beneath which no teacher can drop is a meaningful correction for the worst of that variance.
 
 But then look at what the statute actually does.
+
+| State | Statute | Exact exemption phrase | Who authorizes |
+|---|---|---|---|
+| Florida | HB 379 (2023, expanded 2025) | "unless directed to do so by a teacher solely for educational purposes" | Teacher |
+| Indiana | SB 185 (2024) / SB 78 (2026) | "educational purposes or emergencies" | Teacher |
+| New York | Education Law § 2803 (2025) | "by a teacher, principal, or the school district for a specific educational purpose" | Teacher / principal / district |
+| Louisiana | Act 313 (2024) | Medical IEP/504/IHP accommodations; emergencies; teacher-directed educational use | Teacher / IEP team |
+| Ohio | HB 250 (2024) | "student learning as determined by school officials" | School officials |
+| South Carolina | State Board model policy (Sept 2024) | "explicitly approved by the District Superintendent or his/her designee in writing" with Chromebook-not-suitable test | Superintendent (written) |
+| California | AB 3216 (2024) | "when a teacher or administrator of the school grants permission to a pupil" | Teacher / administrator |
+| Virginia | EO 33 (2024) | No instructional carve-out — phones not recognized as an instructional tool | (No exception) |
 
 Every phone ban law in the United States contains an exemption for educational purposes. Florida's statute prohibits phone use "unless directed to do so by a teacher for educational purposes." Indiana permits exceptions for "educational purposes or emergencies." New York authorizes use "by a teacher, principal, or the school district for a specific educational purpose."
 <!-- FACT-CHECK FLAG: UNVERIFIED — exact statutory quotes (FL, IN, NY) require direct citation to bill text. See factchecks/01-the-ban-assertions.md --> Not one of the laws defines the term operationally. The teacher who could not be trusted to keep phones in pockets at 9:15 a.m. is now trusted, with no additional guidance, to decide what counts as an educational purpose at 10:30 a.m.

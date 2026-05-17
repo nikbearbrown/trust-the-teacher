@@ -1,0 +1,125 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">A teacher's week, before and after: where AI subtracts, where reclaimed hours go</text>
+
+  <!-- Two stacked horizontal bars. Each row at y, height 56. Width = 540 (corresponds to ~54 hours/week). Use 10 px per hour. -->
+  <!-- Row labels at x=64 -->
+  <!-- Bar starts at x=160 -->
+
+  <!-- Top: traditional week (label) -->
+  <text x="152" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="end">Traditional week</text>
+
+  <!-- Segments for traditional (no AI). Approx hours; total ~54. 10 px/h. -->
+  <!-- Instruction 22h, Lesson prep 7h, Grading 6h, Admin 6h, Communication 4h, Intervention/enrichment 2h, Other 7h -->
+  <!-- Use varying fill via crosshatch or simple labels — but we are monochrome so we differentiate by stroke patterns / labels only -->
+
+  <!-- Outline frame -->
+  <rect x="160" y="78" width="540" height="44" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+
+  <!-- Segments (use cream fill but separate with vertical divider lines) -->
+  <line x1="380" y1="78" x2="380" y2="122" stroke="#1a1714" stroke-width="1"/>
+  <line x1="450" y1="78" x2="450" y2="122" stroke="#1a1714" stroke-width="1"/>
+  <line x1="510" y1="78" x2="510" y2="122" stroke="#1a1714" stroke-width="1"/>
+  <line x1="570" y1="78" x2="570" y2="122" stroke="#1a1714" stroke-width="1"/>
+  <line x1="610" y1="78" x2="610" y2="122" stroke="#1a1714" stroke-width="1"/>
+  <line x1="630" y1="78" x2="630" y2="122" stroke="#1a1714" stroke-width="1"/>
+
+  <!-- Light cream fill behind -->
+  <rect x="161" y="79" width="218" height="42" fill="#f5f2ee"/>
+  <rect x="381" y="79" width="68" height="42" fill="#f5f2ee"/>
+  <rect x="451" y="79" width="58" height="42" fill="#f5f2ee"/>
+  <rect x="511" y="79" width="58" height="42" fill="#f5f2ee"/>
+  <rect x="571" y="79" width="38" height="42" fill="#f5f2ee"/>
+  <rect x="611" y="79" width="18" height="42" fill="#f5f2ee"/>
+  <rect x="631" y="79" width="68" height="42" fill="#f5f2ee"/>
+
+  <!-- Segment labels in-bar -->
+  <text x="270" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">Instruction</text>
+  <text x="270" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">22 h</text>
+  <text x="415" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Prep</text>
+  <text x="415" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">7 h</text>
+  <text x="480" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Grading</text>
+  <text x="480" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">6 h</text>
+  <text x="540" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Admin</text>
+  <text x="540" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">6 h</text>
+  <text x="590" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Comms</text>
+  <text x="590" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">4 h</text>
+  <text x="620" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">Int.</text>
+  <text x="620" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">2h</text>
+  <text x="665" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Other</text>
+  <text x="665" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">7 h</text>
+
+  <!-- Bottom: AI-assisted week -->
+  <text x="152" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="end">AI-assisted week</text>
+
+  <!-- AI-assisted: Instruction 22h same, Prep 5h (-2), Grading 4h (-2), Admin 5h (-1), Comms 4h, Intervention 5h (+3), Enrichment 2h (+2 added), Other 7h, total still ~54h -->
+  <rect x="160" y="178" width="540" height="44" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+
+  <!-- Boundaries: instr ends at 380 (22h), prep at 430 (5h), grading at 470 (4h), admin at 520 (5h), comms at 560 (4h), intervention at 610 (5h, +3), enrichment at 630 (2h), other at 700 (7h) -->
+  <line x1="380" y1="178" x2="380" y2="222" stroke="#1a1714" stroke-width="1"/>
+  <line x1="430" y1="178" x2="430" y2="222" stroke="#1a1714" stroke-width="1"/>
+  <line x1="470" y1="178" x2="470" y2="222" stroke="#1a1714" stroke-width="1"/>
+  <line x1="520" y1="178" x2="520" y2="222" stroke="#1a1714" stroke-width="1"/>
+  <line x1="560" y1="178" x2="560" y2="222" stroke="#1a1714" stroke-width="1"/>
+  <line x1="610" y1="178" x2="610" y2="222" stroke="#1a1714" stroke-width="1"/>
+  <line x1="630" y1="178" x2="630" y2="222" stroke="#1a1714" stroke-width="1"/>
+
+  <rect x="161" y="179" width="218" height="42" fill="#f5f2ee"/>
+  <rect x="381" y="179" width="48" height="42" fill="#f5f2ee"/>
+  <rect x="431" y="179" width="38" height="42" fill="#f5f2ee"/>
+  <rect x="471" y="179" width="48" height="42" fill="#f5f2ee"/>
+  <rect x="521" y="179" width="38" height="42" fill="#f5f2ee"/>
+  <rect x="561" y="179" width="48" height="42" fill="#f5f2ee"/>
+  <rect x="611" y="179" width="18" height="42" fill="#f5f2ee"/>
+  <rect x="631" y="179" width="68" height="42" fill="#f5f2ee"/>
+
+  <text x="270" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">Instruction</text>
+  <text x="270" y="216" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">22 h</text>
+  <text x="405" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Prep</text>
+  <text x="405" y="216" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">5 h</text>
+  <text x="449" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">Grade</text>
+  <text x="449" y="216" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">4 h</text>
+  <text x="495" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Admin</text>
+  <text x="495" y="216" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">5 h</text>
+  <text x="540" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">Comms</text>
+  <text x="540" y="216" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">4 h</text>
+  <text x="585" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#1a1714" text-anchor="middle">Intervention</text>
+  <text x="585" y="216" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">5 h</text>
+  <text x="620" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#1a1714" text-anchor="middle">Enr.</text>
+  <text x="620" y="216" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#4a4540" text-anchor="middle">2h</text>
+  <text x="665" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Other</text>
+  <text x="665" y="216" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">7 h</text>
+
+  <!-- Arrows showing redistribution -->
+  <line x1="405" y1="138" x2="405" y2="172" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="405" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">−2</text>
+  <line x1="478" y1="138" x2="478" y2="172" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="478" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">−2</text>
+  <line x1="540" y1="138" x2="540" y2="172" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="540" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">−1</text>
+  <line x1="585" y1="172" x2="585" y2="138" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="595" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">+3</text>
+  <line x1="620" y1="172" x2="620" y2="138" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="610" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">+2</text>
+
+  <!-- Totals labels -->
+  <text x="710" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">54 h total</text>
+  <text x="710" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="end">54 h total</text>
+
+  <!-- Caption -->
+  <text x="350" y="272" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">The within-thirty argument: same total hours, same students, deeper work</text>
+  <text x="350" y="292" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">AI subtracts from preparation, grading, and administrative tasks (≈ 5 h/week saved, the Gallup-Walton dividend).</text>
+  <text x="350" y="308" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Reclaimed hours redistribute toward intervention and enrichment inside the existing class — not toward more students.</text>
+
+  <!-- Illustrative note -->
+  <line x1="96" y1="340" x2="640" y2="340" stroke="#c8c4c0" stroke-width="0.5"/>
+  <text x="350" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Per-task hours are illustrative composites of NEA / Gallup-Walton / EEF time data, not a measured panel.</text>
+  <text x="350" y="378" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">The 25.3-minute reduction in lesson prep documented by the EEF (2024) RCT is in the same neighborhood as the per-task figures shown.</text>
+</svg>

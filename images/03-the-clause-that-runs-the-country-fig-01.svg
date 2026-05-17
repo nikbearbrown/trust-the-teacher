@@ -1,0 +1,62 @@
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="480" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="36" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Six approaches to the same four words, ten states, zero shared definitions</text>
+
+  <!-- Center: the four-word blank -->
+  <circle cx="350" cy="246" r="60" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="350" y="240" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">"for educational</text>
+  <text x="350" y="256" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">purposes"</text>
+  <text x="350" y="276" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">(undefined in statute)</text>
+
+  <!-- Spoke 1: Teacher discretion (top-left) -->
+  <line x1="304" y1="208" x2="200" y2="120" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <rect x="76" y="80" width="200" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="176" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">1. Teacher discretion</text>
+  <text x="176" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">California (AB 3216)</text>
+  <text x="176" y="130" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">"the teacher is the rule"</text>
+
+  <!-- Spoke 2: Refuse the carve-out (top) -->
+  <line x1="350" y1="186" x2="350" y2="120" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <rect x="276" y="60" width="148" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="350" y="80" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">2. Refuse it</text>
+  <text x="350" y="96" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Virginia (EO 33)</text>
+  <text x="350" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">no instructional use</text>
+
+  <!-- Spoke 3: Written superintendent pre-approval (top-right) -->
+  <line x1="396" y1="208" x2="500" y2="120" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <rect x="424" y="80" width="200" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="524" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">3. Superintendent pre-approval</text>
+  <text x="524" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">South Carolina (model policy)</text>
+  <text x="524" y="130" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">+ Chromebook-cannot-do-it test</text>
+
+  <!-- Spoke 4: Device-source resolution (bottom-right) -->
+  <line x1="396" y1="284" x2="500" y2="364" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <rect x="424" y="372" width="200" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="524" y="392" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">4. Device-source resolution</text>
+  <text x="524" y="408" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Texas (HB 1481), Arkansas (Act 122)</text>
+  <text x="524" y="422" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">district devices fine; personal phones aren't</text>
+
+  <!-- Spoke 5: Pre-commit to narrowing (bottom) -->
+  <line x1="350" y1="306" x2="350" y2="364" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <rect x="276" y="372" width="148" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="350" y="392" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">5. Narrow the device fleet</text>
+  <text x="350" y="408" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Indiana (SB 78)</text>
+  <text x="350" y="422" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">2028 transition built in</text>
+
+  <!-- Spoke 6: District-defined (bottom-left) -->
+  <line x1="304" y1="284" x2="200" y2="364" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <rect x="76" y="372" width="200" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="176" y="392" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">6. District-defined</text>
+  <text x="176" y="408" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">most states (NY, OH, LA, FL...)</text>
+  <text x="176" y="422" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">vagueness passed downstream</text>
+
+  <!-- Caption -->
+  <text x="350" y="462" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Move the classroom sixty miles in the right direction and the whole legal landscape shifts.</text>
+</svg>

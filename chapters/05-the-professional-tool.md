@@ -27,6 +27,9 @@ The conclusion is wrong. Not because the studies are bad. Because the average is
 
 Imagine — this is a hypothetical, clearly labeled as such — a meta-analysis that pooled appendectomy outcomes across two groups: trained surgeons performing the operation in modern hospitals, and untrained village barbers performing it on kitchen tables. The trained-surgeon studies would show mortality reductions of ninety-plus percent. The barber studies would show mortality increases of thirty or forty percent. The pooled average would show that surgery "slightly helps but mostly doesn't." No one would believe such a meta-analysis. Anyone reading the methods section would notice that the variance the average is hiding *is the thing the data are actually about*. The average is the wrong question.
 
+![Flowchart: the same scalpel applied by untrained barbers and trained surgeons produces opposite mortality effects; the pooled meta-analytic average reads as "slightly helps but mostly doesn't," hiding the variance that the data are actually about.](images/05-the-professional-tool-fig-01.png)
+*Figure 5.01 — The appendectomy meta-analysis: why pooling can hide what the data are about*
+
 The right question is what the trained operator does with the tool, and what the untrained operator does with the same tool, and how large the gap between them is. The right answer, in the surgical case, is: enormous. Big enough that the average is a misleading number. Big enough that the variable the meta-analysis should be reporting on is the operator, not the operation.
 
 Here is the thing. Almost every piece of empirical research on AI in education is the appendectomy meta-analysis. It pools classrooms where teachers were trained to use the tool well with classrooms where the tool was dropped on a teacher in August with a vendor walkthrough and a password. It averages the two. It produces a number. And that number is then read, by people who should know better, as evidence about the tool itself, when it is actually evidence about the distribution of training among the people holding the tool.
@@ -53,6 +56,9 @@ The NOVICE Trial enrolled twenty-two residents with four dropouts. The precision
 
 The 1990s injury spike is gone. The instrument is the same. The injury rate is back to baseline. What closed the gap was a six-week box-trainer curriculum that, before the field built it, did not exist. The laparoscope did not become safer. The profession built the training that turned the laparoscope into a capability.
 
+![Line chart of common bile duct injury rate per 1,000 cholecystectomies from 1988 through 2010: a baseline near 2 per 1,000 under the open procedure, a spike to roughly 5 per 1,000 in the early-1990s laparoscopic era, then a steady descent back toward baseline by the mid-2000s as box-trainer simulation curricula became mandated.](images/05-the-professional-tool-fig-02.png)
+*Figure 5.02 — Bile duct injury rate over time*
+
 Three things from this literature go straight into the chapter's argument and don't need to be softened. First: a genuinely better tool can produce worse outcomes when its perceptual demands diverge from what the operator's training has prepared her for. The fulcrum effect — instruments pivoting through a trocar so that the surgeon's hand motion inverts at the tip — is not a problem the open procedure had ever made anyone solve. Two-dimensional monitor view replaces stereoscopic depth. The haptic feedback of fingertips on tissue is replaced by the muted signal of a one-meter lever. These are not deficiencies of the laparoscope. They are properties of the laparoscope that the operator has not yet learned to handle.
 
 Second: a structured deliberate-practice curriculum on a much cheaper proxy closes the gap in six weeks at trivial cost relative to the tool itself. The intervention is not exotic. It is what we know how to build for surgeons. We have not yet built the analogue for teachers.
@@ -65,7 +71,8 @@ Third — and this is the pattern that will recur three more times in this chapt
 
 The same shape appears on a 4,000-acre Kansas wheat farm, in a literature that almost nobody writing about education has read, and that holds the argument up just as cleanly as the surgical literature does.
 
-[FIGURE: The KFMA efficiency distribution — histogram showing 570 farms over 21 years, with markers indicating where precision-ag technology adoption produced gains vs. negligible gains]
+![Histogram of farm efficiency scores from the 570-farm, 21-year Kansas Farm Management Association panel, right-skewed toward the efficiency frontier; brackets mark the lower end of the distribution where precision-ag adoption produced meaningful gains and the upper end where gains were negligible.](images/05-the-professional-tool-fig-03.png)
+*Figure 5.03 — The KFMA efficiency distribution: where precision-ag technology moves a farm*
 
 In 2025, Kang Lan and Ruijie Ban published a meta-analysis in the journal *Sustainability* integrating 85 empirical studies and 1,472 independent farm observations from across the global precision-agriculture literature — yield monitors, GPS guidance, grid soil sampling, variable-rate fertilizer prescriptions. The pooled finding: precision-agriculture technology adoption increased average return on investment by 22.3 percent, net profit by 18.5 percent. Nitrogen use efficiency rose 15.1 percent. Pesticide application fell 12.8 percent. Greenhouse gas emissions fell 9.4 percent. The aggregate number is real and substantial.
 
@@ -74,6 +81,14 @@ It is also, as Lan and Ban themselves note, an average across enormous heterogen
 Then, for a moment, look only at the United States. A 2016 USDA Economic Research Service report by David Schimmelpfennig worked from U.S. corn data and found that variable-rate technology raised profitability by about 1 percent; GPS maps, by almost 3 percent. Not 22 percent numbers. An order of magnitude smaller. The two findings are not in conflict — return on investment is a different quantity from net profit on whole-farm revenue — but the more important reconciliation is Schimmelpfennig's own framing: the U.S. sample was unusually well-managed. The corn farms in question were already near the efficiency frontier. Farms already at the frontier have less room to gain from any new tool.
 
 The cleanest demonstration of this came in Fiechter, Brewer, Ifft, and Boehlje (2025), "Farm Efficiency and Precision Agriculture Technology," published in the *Journal of Agricultural and Applied Economics*, using a twenty-one-year panel of 570 farms from the Kansas Farm Management Association. They computed farm-by-farm efficiency relative to the best-performing farms in the same year, and merged the efficiency scores with KFMA's precision-ag adoption survey. The headline conclusion was deliberately understated: most of the seventeen technology combinations they studied were not associated with broad efficiency gains. Two combinations stood out — automated guidance, and the combination of yield monitors with grid soil sampling. But the sentence that matters for this argument is one paragraph later: *less efficient farms gain the most from precision agriculture technology, with farms in the lower end of the efficiency distribution seeing meaningful gains from several technology combinations, while highly efficient farms saw little to none.*
+
+| Technology | Knowledge type | Gain at low end of efficiency distribution | Gain at high end | Operator interpretive demand |
+|---|---|---|---|---|
+| Automated guidance (auto-steer) | Embodied | Meaningful | Modest | Low — tool internalizes the skill |
+| Yield monitor + grid soil sampling | Information-intensive | Meaningful | Negligible | High — farmer reads the map to act |
+| Variable-rate fertilizer | Information-intensive | Modest | Negligible | High — prescription depends on map |
+| GPS field maps | Information-intensive | Modest | Negligible | Medium — farmer interprets layout |
+| Most other tech combinations studied | Mixed | Small or null | Null | Varies — no broad gain detected |
 
 That is the catch-up effect, in the authors' own language, from 570 farms and twenty-one years.
 
@@ -114,6 +129,9 @@ Tutor CoPilot — an open-source tool developed at Stanford — was embedded in 
 
 The result: students working with tutors who had access to Tutor CoPilot were 4 percentage points more likely to master topics ($p < 0.01$). For students paired with lower-rated tutors — the ones at the bottom of the practitioner skill distribution — the gain was 9 percentage points.
 
+![Bar chart of percentage-point gain in student topic mastery for tutors who had access to Tutor CoPilot, grouped by tutor rating tercile: lower-rated tutors gained +9 percentage points, mid-rated tutors gained about +4 percentage points, higher-rated tutors gained approximately 0; pooled average +4 pp marked as dashed reference line.](images/05-the-professional-tool-fig-04.png)
+*Figure 5.04 — Tutor CoPilot effect on student topic mastery, by tutor rating tercile*
+
 Four. Nine. Two numbers that have been sitting together in a working paper since October 2024, and that almost nobody teaching in a classroom has read.
 
 The mechanism analysis, drawn from over 350,000 messages between tutors and students, produces one sentence that I want to put in the largest font in this book: *Tutor CoPilot promotes effective pedagogy, increasing the use of probing questions and reducing generic praise.*
@@ -129,6 +147,14 @@ But none of that changes the shape. Four/nine is the same shape as fourteen/thir
 ## The shape, all five at once
 
 Here is the whole pattern in one place.
+
+| Domain | Source paper | Sample | Gain: trained vs. untrained operator | Gain: bottom quartile of practitioner skill |
+|---|---|---|---|---|
+| Surgery | Cook et al. (2011) JAMA; Aggarwal et al. (2007); NOVICE Trial (2025) | 35,226 trainees pooled (Cook); 22 residents (NOVICE) | Patient outcomes d = 0.50 with structured simulation | 90% of injuries occur in first 30 cases — residents gain most |
+| Farming | Fiechter, Brewer, Ifft, & Boehlje (2025) JAAE; Lan & Ban (2025) | 570 farms × 21 years (KFMA); 1,472 farm-observations (meta) | Pooled ROI +22.3% globally | Less-efficient farms see meaningful gains; frontier farms see none |
+| Customer support | Brynjolfsson, Li, & Raymond (2023, NBER WP 31161; QJE 2025) | 5,179 agents | +14% issues resolved per hour, average | +34% for novice/low-skilled; ~0% for experienced |
+| Writing tasks | Noy & Zhang (2023) Science | 453 college-educated professionals | Time −0.8 SD; quality +0.4 SD | Inequality between workers decreased — low-ability workers gain most |
+| Tutoring | Wang, Ribeiro, Robinson, Loeb, & Demszky (2024) arXiv:2410.03017 | ~700 tutors, 1,000+ students | +4 pp average topic mastery | +9 pp for lower-rated tutors; ~0 pp for higher-rated |
 
 | Profession | The tool | Where the gains concentrate |
 |---|---|---|

@@ -1,0 +1,66 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="36" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Meta-analytic effect sizes by EdTech intervention type</text>
+  <text x="350" y="54" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">The pooled +0.29 average hides the differences the average is about</text>
+
+  <!-- Axis -->
+  <line x1="200" y1="340" x2="640" y2="340" stroke="#1a1714" stroke-width="1"/>
+  <!-- x-axis ticks: 0, 0.2, 0.4, 0.6, 0.8 -->
+  <line x1="200" y1="336" x2="200" y2="344" stroke="#1a1714" stroke-width="1"/>
+  <text x="200" y="358" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0</text>
+  <line x1="310" y1="336" x2="310" y2="344" stroke="#1a1714" stroke-width="1"/>
+  <text x="310" y="358" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.2</text>
+  <line x1="420" y1="336" x2="420" y2="344" stroke="#1a1714" stroke-width="1"/>
+  <text x="420" y="358" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.4</text>
+  <line x1="530" y1="336" x2="530" y2="344" stroke="#1a1714" stroke-width="1"/>
+  <text x="530" y="358" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.6</text>
+  <line x1="640" y1="336" x2="640" y2="344" stroke="#1a1714" stroke-width="1"/>
+  <text x="640" y="358" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.8</text>
+  <text x="420" y="376" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Cohen's d</text>
+
+  <!-- Bars: each y-row 32px tall, starting at y=78 -->
+  <!-- Writing instruction: +0.81 -> width = 0.81*550 = 445 (rounded) -->
+  <text x="194" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Writing instruction</text>
+  <rect x="200" y="80" width="446" height="18" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <text x="654" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">+0.81</text>
+
+  <!-- Blended learning: +0.61 -> 336 -->
+  <text x="194" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Blended learning</text>
+  <rect x="200" y="108" width="336" height="18" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <text x="544" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">+0.61</text>
+
+  <!-- Assistive tech: +0.61 -->
+  <text x="194" y="148" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Assistive tech</text>
+  <rect x="200" y="136" width="336" height="18" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <text x="544" y="148" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">+0.61</text>
+
+  <!-- Intelligent tutoring: +0.52 -> 286 -->
+  <text x="194" y="176" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Intelligent tutoring</text>
+  <rect x="200" y="164" width="286" height="18" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
+  <text x="494" y="176" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">+0.52</text>
+
+  <!-- Unrestricted general tech: +0.29 -> 160 -->
+  <text x="194" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">Unrestricted general tech</text>
+  <rect x="200" y="192" width="160" height="18" fill="#8a8480" stroke="#1a1714" stroke-width="1"/>
+  <text x="368" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">+0.29</text>
+
+  <!-- 1:1 laptops: +0.16 -> 88 -->
+  <text x="194" y="232" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="end">1:1 laptops</text>
+  <rect x="200" y="220" width="88" height="18" fill="#8a8480" stroke="#1a1714" stroke-width="1"/>
+  <text x="296" y="232" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">+0.16</text>
+
+  <!-- Pooled average dashed vertical line at 0.29 = x=359.5 -->
+  <line x1="360" y1="76" x2="360" y2="340" stroke="#1a1714" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="364" y="276" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#1a1714">Pooled average d ≈ +0.29</text>
+  <text x="364" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">(what Horvath averages over)</text>
+
+  <!-- Caption -->
+  <text x="350" y="402" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Surgeries by trained surgeons and surgeries by untrained barbers, pooled into one average. The correct conclusion is not "surgery slightly helps."</text>
+</svg>

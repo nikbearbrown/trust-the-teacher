@@ -1,0 +1,55 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="420" fill="#fdfcfb"/>
+  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1714">Four harms compounding on the same population</text>
+  <text x="350" y="50" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#4a4540">Independent policies, no coordination, overlapping incidence</text>
+
+  <!-- Four harm boxes at top -->
+  <rect x="32" y="72" width="150" height="80" fill="#f5f2ee" stroke="#1a1714"/>
+  <text x="107" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">1. Disciplinary surge</text>
+  <text x="42" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">Phone ban year one:</text>
+  <text x="42" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">+16% suspensions for</text>
+  <text x="42" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">Black students (Figlio</text>
+  <text x="42" y="154" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">&amp; Özek, 2025)</text>
+
+  <rect x="194" y="72" width="150" height="80" fill="#f5f2ee" stroke="#1a1714"/>
+  <text x="269" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">2. Lost substitute</text>
+  <text x="204" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">Smartphone-dependent</text>
+  <text x="204" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">low-income households;</text>
+  <text x="204" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">FCC removes hotspot</text>
+  <text x="204" y="154" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">E-Rate eligibility 9/2025</text>
+
+  <rect x="356" y="72" width="150" height="80" fill="#f5f2ee" stroke="#1a1714"/>
+  <text x="431" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">3. Training inequity</text>
+  <text x="366" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">Title II-A AI training</text>
+  <text x="366" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">flows to already-</text>
+  <text x="366" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">resourced districts;</text>
+  <text x="366" y="154" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">SETDA "digital divide"</text>
+
+  <rect x="518" y="72" width="150" height="80" fill="#f5f2ee" stroke="#1a1714"/>
+  <text x="593" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">4. Unguided AI harm</text>
+  <text x="528" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">Bastani 2025: −17%</text>
+  <text x="528" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">closed-book hit from</text>
+  <text x="528" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">unguided GPT, worse</text>
+  <text x="528" y="154" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714">where scaffolding thin</text>
+
+  <!-- Arrows converging downward -->
+  <line x1="107" y1="152" x2="280" y2="248" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <line x1="269" y1="152" x2="325" y2="248" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <line x1="431" y1="152" x2="375" y2="248" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <line x1="593" y1="152" x2="420" y2="248" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Central population box -->
+  <rect x="180" y="258" width="340" height="84" fill="#1a1714" stroke="#1a1714"/>
+  <text x="350" y="282" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fdfcfb">Same student population absorbs all four</text>
+  <text x="350" y="302" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#fdfcfb">Low-income, high-suspension schools where Title I status,</text>
+  <text x="350" y="318" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#fdfcfb">smartphone-dependent households, untrained teachers,</text>
+  <text x="350" y="334" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#fdfcfb">and unsupervised AI use overlap</text>
+
+  <text x="350" y="376" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#1a1714">Nobody designed the combined outcome. Nobody is accountable for it.</text>
+  <text x="350" y="392" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">The students absorb the sum.</text>
+</svg>

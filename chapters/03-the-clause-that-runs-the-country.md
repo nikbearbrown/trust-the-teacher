@@ -1,5 +1,6 @@
 # The Clause That Runs the Country
 
+*Four words in every phone-ban law, and why no one has finished writing them*
 
 The teacher has thirty-one seconds left in the lesson.
 
@@ -14,8 +15,6 @@ She says yes.
 Two classrooms down, a different teacher says no to the same question.
 
 Neither of them is wrong, exactly. Neither of them is right. They are both operating inside the same four-word hole at the center of the law: *for educational purposes*. The phrase is in thirty-three state phone ban statutes. It is the hinge between a technology ban and a technology policy. It does all of the work that distinguishes the device-as-distraction from the device-as-instrument. And in every one of those thirty-three states, the legislators who wrote those words declined to say what they mean.
-<!-- FACT-CHECK FLAG: CONTRADICTED — Ballotpedia's March 2026 tracker counts 33 states with enacted statewide K-12 cellphone bans/restrictions (41 if "encourage" laws are included). The chapter's "thirty-five" is not corroborated by either canonical count and appears 4+ times. Recommend reconcile to 33 or cite the source. See factchecks/03-the-clause-that-runs-the-country-assertions.md -->
-
 
 That is what this chapter is about. Not the ban. The blank.
 
@@ -31,6 +30,19 @@ Because every one of these laws contains one. Florida's exemption is "except whe
 <!-- FACT-CHECK FLAG: PARTIAL — Florida quotation CONFIRMED verbatim. Ohio "student learning as determined by school officials" CONFIRMED (HB 250, DeWine May 2024). New York "for a specific educational purpose" UNVERIFIED on exact phrasing — closest public-source language is "for an educational purpose" without "specific." Author should cite N.Y. Education Law § 2803 verbatim. See factchecks/03-the-clause-that-runs-the-country-assertions.md -->
 
 
+| State | Statute | Year | Exact exemption phrase | Who decides |
+|---|---|---|---|---|
+| Florida | HB 379 | 2023 (expanded 2025) | "unless directed to do so by a teacher solely for educational purposes" | Teacher |
+| New York | Ed. Law § 2803 | 2025 | "by a teacher, principal, or the school district for a specific educational purpose" | Teacher / principal / district |
+| Ohio | HB 250 | 2024 | "student learning as determined by school officials" | School officials |
+| Louisiana | Act 313 | 2024 | Medical IEP/504/IHP plus teacher-directed educational use; emergencies separately defined | Teacher; IEP team |
+| California | AB 3216 | 2024 | "when a teacher or administrator of the school grants permission to a pupil" | Teacher / administrator |
+| Virginia | EO 33 | 2024 | No instructional carve-out — "cell phones are not an option for instructional use" | (No exception) |
+| South Carolina | State Board model policy | Sept 2024 | "explicitly approved by the District Superintendent or his/her designee in writing" with district-Chromebook-cannot-do-it test | Superintendent (written) |
+| Texas | HB 1481 | 2025 | District-issued devices exempted from the ban; personal-device educational use not authorized | District (structural) |
+| Arkansas | Act 122 (Bell to Bell, No Cell) | 2025 | District-issued devices exempted; personal-device educational use not authorized | District (structural) |
+| Indiana | SB 78 | 2026 (eff. July 1, 2026) | Teacher-directed educational use on school-supplied or school-sanctioned personal devices; narrowing to school-supplied only after July 1, 2028 | Teacher (with device-source transition) |
+
 This is not careless legislative drafting. The statutes themselves are careful — they enumerate other exceptions with precision. Louisiana's 2024 Act 313 specifies, in fine detail, that phones may be used for medical accommodations under IEPs, 504 plans, and Individualized Health Plans, and during "an emergency," which it defines as "an actual or imminent threat to public health or safety which may result in loss of life, injury, or property damage." Louisiana's legislators knew how to write a specific exception when they wanted one. They chose not to write one for educational use. The blank is not an accident. It is a choice.
 <!-- FACT-CHECK FLAG: PARTIAL — Act 313 IEP/504/IHP exception CONFIRMED. Verbatim emergency definition ("actual or imminent threat ... loss of life, injury, or property damage") UNVERIFIED — not surfaced in coverage. Author should pull from Act 313 / R.S. 17:239 enrolled text. See factchecks/03-the-clause-that-runs-the-country-assertions.md -->
 
@@ -39,9 +51,9 @@ The choice has consequences that are currently being lived out in classrooms acr
 
 ---
 
-## Thirty-five laws, six approaches, zero definitions
+## Thirty-three laws, six approaches, zero definitions
 
-Lay the statutes next to each other and the variation reveals something the headlines about the "phone ban wave" mostly miss. These are not thirty-three versions of the same policy. They are thirty-three versions of thirty-five different guesses at the same unanswered question.
+Lay the statutes next to each other and the variation reveals something the headlines about the "phone ban wave" mostly miss. These are not thirty-three versions of the same policy. They are thirty-three different guesses at the same unanswered question.
 
 California's AB 3216, the Phone-Free School Act signed by Governor Newsom in September 2024, is what lawyers call a mandate-the-policy law. The state doesn't write the rule; it tells districts to write a rule by July 1, 2026. On the question of educational exceptions, it defers entirely to the teacher: exceptions are permitted "when a teacher or administrator of the school grants permission to a pupil." No criterion. The teacher is the rule.
 <!-- FACT-CHECK FLAG: CONFIRMED — AB 3216 signed Sept 23, 2024 by Gov. Newsom; July 1, 2026 district policy deadline; teacher/administrator permission exception in Ed. Code § 48901.7 matches the chapter's quote. See factchecks/03-the-clause-that-runs-the-country-assertions.md -->
@@ -64,6 +76,9 @@ Texas and Arkansas found a different solution: define the problem out of existen
 Indiana wrote a different kind of provisionality into SB 78. The statute permits teacher-directed educational use on either school-supplied *or* school-sanctioned personal devices — until July 1, 2028. After that date, instructional use must be on school-supplied devices only. The legislature did not abolish the educational exemption; it pre-committed to narrowing the device fleet on which the exemption can be exercised, on the theory that two years is enough time for districts to fund what the personal phones are currently substituting for. The pre-commitment is more thoughtful than any of the other state laws. It is also a forecast about district budgets that no Indiana school finance officer I can locate has publicly endorsed.
 <!-- FACT-CHECK FLAG: CONTRADICTED in framing — Indiana SB 78 (signed by Gov. Braun, March 2026, effective July 1, 2026) contains a July 1, 2028 date, but it is NOT a sunset on the teacher-directed exemption. It is a device-source transition: before July 1, 2028, teacher-directed educational use may occur on either school-supplied OR school-sanctioned personal devices; after June 30, 2028, instructional use must be on school-supplied devices only. The statute DOES specify what happens after the date. Recommend rewriting this paragraph against SB 78's enrolled text. The "alone among the fifty states" claim is also unverified. See factchecks/03-the-clause-that-runs-the-country-assertions.md -->
 
+
+![Radial diagram with the four-word phrase "for educational purposes" at center and six labeled spokes naming the six distinct approaches states have taken to fill the blank — teacher discretion in California, refusal of the carve-out in Virginia, written superintendent pre-approval with a Chromebook-cannot-do-it test in South Carolina, device-source resolution in Texas and Arkansas, pre-committed narrowing in Indiana, and district-defined deferral in most remaining states](images/03-the-clause-that-runs-the-country-fig-01.png)
+*Figure 3.01 — Ten states, six approaches, zero shared definitions*
 
 Ten states, six different approaches, zero shared definitions. The same lesson — say, using an AI writing tutor that requires students to argue against the model's suggestions before accepting them — is permissible in Florida if the teacher says so, permissible in New York if the principal authorizes, permissible in South Carolina if the superintendent signs written approval and the Chromebook demonstrably cannot do it, and flatly impermissible in Virginia. Move the classroom sixty miles in the right direction and the whole legal landscape shifts.
 
@@ -112,6 +127,9 @@ LAUSD implemented its all-day phone ban in February 2025. When reporters asked t
 
 
 The pattern is the same across every large district with published implementation guidance. The phrase passes through the system unchanged. The legislature delegates to the district; the district delegates to the principal; the principal delegates to the teacher. Statutory vagueness becomes administrative vagueness becomes classroom-by-classroom inconsistency.
+
+![Flowchart with three small boxes across the top labeled Legislature, District, and Principal connected by horizontal arrows, then a vertical arrow descending into a large bottom box labeled Teacher showing thirty seconds and thirty students, with a divider noting that two classrooms apart produce contradictory answers under the same statute](images/03-the-clause-that-runs-the-country-fig-02.png)
+*Figure 3.02 — The delegation chain: where the four-word blank gets passed through unchanged*
 
 This is not malice. It is what happens when a rule cannot be specified at the level it actually operates. Nobody in the chain is being negligent. The legislature couldn't define educational purposes for thirteen thousand districts. The district can't define it for six hundred schools. The principal can't define it for forty teachers. And the teacher can't define it ahead of time for thirty students, because the determination is always contextual — it depends on what the student is actually doing in her head, which is not a fact the teacher can read off the face of the device.
 
@@ -168,6 +186,9 @@ SETDA's November 2025 national research on professional learning found that fewe
 
 
 Seventy percent of teachers who are not using AI in their classrooms, according to OECD's 2024 TALIS data, report lacking the skills or knowledge to do so. A Gallup-Walton survey in 2025 found that teachers who use AI weekly save an average of 5.9 hours per week. Teachers in under-resourced schools who received no training save nothing. The training is correlated with district wealth. The districts that can pay for sustained, subject-specific AI training are the districts whose students were already advantaged.
+
+![Two-panel chart: the left panel shows two vertical bars contrasting under-40 percent of local education agencies using Title II-A funds for technology PD against over-60 percent using them for non-tech PD; the right panel shows a 5-by-10 grid of 50 dots representing states, with the first nine filled in dark to mark the states that explicitly prioritize Title II-A for technology instruction and the remaining 41 left hollow](images/03-the-clause-that-runs-the-country-fig-03.png)
+*Figure 3.03 — The funding gap underneath the educational-purposes exemption*
 <!-- FACT-CHECK FLAG: CONFIRMED — OECD TALIS 2024 US country note: 70% of US non-AI-using teachers report lacking the knowledge/skills (OECD average is 75%). Gallup-Walton "Teaching for Tomorrow" report (March-April 2025 fieldwork, n=2,232) confirms "three in 10 teachers use AI at least weekly, saving an estimated 5.9 hours per week." See factchecks/03-the-clause-that-runs-the-country-assertions.md -->
 
 
@@ -182,8 +203,6 @@ The void-for-vagueness doctrine warns against rules that delegate basic policy m
 ## The question the statute handed back
 
 Four words. *For educational purposes.* Some version of them appears in thirty-three state statutes. They are the policy. Everything else — the storage requirements, the confiscation protocols, the parental notification procedures — is logistics. The four words are where the question lives.
-<!-- FACT-CHECK FLAG: CONTRADICTED — see flag on line 14. Ballotpedia's March 2026 count is 33 states with enacted statewide K-12 cellphone bans. The "thirty-five" figure appears 4+ times in this chapter and should be reconciled across all occurrences. See factchecks/03-the-clause-that-runs-the-country-assertions.md -->
-
 
 What the legislatures did, in writing those words and leaving them blank, was correct. Any definition they could have written would have been wrong. They handed the question to the teacher and said: *you decide*. They were right to do it. The distinction between the device-as-instrument and the device-as-drain is real and contextual and irreducibly dependent on the professional judgment of the person in the room.
 

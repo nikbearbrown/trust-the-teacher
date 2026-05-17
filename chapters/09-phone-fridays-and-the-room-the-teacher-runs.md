@@ -15,6 +15,15 @@ Three doors down the hall, an English teacher is also having Friday class. Her s
 
 This is what the third model looks like, on a Friday morning, in two classrooms sixty feet apart.
 
+A schedule like this is not abstract. It is what the third model looks like written out in the language a building schedule actually uses — five days, four subjects, one rule about devices that produces four different lessons because four different teachers have made four different calls.
+
+| Subject | Mon–Thu (default-off) | Fri (structured-tech time) | The call this teacher made |
+|---|---|---|---|
+| History | Phones and tablets in lockers. Whole-class reading and discussion of primary sources. | Tablets out. AI-differentiated reading-level versions of an 1868 editorial; live dashboard surfaces stuck students. | Devices earn the lesson because differentiated text *and* live formative data are what this Reconstruction unit needs. |
+| English | Phones and tablets in lockers. Annotation and small-group reading of the novel. | Tablets stay in lockers. Socratic seminar on *Gatsby* — uninterrupted attention to other humans in the room. | Devices do not earn this lesson. Nothing in the seminar protocol benefits, at any point, from a screen. |
+| Math | Phones in lockers; paper handouts and whiteboards for problem work. | Tablets out for the second half of class only. Adaptive practice tool against unit standards; teacher pulls a small group on a misconception the warm-up surfaced. | Devices earn the second half because adaptive practice + targeted small-group work is what differentiates honestly here. |
+| Science | Phones in lockers; lab notebooks and bench work. | Tablets out for data entry and a simulation only — closed at the conclusion-discussion phase. | Devices earn the data-capture and simulation portions. The argument-from-evidence move at the end is a human-only conversation. |
+
 ---
 
 ## The decade we ran the experiment without controls — and what it proved
@@ -28,6 +37,9 @@ It is also, in the implementation, a machine that distributes its costs unevenly
 The opposite model — phones permitted, teachers manage it case by case in the moment — was what most U.S. schools ran between roughly 2010 and 2022. Teacher surveys from 2020 to 2022 showed this model collapsing in real time. Teachers reported spending twenty to thirty percent of class time on phone-related redirection. <!-- [verify 2026-05-16] Specific 20–30% range not pinned to a named survey. Name source or soften to documented surrounding stat (Pew 2024: 72% of HS teachers say cellphone distraction is major; IES: lenient-policy teachers 21pp more likely to lose >1hr/wk to phone management). --> Most reported no institutional support for their enforcement decisions — every call was theirs to make and theirs to defend when a student argued back or a parent called. Discretion without training is just inconsistency. The decision load falls on individual teachers without institutional backing, and the result is that norms erode unevenly across classrooms in the same building. Students learn quickly which teacher will enforce and which will not. The variance that the educational exemption is supposed to capture as professional judgment shows up instead as the demographic of luck — whose classroom you ended up in this period.
 
 Hold both failures together, because the shared structure is what matters. The ban fails because the rule cannot adjust for the classroom and the learner in front of it; the enforcement cost lands on the children least equipped to absorb it. The no-rule fails because the call falls on a teacher who has not been prepared to make it well; the variance also lands on the children least equipped to absorb it. Both models are making the same mistake. They are trying to solve, at the policy level, a problem that lives at the level of the classroom, the lesson, and the specific student.
+
+![Three governance models compared across rule type, decision-maker, what flexes, and what breaks](images/09-phone-fridays-and-the-room-the-teacher-runs-fig-01.png)
+*Figure 9.01 — The three governance models compared*
 
 ---
 
@@ -65,6 +77,17 @@ Los Angeles Unified tried a different path and documented a different failure. T
 
 Finland's 2025 legislation restricting student smartphone use built the discretion into the statute itself: students may use phones during lessons for learning purposes with permission from their teacher. The teacher has explicit statutory authority to allow educational use. Estonia has run BYOD as national policy since 2014, with digital literacy as a curriculum strand from grade one and an educational technologist in most schools; its 2025 AI Leap initiative placed AI tools in the hands of 20,000 high school students and 3,000 teachers, with training arriving alongside the tools. The principle Estonia demonstrates is the one this chapter keeps returning to: the tools and the training arrive together. Neither country maps cleanly onto American conditions. Both demonstrate that the design space this chapter is sketching has been entered at national scale, with measurable success. The pattern is not invented. It is unbuilt here.
 
+The pattern repeats across the implementations the chapter has been tracing. Some get the first model right and stop. Some skip the trained-teacher layer entirely and call the structure the system. Two countries have actually built the second kind of discretion into the statute and the curriculum.
+
+| District / state / country | Design pattern | What the implementation has produced |
+|---|---|---|
+| NYC DOE, 2006–2015 | Bell-to-bell ban, no infrastructure, no exemption operationalized | Phone-storage shops outside school doors charged low-income families $1/day; ban rescinded January 2015 on enforcement-asymmetry grounds |
+| LAUSD (~$5.2M, 2023–24) | Yondr magnetic-locking pouches as structural replacement for judgment | Students defeated pouches within weeks using neodymium magnets or decoy phones; compliance theater documented in district records |
+| Stillwater Area Public Schools (MN), Policy 524.5, 2025–26 | Bell-to-bell + lockboxes + medical/IEP exceptions + principal-discretion escape valve | Components 1 and 5 in solid form; components 2, 3, 4 (scheduled time, contextual discretion, training) absent |
+| Finland, 2025 legislation | Default-off + statutory authority for teachers to permit educational use during lessons | Discretion built into the statute itself, not handed back to teachers as an undefined exemption |
+| Estonia, AI Leap 2025 + BYOD since 2014 | Digital literacy as curriculum strand grade 1+; AI tools placed with 20,000 students and 3,000 teachers with training arriving alongside | The training arrives with the tools — the principle this chapter keeps returning to, demonstrated at national scale |
+| Colorado HB25-1135, 2025 | State law requires every district to adopt a policy by July 1, 2026 — does not specify pattern | The pattern question is back at the district level; the third model is one of the options districts can choose |
+
 ---
 
 ## What the trained teacher does that the algorithm cannot — five moves
@@ -81,7 +104,13 @@ The Tutor CoPilot study gave human tutors an AI assistant during real one-on-one
 
 This is a precise description of what good teaching looks like, empirically induced by a tool that the tutor was using in the background. The student's experience was better human attention. The mechanism by which the better attention happened was AI augmenting the human's judgment in real time. The caveat is real: this is one-on-one chat-based tutoring, not classroom instruction, and the causal chain to a classroom of thirty has not been established in a randomized trial. But the M-Powering Teachers research from Demszky's lab provides a brick-and-mortar version of the same pattern — automated feedback on teacher questioning practice, in real K-12 classrooms, producing a 20 percent increase in focusing questions — and the direction is the same. When a trained human has AI in her corner, the human does more of what good teaching looks like, not less.
 
+![Bar chart: Tutor CoPilot raises mastery 4 percentage points on average and 9 percentage points for lower-rated tutors, with mechanism note on probing-question shift](images/09-phone-fridays-and-the-room-the-teacher-runs-fig-02.png)
+*Figure 9.02 — Tutor CoPilot: what an AI in the tutor's corner changes*
+
 The cognitive division of labor that makes this work can be stated plainly. AI handles pattern recognition, recall, factual content delivery, routine first-pass feedback, summarization, translation, generating practice problems at a specified difficulty level. These are cognitively real tasks, but they are the kind of thinking machines do at scale, and having them done by machine is not a loss. What the teacher does that AI cannot is a different category: auditing whether the AI's output actually answers the question correctly in the context this specific student is working in; interpreting what a confused answer reveals about what the student is actually thinking; formulating which question to ask this student right now; and the hour-by-hour relational adjustment that comes from knowing this specific child across this specific year. These are the moves the history teacher is making when she walks the room with the dashboard. They are the moves the English teacher is making when she decides the Gatsby seminar does not need devices. They are not moves AI makes. They are the educational exemption. And the educational exemption only means anything when there is a trained teacher available to exercise it.
+
+![Two-column comparison of what AI handles at scale versus what only the teacher can do in this room with this student](images/09-phone-fridays-and-the-room-the-teacher-runs-fig-03.png)
+*Figure 9.03 — The cognitive division of labor: Tier 1 vs. Tier 4*
 
 ---
 

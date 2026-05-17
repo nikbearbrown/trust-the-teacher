@@ -1,0 +1,77 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">The neurobiology of durable learning, and what unguided AI bypasses</text>
+
+  <!-- Top row: three nodes in sequence + final durable-memory state -->
+  <!-- Node 1: Prediction error -->
+  <rect x="40" y="96" width="128" height="76" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="104" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">1. Prediction error</text>
+  <text x="104" y="138" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Student commits a guess.</text>
+  <text x="104" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Wrongness = the update.</text>
+  <text x="104" y="166" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">(Schultz et al. 1997)</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="168" y1="134" x2="208" y2="134" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Node 2: Effortful retrieval -->
+  <rect x="216" y="96" width="128" height="76" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="280" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">2. Effortful retrieval</text>
+  <text x="280" y="138" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">NMDA-channel calcium influx;</text>
+  <text x="280" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">PKA cascade; synaptic growth.</text>
+  <text x="280" y="166" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">(Roediger &amp; Karpicke 2006)</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="344" y1="134" x2="384" y2="134" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Node 3: Schema construction -->
+  <rect x="392" y="96" width="128" height="76" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="456" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">3. Schema construction</text>
+  <text x="456" y="138" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Pattern migrates from</text>
+  <text x="456" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">working to long-term memory.</text>
+  <text x="456" y="166" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">(Sweller 1988; Cowan 2001)</text>
+
+  <!-- Arrow 3->durable -->
+  <line x1="520" y1="134" x2="560" y2="134" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Node 4: durable memory -->
+  <rect x="568" y="96" width="92" height="76" fill="#f5f2ee" stroke="#1a1714" stroke-width="1.5"/>
+  <text x="614" y="124" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Durable</text>
+  <text x="614" y="142" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">memory</text>
+  <text x="614" y="162" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">(retrieves under exam)</text>
+
+  <!-- Bottom row: AI offloading bypass arrow -->
+  <!-- Source: unguided AI bypass node -->
+  <rect x="40" y="252" width="200" height="64" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="140" y="276" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Unguided AI offloading</text>
+  <text x="140" y="294" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Tool supplies the answer</text>
+  <text x="140" y="308" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">before the student commits.</text>
+
+  <!-- Bypass arrow path: from offloading box across the bottom, around the three steps, into 'fluency without storage strength' -->
+  <path d="M 240 284 L 320 284 L 320 230 L 460 230 L 460 284 L 540 284" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Annotation on bypass: three small "skip" labels under each node -->
+  <text x="104" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">skipped:</text>
+  <text x="104" y="214" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">no commit, no error</text>
+  <text x="280" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">skipped:</text>
+  <text x="280" y="214" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">no effortful retrieval</text>
+  <text x="456" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">prevented:</text>
+  <text x="456" y="214" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">no schema migration</text>
+
+  <!-- End node: fluency without storage strength -->
+  <rect x="548" y="252" width="120" height="64" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="608" y="274" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Fluency without</text>
+  <text x="608" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">storage strength</text>
+  <text x="608" y="306" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#4a4540" text-anchor="middle">(Bjork &amp; Bjork 1992)</text>
+
+  <!-- Bottom caption -->
+  <text x="350" y="356" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">The three events stack. Skip any of them and the practice session leaves nothing to retrieve.</text>
+  <text x="350" y="376" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">The Bastani −17% exam result is the experimental measurement of what the bypass costs.</text>
+  <text x="350" y="394" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Synaptic mechanism: calcium influx through NMDA receptors → PKA cascade → structural growth.</text>
+</svg>

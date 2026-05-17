@@ -36,6 +36,9 @@ These are not three names for one thing. They are three different interventions 
 
 Medicine has all three. Teaching has, at scale, only the one that does not work.
 
+![Three-layer comparison diagram showing what U.S. medicine has built and what U.S. teaching has at scale. Bottom layer (clock-hour compliance): medicine has state CME with 20-50 hours per year and content-update mandates like opioid prescribing; teaching has per-school PD hours with no AI content mandate, and the Yoon 2007 review shows under-14-hour PD is null on student outcomes. Middle layer (sustained coaching): medicine has the ACCME activity infrastructure of 247,000 accredited activities and 68 million learner interactions in 2023, with $3.7 billion in reported income; teaching has effectively no parallel, though Finland's tutoropettaja system exists abroad, and Kraft's meta-analysis shows pooled effects of d=0.49 on instructional practice and d=0.18 on student achievement when coaching is built. Top layer (credentialed competence): medicine has Maintenance of Certification with cycles like ABFM's 200 CME credits plus 25 quarterly knowledge questions; teaching has almost nothing — National Board reaches about 3% of teachers, and AI credentials are nascent (Purdue, UNI, NIE Singapore).](images/08-train-like-a-doctor-fig-01.png)
+*Figure 8.01 — The three-layer infrastructure: medicine vs. teaching*
+
 ---
 
 ## What medicine actually built
@@ -58,6 +61,12 @@ Teaching has no equivalent. The closest thing is the small handful of randomized
 The third layer is *Maintenance of Certification* — the specialty-board layer that adds higher-stakes content requirements on top of everything else. The American Board of Family Medicine's current five-year cycle requires sixty certification points, two hundred continuing medical education credits, and twenty-five quarterly knowledge-assessment questions. Not a half-day exam every five years. Twenty-five questions per quarter, low-stakes per question, embedded in normal practice, written by content experts who update them as the field changes. The opposite, in every structural dimension, of what most American teachers experience as professional learning.
 
 Medicine did not arrive at this three-layer system fully formed. It was built incrementally over fifty years, in response to specific failure modes — physicians whose knowledge had drifted, specialty areas that evolved faster than initial training could track, patient harm that was traceable to outdated practice. Teaching has the same failure modes, on a slower and harder-to-attribute curve. It has not built the infrastructure.
+
+| Layer | U.S. Medicine | U.S. Teaching |
+|---|---|---|
+| **Compliance (clock hours)** | State CME for licensure: 20–50 hours per year, plus content-specific mandates (opioid prescribing, suicide assessment, implicit bias). Funded by individual physicians and employers. Audited by state medical boards. Content-update mechanism actively used. | Per-school PD hours tied to 5-year credential renewal. August vendor demos count. Funded by district budgets, partly Title II-A. Audited at district level if at all. No state-level AI content mandate as of 2026. |
+| **Ongoing accredited activity (coaching)** | ACCME-accredited activity infrastructure: ~247,000 activities in 2023, ~68 million learner interactions, $3.7 billion total reported income. Funded by registration fees + employers + ~25% commercial support. Independently audited at multiple competence levels. Content updates continuously. | Effectively absent at national scale. Coaching exists as research artifact (Kraft d=0.49 / 0.18) but no parallel accreditation body. Finland's tutoropettaja network is the closest implemented analog. No audit mechanism. No content-update infrastructure. |
+| **Specialty credential** | Maintenance of Certification: e.g., ABFM 5-year cycle requires 60 certification points, 200 CME credits, and 25 quarterly knowledge-assessment questions. Funded by candidates + employers. Audited by specialty boards. Content updated by content experts as field evolves. | National Board certification reaches roughly 3% of teachers. AI-specific credentials nascent (Purdue, UNI graduate certificates; NIE Singapore). Funded ad hoc. No mandatory specialty layer for AI in K-12 in any U.S. state. |
 
 ---
 
@@ -108,6 +117,9 @@ The federal funding stream designated for improving teacher quality is Title II,
 
 Over sixty percent of Title II-A funds in 2022–23 were spent on professional development. The money is being spent in the category. But only nine states prioritized Title II-A funds for technology training. Fewer than forty percent of local education agencies used Title II-A funds to advance technology-related professional learning at all. The dominant form of spending was short-term workshops centered on a specific tool — exactly the structure the Yoon and Kraft literatures identify as the form that does not produce sustained practice change.
 
+![Two-panel diagram of Title II-A spending. Top panel: horizontal stacked bar showing that roughly 60% of Title II-A funds go to professional development and roughly 40% to other allowable uses. Bottom panel: dot-grid of all 50 U.S. states, with 9 dots filled solid (states prioritizing Title II-A for technology-enabled professional learning) and 41 dots outlined (states not prioritizing). Caption notes that the federal funding stream is ~$2.2B per year and that the technical authority to use it for sustained AI-specific professional development already exists.](images/08-train-like-a-doctor-fig-02.png)
+*Figure 8.02 — Title II-A funds: how the $2.2 billion is actually directed (2022–23)*
+
 The federal infrastructure exists. The funding stream exists. The technical authority to use it for sustained, coaching-anchored, AI-specific professional development exists. Almost no district is exercising that authority.
 
 Here is a useful comparison. Los Angeles Unified School District spent $5.2 million on Yondr phone pouches. That is approximately the cost of sustained AI-specific professional development for thousands of teachers at the per-teacher unit cost the coaching literature implies. The pouch line item is the coaching line item that was not funded. Houston ISD's $800,000 for phone storage solutions is the same trade in miniature. The $29 million New York City spent implementing the state phone ban is the same trade scaled up.
@@ -141,6 +153,14 @@ Australia has the longest-running clock-hour mandate at scale. All Australian te
 
 The United States is the outlier in both directions. It has the largest education sector by an order of magnitude — roughly 3.5 million teachers, fifty million students. It has the least developed national infrastructure for keeping those teachers current. There is no national AI-in-education initiative. There is no federally funded teacher AI credential. There is no continuing-education infrastructure parallel to the ACCME for teachers in any subject, let alone AI specifically. The country that produced ChatGPT and Claude and the global edtech industry has the least developed teacher continuing-education infrastructure of any comparably resourced education system.
 
+| Country | Named program | Scope (teachers / students reached) | Funding model | Current status (as of 2025–26) |
+|---|---|---|---|---|
+| Finland | *Tutoropettaja* network + DigiErko specialization | Target: 1 tutor teacher per 220 students across ~2,500 basic schools; DigiErko consortium of 3 universities | State-funded: initial €7.5M (2016), scaling to ~€23M across the government period | Tutoropettaja network ongoing. Most recent DigiErko cohort completed December 2024; successor status open. |
+| Singapore | NIE Certificate in Artificial Intelligence for Education | All teacher education programs embed AI competencies; certificate launched July 2025 | Ministry of Education + NIE (university-issued) | Active. Pre-service AI fluency built into the pipeline. |
+| Estonia | AI Leap programme, launched September 1, 2025 | Pilot phase: 20,000 students and 3,000 teachers; partnerships with OpenAI and Anthropic | Ministry of Education and Research (public-private) | Active pilot. Builds on legacy informatics training (~7,000 teachers historically). |
+| Australia | Australian Framework for Generative AI in Schools (Oct 2023) + 100-hour 5-year PD cycle | All teachers under the mandatory clock-hour requirement; AI framework principles voluntary | Federal framework + state licensure hours (employer/teacher) | Compliance infrastructure active. AI-specific content mandate not yet layered on. |
+| United States | None at federal scale | ~3.5 million teachers; ~50 million K-12 students | Fragmented across districts; Title II-A ~$2.2B/yr underused for AI PD | No national AI initiative; no federally funded AI credential; no parallel to ACCME for teachers. |
+
 That sentence should be more surprising than it is.
 
 ---
@@ -154,6 +174,9 @@ The OECD's *Global Teaching InSights* study (2020) — a multi-country video obs
 The OECD's *Teacher Knowledge Survey* (2024–2026), the more recent companion study, did include the United States. The headline finding for the U.S. is striking in both directions. The U.S. has the world's highest share of teachers at the *advanced* level of general pedagogical knowledge — fifty-one percent at Level 3 of the survey's scoring. The U.S. also has an above-average share at the *foundational* level — twenty percent at Level 1. The interquartile range on teacher knowledge in the U.S. is fifty-seven points, the largest variance of any country in the comparison set. American teaching is not weak on average. American teaching is *spread* — more excellent teachers than anywhere else and more foundational-level teachers than most peers, in the same labor force, often in the same district.
 
 This variance is the case for the three-layer infrastructure this chapter is recommending. Average-quality interventions miss both tails. The bottom quartile needs the coaching layer that the medical analog of CME provides — sustained, embedded, content-specific support that meets teachers where they are. The top quartile needs the credentialing layer that medicine's specialty boards provide — formal recognition and post-experience specialization that gives the best teachers a defensible path to deeper expertise in the subject they are teaching. A single uniform PD requirement, the form that most current state systems take, serves neither tail and is part of why the existing spend produces so little movement. The variance is the case.
+
+![Stacked horizontal bar chart comparing the share of teachers at three levels of general pedagogical knowledge in the U.S. versus a typical OECD country, from the 2024 Teacher Knowledge Survey. The U.S. has 20% at Level 1 (foundational), 29% at Level 2 (intermediate), and 51% at Level 3 (advanced) — the highest advanced share in the sample, alongside an above-average foundational share. A typical OECD comparison country has roughly 12% / 50% / 38%. Brackets below show the U.S. interquartile range at 57 points, the largest in the comparison set, and a typical OECD IQR of roughly 32 points.](images/08-train-like-a-doctor-fig-03.png)
+*Figure 8.03 — U.S. teaching is spread: pedagogical knowledge distribution, OECD TKS 2024*
 
 ---
 
