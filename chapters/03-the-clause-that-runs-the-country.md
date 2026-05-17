@@ -1,6 +1,5 @@
 # The Clause That Runs the Country
 
----
 
 The teacher has thirty-one seconds left in the lesson.
 
