@@ -1,5 +1,6 @@
 # The Clause That Runs the Country
 
+---
 
 The teacher has thirty-one seconds left in the lesson.
 
@@ -17,6 +18,8 @@ That is what this chapter is about. Not the ban. The blank.
 
 ---
 
+## Twenty-two states, one shared blank
+
 By the close of 2025, the pace of state phone legislation had become unusual enough to attract attention from people who watch state legislation for a living and are not usually surprised by anything. Twenty-two states passed K-12 cell phone restrictions in 2025 alone. State legislatures do not typically agree on anything this fast. Climate policy, education funding, healthcare — these are contentious, slow, fought over for years. Phone bans moved through chambers in weeks. The political coalition was, and remains, odd: progressive Democrats worried about the mental health of adolescent girls, conservative Republicans worried about social media and attention spans, school boards worried about liability, parents worried about everything at once. The coalition agreed on the ban. It agreed, with equal firmness, on the exemption.
 
 Because every one of these laws contains one. Florida's exemption is "except when expressly directed by a teacher solely for educational purposes." New York's, signed by Governor Hochul in May 2025, authorizes exceptions "for a specific educational purpose." Ohio's 2024 law requires district policies to allow phone use for "student learning as determined by school officials." Three states. Three formulations. One shared word: *educational*. Not one statute explains what that word is supposed to catch.
@@ -26,6 +29,8 @@ This is not careless legislative drafting. The statutes themselves are careful �
 The choice has consequences that are currently being lived out in classrooms across the country — thirty-one seconds at a time.
 
 ---
+
+## Thirty-five laws, six approaches, zero definitions
 
 Lay the statutes next to each other and the variation reveals something the headlines about the "phone ban wave" mostly miss. These are not thirty-five versions of the same policy. They are thirty-five versions of thirty-five different guesses at the same unanswered question.
 
@@ -45,6 +50,8 @@ Ten states, six different approaches, zero shared definitions. The same lesson �
 
 ---
 
+## What the Constitution calls a blank like this
+
 There is a doctrine in constitutional law called void-for-vagueness, and it is worth meeting because it names what is happening here — even though, strictly speaking, it probably doesn't apply.
 
 The doctrine's clearest statement comes from *Grayned v. City of Rockford*, decided by the Supreme Court in 1972. A law is impermissibly vague, the Court said, when it "impermissibly delegates basic policy matters to policemen, judges, and juries for resolution on an ad hoc and subjective basis, with the attendant dangers of arbitrary and discriminatory application." The principle is that if a rule cannot specify what it forbids, it hands the forbidding to whoever happens to be enforcing it — and that the law should not be in the business of creating that kind of arbitrary power.
@@ -57,6 +64,8 @@ It is arguing something more pedagogically important. The doctrine's underlying 
 
 ---
 
+## The strongest argument for leaving it blank — and what it misses
+
 The school-board associations have an argument for why leaving the term blank is actually correct. It is the strongest defense of the current design, and it deserves a fair statement before the chapter moves past it.
 
 The argument: any state-level definition will be wrong for most classrooms. A statute that enumerates permitted uses will, by enumeration, exclude the legitimate use that arrives the following semester. A statute that enumerates prohibited uses will fail to anticipate the next form of evasion. The classroom is too varied, the technology too fast-moving, the pedagogical contexts too divergent across thirteen thousand school districts for any legislature to capture the distinction in statutory language. Better, the argument goes, to leave the term open and let local judgment fill it in case by case. The vagueness is not a bug. It is the only design that survives contact with the diversity of classrooms the statute has to govern.
@@ -68,6 +77,8 @@ But declining to write the definition is not the same as solving the problem. It
 The legislatures wrote a statute that depends entirely on professional judgment at the exact point where it stops defining the rule. They did not, in the same legislative session or in any subsequent one, fund the professional development that would allow that judgment to be exercised competently. The exemption is the place the statute hands the question to the teacher. What the teacher knows when she catches it is a question the statute does not ask.
 
 ---
+
+## How the districts passed it down
 
 If the state statute leaves the term undefined, logic says the district fills it in. Districts are closer to classrooms. They have implementation staff. They have policy infrastructure. This is where vagueness is supposed to get resolved.
 
@@ -83,6 +94,8 @@ Someone has to make the call in the moment. The chain has been built so that som
 
 ---
 
+## Nobody else has solved it either
+
 No major jurisdiction has solved this. That is worth saying plainly, because the American discussion has sometimes described the undefined exemption as American sloppiness. It isn't. The same gap appears everywhere.
 
 France passed the original school phone ban in 2018 — the first major democracy to do so. The educational exemption in the French law is, in terms of structural requirements, the most sophisticated in the world: phones may be used for "*usages pédagogiques explicites et spécifiques, encadrés par les enseignants*" — pedagogical uses that are explicit, specific, and supervised by teachers. Three modifiers where U.S. statutes manage one or none. The French legislature required that educational use be *pre-declared* and *bounded*. It still did not define what counts as pedagogical. The structural conditions are genuinely stricter than anything in American law. The substantive definition remains unwritten.
@@ -92,6 +105,8 @@ The UK Department for Education issued guidance in February 2024, sharpened in J
 Three approaches across the countries that have tried this: pre-declare and supervise the use (France), let each school define it (UK, Australia, most of the U.S.), or refuse to recognize the device as an instructional tool at all (Virginia, effectively). Nobody — anywhere — has produced a substantive, operational definition of educational use that scales across schools with different resources, different student populations, different curriculum structures, different levels of technology infrastructure. The closest is France's structural framing, which adds procedural conditions without answering the underlying question. The problem is not American. It is in the kind of question being asked.
 
 ---
+
+## What the frameworks get right, and where they stop
 
 The research community has tried to build the framework the legislatures couldn't. Its attempts are worth examining because they are the best the field has produced — and because each one fails in the same instructive way.
 
@@ -106,6 +121,8 @@ A third attempt, scattered across the work of several researchers — Lisa Guern
 The trouble: "Is the student exerting cognitive effort?" is a question only the teacher in the room can answer in real time, watching the student's face, knowing the student's history, understanding the assignment's design. The productive-friction framework, properly applied, points at exactly the same conclusion this chapter has been approaching since the cold open. The distinction between educational use and distraction is real. It is not arbitrary. It can be specified — at the level of the individual student, in a particular moment, by someone with relevant training and presence. No statute can capture it. No district policy can resolve it in advance. The frameworks are useful as training material for the teacher who will make the call. They are not substitutes for her.
 
 ---
+
+## The blank falls hardest where training is thinnest
 
 The blank is the right blank. Say it plainly. No legislature can write a substantive definition of educational purposes that survives contact with the variety of classrooms, devices, students, lessons, and learning objectives it would have to cover. The school-board associations are correct about this. The delegates are correct about this. Anyone who has spent a week in a real classroom is correct about this. The exemption is open-ended because any closed version would be wrong.
 
@@ -122,6 +139,8 @@ The EdWeek coverage of the ban wave, published in July 2025, noted that implemen
 The void-for-vagueness doctrine warns against rules that delegate basic policy matters to front-line enforcers, because delegation risks "arbitrary and discriminatory application." The equity data show that the risk has been realized. The application of the educational-purposes exemption is not random. It is patterned by the training the enforcer has had. The training is patterned by district wealth. The students in the schools with the least training are, in the majority of cases, the students who need the most help navigating the line between a device that extends their cognitive reach and a device that replaces their thinking. They are the students who cannot compensate at home when the classroom gets it wrong. They are the students the 2025 ban wave was, in part, designed to protect.
 
 ---
+
+## The question the statute handed back
 
 Four words. *For educational purposes.* Some version of them appears in thirty-five state statutes. They are the policy. Everything else — the storage requirements, the confiscation protocols, the parental notification procedures — is logistics. The four words are where the question lives.
 
