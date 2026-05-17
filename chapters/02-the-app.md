@@ -2,8 +2,6 @@
 
 *What the $165 billion EdTech industry got right, what it got wrong, and the finding nobody is advertising*
 
----
-
 ## Two spreadsheets, one billion dollars, one constant
 
 The IT director has a spreadsheet. It is very satisfying. Every column is filled: vendor name, license count, cost per seat, contract end date, renewal option. The numbers are real. The procurement cycle is closed. The budget has been spent wisely — or at least spent formally, which in a school district looks identical until someone checks a second spreadsheet.
