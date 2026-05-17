@@ -1,0 +1,13 @@
+date,book,chapter_slug,word_count,sources_count,verify_flag_count,pantry_notes_found,pantry_lib_files_used,thin_pantry,mechanism_explained,contested_claims_flagged
+2026-05-16,trust-the-teacher,01-the-ban,5802,20,3,yes,3,no,"phone ban as right policy with insufficient infrastructure for the educational-exemption call",1
+2026-05-16,trust-the-teacher,02-the-app,6488,13,4,yes,3,no,"category collapse — averaging trained-teacher and untrained-teacher deployments produces a number that hides the variable",1
+2026-05-16,trust-the-teacher,03-the-clause-that-runs-the-country,6150,35,7,yes,1,no,"the educational exemption is the teacher-training question disguised as a legal-drafting problem",0
+2026-05-16,trust-the-teacher,04-the-teacher-variable,6522,21,7,yes,3,no,"effect-size ranking direction survives methodology critiques even where magnitudes don't — teacher-mediated variables dominate",4
+2026-05-16,trust-the-teacher,05-the-professional-tool,7060,14,1,yes,1,no,"surgical training as the worked-out infrastructure for what teacher AI training should be (the appendectomy-meta argument)",0
+2026-05-16,trust-the-teacher,06-the-ai-dividend,7381,15,3,yes,1,no,"the dividend is slack the teacher reinvests in within-30 relational work; not a productivity guarantee",1
+2026-05-16,trust-the-teacher,07-the-cognitive-offloading-problem,6684,27,4,yes,1,no,"prediction error + effortful retrieval + schema construction — the neurobiological events AI without scaffolding bypasses",2
+2026-05-16,trust-the-teacher,08-train-like-a-doctor,7914,17,7,yes,1,no,"continuous PD tied to AI evolution rather than annual workshops — medical CME as the analog system",2
+2026-05-16,trust-the-teacher,09-phone-fridays-and-the-room-the-teacher-runs,6939,15,4,yes,2,no,"professional discretion as third governance model — bounded by training infrastructure rather than statute",2
+2026-05-16,trust-the-teacher,10-three-honest-measures,9161,20,4,yes,1,no,"three-measure evaluation (wellbeing + learning gains + teacher growth) makes the AI+1 teacher recognizable; the third measure is the absent precondition",2
+2026-05-16,trust-the-teacher,11-the-equity-argument,6611,30,4,yes,1,no,"every harm vector lands hardest where teacher training is weakest; the catch-up effect across professions inverts the AI-widens-gaps default for trained deployments",3
+2026-05-16,trust-the-teacher,12-the-teacher-this-book-is-arguing-for,5799,20,3,yes,2,no,"the AI+1 classroom exists in fragments; what is missing is the infrastructure to scale it (funded coaching, protected planning, honest evaluation, sustained training)",1
