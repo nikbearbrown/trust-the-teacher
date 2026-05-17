@@ -87,10 +87,17 @@ Researchers at the MIT Media Lab used EEG to measure neural activity in particip
 There is real counter-evidence, and the chapter has not earned its closing move until it engages the strongest of it.
 
 Khan Academy's Khanmigo, evaluated by WestEd in a forty-seven-school randomized trial, produced statistically significant improvements in algebra readiness after one semester of use. The finding circulates in K–12 press as roughly 0.15 standard deviations. This is a positive AI-tutoring effect in a school context, in math, in a large sample. It sits on the page as a direct counter to the Bastani picture.
+<!-- FACT-CHECK FLAG: UNVERIFIED — Underlying WestEd report (47-school RCT, 0.15 SD algebra-readiness gain) not located at wested.org or in IES/REL repository; figure traces only to secondary press. Either locate primary report or further soften attribution. -->
 
-Khanmigo is also not the GPT Base condition. It is a teacher-designed, curriculum-aligned, scaffolded tutoring system built by an education-first organization, deployed with teacher professional development and curriculum integration. It is closer to Bastani's scaffolded GPT Tutor than to the bare chatbot — and the GPT Tutor condition produced exactly zero exam decrement, not a negative one. Khan Academy's own efficacy blog says the improvement in math is meaningful but modest and is not a replacement for skilled teaching. That sentence, from the vendor's own report, is the chapter's argument condensed to seven words. The best-case scaffolded AI does no harm and produces modest positive effects. The unscaffolded AI does harm. The variable that separates the two conditions is the presence or absence of instructional design — which is to say, the teacher's thinking embedded in either the scaffold or the room.
 
-Kestin and colleagues at Harvard published a result in *Scientific Reports* in 2025 showing effect sizes of 0.73 to 1.3 standard deviations for AI tutoring compared to in-class active learning in a physics RCT. This is the most-cited "AI outperforms teachers" result in the recent literature. Chapter 2 took the design apart. The short version: the AI tutor was built by the instructors themselves, using the same active-learning principles they applied in class. What the AI tutor provided was bandwidth — one-to-one delivery of the instructor's own pedagogical design. The teacher's thinking made the tutor work. The tutor delivered it at scale. Remove the instructor's design from the tutor and you have a chatbot. The Kestin result is not a case against the teacher. It is a case for the teacher's design as the animating force of the tool.
+
+Khanmigo is also not the GPT Base condition. It is a teacher-designed, curriculum-aligned, scaffolded tutoring system built by an education-first organization, deployed with teacher professional development and curriculum integration. It is closer to Bastani's scaffolded GPT Tutor than to the bare chatbot — and the GPT Tutor condition produced exactly zero exam decrement, not a negative one. Khan Academy's own efficacy blog says the improvement in math is meaningful but modest and is not a replacement for skilled teaching.
+<!-- FACT-CHECK FLAG: UNVERIFIED — The "meaningful but modest / not a replacement for skilled teaching" phrasing appears in secondary summaries (Edrus) rather than verbatim in Khan Academy's November 2024 efficacy blog post. Either locate the direct vendor quote or recast as paraphrase. -->
+That sentence, from the vendor's own report, is the chapter's argument condensed to seven words. The best-case scaffolded AI does no harm and produces modest positive effects. The unscaffolded AI does harm. The variable that separates the two conditions is the presence or absence of instructional design — which is to say, the teacher's thinking embedded in either the scaffold or the room.
+
+Kestin and colleagues at Harvard published a result in *Scientific Reports* in 2025 showing effect sizes of 0.73 to 1.3 standard deviations for AI tutoring compared to in-class active learning in a physics RCT.
+<!-- FACT-CHECK FLAG: UNVERIFIED — The specific 0.73–1.3 SD range does not appear in the paper's abstract or in popular summaries (Harvard Gazette, Hechinger Report), all of which describe the result as "roughly twice the learning gains." Verify against the paper's results section before publication or substitute the reported "doubled learning gains" framing. -->
+ This is the most-cited "AI outperforms teachers" result in the recent literature. Chapter 2 took the design apart. The short version: the AI tutor was built by the instructors themselves, using the same active-learning principles they applied in class. What the AI tutor provided was bandwidth — one-to-one delivery of the instructor's own pedagogical design. The teacher's thinking made the tutor work. The tutor delivered it at scale. Remove the instructor's design from the tutor and you have a chatbot. The Kestin result is not a case against the teacher. It is a case for the teacher's design as the animating force of the tool.
 
 The calculator objection is worth meeting once: AI is just another tool, and teachers worried about calculators in the 1970s and everyone adapted. The response is not a refutation but a specification. A calculator offloads arithmetic while leaving the problem-modeling schema-building entirely to the student. GPT Base offloads the problem-modeling. These are not the same kind of tool. The calculator removed a computational sub-step. The unscaffolded chatbot removed the step the lesson was trying to teach. "Tool" is too broad a category to carry the analogy. The relevant question is always which cognitive operation is being offloaded and whether that operation is the one the lesson is designed to build. The 1970s math teacher worried about the wrong thing. That does not mean the 2025 math teacher should stop worrying.
 
@@ -137,3 +144,31 @@ Zero decrement, when someone was making the call.
 Seventeen percent below baseline, when nobody was.
 
 That is the gap this book is about.
+
+---
+
+## References
+
+- Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *Proceedings of the National Academy of Sciences*, 122(26), e2422633122. https://doi.org/10.1073/pnas.2422633122 [Correction (affiliation only, non-substantive): https://doi.org/10.1073/pnas.2518204122]
+
+- Bjork, R. A., & Bjork, E. L. (1992). A new theory of disuse and an old theory of stimulus fluctuation. In A. F. Healy, S. M. Kosslyn, & R. M. Shiffrin (Eds.), *From learning processes to cognitive processes: Essays in honor of William K. Estes* (Vol. 2, pp. 35–67). Erlbaum.
+
+- Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. *Behavioral and Brain Sciences*, 24(1), 87–114.
+
+- Karpicke, J. D., & Blunt, J. R. (2011). Retrieval practice produces more learning than elaborative studying with concept mapping. *Science*, 331(6018), 772–775. https://doi.org/10.1126/science.1199327
+
+- Kestin, G., Miller, K., et al. (2025). AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting. *Scientific Reports*, 15, 17458. https://doi.org/10.1038/s41598-025-97652-6
+
+- Koriat, A., & Bjork, R. A. (2005). Illusions of competence in monitoring one's knowledge during study. *Journal of Experimental Psychology: Learning, Memory, and Cognition*, 31(2), 187–194.
+
+- Kosmyna, N., et al. (2025). Your brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task. *arXiv preprint* arXiv:2506.08872 [preprint — not yet peer-reviewed].
+
+- Lee, H.-P., Sarkar, A., et al. (2025). The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers. *Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems*. https://doi.org/10.1145/3706598.3713778
+
+- Risko, E. F., & Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive Sciences*, 20(9), 676–688. https://doi.org/10.1016/j.tics.2016.07.002
+
+- Roediger, H. L., & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. *Psychological Science*, 17(3), 249–255. https://doi.org/10.1111/j.1467-9280.2006.01693.x
+
+- Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of prediction and reward. *Science*, 275(5306), 1593–1599. https://doi.org/10.1126/science.275.5306.1593
+
+- Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. *Cognitive Science*, 12(2), 257–285.

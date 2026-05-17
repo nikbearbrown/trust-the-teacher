@@ -9,6 +9,7 @@ The IT director has a spreadsheet. It is very satisfying. Every column is filled
 That second spreadsheet is the login data.
 
 A company called Glimpse K12 checked the login data. In 2017 and 2018, they audited 200,000 software licenses purchased by 275 schools across the United States and asked a simple question: how many of these were actually used? The answer came back: about one in three. The other two — two out of every three licenses purchased, paid for, invoiced, and closed — were never opened. Not used poorly. Not abandoned in week three. Never touched. In some schools the unused fraction climbed past ninety percent. EdWeek Market Brief revisited the same question in 2024 and found that the problem had improved, but the remaining waste still totaled more than a billion dollars annually in unused K–12 licensing fees.
+<!-- FACT-CHECK FLAG: OUTDATED — the "$1 billion+" figure is from EdWeek Market Brief 2019; a 2024 follow-up with this specific dollar figure was not surfaced. See factchecks/02-the-app-assertions.md -->
 
 A billion dollars. Per year. Not in failing schools. In all schools, averaged out, as a structural feature of how educational technology gets purchased.
 
@@ -24,9 +25,11 @@ We are now in a new generation. The platform this time is AI. The gap is the con
 
 Before we go further into what the gap is, it is worth untangling what we mean when we say "the EdTech industry" — because the phrase hides at least three different numbers, and the difference between them matters more than it might seem.
 
-There is the pure-play segment: companies whose primary product *is* education technology. The K–12 learning-management systems, the adaptive-learning platforms, the online-degree operators, the publishers' digital arms. Market Research Future estimated this segment at roughly $167 billion in 2024 — the figure closest to the oft-cited "$165 billion EdTech industry" you see in conference decks and policy documents. Other consultancies put the same segment between $163 and $170 billion for the same year. The methodology is proprietary and not peer-reviewed, so the figure is better read as the industry's working consensus than as a hard census.
+There is the pure-play segment: companies whose primary product *is* education technology. The K–12 learning-management systems, the adaptive-learning platforms, the online-degree operators, the publishers' digital arms. Market Research Future estimated this segment at roughly $167 billion in 2024 — the figure closest to the oft-cited "$165 billion EdTech industry" you see in conference decks and policy documents.
+<!-- FACT-CHECK FLAG: UNVERIFIED — Market Research Future is paywalled; specific $167B 2024 figure not directly verified. See factchecks/02-the-app-assertions.md --> Other consultancies put the same segment between $163 and $170 billion for the same year. The methodology is proprietary and not peer-reviewed, so the figure is better read as the industry's working consensus than as a hard census.
 
 Then there is the broader total: devices, infrastructure, software, content, services, professional development, all bundled. HolonIQ, the firm most cited in education-investment circles, projected total global EdTech expenditure at roughly $404 billion by 2025. Their more recent estimates are lower — the actual 2024 total came in closer to $310 billion — with a projected rebound back toward the original number.
+<!-- FACT-CHECK FLAG: UNVERIFIED — specific $310B 2024 figure not directly surfaced in HolonIQ materials accessed. See factchecks/02-the-app-assertions.md -->
 
 And then there is global education spending in its entirety: public and private, kindergarten through postgraduate. HolonIQ puts that at roughly six trillion dollars, of which all of EdTech, however you count it, is a single-digit percent.
 
@@ -59,8 +62,10 @@ Consider five deployments of the same underlying model — a large language mode
 *Deployment two.* The same model, wrapped in a custom system prompt built by an educator — designed to ask questions rather than supply answers, to withhold final solutions, to provide hints calibrated to the teacher-written objectives for that specific problem set. The model is the same. The system prompt is the teacher's lesson plan, rendered in instructions to the machine.
 
 *Deployment three.* AI with a teacher in the loop in real time — the configuration developed by Google DeepMind and the tutoring platform Eedi in 2025, in which the teacher reviews and approves the model's messages before they reach the student.
+<!-- FACT-CHECK FLAG: UNVERIFIED — DeepMind × Eedi 2025 collaboration specifics not pulled. See factchecks/02-the-app-assertions.md -->
 
 *Deployment four.* AI as teacher copilot — developed by Demszky and colleagues at Stanford — in which the AI augments the human tutor in real time, suggesting how to respond to what the student has just said, while the human tutor remains the one actually talking to the student.
+<!-- FACT-CHECK FLAG: UNVERIFIED — Demszky Tutor CoPilot citation not pulled in this pass; attribution plausible. See factchecks/02-the-app-assertions.md -->
 
 *Deployment five.* AI as teacher replacement — the configuration most commonly featured in press releases — in which the student interacts with the AI and no human is in the loop at all.
 
@@ -102,7 +107,8 @@ ASSISTments is a free online math homework platform developed at Worcester Polyt
 
 A tenth of a standard deviation is not transformational. In the language of education research it is small-to-moderate — roughly three or four months of additional learning growth sustained through the following year. The reason to slow down on this number is what produced it.
 
-WestEd's 2024 cost-effectiveness analysis put the all-in cost of the Maine implementation at $46.23 per student per school year. The marginal cost of the software was effectively zero — ASSISTments is free, and the ASSISTments Foundation provided the professional development at no charge. The $46 is almost entirely teacher time. Time spent in professional development. Time spent adapting assignments. Time spent learning how to close the feedback loop between what the platform was tracking and what the teacher was actually teaching.
+WestEd's 2024 cost-effectiveness analysis put the all-in cost of the Maine implementation at $46.23 per student per school year.
+<!-- FACT-CHECK FLAG: CONTRADICTED — canonical program records (Evidence for ESSA, Social Programs That Work, IES WWC, Blueprints) cite ASSISTments cost as "less than $100 per student" without pinning to $46.23. WestEd cost-effectiveness analysis citation needs to be made explicit or figure revised. See factchecks/02-the-app-assertions.md --> The marginal cost of the software was effectively zero — ASSISTments is free, and the ASSISTments Foundation provided the professional development at no charge. The $46 is almost entirely teacher time. Time spent in professional development. Time spent adapting assignments. Time spent learning how to close the feedback loop between what the platform was tracking and what the teacher was actually teaching.
 
 Forty-six dollars per student for a persistent, replicated learning gain. Roughly $1,000 per student — in a single year — for software that two-thirds of the teachers never opened.
 
@@ -118,7 +124,8 @@ Made or broke. Not *modestly influenced*. Not *was a contributing factor*. The v
 
 There is a counterargument to everything I am saying in this chapter, and it is a serious one. It comes from Jared Cooney Horvath's 2024 book *The Digital Delusion*, and I want to engage with it rather than footnote it, because the strongest version of Horvath's case is built on real numbers that I am not going to dispute.
 
-The hard core of Horvath's empirical argument: international assessments — PISA, TIMSS, PIRLS — show consistent negative correlations between high screen exposure and academic achievement. Students using computers six or more hours daily on PISA score sixty-six points lower than non-users. TIMSS 2019 found daily computer use in mathematics and science associated with forty-one to fifty-one point declines. PIRLS 2021's shift from paper to digital assessment produced a twenty-seven-point overall drop in reading scores. Meta-analytic syntheses of decades of EdTech randomized trials produce an average effect size of around +0.29 — real, positive, but below the threshold that John Hattie's *Visible Learning* synthesis identifies as meaningfully impactful. The screen-inferiority effect in reading and the handwriting superiority effect in note-taking are both well-replicated. These are not numbers Horvath is fabricating. They are, by and large, the consensus.
+The hard core of Horvath's empirical argument: international assessments — PISA, TIMSS, PIRLS — show consistent negative correlations between high screen exposure and academic achievement. Students using computers six or more hours daily on PISA score sixty-six points lower than non-users. TIMSS 2019 found daily computer use in mathematics and science associated with forty-one to fifty-one point declines. PIRLS 2021's shift from paper to digital assessment produced a twenty-seven-point overall drop in reading scores.
+<!-- FACT-CHECK FLAG: UNVERIFIED — OECD PISA 2022 reports a 49-point gap at a different threshold; PISA/TIMSS/PIRLS figures here likely come from Horvath ch. 5 synthesis and need primary-table citations. See factchecks/02-the-app-assertions.md --> Meta-analytic syntheses of decades of EdTech randomized trials produce an average effect size of around +0.29 — real, positive, but below the threshold that John Hattie's *Visible Learning* synthesis identifies as meaningfully impactful. The screen-inferiority effect in reading and the handwriting superiority effect in note-taking are both well-replicated. These are not numbers Horvath is fabricating. They are, by and large, the consensus.
 
 Where Horvath goes beyond his evidence is in what he concludes from these numbers. The inference he draws is that screens are *biologically incompatible* with learning — that the failure is in the technology itself, not in how it is used — and that the response is to ban most EdTech from classrooms. This is where the argument breaks down, and it breaks down in a specific, traceable place.
 
@@ -146,7 +153,8 @@ A tractor without a trained operator is a $90,000 ornament. The first farmers wh
 
 The platform is the tractor. The trained teacher is the operator. The school is the farm.
 
-There is a hard constraint at the level of the farm that the analogy captures precisely. Each farmer farms a finite plot. The tractor lets her cover more of it, faster, with less drudgery and more precision. But the system still needs farmers to cover the land that exists, because the land that exists is the constraint. Teaching has the analogous fixed quantity: students. Each teacher teaches a finite number of students, set by relational and cognitive limits that no tool changes. John Hattie's *Visible Learning* synthesis — the largest meta-analysis of educational interventions ever assembled — reports that teacher-student relationships and feedback quality both produce effect sizes around $d = 0.72$, the highest-leverage interventions in the dataset, and neither scales past roughly twenty-five to thirty students per teacher regardless of what tools the teacher carries. The question is never how many students the AI can reach in principle. The question is whether the teacher has learned to use the AI to teach the twenty-five in her room better. The tractor does not make one farmer responsible for fifty farms. AI should not make one teacher responsible for five hundred students.
+There is a hard constraint at the level of the farm that the analogy captures precisely. Each farmer farms a finite plot. The tractor lets her cover more of it, faster, with less drudgery and more precision. But the system still needs farmers to cover the land that exists, because the land that exists is the constraint. Teaching has the analogous fixed quantity: students. Each teacher teaches a finite number of students, set by relational and cognitive limits that no tool changes. John Hattie's *Visible Learning* synthesis — the largest meta-analysis of educational interventions ever assembled — reports that teacher-student relationships and feedback quality both produce effect sizes around $d = 0.72$, the highest-leverage interventions in the dataset
+<!-- FACT-CHECK FLAG: UNVERIFIED ("highest-leverage" framing slightly overstates) — d≈0.72 for teacher-student relationships and d≈0.73 for feedback are confirmed, but several other Hattie influences (e.g., collective teacher efficacy ≈1.39) rank higher. Recommend "among the highest-leverage." See factchecks/02-the-app-assertions.md -->, and neither scales past roughly twenty-five to thirty students per teacher regardless of what tools the teacher carries. The question is never how many students the AI can reach in principle. The question is whether the teacher has learned to use the AI to teach the twenty-five in her room better. The tractor does not make one farmer responsible for fifty farms. AI should not make one teacher responsible for five hundred students.
 
 The analogy breaks down in three places, and the chapter has to name them.
 
@@ -185,3 +193,35 @@ The problem is not the scalpel.
 ## What the evidence doesn't yet settle, and why I'd rather say so
 
 *Three things this chapter has not settled, and which the available evidence does not yet settle. The Bastani finding is a single large trial in high school mathematics in one country; whether the negative effect of unguided AI on exam performance replicates in U.S. K–12 contexts, in other subjects, and across populations with different baseline norms is the obvious next study, and it has not been run. The GPT Tutor scaffold neutralized the harm but did not, in this study, produce a positive effect over control; whether a live teacher orchestrating the scaffolded use would convert neutral into positive is the inference this chapter makes, and it is plausible but not yet demonstrated in a large pre-registered trial. And the long-run effect of AI-assisted teaching on teacher skill itself — whether teachers who have co-planned with language models for years can still plan well without them, whether some forms of pedagogical fluency atrophy when offloaded — has not been studied at all. I would rather name these openings than pretend the empirical case is more settled than it is.*
+
+---
+
+## References
+
+The following sources were independently verified by fact-check pass (2026-05-16). See `factchecks/02-the-app-assertions.md` for the full verification record.
+
+**Empirical / academic sources**
+
+- Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). *Generative AI without guardrails can harm learning: Evidence from high school mathematics.* PNAS, 122(26). [https://www.pnas.org/doi/10.1073/pnas.2422633122](https://www.pnas.org/doi/10.1073/pnas.2422633122)
+- Roschelle, J., Feng, M., Murphy, R. F., & Mason, C. A. (2016). *Online Mathematics Homework Increases Student Achievement.* AERA Open, 2(4), 1–12. [https://files.eric.ed.gov/fulltext/EJ1194398.pdf](https://files.eric.ed.gov/fulltext/EJ1194398.pdf)
+- IES What Works Clearinghouse. ASSISTments study review. [https://ies.ed.gov/ncee/wwc/Study/86375](https://ies.ed.gov/ncee/wwc/Study/86375)
+- WestEd. *Efficacy of ASSISTments Online Homework Support for Middle School Mathematics Learning.* [https://www.wested.org/support/efficacy-of-assistments-online-homework-support-for-middle-school-mathematics-learning/](https://www.wested.org/support/efficacy-of-assistments-online-homework-support-for-middle-school-mathematics-learning/)
+- ASSISTments long-term effects follow-up (NSF/WPI). [https://par.nsf.gov/servlets/purl/10443313](https://par.nsf.gov/servlets/purl/10443313)
+- RAND Europe (January 2026). *Harnessing the Benefits of EdTech: What Research Tells Us About Using Digital Technology to Support Pupils.* [https://www.rand.org/pubs/commentary/2026/01/harnessing-the-benefits-of-edtech-what-research-tells.html](https://www.rand.org/pubs/commentary/2026/01/harnessing-the-benefits-of-edtech-what-research-tells.html)
+- Hattie. Visible Learning MetaX, teacher-student relationships. [https://www.visiblelearningmetax.com/influences/view/teacher-student_relationships](https://www.visiblelearningmetax.com/influences/view/teacher-student_relationships)
+
+**Industry / market sizing**
+
+- HolonIQ. *Global EdTech market to reach $404B by 2025.* [https://www.holoniq.com/notes/global-education-technology-market-to-reach-404b-by-2025](https://www.holoniq.com/notes/global-education-technology-market-to-reach-404b-by-2025)
+- HolonIQ. *2025 Global Education Outlook.* [https://www.holoniq.com/notes/2025-global-education-outlook](https://www.holoniq.com/notes/2025-global-education-outlook)
+- HolonIQ. *Sizing the Global EdTech Market.* [https://www.holoniq.com/notes/sizing-the-global-edtech-market](https://www.holoniq.com/notes/sizing-the-global-edtech-market)
+
+**Glimpse K12 / EdWeek**
+
+- Glimpse K12 (May 15, 2019). *Analysis of School Spending Shows that Two-Thirds of Software License Purchases Go Unused.* [https://www.globenewswire.com/news-release/2019/05/15/1825260/0/en/Glimpse-K12-Analysis-of-School-Spending-Shows-that-Two-Thirds-of-Software-License-Purchases-Go-Unused.html](https://www.globenewswire.com/news-release/2019/05/15/1825260/0/en/Glimpse-K12-Analysis-of-School-Spending-Shows-that-Two-Thirds-of-Software-License-Purchases-Go-Unused.html)
+- EdWeek Market Brief (May 2019). *K-12 Districts Wasting Millions by Not Using Purchased Software.* [https://marketbrief.edweek.org/meeting-district-needs/k-12-districts-wasting-millions-by-not-using-purchased-software-new-analysis-finds/2019/05](https://marketbrief.edweek.org/meeting-district-needs/k-12-districts-wasting-millions-by-not-using-purchased-software-new-analysis-finds/2019/05)
+- EdWeek Market Brief (November 2019). *More Than $1 Billion in K-12 Ed-Tech Licensing Fees Go to Waste.* [https://marketbrief.edweek.org/education-market/more-than-1-billion-in-k-12-ed-tech-licensing-fees-go-to-waste/2019/11](https://marketbrief.edweek.org/education-market/more-than-1-billion-in-k-12-ed-tech-licensing-fees-go-to-waste/2019/11)
+
+**Press**
+
+- Knowledge @ Wharton. *Without Guardrails, Generative AI Can Harm Education.* [https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education/](https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education/)

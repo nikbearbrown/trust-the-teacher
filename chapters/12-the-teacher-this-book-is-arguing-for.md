@@ -4,6 +4,8 @@
 
 ---
 
+<!-- FACT-CHECK FLAG: The vignette opening below (through line 19) is composite, drawn from documented practice across the chapters. Composite disclosure currently lives at lines 23-33 (§"A description, not a vision"), but the vignette reads as reportage for 16 lines before that disclosure arrives. Consider moving the composite label up, or labeling at chapter open. See factchecks/12-the-teacher-this-book-is-arguing-for-assertions.md CRITICAL #1. -->
+
 It is 7:42 on a Monday morning and she has twenty minutes before the bell.
 
 She is a seventh-grade humanities teacher. Her classroom has not been remodeled since 2003. On her desk is a primary-source packet she assembled the night before — a Frederick Douglass speech on the economic architecture of slavery. Her grade-level standards require her to teach it three ways: at grade level for most of the class, scaffolded for the four students still developing English-language proficiency, extended for the two reading two grades above the rest. By 8:10 she has all three versions printed. She wrote a single prompt, pasted in the source text, specified what reading level each version needed and what kinds of comprehension questions she wanted at the bottom of each one, edited the outputs against the standards rubric in her planning binder, and walked the stack to the copier. Eight minutes of model time. Twelve minutes of her own judgment on top. Before AI, the same Monday task — done well — was an hour she did not always have.
@@ -16,7 +18,7 @@ On Thursday afternoon she runs an AI-assisted formative check — a quiz generat
 
 That is one week. None of it is exotic.
 
-The differentiation tool is one of half a dozen platforms — Diffit, MagicSchool, a direct Claude prompt — that take a primary source and return reading-level-adjusted versions in under a minute. The formative tool is in the same family as Khanmigo and the Eedi platform. The structured discussion protocol is older than any of this — it is the "classroom discussion" effect that sits at *d* ≈ 0.82 in the Hattie meta-analysis, which has been near the top of the rankings for a decade waiting for teachers who had the time to design it. And the Tuesday move with Marcus is the oldest move in teaching. It is what *teaching* meant before the word had to compete with *content delivery.*
+The differentiation tool is one of half a dozen platforms — Diffit, MagicSchool, a direct Claude prompt — that take a primary source and return reading-level-adjusted versions in under a minute. The formative tool is in the same family as Khanmigo and the Eedi platform. <!-- FACT-CHECK FLAG: d ≈ 0.82 classroom-discussion figure is stable in Hattie editions but should be pinned to specific MetaX retrieval date or Visible Learning: The Sequel (2023). MetaX has had recent recalibrations across other influences. -->The structured discussion protocol is older than any of this — it is the "classroom discussion" effect that sits at *d* ≈ 0.82 in the Hattie meta-analysis, which has been near the top of the rankings for a decade waiting for teachers who had the time to design it. And the Tuesday move with Marcus is the oldest move in teaching. It is what *teaching* meant before the word had to compete with *content delivery.*
 
 ---
 
@@ -24,13 +26,13 @@ The differentiation tool is one of half a dozen platforms — Diffit, MagicSchoo
 
 Let me be careful with what kind of claim the opening just made, because everything that follows depends on the reader taking the vignette as an empirical claim rather than an inspirational one.
 
-This is not a vision of a classroom that does not yet exist. It is a description, assembled from documented practice, of what trained teachers who use AI purposefully are already doing in classrooms across the country. The Monday differentiation move is in the Gallup-Walton 2025 survey of 2,232 nationally representative public school teachers under "modifying materials to meet student needs." The Tuesday move with Marcus is what teachers who reclaim several hours a week from differentiation labor report doing with that time — sixty percent of weekly AI users in the same survey report more time for individualized feedback and support. The Wednesday discussion is what sixty percent report more time for in "improving teaching and learning." The Thursday formative-data move is what fifty-seven percent describe as "better insights about student learning data."
+This is not a vision of a classroom that does not yet exist. It is a description, assembled from documented practice, of what trained teachers who use AI purposefully are already doing in classrooms across the country. <!-- FACT-CHECK FLAG: 60% / 60% / 57% Gallup reinvestment figures may be transposed relative to the Gallup-Walton 2025 report (which reports 57% on grading/feedback and 61% on data insights per Ch. 6 fact-check). Pin to exact Gallup category labels. -->The Monday differentiation move is in the Gallup-Walton 2025 survey of 2,232 nationally representative public school teachers under "modifying materials to meet student needs." The Tuesday move with Marcus is what teachers who reclaim several hours a week from differentiation labor report doing with that time — sixty percent of weekly AI users in the same survey report more time for individualized feedback and support. The Wednesday discussion is what sixty percent report more time for in "improving teaching and learning." The Thursday formative-data move is what fifty-seven percent describe as "better insights about student learning data."
 
 The pattern is not aspirational. It is what the AI dividend, when there is one, gets reinvested in when there is a trained teacher to do the reinvesting. That is the load-bearing qualifier. The dividend creates the possibility. The trained teacher is what converts the possibility into a Tuesday with Marcus.
 
 Marcus himself is not hypothetical. He is the classroom-level expression of the Bastani finding — the seventeen-percent closed-book performance drop that students in the unguided AI condition produced after practice sessions they predicted would help them. Marcus produces correct answers he cannot defend because the fluent practice he did with the tool did not encode anything his teacher can build on. The AI built the symptom. The teacher reads it. That asymmetry is what the whole book has been about.
 
-She is also not a composite who exists in abundant supply. She exists in fragments. A 2024 Edutopia profile here. A district fellows cohort there. A Khanmigo pilot in Puerto Rico. A handful of grade-level teams whose principal protected ninety minutes a week of common planning time and put a coach in the building. The fragments are real. The infrastructure that would produce her at scale — in every district, every grade, every subject — is the work that remains. What follows is that work, broken by who is responsible for which piece of it.
+She is also not a composite who exists in abundant supply. She exists in fragments. <!-- FACT-CHECK FLAG: "A 2024 Edutopia profile" and "a district fellows cohort" are not named. Khanmigo Puerto Rico pilot is real (see Ch. 8 fact-check) but is name-only. Name the specific Edutopia profile and the fellows cohort, or soften framing. -->A 2024 Edutopia profile here. A district fellows cohort there. A Khanmigo pilot in Puerto Rico. A handful of grade-level teams whose principal protected ninety minutes a week of common planning time and put a coach in the building. The fragments are real. The infrastructure that would produce her at scale — in every district, every grade, every subject — is the work that remains. What follows is that work, broken by who is responsible for which piece of it.
 
 ---
 
@@ -44,7 +46,7 @@ The principle the language has to encode is the one the Bastani finding made con
 
 **Fund teacher AI training through Title II-A at a 70/30 ratio.**
 
-Title II-A — Supporting Effective Instruction State Grants — is currently appropriated at $2.19 billion annually. Fewer than forty percent of local education agencies use those funds for technology-related professional learning. The limiting variable in EdTech outcomes is teacher capacity, not device count. At least seventy percent of any AI-related federal expenditure should go to sustained professional development; no more than thirty percent to hardware and licensing. Hardware is not the bottleneck. The trained person who decides what the hardware is for — that is the bottleneck. The funding should follow it.
+<!-- FACT-CHECK FLAG: "Fewer than 40% of LEAs use Title II-A funds for technology-related PD" is plausible but should be pinned to SETDA Nov 2025 or USDE Title II-A summary. The 70/30 ratio itself is the chapter's authorial recommendation, not a ratio drawn from named policy literature — frame as recommendation. -->Title II-A — Supporting Effective Instruction State Grants — is currently appropriated at $2.19 billion annually. Fewer than forty percent of local education agencies use those funds for technology-related professional learning. The limiting variable in EdTech outcomes is teacher capacity, not device count. At least seventy percent of any AI-related federal expenditure should go to sustained professional development; no more than thirty percent to hardware and licensing. Hardware is not the bottleneck. The trained person who decides what the hardware is for — that is the bottleneck. The funding should follow it.
 
 **Add teacher learning and improvement to every teacher evaluation framework.**
 
@@ -116,7 +118,7 @@ Every teacher has a list. A protocol. A unit redesign. A formative routine. A di
 
 Whether the AI+1 configuration scales nationally without reproducing the equity tilt the rest of the book documents — wealthy districts implementing it well, under-resourced districts implementing it badly — is open. The pattern of every preceding wave of educational reform suggests the tilt will appear unless the funding mechanism is built deliberately against it. Whether it arrives faster than the equity failure mode does is empirical, and the experiment has not been run at the scale the question requires.
 
-Whether the Bastani finding replicates outside Turkey, outside high school, outside mathematics is genuinely open. It is one large randomized trial. The mechanism is consistent with twenty years of independent cognitive-science work — the Bjorks' storage-retrieval distinction, Sweller's cognitive load theory, Schultz's prediction-error account — and that consistency is why the book has taken it as load-bearing. But mechanism consistency and empirical replication are different things. Three to five additional pre-registered trials in different subjects, ages, and country contexts would settle whether the finding generalizes or is an artifact of the specific context. The book is making the larger bet. The bet could be wrong.
+Whether the Bastani finding replicates outside Turkey, outside high school, outside mathematics is genuinely open. It is one large randomized trial. <!-- FACT-CHECK FLAG: "Twenty years of independent cognitive-science work" understates the timeline. Bjork & Bjork 1992 is 34 years old; Sweller 1988 is nearly 40; Schultz 1997 is nearly 30. Consider "three decades" or "thirty-plus years." -->The mechanism is consistent with twenty years of independent cognitive-science work — the Bjorks' storage-retrieval distinction, Sweller's cognitive load theory, Schultz's prediction-error account — and that consistency is why the book has taken it as load-bearing. But mechanism consistency and empirical replication are different things. Three to five additional pre-registered trials in different subjects, ages, and country contexts would settle whether the finding generalizes or is an artifact of the specific context. The book is making the larger bet. The bet could be wrong.
 
 Whether the three-measure evaluation framework can survive the political pressures that have defeated every previous attempt at evaluation reform is open. Tennessee's framework has held for fifteen years and has been re-litigated repeatedly. Massachusetts's has held for fifteen years with steady professional resistance. The integration of both — neither state has managed it — is the harder political move. The book's argument is that without the third measure, teacher learning and improvement, the AI+1 configuration produces work the evaluation system cannot see. That is a structurally unstable place to leave the work.
 
@@ -130,14 +132,47 @@ Whether the AI+1 teacher is, at scale, a configuration that survives twenty year
 
 ---
 
+<!-- FACT-CHECK FLAG: Three specifics in this paragraph need sourcing. NYC $29M pouch spend, Houston $800K pouch spend, and "fourteen-district legal dispute" on Title II-A funds are not surfaced in prior fact-check passes. LAUSD $5.2M is verified. 33 state laws aligns with Ballotpedia tracker but should be pinned to retrieval date. See factchecks/12-the-teacher-this-book-is-arguing-for-assertions.md CURRENT — UNVERIFIED. -->
+
 In 2025 and into 2026, America wrote thirty-three state laws about phones in schools. We wrote almost none about training the teachers those schools depend on. In the same policy window, the FCC removed the federal connectivity subsidy that was the substitute mechanism for the devices the states were locking away. Los Angeles spent $5.2 million on pouches. New York spent $29 million. Houston spent $800,000. The Title II-A funds that would have paid for the coaching cycles sat frozen in a fourteen-district legal dispute. The AI platform licenses sat sixty-seven percent unused on the servers.
 
 The phone is in the pouch. The app is on the server. The teacher is in the room, making the call the legislature could not make, doing the work the algorithm cannot do, without the preparation we have consistently failed to provide.
 
 That is the state of things. It is also the sentence the book has been building toward for eleven chapters, because it names both the problem and the place the problem can be addressed. The call is being made — imperfectly, without sufficient training, inside an evaluation system that cannot see it — by the one variable the research keeps finding at the top of the list. What the book is asking is that we take that finding seriously enough to invest in it. Not as a vision. As a policy choice, made deliberately, at the scale the evidence demands.
 
+<!-- FACT-CHECK FLAG: Finland "rebuilt a national curriculum around them" overstates. Phenomenon-based learning is a component of the 2014 Finnish core curriculum (mandating at least one multi-disciplinary learning module per year), not the entire framework. The Finnish curriculum remains primarily subject-based with phenomenon-based modules layered in. Soften framing. -->
+
 Singapore put three words on a wall in 2004 — *Teach Less, Learn More* — and built a curriculum redesign beneath them. Finland wrote two — *phenomenon-based* — and rebuilt a national curriculum around them. Slogans work when the structural commitments beneath them are real. The book's three sentences — trust the teacher, train the teacher, measure what matters — are a directive if the four sections above this one get built, and wallpaper if they do not. That choice belongs to every person reading this, at whatever scale they operate.
 
 On Tuesday morning, the teacher heard the wrong note in Marcus's reasoning. She sat down. She asked the question four different ways. She got an honest wrong answer she could teach from. That moment — the one the algorithm cannot produce, the legislature cannot mandate, and the platform cannot replace — is the moment the book has been arguing for. The conditions that make it possible at scale are not mysterious. They are funded coaching cycles, protected planning time, evaluation that sees the work, training that respects the subject and the grade and the room. None of these is new. All of them are absent at the scale the evidence demands.
 
 The teacher is already in the room. The work that remains is to build what she needs to do her job.
+
+<!-- FACT-CHECK FLAG: Schoenfeld 1985 *Mathematical Problem Solving* is listed in the back-matter Ch. 12 Notes (Note 1) but does not appear in this chapter body. Either restore the army-bus example to the body (likely fits the "Treat AI output the way a serious clinician treats a lab result" section in §For teachers) or remove the citation from the back matter. -->
+
+---
+
+## References
+
+(Chapter 12 sources verified or flagged in this fact-check. See full fact-check report at `factchecks/12-the-teacher-this-book-is-arguing-for-assertions.md`. The complete book bibliography lives in `99-back-matter.md`.)
+
+1. Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). "Generative AI without guardrails can harm learning." *PNAS* 122(26): e2422633122. https://www.pnas.org/doi/10.1073/pnas.2422633122
+2. Wang, R. E., Ribeiro, A. T., Robinson, C. D., Loeb, S., & Demszky, D. (2024). "Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise." arXiv:2410.03017. https://arxiv.org/abs/2410.03017
+3. Walton Family Foundation & Gallup (2025). "Teaching for Tomorrow: Unlocking Six Weeks a Year With AI." https://static.waltonfamilyfoundation.org/df/fb/eba12807470a9402d7433cc47dba/teaching-for-tomorrow-unlocking-six-weeks-a-year-with-ai-report.pdf
+4. Education Endowment Foundation (2024). *Using ChatGPT in Lesson Preparation: Randomised Controlled Trial*. https://educationendowmentfoundation.org.uk
+5. Kraft, M. A., Blazar, D., & Hogan, D. (2018). "The Effect of Teacher Coaching on Instruction and Achievement: A Meta-Analysis of the Causal Evidence." *Review of Educational Research* 88(4): 547–588. https://scholar.harvard.edu/files/mkraft/files/kraft_blazar_hogan_2018_teacher_coaching.pdf
+6. Hattie, J. (2023). *Visible Learning: The Sequel*. Routledge.
+7. Visible Learning MetaX, Classroom Discussion: https://www.visiblelearningmetax.com/influences/view/classroom_discussion
+8. Visible Learning MetaX, Teacher-Student Relationships: https://www.visiblelearningmetax.com/influences/view/teacher-student_relationships
+9. Tennessee Educator Acceleration Model (TEAM). https://team-tn.org
+10. Massachusetts DESE Educator Evaluation. https://www.doe.mass.edu/edeval/
+11. SETDA (Nov 2025). *Improving Professional Learning Systems to Better Support Today's Educators*. https://www.setda.org/wp-content/uploads/2025/11/Improving-Professional-Learning-Systems-to-Better-Support-Todays-Educators-2.pdf
+12. Singapore Ministry of Education, "Teach Less, Learn More." https://www.moe.gov.sg/about-us/our-people/educator-stories/teach-less-learn-more
+13. Finnish National Agency for Education (Opetushallitus). https://www.oph.fi
+14. Diffit. https://diffit.me
+15. MagicSchool. https://magicschool.ai
+16. Khan Academy / Khanmigo. https://www.khanacademy.org
+17. Bjork, R. A., & Bjork, E. L. (1992). "A new theory of disuse." In *From Learning Processes to Cognitive Processes*. Erlbaum.
+18. Sweller, J. (1988). "Cognitive load during problem solving." *Cognitive Science* 12(2): 257–285.
+19. Schultz, W., Dayan, P., & Montague, P. R. (1997). "A Neural Substrate of Prediction and Reward." *Science* 275: 1593–1599.
+20. Ballotpedia. Cell phones in schools. https://ballotpedia.org/Cell_phones_in_schools

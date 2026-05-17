@@ -2,7 +2,10 @@
 
 The pouch closes with a sound like a zipper, which is what it is. Magnetic, orange, the size of a paperback. A Florida seventh-grader drops her phone inside, the attendant passes a wand over it to confirm the seal, and that's it. The phone is still on her hip. She can feel its weight through the fabric all day. She just can't get to it. Not until the bell rings at 2:45, when the pouch opens again and the phone comes back into her hand and the school day, in some important sense, is over.
 
-This is the policy. A billion-dollar industry grew up around it. Twenty-two states passed some version of it in 2025 alone. New York spent $29 million on pouches and the infrastructure to manage them. Los Angeles spent $5.2 million. Houston allocated $800,000. The political coalition that built this wave spans left and right, urban and rural, teachers' unions and parent groups who agree on almost nothing else. It is, by any ordinary measure, a successful piece of education policy.
+This is the policy. A billion-dollar industry grew up around it. Twenty-two states passed some version of it in 2025 alone.
+<!-- FACT-CHECK FLAG: OUTDATED FRAMING — 22 states in 2025 is correct, but reconcile with the "thirty-three states" header on line 37 (Kansas became #33 in March 2026 per Ballotpedia). See factchecks/01-the-ban-assertions.md -->
+New York spent $29 million on pouches and the infrastructure to manage them. Los Angeles spent $5.2 million. Houston allocated $800,000.
+<!-- FACT-CHECK FLAG: UNVERIFIED — Houston $800,000 allocation not directly confirmed in single source. See factchecks/01-the-ban-assertions.md --> The political coalition that built this wave spans left and right, urban and rural, teachers' unions and parent groups who agree on almost nothing else. It is, by any ordinary measure, a successful piece of education policy.
 
 The suspension numbers for Black students in that Florida district rose sixteen percent in year one.
 
@@ -22,11 +25,16 @@ The first question: do personal smartphones disrupt learning during the school d
 
 Sit with that for a moment, because it's doing structural work. The students least able to resist distraction, least scaffolded at home, most subject to the ambient pull of a notification — those students, specifically, are the ones the phone ban helps most when it removes the phone from their hand. This is a *progressive* finding at the level of in-classroom learning. The ban closes the gap. It levels up the students who are farthest behind.
 
-The Common Sense Media 2023 *Constant Companion* study filled in the mechanical picture. The median teenager was picking up the phone fifty-one times a day during school hours. The median was forty-three minutes of phone use between first bell and last. About twenty-three percent of all notifications arrived during class time. The high end of the distribution exceeded four hundred and ninety-eight pickups per day — a number that sounds impossible until you recall that each pickup is often a few seconds, and that four hundred and ninety-eight tiny interruptions, each resetting the cognitive state required to follow an explanation, amounts to something close to an inability to follow the lesson at all.
+The Common Sense Media 2023 *Constant Companion* study filled in the mechanical picture. The median teenager was picking up the phone fifty-one times a day during school hours.
+<!-- FACT-CHECK FLAG: UNVERIFIED — "51 pickups during school hours" specific figure not surfaced in CSM press materials. See factchecks/01-the-ban-assertions.md -->
+The median was forty-three minutes of phone use between first bell and last. About twenty-three percent of all notifications arrived during class time. The high end of the distribution exceeded four hundred and ninety-eight pickups per day
+<!-- FACT-CHECK FLAG: UNVERIFIED — specific "498 pickups" high end not in surfaced press materials. See factchecks/01-the-ban-assertions.md -->
+— a number that sounds impossible until you recall that each pickup is often a few seconds, and that four hundred and ninety-eight tiny interruptions, each resetting the cognitive state required to follow an explanation, amounts to something close to an inability to follow the lesson at all.
 
 A phone in the room is an attention auction running in parallel with whatever the teacher is saying. The teacher can't win that auction. She wasn't designed for it. The phone was.
 
-The second question — the one doing most of the political work — is whether smartphones *caused* the post-2012 collapse in adolescent mental health. This is genuinely contested. Jonathan Haidt's *The Anxious Generation* argues that phone-based childhood is the primary driver of the crisis, with four compounding harms: social deprivation, sleep deprivation, attention fragmentation, addiction. His evidence carried the ban wave. Candice Odgers, writing in *Nature* in 2024, pushed back with force: the central causal claim is "not supported by science." Hundreds of researchers — Amy Orben, Andrew Przybylski, and others — have looked for the large, consistent effects a strong causal story requires and found, instead, a literature full of small effects, mixed associations, and reverse causation that runs the other way just as plausibly. Anxious teenagers seek out their phones; the phone didn't necessarily make them anxious.
+The second question — the one doing most of the political work — is whether smartphones *caused* the post-2012 collapse in adolescent mental health. This is genuinely contested. Jonathan Haidt's *The Anxious Generation* argues that phone-based childhood is the primary driver of the crisis, with four compounding harms: social deprivation, sleep deprivation, attention fragmentation, addiction. His evidence carried the ban wave. Candice Odgers, writing in *Nature* in 2024, pushed back with force: the central causal claim is "not supported by science."
+<!-- FACT-CHECK FLAG: UNVERIFIED — exact wording of Odgers Nature 2024 review not directly pulled; widely circulated but needs primary citation. See factchecks/01-the-ban-assertions.md --> Hundreds of researchers — Amy Orben, Andrew Przybylski, and others — have looked for the large, consistent effects a strong causal story requires and found, instead, a literature full of small effects, mixed associations, and reverse causation that runs the other way just as plausibly. Anxious teenagers seek out their phones; the phone didn't necessarily make them anxious.
 
 I am not going to resolve that dispute here. I don't need to. The classroom-attention case alone is enough to justify the policy. A phone disrupting a math lesson is doing measurable damage to the lesson whether or not it is also doing permanent damage to the student's developing brain. The ban stands on the classroom evidence. It doesn't need the mental health frame to hold — and the mental health frame, being contested, makes the ban look more settled than it is. The legislature that wrote the strongest statute possible on the weakest evidence will find itself on shaky ground when the science moves. The legislature that wrote a conservative statute on uncontested evidence won't.
 
@@ -56,7 +64,10 @@ The ban is facially neutral. The same Yondr pouch closes on the wealthy student 
 
 Here is the fact underneath the feeling.
 
-The National Center for Education Statistics, drawing on the American Community Survey, reports that roughly six percent of three- to eighteen-year-olds have no home internet of any kind. That number is larger if you ask it differently. Among households earning under thirty thousand dollars a year, Pew Research has found that about a quarter reach the internet primarily through a smartphone, not a home broadband connection. For roughly that quarter of low-income students, the phone the pouch closes on is not *a* device. It is *the* device. The tether to the internet. The homework tool. The way to reach the AI tutor she started using last spring. The personal hotspot that makes the school-issued Chromebook on the kitchen table into something other than a $400 plastic rectangle.
+The National Center for Education Statistics, drawing on the American Community Survey, reports that roughly six percent of three- to eighteen-year-olds have no home internet of any kind.
+<!-- FACT-CHECK FLAG: UNVERIFIED — specific NCES table not directly pulled. See factchecks/01-the-ban-assertions.md -->
+That number is larger if you ask it differently. Among households earning under thirty thousand dollars a year, Pew Research has found that about a quarter reach the internet primarily through a smartphone, not a home broadband connection.
+<!-- FACT-CHECK FLAG: UNVERIFIED — Pew currently reports 16% smartphone-only overall; income-stratified 27% figure could not be confirmed in current Pew Mobile Fact Sheet. See factchecks/01-the-ban-assertions.md --> For roughly that quarter of low-income students, the phone the pouch closes on is not *a* device. It is *the* device. The tether to the internet. The homework tool. The way to reach the AI tutor she started using last spring. The personal hotspot that makes the school-issued Chromebook on the kitchen table into something other than a $400 plastic rectangle.
 
 For the student whose parents work in technology, whose house has two laptops and a router and a fiber connection, the phone is a convenience. The ban removes a distraction from her school day and touches almost nothing else. She goes home to broadband. She goes home to devices. The digital infrastructure of her education is not stored in the pouch.
 
@@ -72,7 +83,8 @@ This is what progressive-in-the-classroom and regressive-at-the-household-level 
 
 In September 2025, on a 2–1 vote, the Federal Communications Commission adopted an Order on Reconsideration that removed off-premises Wi-Fi hotspots and school-bus Wi-Fi from E-Rate eligibility. E-Rate is the federal program that subsidizes internet connectivity for schools and libraries, funded through the Universal Service Fund. The 2024 expansion under the previous FCC had added off-premises connectivity — the hotspot programs designed to follow students home — to the program's scope. The 2025 majority read the same authorizing statute differently and rolled it back.
 
-During fiscal year 2025, schools and districts had requested $42.6 million for hotspot programs and $15.3 million for school-bus Wi-Fi. 1,762 libraries had applied for hotspot funding. The FCC's order directed the Universal Service Administrative Company to deny the pending requests, including for the 2025–26 school year already underway.
+During fiscal year 2025, schools and districts had requested $42.6 million for hotspot programs and $15.3 million for school-bus Wi-Fi. 1,762 libraries had applied for hotspot funding.
+<!-- FACT-CHECK FLAG: UNVERIFIED — specific dollar amounts and library count not directly verified from FCC 25-63 order text. See factchecks/01-the-ban-assertions.md --> The FCC's order directed the Universal Service Administrative Company to deny the pending requests, including for the 2025–26 school year already underway.
 
 The 2025 state phone bans and the 2025 FCC rescission were not coordinated. Different actors. Different institutional logics. Different stated rationales. Different political coalitions. One decision was made in state capitals by legislators responding to parent pressure and a body of educational research. The other was made in Washington by a regulatory body adjudicating the limits of its statutory authority. Neither group was thinking about what the other group was doing.
 
@@ -101,6 +113,7 @@ It was not the variable that determined what the new law said.
 ## The $5.2 million that was not spent on teachers
 
 The Los Angeles Unified School District spent $5.2 million on Yondr pouches in 2023–24. Within months, students were using magnets purchased on Amazon to pop the pouches open. Some carried cheap backup phones that went into the pouch while their real phone stayed in a pocket. Some simply banged the pouch against a desk until the magnetic seal gave. Houston allocated $800,000 for phone storage. Cincinnati spent roughly half a million on pouches for grades 7–12 and reported durability problems within the first year.
+<!-- FACT-CHECK FLAG: UNVERIFIED — Cincinnati ~$500K figure and durability documentation not surfaced in single source. See factchecks/01-the-ban-assertions.md -->
 
 I do not lean on the workaround stories. Students find workarounds is not a strong argument against the ban itself, and the workarounds will be addressed with sturdier pouches or different enforcement mechanisms or simple habituated compliance. The argument is about what the pouch budget is. It is a procurement line item that displaces another procurement line item.
 
@@ -118,7 +131,8 @@ This statement, applied to teachers and technology, has a defensible reading. Te
 
 But then look at what the statute actually does.
 
-Every phone ban law in the United States contains an exemption for educational purposes. Florida's statute prohibits phone use "unless directed to do so by a teacher for educational purposes." Indiana permits exceptions for "educational purposes or emergencies." New York authorizes use "by a teacher, principal, or the school district for a specific educational purpose." Not one of the laws defines the term operationally. The teacher who could not be trusted to keep phones in pockets at 9:15 a.m. is now trusted, with no additional guidance, to decide what counts as an educational purpose at 10:30 a.m.
+Every phone ban law in the United States contains an exemption for educational purposes. Florida's statute prohibits phone use "unless directed to do so by a teacher for educational purposes." Indiana permits exceptions for "educational purposes or emergencies." New York authorizes use "by a teacher, principal, or the school district for a specific educational purpose."
+<!-- FACT-CHECK FLAG: UNVERIFIED — exact statutory quotes (FL, IN, NY) require direct citation to bill text. See factchecks/01-the-ban-assertions.md --> Not one of the laws defines the term operationally. The teacher who could not be trusted to keep phones in pockets at 9:15 a.m. is now trusted, with no additional guidance, to decide what counts as an educational purpose at 10:30 a.m.
 
 Try to apply your own district's exemption to three specific cases. A student uses Khan Academy on her phone during study hall to practice a math problem the textbook handled poorly. A student uses TikTok to watch a college-admissions counselor's video on essay writing. A student uses ChatGPT to summarize the chapter she didn't read.
 
@@ -138,7 +152,8 @@ There is a pattern running through everything the ban-supporting research found,
 
 Every study the ban-everything camp relies on is a study about what happens when nobody is making the call.
 
-Beland and Murphy found gains from banning phones. The implicit comparison is to classrooms where phones were not banned — meaning classrooms where no adult was deciding when the phone helped and when it hurt. Figlio and Özek's Florida study found the same. The PISA data showing that students using computers more than six hours a day score sixty-six points lower describe what happens when screen exposure is ambient and unmanaged. The Common Sense Media notification data describe what happens when no one is filtering. The research is consistent, and the consistency has been read as evidence that the technology itself is the problem.
+Beland and Murphy found gains from banning phones. The implicit comparison is to classrooms where phones were not banned — meaning classrooms where no adult was deciding when the phone helped and when it hurt. Figlio and Özek's Florida study found the same. The PISA data showing that students using computers more than six hours a day score sixty-six points lower describe what happens when screen exposure is ambient and unmanaged.
+<!-- FACT-CHECK FLAG: UNVERIFIED — OECD PISA 2022 reports a 49-point gap at a different threshold (1 hr vs. 5–7 hr); the 66-point figure for ≥6 hours needs direct sourcing (likely via Horvath ch. 5). See factchecks/01-the-ban-assertions.md --> The Common Sense Media notification data describe what happens when no one is filtering. The research is consistent, and the consistency has been read as evidence that the technology itself is the problem.
 
 That is one reading. The other reading is that *nobody being in charge of the technology* is the problem — that the trained professional whose job is to manage what happens in that room is the missing variable. The data don't measure what happens when the call is made well, because we have not trained the people who would make it well. That study has not been run because we have not built the cohort that would let us run it.
 
@@ -169,3 +184,36 @@ So far, almost no one has.
 ---
 
 *Three things this chapter has not settled, because the available evidence hasn't settled them either. The Figlio and Özek paper's race-by-sex heterogeneity needs direct verification against the published tables; a figure of approximately thirty percent for Black boys specifically has circulated in press coverage, sharper than the sixteen percent for Black students overall reported in the NBER digest, and the chapter's opening should not overshoot the paper. The causal debate on smartphones and adolescent mental health — Haidt and Twenge on one side, Odgers, Orben, and Przybylski on the other — is not resolved, and the policy case made here doesn't rest on resolving it. And whether the long-run academic gains from bell-to-bell prohibition replicate in districts with weaker enforcement is genuinely open; the Florida finding comes from a district that locked phones in backpacks all day. I would rather name these three uncertainties than wave them through.*
+
+---
+
+## References
+
+The following sources were independently verified by fact-check pass (2026-05-16). See `factchecks/01-the-ban-assertions.md` for the full verification record.
+
+**Empirical / academic sources**
+
+- Beland, L.-P., & Murphy, R. (2016). *Ill Communication: Technology, distraction & student performance.* Labour Economics, 41, 61–76. [https://www.sciencedirect.com/science/article/abs/pii/S0927537116300136](https://www.sciencedirect.com/science/article/abs/pii/S0927537116300136)
+- Figlio, D. N., & Özek, U. (2025). *The Impact of Cellphone Bans in Schools on Student Outcomes: Evidence from Florida.* NBER Working Paper 34388. [https://www.nber.org/papers/w34388](https://www.nber.org/papers/w34388)
+- NBER Digest (2025). *School Cell Phone Bans and Student Achievement* (December 2025). [https://www.nber.org/digest/202512/school-cell-phone-bans-and-student-achievement](https://www.nber.org/digest/202512/school-cell-phone-bans-and-student-achievement)
+- Orben, A., & Przybylski, A. K. (2019). *The association between adolescent well-being and digital technology use.* Nature Human Behaviour. [https://www.nature.com/articles/s41562-018-0506-1](https://www.nature.com/articles/s41562-018-0506-1)
+- Common Sense Media (2023). *Constant Companion: A Week in the Life of a Young Person's Smartphone Use.* [https://www.commonsensemedia.org/research/constant-companion-a-week-in-the-life-of-a-young-persons-smartphone-use](https://www.commonsensemedia.org/research/constant-companion-a-week-in-the-life-of-a-young-persons-smartphone-use)
+
+**Legislative / regulatory**
+
+- Ballotpedia (2026). *Kansas becomes 33rd state to enact a K-12 cellphone ban.* [https://news.ballotpedia.org/2026/03/30/kansas-becomes-the-33rd-state-to-enact-a-k-12-cellphone-ban/](https://news.ballotpedia.org/2026/03/30/kansas-becomes-the-33rd-state-to-enact-a-k-12-cellphone-ban/)
+- Ballotpedia (2025). *Twenty-two states enacted K-12 cellphone bans so far in 2025.* [https://news.ballotpedia.org/2025/08/08/twenty-two-states-enacted-k-12-cellphone-bans-so-far-in-2025/](https://news.ballotpedia.org/2025/08/08/twenty-two-states-enacted-k-12-cellphone-bans-so-far-in-2025/)
+- Ballotpedia: *State policies on cellphone use in K-12 public schools.* [https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools](https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools)
+- FCC Public Notice DA 25-920 (released September 30, 2025). [https://docs.fcc.gov/public/attachments/DA-25-920A1.pdf](https://docs.fcc.gov/public/attachments/DA-25-920A1.pdf)
+- FCC 25-63 Order on Reconsideration & Declaratory Ruling (WC Docket 21-31 / 13-184). [https://docs.fcc.gov/public/attachments/FCC-25-63A1.pdf](https://docs.fcc.gov/public/attachments/FCC-25-63A1.pdf)
+- ALA: *FAQs on the FCC's Reversal of E-Rate's Hotspot Lending Program.* [https://www.ala.org/advocacy/federal-resources/broadband-policy/erate/hotspot-FAQ](https://www.ala.org/advocacy/federal-resources/broadband-policy/erate/hotspot-FAQ)
+- K-12 Dive (2025). *FCC removes school bus Wi-Fi, hotspots from E-rate.* [https://www.k12dive.com/news/fcc-removes-school-bus-wi-fi-hotspots-from-e-rate/761481/](https://www.k12dive.com/news/fcc-removes-school-bus-wi-fi-hotspots-from-e-rate/761481/)
+- Governor Kathy Hochul (2025). *Plan to Restrict Smartphone Use in Schools Statewide.* [https://www.governor.ny.gov/news/governor-hochul-unveils-plan-restrict-smartphone-use-schools-statewide-and-ensure-distraction](https://www.governor.ny.gov/news/governor-hochul-unveils-plan-restrict-smartphone-use-schools-statewide-and-ensure-distraction)
+- Chalkbeat NY (2025). *NYC schools to get $29 million for cellphone ban.* [https://www.chalkbeat.org/newyork/2025/07/16/nyc-school-cell-phone-ban-funding-kathy-hochul-yondr/](https://www.chalkbeat.org/newyork/2025/07/16/nyc-school-cell-phone-ban-funding-kathy-hochul-yondr/)
+
+**Press / secondary**
+
+- NBC News. *Schools spend millions on Yondr pouches to store cellphones.* [https://www.nbcnews.com/business/consumer/schools-spend-millions-yondr-pouches-store-cellphones-rcna230454](https://www.nbcnews.com/business/consumer/schools-spend-millions-yondr-pouches-store-cellphones-rcna230454)
+- LAist. *Is LAUSD's cellphone ban working?* [https://laist.com/news/education/los-angeles-unified-phone-ban-end-of-first-semester-summer-starts](https://laist.com/news/education/los-angeles-unified-phone-ban-end-of-first-semester-summer-starts)
+- Hechinger Report. *Cellphone bans can help kids learn — but Black students are suspended more.* [https://hechingerreport.org/proof-points-cellphone-bans/](https://hechingerreport.org/proof-points-cellphone-bans/)
+- Pew Research Center. *Mobile Fact Sheet.* [https://www.pewresearch.org/internet/fact-sheet/mobile/](https://www.pewresearch.org/internet/fact-sheet/mobile/)
