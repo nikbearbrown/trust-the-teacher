@@ -1,133 +1,129 @@
-# Chapter 0 — Prologue
+# The Gap
 
-*Why the book has to earn its title before the book begins.*
-
----
-
-I want to start with a number, because the number is strange.
-
-Somewhere between eighty-six and ninety-five percent of university students are now using generative AI regularly. The UK Higher Education Policy Institute measured it at 92% undergraduate utilization, 94% engagement on assessed coursework. Latin American higher education came in at the same 92%, with two-thirds reporting daily or weekly use. American middle and high school students are at 62%. These are not projections or model outputs. These are surveys of people with names, in schools with addresses, filling out questionnaires about what they actually do.
-
-<!-- → CHART: paired bar chart showing student AI adoption rates vs. teacher daily-use rates across three populations — K-12 US, higher education US/business school, Latin American higher ed — columns side by side per population so the asymmetry is immediately visible; reader should feel the gap before the prose names it -->
-
-Now hold that number next to this one. Only twelve to fifteen percent of K-12 teachers use AI tools daily. In higher education, business-school faculty came in at 7% daily, 18% weekly; two-thirds use AI occasionally or rarely or never.
-
-Something is wrong with those two numbers being true at the same time. They describe a classroom in which the students are fluent in a tool the teacher has never used seriously. That is not a metaphor. That is the measured condition of American education right now.
-
-Here is the number that makes the strangeness precise. In a 2025 study of 1,200 principals, teachers, and students, educators rated their own AI competence at a mean of 5.0 on a ten-point scale. Their students rated themselves at 6.5. And forty-nine percent of US K-12 teachers explicitly agree — in surveys, under their own names — that their students are better prepared to use AI tools effectively than they are.
-
-<!-- → INFOGRAPHIC: split-scale visualization — one dial showing educator self-rated AI competence (5.0/10) and a second showing student self-rating (6.5/10), with a callout: "49% of US K-12 teachers agree their students are better prepared to use AI than they are" — the visual point is the direction, not the decimal: the profession is aware it is behind -->
-
-Teachers know. That is the thing I want you to sit with before we go any further. The teachers know that their students have outpaced them. They are not in denial. They are in a situation where nobody has given them a way out of it.
+*On what it means when the students know something the teacher doesn't*
 
 ---
 
-I have watched a teacher's face change when she understands the size of that situation.
+She is in the middle of a sentence about mitosis when the phone buzzes.
 
-She was a middle-school science teacher, late forties, twenty years in the classroom, at an evening AI workshop her district had finally scheduled. Skeptical when she arrived — the reasonable skepticism of someone who has watched a lot of educational technology come and go. The first prompt I ran was the kind of question her students typed at her every week: *explain the difference between mitosis and meiosis like I'm in seventh grade, and give me three analogies a kid would actually remember.* The model produced an answer in eleven seconds. She read it once. She read it twice. She looked up and said, *"How long has it been able to do this?"*
+Then another phone. Then three more in quick succession, the soft percussion of a classroom conducting its own parallel conversation — one that has nothing to do with cell division and everything to do with whatever is happening, right now, on a screen she cannot see. She keeps talking. She has learned to keep talking. Twenty years in a middle-school science classroom will teach you which battles to choose, and the phone battle, she has decided, is not one she can win at 9:47 on a Tuesday morning with forty minutes left in the period and meiosis still to cover.
+
+What she does not know — cannot know, from where she stands at the whiteboard — is that at least three of those phones are not showing social media. They are showing a conversation. A back-and-forth between a student and a system that, eleven seconds ago, produced a cleaner explanation of the difference between mitosis and meiosis than any she has managed in two decades of trying. The student did not have to ask a second time. The system did not sigh, or check the clock, or slow down because it had explained this particular thing four periods in a row already. It just answered. With three analogies the student would actually remember.
+
+She does not know this is happening.
+
+This is where the story starts.
+
+---
+
+There is a number I want you to hold in your head, because it is strange and it is precise and it describes something real.
+
+Ninety-two percent.
+
+That is the proportion of university undergraduates who are now using generative AI regularly. Not experimenting with it, not having tried it once for a paper — using it, as a matter of routine, integrated into the texture of how they study and think and write. The UK Higher Education Policy Institute measured it. Latin American higher-education researchers measured it independently and got the same number. For assessed coursework specifically — the assignments that count, the ones that carry grades — engagement runs at 94%. Among American middle and high schoolers, it sits at 62%. These are not projections. They are surveys of students with names, in buildings with addresses, describing what they actually do.
+
+Now hold that number next to this one.
+
+Twelve to fifteen percent. That is the proportion of K-12 teachers who use AI tools daily. In higher education, the figure is starker: 7% of business-school faculty use these tools every day. Two-thirds use them occasionally, or rarely, or never.
+
+Something is wrong with those two numbers being true at the same time. They describe a classroom in which the students are fluent in a tool the teacher has never seriously touched. Not a metaphor. A measured condition. The most significant shift in how human beings produce and process knowledge since the search engine went mainstream — and the people we have asked to educate our children are, by their own account, behind.
+
+Their own account. That is the part that matters.
+
+In a 2025 study of 1,200 principals, teachers, and students, educators rated their own AI competence at a mean of 5.0 on a ten-point scale. Their students rated themselves at 6.5. And 49% of US K-12 teachers explicitly agreed — in surveys, under their own names, with the considered judgment of professionals describing their professional situation — that their students are better prepared to use AI tools effectively than they are.
+
+The teachers know. That is the thing I want you to sit with before we go any further. They are not in denial. They are not dismissing the technology or claiming it doesn't matter. They are aware — precisely, uncomfortably aware — that the classroom dynamic has shifted beneath them. They are in a situation where the map they were given does not match the territory they are standing in, and nobody has shown them how to draw a new one.
+
+---
+
+The evening workshop was her district's first.
+
+She arrived skeptical — the reasonable skepticism of someone who had watched a lot of educational technology promise transformation and deliver complications. Interactive whiteboards. MOOCs. Learning management systems so elaborate that navigating the interface consumed more time than whatever it was supposed to save. She had seen the cycle enough times to have developed a kind of professional immunity to enthusiasm.
+
+The first demonstration I ran was a question her students asked every week.
+
+*Explain the difference between mitosis and meiosis like I'm in seventh grade. Give me three analogies a kid would actually remember.*
+
+The answer arrived in eleven seconds. She read it once. She read it twice. The analogies were good — not textbook-good, genuinely good, the kind that stick because they map onto something a twelve-year-old already knows and cares about. She looked up. Her expression had changed.
+
+*How long has it been able to do this?*
 
 The honest answer was: about two years.
 
-She had no way to know. Her district's last technology professional-development day had been the previous March. That session covered Google Classroom, attendance digitization, and the difference between a Chromebook and an iPad. By the time she sat down in front of me, the version of GPT she had heard about in news clips eighteen months earlier had been superseded twice. The tool her students were using on their phones during her class — and they were using it, every day, in every class she taught — bore almost no resemblance to the tool she thought she understood.
+She had no way to know. Her district's last technology professional-development day had been the previous March. It covered Google Classroom, attendance digitization, and the difference between a Chromebook and an iPad. By the time she sat down in front of me, the version of AI she had seen discussed in news clips — cautious coverage, roughly eighteen months old, focused on plagiarism and the unreliability of early outputs — described a system that had been superseded twice. The tool her students were using on their phones during her class, every day, in every class she taught, bore almost no resemblance to the tool she had been vaguely warned about.
 
-This is the gap. And I want to be precise about what kind of gap it is, because the wrong diagnosis produces the wrong treatment.
-
----
-
-The pace of generative-AI capability release is approximately monthly. Significant model upgrades, new features, new modes of interaction — they ship roughly every four to six weeks across the major providers. The cycle on which institutional professional development operates is annual at best, biennial at typical, sometimes longer when budget years and contract cycles work against each other. By the time a curriculum committee approves a training module on a specific tool, the tool the module describes has been superseded twice. The training arrives obsolete.
-
-<!-- → CHART: dual timeline — top track shows major generative AI model releases from 2022–2026 (GPT-3.5, GPT-4, Claude 2, Gemini, etc.) with tick marks at roughly 4–6 week intervals of significant updates; bottom track shows a single bar spanning 12–24 months labeled "typical institutional PD cycle" — the visual argument is the mismatch between cadence on the two tracks -->
-
-This is a structural mismatch. It is not a moral failure. No individual teacher, however motivated, can fix a structural mismatch by trying harder. The system that was supposed to keep her current has been outrun by the technology it was supposed to keep her current on. When she asks me how long the model has been able to do what it just did, the right answer is not *"you should have known."* The right answer is *"nobody built the system that would have told you."*
-
-Forty-four percent of K-12 educators have received no AI professional development at all. Twenty-nine percent have attended exactly one workshop. Eight percent have access to systematic, ongoing training. These are not numbers from a hostile report. These are educators describing their own situation to Education Week researchers in 2026. The phrase the teachers themselves used was: *"We're at a disadvantage."*
-
-<!-- → CHART: stacked horizontal bar showing distribution of K-12 educator AI PD exposure — four segments: no PD received (44%), one workshop only (29%), some occasional training (19%), systematic ongoing training (8%) — reader should see that the rightmost segment, the one that actually works, is nearly invisible -->
-
-It also matters that when training does arrive, it is usually the wrong shape. A math teacher's AI gap is not the same as an English teacher's AI gap. Generic prompting workshops — the modal professional-development offering when any offering exists — do not close subject-specific deficits. The research on what actually works points in one direction consistently: subject-specific professional learning communities, where teachers practice the technology on the actual curriculum they teach, with colleagues who teach the same subject. A 2026 study of English Language Teaching instructors found the pattern clearly — when AI training was integrated into a discipline-specific community of practice, the technology stuck; when it was generic, it did not. This is not a surprising finding. It is exactly what forty years of Pedagogical Content Knowledge research predicts: domain-specific pedagogy outperforms generic pedagogy when content is held constant. Shulman established this in 1986. It has been replicated so many times it is essentially settled. The insight did not arrive with AI. We just keep not applying it.
-
-The teacher in my workshop did not need me to tell her the model's explanation was good. She could see that. She needed me to tell her that not knowing the explanation existed was not a failure on her part. She needed an infrastructure that would have shown it to her two years earlier, in her subject area, on her curriculum, with colleagues who teach seventh-grade science. None of that existed. None of it exists now.
+This is the gap. And I want to be careful about what kind of gap it is, because the wrong diagnosis produces the wrong treatment.
 
 ---
 
-So let me tell you what this book is about, and what it is not about, because the title requires some defense.
+The pace of generative-AI capability release is approximately monthly.
 
-The title is *Trust the Teacher.* That is a political claim, an institutional claim, a claim about where educational authority should live. It is a claim I intend to defend in the chapters that follow. But the claim is conditional, and the condition is the one the data in this prologue describes.
+Significant model upgrades — new abilities, new modes of interaction, substantial improvements in reasoning and reliability — ship roughly every four to six weeks across the major providers. This is not the pace of a technology maturing toward stability. It is the pace of a technology in the exponential phase of development, where each iteration is genuinely different from the last in ways that matter for how it is used.
 
-*Trust the teacher* is only a defensible argument if the teacher has been given something worth trusting.
+The cycle on which institutional professional development operates is annual at best. Biennial at typical. Sometimes longer, when budget years and contract negotiations and curriculum-committee timelines work against each other. By the time a training module on a specific tool has been approved, designed, scheduled, and delivered to teachers, the tool the module describes has already changed twice. The training arrives obsolete. Not slightly outdated — structurally, architecturally, functionally obsolete.
 
-The book's closing line is: *Trust the teacher. Train the teacher. Measure what matters.* The order in that line is not accidental.
+This is not a failure of will. It is a structural mismatch. A gap between the clock speed of technological change and the clock speed of the institution designed to respond to it. No individual teacher, however motivated and curious, can fix a structural mismatch by trying harder. She cannot attend workshops that don't exist. She cannot receive professional development that has not been funded. She cannot know what nobody has built the infrastructure to tell her.
 
-<!-- → INFOGRAPHIC: three-step chain diagram — TRUST → TRAIN → MEASURE — with a one-sentence gloss under each showing the dependency: "Trust funds the investment / Training earns the trust / Measurement tells us whether it worked" — the arrows should show that the chain breaks if any link is missing, not that the steps are merely sequential -->
+Forty-four percent of K-12 educators have received no AI professional development at all. Not inadequate development — none. Twenty-nine percent have attended exactly one workshop. Eight percent have access to systematic, ongoing training. These are not figures from a hostile report. These are educators describing their own situation to Education Week researchers in 2026. The phrase they used, unprompted, was: *we're at a disadvantage.*
 
-*Trust* comes first because without the political and institutional commitment to trust, the training will not be funded. Schools that do not trust their teachers' judgment do not invest in developing their teachers' judgment. The trust is the precondition for the investment. But the trust the title asks for cannot rest on the current situation — students at 92% adoption, teachers at 12% daily use, 44% of educators with zero AI professional development. The trust has to be the trust the training earns. We are asking institutions to commit in advance to trusting a workforce we are simultaneously committing to build into something worth trusting. That is the argument. It compounds.
+The shape of that disadvantage is also important. When training does exist, it is usually the wrong shape. A mathematics teacher's AI gap is not the same as an English teacher's AI gap. A seventh-grade science teacher's practical needs are not met by a generic prompting workshop designed for no subject in particular. The research on what actually closes these gaps points in one direction, consistently and without much ambiguity: subject-specific professional learning communities, where teachers practice the technology on the actual curriculum they teach, alongside colleagues who teach the same subject.
 
-*Train* comes second because the trust is only defensible after the training has been done. The kind of training I mean is not the one-day workshop. It is the infrastructure that medicine built for physicians half a century ago: continuous, specialty-specific, tied to demonstrated competence, evaluated on whether the practitioner is getting better at the work. A cardiologist cannot let her skills atrophy and keep her license. The Continuing Medical Education system is not perfect, but it is built on the premise that the state of the field changes continuously and professional preparation must change with it. We have not built the analog for teaching. This book is the case that we must.
-
-*Measure what matters* comes third because without measurement there is no accountability — not the punitive accountability that standardized testing introduced and that the research says does not improve teaching, but the reflective accountability of a professional who can look at evidence and ask whether her practice is working. The distinction matters. One kind of measurement deskills teachers by substituting external judgment for internal professional development. The other kind of measurement is itself a form of professional development, the mechanism by which a practitioner learns whether what she changed made a difference.
+This is not a new finding. It is exactly what forty years of pedagogical research predicts. Lee Shulman established it in 1986: domain-specific pedagogy outperforms generic pedagogy. The principle has been replicated across subjects, age groups, and teaching contexts so many times that it is essentially settled science. When AI training is integrated into a discipline-specific community of practice, the technology sticks. When it is generic, it does not. We have known this. We keep not applying it.
 
 ---
 
-Every chapter that follows assumes a teacher who has been trained in the way medicine trains doctors. Every chapter that follows is honest about how far most American schools are from being able to make that assumption today.
+The title of this book is *Trust the Teacher.*
 
-Chapter 1 will argue that the smartphone ban, however justified the underlying concern, is the wrong instrument. The reason is not that smartphones are fine, or that students use them responsibly, or that the research on distraction and attention fragmentation is uncertain — none of those things are true. The reason is that a ban routes around the trained-professional judgment that has not been built. If teachers had the training to integrate these devices purposefully, the ban would not be necessary. The ban is a symptom of the gap, not a solution to it.
+That is a political claim. It is an institutional claim. It is a claim about where educational authority should live. And it requires some defense, because the data in this chapter does not, on its face, make a compelling case for trust.
 
-Chapter 2 will argue that the EdTech industry has been wrong about which variable predicts whether a platform produces learning. The industry has consistently bet on the platform — the software, the interface, the algorithm, the adaptive engine. The research consistently finds that the teacher is the variable. A good teacher with bad software usually gets better outcomes than a bad teacher with good software. This finding is inconvenient for an industry that sells software, which is why the industry has been consistently motivated to obscure it.
+Here is the defense.
 
-Chapter 4 will argue that forty years of education research has been pointing at the same answer — John Hattie's effect-size meta-analyses, the collective teacher efficacy literature, the research on teacher-student relationships, the work on feedback and formative assessment — and the AI moment is the moment that answer becomes urgent. None of this is new knowledge. What is new is the cost of ignoring it.
+*Trust the teacher* is only a defensible argument if the teacher has been given something worth trusting. The trust is not unconditional. It is not a gesture toward a profession we like in the abstract. It is a commitment — a prior commitment, made by institutions before the training is complete — to invest in building teacher expertise because expertise is the variable that predicts learning outcomes, and teacher expertise is the thing that has been chronically and measurably underinvested in for decades.
 
-Chapter 8 will argue that medicine built the infrastructure for continuous specialty-specific professional development half a century ago and that we have spent the intervening decades not building its analog for teaching. The reasons are familiar — teacher training is chronically underfunded, the political economy of education discourages investment in adult learning, there is no equivalent of a medical licensing board enforcing competency. These are real obstacles. The chapter will argue that the AI moment changes the cost-benefit calculus in a way that makes the obstacles worth confronting, because the cost of not confronting them is now legible in data that did not exist five years ago.
+The book's closing argument is: *Trust the teacher. Train the teacher. Measure what matters.* The order is not accidental.
 
----
+Trust comes first because without the institutional commitment to trust teacher judgment, the training will not be funded. Schools that do not trust their teachers' judgment do not invest in developing their teachers' judgment. The trust has to precede the investment. But the trust cannot rest on the current condition — students at 92% adoption, teachers at 12% daily use, nearly half the profession with zero AI professional development. The trust has to be the kind that training earns. We are asking institutions to commit in advance to trusting a workforce that we are simultaneously committing to build.
 
-Here is the claim I want to make before any of that begins, and it is the claim this prologue exists to establish.
+Train comes second because the trust is only defensible after the training has been done. Not the one-day workshop. The infrastructure. The kind that medicine built for physicians half a century ago: continuous, specialty-specific, tied to demonstrated competence, evaluated on whether the practitioner is actually getting better at the work. A cardiologist cannot let her skills atrophy and keep her license. The Continuing Medical Education system is not perfect, but it is built on a premise we have never applied to teaching: that the state of the field changes continuously and professional preparation must change with it.
 
-The gap described by the numbers at the start of this chapter — students fluent in AI, teachers undertrained, classrooms in which professional authority is structurally undermined by a technological asymmetry — is not the teachers' fault. It was produced by a system that moved faster than any system of institutional preparation was designed to move, and that landed its consequences disproportionately on a profession that has been chronically underinvested in for decades.
-
-This matters because the policy response to a moral failure is different from the policy response to a structural failure.
-
-If the problem is that teachers are lazy, the response is accountability and incentive realignment. The last twenty years of American education reform have been built substantially on this diagnosis — No Child Left Behind, Race to the Top, the Common Core debate, the teacher-evaluation movement. The diagnosis has been wrong. The teachers are not lazy. The research on teacher motivation is unambiguous: teachers are, as a population, among the most intrinsically motivated professionals in the workforce. What they lack is support, time, and subject-specific professional development that actually works.
-
-If the problem is structural — a mismatch between the pace of technological change and the pace of institutional adaptation — then the response is infrastructure. Build the professional-learning communities. Fund the subject-specific training. Create the ongoing evaluation system that treats professional development as a continuous process rather than a one-time event. Tie it to demonstrated competence the way medical CME is tied to demonstrated competence. Fund it as if the health of the education system depends on it, which it does.
-
-The prologue is making the case that the problem is structural. The rest of the book is making the case for what building the infrastructure looks like.
+Measure what matters comes third because without evidence there is no learning — not the punitive accountability of standardized testing that the last two decades of reform have built and the research has consistently failed to validate, but the reflective accountability of a professional who can look at evidence and ask whether her practice is working. One kind of measurement substitutes external judgment for internal professional development. The other kind *is* professional development.
 
 ---
 
-One more thing, and then we can begin.
+Every chapter in this book assumes a teacher who has been trained. Every chapter is honest about how far most American schools are from being able to make that assumption.
 
-The teacher in my workshop — the one who asked how long the model had been able to do what it just did — did something after she asked that question. She picked up her phone. She typed in a question about one of the units she was currently teaching, a genetics unit that she said her students found confusing every year. She read the response. She tried another prompt, adjusting the vocabulary level. She tried a third. She was not waiting for me to explain the technology to her. She was figuring it out the way any curious person figures out a tool: by using it, adjusting, using it again.
+Chapter 1 will argue that the smartphone ban — however justified the underlying concern about distraction and attention fragmentation — is the wrong instrument. Not because smartphones are harmless. Not because students use them responsibly. But because a ban routes around the trained professional judgment that has not been built. If teachers had the subject-specific training to integrate these devices purposefully, the ban would not be necessary. The ban is a symptom of the gap, not a solution to it.
 
-What she needed was not capability. She had the capability the moment she sat down. What she needed was permission — the signal from her institution that figuring this out was her job, that time spent on it was not time stolen from something else, that the workshop she was attending at six-thirty on a Tuesday evening was not an anomaly but the beginning of a system.
+Chapter 2 will argue that the EdTech industry has been systematically wrong about which variable predicts whether a platform produces learning. The industry has consistently bet on the platform. The research has consistently found that the teacher is the variable. A well-prepared teacher with mediocre software typically outperforms an unprepared teacher with excellent software. This is inconvenient for an industry that sells software, which helps explain why the industry has been motivated to obscure it.
 
-She did not get that signal when she walked out of the workshop. She went back to a school that had allocated no professional development time to AI for the coming year and a district that had not updated its AI policy since a brief statement in 2023 that mostly said teachers should be cautious. She was on her own. She is still on her own.
-
-The book is not about her individually. She is going to figure it out. She is curious and persistent and twenty years of teaching have made her very good at learning what she needs to learn. But she should not have to figure it out alone, and the students she teaches next year while she is still in the early part of the learning curve will pay a small and unmeasured cost for the fact that the institution did not build what it needed to build.
-
-Multiply that by the 3.5 million K-12 teachers currently in American classrooms. That is the scale of the structural problem.
-
-That is why the book has to earn its title before the book begins.
+Chapter 8 will argue that medicine built the infrastructure for continuous professional development half a century ago and we have spent the intervening decades failing to build its analog for teaching. The obstacles are real — chronic underfunding, a political economy that discourages investment in adult learning, no equivalent of a licensing board enforcing competency. The chapter will argue that the AI moment changes the calculus, because the cost of failing to build the infrastructure is now legible in data that did not exist five years ago. We can see the gap. We can measure it. We can no longer claim we didn't know it was there.
 
 ---
 
-## LLM Exercises
+Here is what I want you to understand before any of that begins.
 
-The following exercises are designed to be worked with a large language model. Each one is an investigation, not a lookup — the point is to push the model, examine what it produces, and develop judgment about when its outputs can be trusted.
+The gap described by the numbers at the start of this chapter — students fluent, teachers undertrained, classrooms in which professional authority is structurally undermined by a technological asymmetry — was not produced by teachers failing. It was produced by a system that moved faster than any system of institutional preparation was designed to move, and that landed its consequences disproportionately on a profession that has been chronically underresourced for decades.
 
-**Exercise 0.1 — The competence gap, in your context**
+This matters because the policy response to a moral failure is different from the policy response to a structural failure. If the problem is that teachers are unmotivated, the response is accountability and incentive realignment. The last twenty years of American education reform have been built substantially on this diagnosis. The research has not supported it. Teachers are, as a professional population, among the most intrinsically motivated workers in the workforce. What they lack is time, funding, and subject-specific professional development that actually works.
 
-Ask an LLM: *"Describe the current state of AI adoption among teachers versus students in K-12 and higher education. What does the research say about professional development?"* Compare the response against the specific figures cited in this prologue. Where does the model's response align with the literature? Where does it diverge, hedge, or produce numbers you cannot trace to a source? What does that tell you about using LLMs for literature review?
+If the problem is structural — a mismatch between the pace of technological change and the pace of institutional adaptation — then the response is infrastructure. Professional learning communities. Subject-specific training. An ongoing evaluation system that treats professional development as continuous rather than episodic. Fund it as if the health of the education system depends on it. Because it does.
 
-**Exercise 0.2 — The structural vs. moral failure distinction**
+---
 
-Present an LLM with this claim: *"The AI preparation gap in education is a structural failure, not a moral failure, and policy responses should reflect that distinction."* Ask it to steelman the opposing view — that the gap is substantially a moral failure and teacher motivation is the variable. Then ask it to critique that steelman. Does the model's critique match the critique in this prologue? Where does it add something? Where does it miss?
+After she read the third prompt response, the teacher in my workshop picked up her phone.
 
-**Exercise 0.3 — The CME analog**
+She typed in a question about the genetics unit she was currently teaching — the one her students found confusing every year, the one she had been teaching the same way since she developed the unit in her third year and never quite found the time to rebuild. She read the response. She adjusted the vocabulary level and tried again. She tried a third approach, different angle, checking whether the model could explain the inheritance pattern her students most commonly got wrong.
 
-Ask an LLM to describe how medical Continuing Medical Education works — requirements, structure, enforcement, funding — and then ask it to describe what an analogous system for teacher AI competency would look like. Take the output seriously as a design document. What would have to be true about funding, governance, and political will for the proposed system to exist? What does the model get wrong or leave out?
+She was not waiting for me to explain the technology. She had been in the room for forty minutes. She understood enough to start.
 
-**Exercise 0.4 — Finding the gap in your own subject area**
+What she needed was not capability. She had the capability the moment she sat down. What she needed was permission — the signal from her institution that figuring this out was her job, that time spent on it was not time taken from something more important, that the workshop she was attending at six-thirty on a Tuesday evening was not an anomaly but the beginning of a system.
 
-Pick a subject you teach or care about. Ask an LLM to generate the five most common student misconceptions in that subject and a brief instructional intervention for each. Evaluate: Is this better or worse than what a well-prepared teacher produces? What would a teacher need to know to use this output responsibly rather than uncritically? What does your answer imply about what AI training for teachers in your subject area should actually cover?
+She did not get that signal when she walked out. She went back to a school that had allocated no professional development time to AI for the coming year. A district whose policy document on AI dated to a brief statement in 2023 that said, mostly, that teachers should be cautious. She was on her own.
+
+She is going to figure it out. She is curious and persistent and twenty years of teaching have made her very good at learning what she needs. But her students next year will learn from a teacher who is still in the early part of the learning curve — not because she failed, but because the institution failed her first. And the cost will be real, and small, and unmeasured.
+
+Multiply her by 3.5 million.
+
+That is the scale of the structural problem. That is why the book cannot simply state its title. It has to earn it first.
 
 ---
