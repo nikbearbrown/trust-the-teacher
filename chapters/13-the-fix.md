@@ -4,124 +4,164 @@
 
 ---
 
-## Learning objectives
+Here is a thing that bothers me.
 
-By the end of this chapter you will be able to:
+Harvard published a free, structured, multi-session course on how generative AI works — how the model is trained, how attention mechanisms let it build context, how a prompt actually steers output — taught by three people who study this for a living. It has been sitting on a public website since 2024. Any teacher in America can open a browser, navigate to it, and start watching tonight.
 
-1. **(Understand)** Distinguish the *content* problem in teacher AI training from the *incentives* problem, and explain why conflating them has paralyzed the field.
-2. **(Apply)** Name the specific free-to-audit AI courses that already exist from Harvard and HarvardX, and explain why their existence solves the content problem tonight.
-3. **(Analyze)** Compare the ASSISTments $46-per-student trained-teacher result from Chapter 2 against the prevailing $1,000-per-student EdTech procurement pattern, and explain what the comparison implies for AI-PD spend.
-4. **(Evaluate)** Apply the medical CME compliance model to the teaching context and identify the single administrative decision a superintendent could make tomorrow to fix the incentive problem.
-5. **(Create)** Draft a three-line PD-policy revision a superintendent could put before a school board within the current fiscal year, with no new budget line.
+Most of them haven't. And I don't think that's because teachers are incurious, or because the material is too hard, or because they're waiting for something better. I think it's because the institution that employs them has never told them that it matters. No salary credit. No licensure hours. No recognition on any form anyone reviews. The teacher who finishes those lectures is more capable than she was before — she can now explain to a student why the AI gave a confident wrong answer, and how to probe it, and when to stop trusting it — and her employer cannot see any difference between her and the teacher who watched Netflix instead.
 
-**Prerequisites.** Chapter 2 (the App; the ASSISTments cost figure; the third-measure framing); Chapter 8 (Train Like a Doctor; the three-layer PD infrastructure and the medical CME analog); the Prologue (the literacy gap and the 44%-no-AI-PD baseline).
+That is the problem. Not the content. The content exists. The problem is that the system built to develop teachers professionally has been looking at the wrong thing.
 
 ---
 
-## Two problems, one conflated
+## Two problems wearing one coat
 
-When people say *"teachers need AI training,"* they are describing two separate problems as one. The conflation is what has paralyzed the field for three years.
+When districts talk about *"teachers need AI training,"* they are usually talking about two completely separate problems as if they were one. Keeping them separate is important, because the solutions are completely different in kind.
 
-**Problem A is content.** Do high-quality, current, subject-aware AI training materials exist? Are they accessible to the teacher who wants them?
+The first problem is **content**. Do high-quality materials exist? Can a teacher access them?
 
-**Problem B is incentives.** Does the institution that employs the teacher recognize and reward completion of that training? Does completing it produce a credential the system reads as professional advancement?
+The second problem is **incentives**. Does the institution recognize completion? Does it reward it? Does finishing something count as professional advancement in the only system that measures advancement — the salary schedule, the licensure clock, the annual evaluation?
 
-The honest answer to A is *yes, and it has been yes for at least a year.* The honest answer to B is *no, and the structure that would make it yes does not yet exist in most American school districts.*
+The honest answer to the first problem is: *yes, and it's been yes for at least a year.* The honest answer to the second is: *no, for most American school districts, no.*
 
-The field has been trying to solve B by building more solutions to A. That is why it isn't working. Adding another vendor workshop to a calendar that the teacher is required to attend but for which she is given no time, no credit, no salary recognition, and no demonstration mechanism is not a solution to either problem. It is the *appearance* of a solution to A, layered on top of an unaddressed B, while the budget that paid for the workshop is the budget that could have funded the recognition.
+The reason the field has been spinning for three years is that it has been building more and more solutions to the first problem while leaving the second problem completely untouched. That's the wrong diagnosis. A vendor workshop delivered to a teacher who is required to attend, given no time to prepare, issued no usable credential, and subject to no mechanism for demonstrating that the workshop changed anything in her classroom — that is not a solution to either problem. It is the *appearance* of solving problem one, on top of an unexamined problem two, funded by the budget that could have paid for the recognition infrastructure that would have actually moved something.
 
-I want to spend the rest of this chapter on the part of the problem that is solvable tonight. Because the part of the problem that is solvable tonight is much larger than the field has been admitting.
+I want to spend the rest of this chapter on what solving problem two actually requires. Because what it requires is less than almost anyone in the field has been willing to say out loud.
 
----
+<!-- → [DIAGRAM: two-column split showing Problem A (Content) vs. Problem B (Incentives) — left column: "Does quality material exist? Can a teacher access it? Answer: Yes, since 2024." Right column: "Does the institution recognize completion? Does it count toward salary, licensure, evaluation? Answer: No, for most U.S. districts." Below both columns: a single arrow pointing down to "Field has been building solutions to A while B remains untouched." The visual should make the diagnostic error legible at a glance.] -->
 
-## The Harvard curriculum
-
-The content exists. I am going to name the specific courses, because the field's habit of saying *"free online resources are available"* is too vague to be useful.
-
-Harvard and the broader Harvard ecosystem have published, free to access, a specific set of AI-relevant material as of mid-2026 (catalog stability should be re-verified at the time of district adoption against the [Harvard Online catalog of AI courses](https://pll.harvard.edu/subject/artificial-intelligence)). It is worth being honest about the category mix — the set is not uniformly "free-to-audit credential courses," and a district selecting from it should know which items are which:
-
-> The Harvard Kennedy School's free open course *The Science and Implications of Generative AI* — the open online version of Spring 2024's DPI 681M, taught by Sharad Goel, Dan Levy, and Teddy Svoronos — provides structured multi-class instruction in three modules a working teacher can move through at her own pace: [*Introduction to Generative AI* (Class 1, How GenAI Works)](https://generative-ai-course.hks.harvard.edu/1-how-genai-works/class-1), [*Prompt Engineering* (Class 4)](https://generative-ai-course.hks.harvard.edu/2-using-genai/class-4), and [*Beyond Chatbots: System Prompts, RAG* (Class 5)](https://generative-ai-course.hks.harvard.edu/2-using-genai/class-5). The HKS *Slate* companion resource page on [*The Basics of Generative AI*](https://sites.google.com/g.harvard.edu/hksslate-genai/the-basics-of-generative-ai) gathers the foundational vocabulary in one place. The [CS50x AI week](https://cs50.harvard.edu/x/weeks/ai/) and the [CS50 Extension School AI / Prompt Engineering week](https://cs50.harvard.edu/extension/2025/spring/weeks/10/) cover prompt engineering, system prompts, RAG, and LLM mechanics inside the CS50 credentialed catalog (free to audit on edX, paid verified certificate). The Derek Bok Center's [*Generative AI in Teaching and Learning* YouTube playlist](https://www.youtube.com/playlist?list=PL_kRkvxqHjkqjnhAdSdejAkyQf1TnPkNM) collects faculty-side classroom-practice videos — a curated playlist, not a credentialed course. Harvard Business Publishing Education hosts [*Teaching with AI*](https://www.hbsp.harvard.edu/educator-training/teaching-with-ai), a structured educator-training program — free with HBP Education registration, sitting between the resource-page items and the credentialed CS50 track in terms of structure. CS50 Tech Talks supplement the credentialed material with one-off deep dives — David Malan's [*GPT-4: How does it work, and how do I build apps with it?*](https://www.youtube.com/watch?v=vw-KWfKwvTQ) and Matt Welsh's [*Large Language Models and the End of Programming*](https://www.youtube.com/watch?v=JhCl-GeT4jw).
-
-The CS50 sequence on edX is the part of this list that maps cleanly to a credentialed track: [CS50's Introduction to Computer Science](https://www.edx.org/cs50) and [CS50's Introduction to Artificial Intelligence with Python](https://www.edx.org/learn/artificial-intelligence/harvard-university-cs50-s-introduction-to-artificial-intelligence-with-python) are both free to audit, with a verified certificate available in roughly the one-fifty-to-three-hundred-dollar range per learner. At district institutional rates through edX for Business, the per-teacher cost likely lands in the fifty-to-one-fifty range [verify with current edX for Business pricing for the specific district size]. The HKS open course, the HKS *Slate* page, the HBP Education program, and the Bok Center playlist are free without certificates — the recognition fix in the next section is what converts them into recorded professional learning under the district's existing PD framework.
-
-Now hold those numbers next to two numbers from Chapter 2.
-
-The first is the ASSISTments figure. A free piece of software, twenty years old, delivered to teachers with structured training and weekly coaching cycles, produced statistically significant gains on a state mathematics assessment for approximately forty-six dollars per student per year, almost the entirety of which went to teacher time and professional development [Roschelle et al. 2016 *AERA Open*; see Ch 2]. The software was free. The investment was the teacher.
-
-The second is the prevailing EdTech procurement number. A typical American school district spends in the neighborhood of one thousand dollars per student per year on educational technology contracts, of which roughly two-thirds of the purchased licenses are never opened [Evelyn Learning Solutions district analysis; see Ch 2 and back-matter Note 1]. The platforms are bought. The training to use them is bought separately. The licenses sit dormant in administrative dashboards no one looks at.
-
-Now read the arithmetic. A district currently spending one thousand dollars per teacher per year on vendor AI workshops — workshops on tools that are obsolete by the time the slide deck loads — could instead spend one hundred dollars per teacher on a HarvardX verified certificate and pocket the difference. The content would be better. The credential would be more recognizable across district lines. The learning would be self-paced and subject-specific. The teacher who finished it would have more knowledge of generative AI than the vendor who sold the workshop.
-
-I am not making the case for HarvardX specifically. MIT OpenCourseWare publishes similar material. Stanford Online does. Carnegie Mellon does. The University of Pennsylvania does. The content layer is a solved problem at the level of the field. It is also a solved problem at the level of the single highest-prestige credentialing institution in American higher education, which has been publishing the relevant material for free, on its public website, for the better part of two years.
-
-The content is there. Tonight. For free or close to it. The barrier is not content.
 
 ---
 
-## The incentive fix
+## What the content layer actually looks like
 
-The barrier is that a teacher who completes six HarvardX AI lectures on her own time, after a long Friday with twenty-eight seventh graders, gets nothing from the institution. The district does not know it happened. The state licensing board does not count it. The salary schedule does not register it. The principal does not see it on a form. The teacher is a more competent operator of generative AI in her classroom than she was two months earlier, and the system she works inside is completely blind to the change.
+Before I get to the incentive fix, let me be specific about the content — specific enough to be useful, which "free online resources are available" decidedly is not.
 
-This is the part of the problem that has nothing to do with content and everything to do with the structure of how teaching's compliance layer is wired.
+The Harvard Kennedy School published the open version of *The Science and Implications of Generative AI* (Spring 2024, DPI 681M, taught by Sharad Goel, Dan Levy, and Teddy Svoronos) as a free multi-session course any teacher can move through at her own pace. Three modules. How the model works, how to prompt it, how it extends beyond chatbots into retrieval and agentic systems. The HKS *Slate* companion page on the basics of generative AI gathers the vocabulary in one place. The [Harvard Online AI catalog](https://pll.harvard.edu/subject/artificial-intelligence) is the living index; its contents should be verified against current offerings at the time of district adoption, because the catalog evolves.
 
-The medical CME model is the right frame. A physician earns CME credit for completing accredited online courses, including free ones from accredited providers. The American Board of Family Medicine requires roughly two hundred CME credits over a five-year cycle, plus quarterly knowledge assessments tied to the actual practice of family medicine [American Board of Family Medicine, *Continuous Certification Requirements*; see Ch 8]. The Accreditation Council for Continuing Medical Education runs the accreditation system that decides what counts. The system rewards demonstrated learning. It does not reward attendance at the conferences where the learning was supposed to happen.
+The CS50 track runs parallel. CS50x includes an AI week. The CS50 Extension School AI and Prompt Engineering week covers prompt engineering, RAG, and LLM mechanics inside a credentialed course — free to audit on edX, with a verified certificate at roughly $150–$300 per learner, or closer to $50–$150 at institutional edX for Business rates depending on district size (verify current pricing with edX for Business directly). The Derek Bok Center has a YouTube playlist of faculty-side classroom-practice videos on generative AI in teaching. Harvard Business Publishing Education runs a structured *Teaching with AI* program, free with HBP Education registration, with more scaffolding than a resource page but not quite the same weight as the credentialed CS50 track. Tech Talks from the CS50 team fill in the deep technical dives — David Malan's lecture on how GPT-4 works and Matt Welsh's on large language models and the future of programming are both publicly available.
 
-Teaching's compliance layer is structured the other way. Most state professional-development requirements measure seat-time, not knowledge change. The clock-hour audit asks whether the teacher attended the workshop. It does not ask whether she can do something at the end of the workshop that she could not do at the start. It does not ask whether the practice in her classroom changed. It does not ask, six months later, whether her students learned more.
+MIT OpenCourseWare publishes comparable material. Stanford Online does. Carnegie Mellon does. The University of Pennsylvania does.
 
-The fix is administrative. It is not legislative. It is not budgetary. A superintendent who decides tomorrow that documented completion of a HarvardX (or MITx, or Stanford Online, or AccessibleAI) AI course bundle counts as professional-development hours under the district's existing PD policy has fixed the incentive for her district by Wednesday. The content is there. The teachers who want it can already find it. The missing piece is a single document the superintendent's office has the authority to publish: *the following completed certificates count toward annual PD hours under district policy, at the following ratio.*
+<!-- → [TABLE: AI training catalog for K–12 educators — rows: HKS DPI 681M open course, CS50x AI week, CS50 Extension AI/Prompt Engineering, HBP Education Teaching with AI, MITx AI courses, Stanford Online AI courses, Carnegie Mellon AI courses. Columns: Provider, Course/resource name, Format (self-paced / structured / playlist), Credential type (audit / certificate / none), Cost (individual / institutional), Hours estimated, Subject-area applicability. Note in footer: "Verify all entries against provider catalogs at time of district adoption." This table is the resource a PD coordinator would actually bring to a board meeting.] -->
 
-This is one signature. One memo. One revised page in the district staff handbook. It is the cheapest single intervention this book recommends, and it is also the one that produces the largest fraction of the recognition gap closed per dollar spent. The dollars spent are approximately zero. The fraction of the recognition gap closed is, if my arithmetic on Bauer and Erdogan's newcomer-adjustment work generalizes correctly to mid-career professionals [verify: the extrapolation is mine, not the literature's], something on the order of half.
 
----
+I am not making the case for Harvard specifically. I am making the case that the content layer of this problem is solved — thoroughly, rigorously, and for free — at the level of the most recognizable research institution in American higher education, and has been solved for at least two years. The barrier to a teacher learning how AI works, right now, tonight, is not content availability. The barrier is zero.
 
-## The study-group layer
+Now hold that against two numbers from earlier in this book.
 
-The objection writes itself. *Solo online courses have terrible completion rates.* That is correct. MOOC completion rates for solo learners hover well under ten percent across the published literature [Reich & Ruipérez-Valiente 2019 *Science* on the trajectory of MOOC engagement; the figure has been stable since 2015]. A district that recognized HarvardX completion as PD credit and stopped there would still see most teachers not complete the courses.
+ASSISTments — a free, twenty-year-old piece of adaptive math software — delivered to teachers with structured training and weekly coaching cycles, produced statistically significant gains on state mathematics assessments for approximately $46 per student per year. Almost the entire cost went to teacher time and professional development. The software itself cost nothing.
 
-The fix for that is also nearly free.
+The prevailing district EdTech procurement pattern runs roughly $1,000 per student per year, with estimates from Evelyn Learning Solutions and similar district audits suggesting that roughly two-thirds of purchased licenses are never opened.
 
-The model that works is small-group, same-school, same-subject, monthly meeting. Ten teachers. One school. The same grade band or the same subject area. Sixty minutes a month. The meeting documents what each teacher tried that month with the AI tool, what changed in the classroom, what the students did differently, and what surprised the teacher about her own students' responses. The documentation is the proof of practice change — which, as Chapter 10 argues, is the third measure the evaluation framework has been missing.
+Now do the arithmetic. A district spending $1,000 per teacher per year on vendor AI workshops — workshops on tools that are obsolete before the slide deck loads — could spend $150 per teacher on a HarvardX verified certificate and keep $850. The content would be better. The credential would travel across district lines. The learning would be self-paced. The teacher who finished it would know more about generative AI than the vendor who sold the workshop.
 
-The cost to the district is a substitute teacher for one afternoon per semester so the meeting can run during the contract day, or nothing at all if the meeting runs after school. The cost can also be borne by the existing PLC structure most districts already maintain on paper. The PLC time is already on the calendar. The change is what is discussed in it.
+The content is there. The money is there if districts reallocate it. What is not yet there — and this is the problem — is the system that makes finishing the certificate mean something.
 
-The advanced version is the train-the-trainers model. A small group of teachers, librarians, and instructional coaches — six to ten people, ideally drawn from across the curriculum — meets monthly and runs quarterly training sessions for their colleagues. The Agua Fria Union High School District in Arizona built something close to this and walked it up from *how to generate a worksheet* to *how to design a deeper-learning experience that uses AI as a thinking partner without letting the AI do the thinking*, over the course of two academic years [Education Week, *AI Teacher Leaders*, 2025; verify exact program name and timing against EdWeek's archive]. The progression is what the cadence allowed. The trainers learned by teaching the colleagues. The colleagues learned by trying what the trainers had tried the month before. The capability built on capability.
+<!-- → [CHART: bar chart comparing per-teacher annual spend — three bars: (1) Prevailing vendor AI workshop spend ~$1,000, (2) HarvardX verified certificate ~$150, (3) ASSISTments full PD model ~$46/student cost equivalent. Y-axis: dollars. Each bar labeled with what the spend produces: "vendor workshop, no credential, no completion tracking" / "self-paced credentialed course, travels across district lines" / "statistically significant math gains, Roschelle et al. 2016." The reader should feel the arithmetic in their chest.] -->
 
-This is the same architecture that medicine's specialty boards have used for fifty years. The Maintenance of Certification programs are not lectures. They are case-conferences and clinical-reasoning exercises that doctors complete with peer practitioners, on a quarterly cadence, with documentation of the reasoning, not just the answer [American Board of Family Medicine MOC structure; see Ch 8]. The substrate is the same. The cost of porting it into teaching is the cost of a substitute teacher's afternoon and a shared Google Doc.
 
 ---
 
-## The prescription
+## Why the recognition layer is missing
 
-Here is the chapter's ask, written tight enough that the superintendent who reads it on a Tuesday morning can put it in front of her board on Thursday.
+A teacher who completes six HarvardX AI lectures on her own time — after a full day with twenty-eight seventh graders, after grading, after the email that needed answering — gets nothing from the institution. The district does not know it happened. The state licensing board does not count it. The salary schedule does not register it. The principal does not see it on any form.
 
-*First.* Issue an administrative letter recognizing documented completion of a defined slate of validated free or low-cost AI training — HarvardX, MITx, Stanford Online, Carnegie Mellon equivalents — as fulfilling professional-development hours under existing district policy, at a published per-course credit ratio. No new budget line. One memo. One signature.
+That teacher is now more capable in her classroom than she was two months ago. She understands why the AI confident-wrongly answers certain history questions. She knows how to show her students that, and what to do about it. And the institution she works inside is completely blind to the change.
 
-*Second.* Authorize subject-specific study-group participation, documented through a standardized one-page monthly summary of practice change and student response, as a pathway toward licensure renewal hours under existing state mechanisms. No new vendor contract. The PLC structure already exists in most districts; what is being added is what counts as documentation of having done it.
+This is not a content problem. It is the wiring of the compliance layer.
 
-*Third.* Add to the salary-increment policy, at the next contract revision window, a clause that ties one of the existing increment tiers to demonstrated AI fluency — not seat-time, not certificate-collecting, but a documented practice-change submission reviewed by a peer panel of teachers from the same subject area. One policy revision. The mechanism for peer review is the same mechanism districts already use for National Board Certification renewals.
+The medical CME model is the right frame to think about the wiring, because medicine solved this problem fifty years ago and the solution has held. A physician earns CME credit for completing accredited online courses, including free ones from accredited providers. The American Board of Family Medicine requires roughly 200 CME credits over a five-year cycle, plus quarterly knowledge assessments tied to actual clinical practice. The Accreditation Council for Continuing Medical Education runs the accreditation system — it decides what counts. The key feature of that system is what it measures: not whether the physician attended the conference, but whether she completed a verified learning activity.
 
-None of these require legislation. None require a new budget line. All three require one decision: the decision that the system values demonstrated learning over documented attendance.
+Teaching's compliance layer measures the other thing. Most state professional-development frameworks measure seat-time. The clock-hour audit asks whether the teacher attended the workshop. It does not ask whether she can do something at the end that she could not do at the start. It does not ask whether the practice in her classroom changed. It does not ask, six months later, whether her students learned more.
 
-The content is there. Harvard published it. MIT published it. Stanford published it. The teachers who want it can find it inside an hour. The question this chapter wants to put in front of every district leader in America is whether the system that employs those teachers will build the recognition layer that makes the learning visible — or continue to pay vendors to deliver workshops on outdated tools, on slides written six months ago, to teachers who never asked for them and who are quietly learning what they actually need on YouTube, at midnight, on their own time, with no one in their professional lives the wiser.
+A system that measures attendance will get attendance. A system that measures learning will get something closer to learning. The argument I want to make is not about which is philosophically preferable — it is about which one changes teacher behavior, and the mechanism by which it does.
 
-*Trust the teacher* means something specific in this chapter. It means trust her to learn when learning is valued. It also means: build the system that values it.
+<!-- → [TABLE: side-by-side comparison of medicine's CME compliance model vs. teaching's PD compliance model — rows: What is measured, What triggers credit, Who decides what counts, Cadence of verification, Connection to demonstrated practice change, Consequence of non-completion. Columns: Medicine (CME/MOC), Teaching (current model), Teaching (proposed model). The table makes visible exactly which row is broken in the current teaching model and which row the chapter's fix addresses.] -->
+
 
 ---
 
-## What would change my mind
+## The single administrative decision
 
-A well-designed two-year district trial in which the recognition layer is changed — HarvardX completion counts as PD hours, study groups documented through standardized templates count as licensure-renewal hours, peer-reviewed practice-change submissions tie to salary increments — and the result is no measurable change in teacher AI fluency, no measurable change in classroom practice, and no measurable change in student outcomes, would force me to revise the chapter's central claim. The thinness of the *direct* evidence connecting changed incentive structures to changed teacher behavior in the AI-specific context is the chapter's load-bearing extrapolation. If the recognition fix is tried and does not move teacher behavior, the chapter is wrong about the binding constraint. The right reading would then be that the binding constraint is somewhere else — possibly time, possibly initial-training quality, possibly the absence of trusted peer networks. I would update.
+Here is the thing that the field has been reluctant to say plainly: a superintendent can fix the incentive problem for her district without legislation, without a new budget line, and without a vendor contract.
 
-## Still puzzling
+She needs to make one decision. The decision is: *what counts.*
+
+An administrative letter — one memo, one signature — recognizing documented completion of a defined slate of validated AI training (HarvardX, MITx, Stanford Online, Carnegie Mellon equivalents) as fulfilling professional-development hours under existing district PD policy, at a published per-course credit ratio, has fixed the incentive for her district by Wednesday. The content is already there. The teachers who want it can find it. The missing document is the one that says: *we see you. This counts.*
+
+That letter requires no new money. It requires no new program. It requires no new department. It requires a decision about what the district values, expressed in a form that the institutional machinery can read.
+
+The same logic extends to the recognition architecture that actually produces behavior change over time. Authorizing subject-specific study-group participation — documented through a standardized one-page monthly summary of what the teacher tried, what changed in the classroom, what surprised her about her students' responses — as a pathway toward licensure renewal hours is a policy revision. It uses the professional learning community structure that most districts already maintain. What changes is what counts as documentation of having done something.
+
+Adding to the salary-increment policy, at the next contract revision window, a clause tying one increment tier to demonstrated AI fluency — not seat-time, not certificate-collecting, but a documented practice-change submission reviewed by a peer panel from the same subject area — is one clause in one contract. The peer-review mechanism already exists in the form districts use for National Board Certification renewals. It is not an invention; it is a transplant.
+
+None of these require a legislature. All three require the same underlying decision, expressed through different institutional channels: *demonstrated learning is worth more than documented attendance.*
+
+---
+
+## The study-group layer, and why completion rates make it necessary
+
+The objection is obvious. Solo online courses have terrible completion rates. This is correct — MOOC completion rates for solo learners have hovered below ten percent across the published literature since roughly 2015, and the figure has been stable [Reich & Ruipérez-Valiente, *Science*, 2019]. A district that recognizes HarvardX completion and stops there will see most teachers not complete the courses.
+
+The fix for that is also nearly free. It is the study group.
+
+Ten teachers. One school. Same grade band or same subject area. Sixty minutes a month. The meeting documents what each teacher tried that month with an AI tool, what changed, what the students did differently, and what surprised the teacher. The documentation is proof of practice change — the third measure that the evaluation framework in this book has been calling for since Chapter 2.
+
+The cost to the district is the cost of a substitute teacher for one afternoon per semester, or nothing if the meeting runs during existing PLC time, which is already on most district calendars. The change is what is discussed in it.
+
+The advanced version — the one that scales — is train-the-trainers. A small cohort of six to ten teachers, librarians, and instructional coaches meets monthly and runs quarterly training sessions for their colleagues. The Agua Fria Union High School District in Arizona built something close to this architecture, walking the capability up from *how to generate a worksheet* to *how to design a deeper-learning experience that uses AI as a thinking partner without letting the AI do the thinking*, over two academic years [*Education Week*, "AI Teacher Leaders," 2025; verify exact program name and timing against EdWeek's archive]. The progression happened because the cadence allowed it. The trainers learned by teaching. The colleagues learned by trying what the trainers had tried the month before.
+
+This is the same architecture as medicine's Maintenance of Certification programs — not lectures, but case-conferences and clinical-reasoning exercises that doctors complete with peer practitioners, on a quarterly cadence, with documentation of the reasoning rather than just the answer. The substrate is different. The cost is a substitute teacher's afternoon and a shared document.
+
+<!-- → [DIAGRAM: two-tier train-the-trainers flow — top tier: "Core cohort (6–10 teachers, librarians, instructional coaches) — meets monthly, documents practice change." Arrow down to bottom tier: "Colleagues across the school — quarterly training sessions run by core cohort, trying what the cohort tried the month before." Alongside: timeline showing capability progression over two academic years from 'generate a worksheet' to 'design deeper-learning experiences using AI as thinking partner.' Reference: Agua Fria Union HSD model. Annotation: reader should see how the cadence is what allows the progression — not the content, not the technology.] -->
+
+
+---
+
+## The prescription, tight enough to use
+
+Three moves. A superintendent who reads this on a Tuesday could put the first one before her board on Thursday.
+
+**First.** Issue an administrative letter recognizing documented completion of a defined slate of validated AI training — HarvardX, MITx, Stanford Online, Carnegie Mellon equivalents — as fulfilling professional-development hours under existing district policy. Published per-course credit ratio. No new budget line. One memo. One signature.
+
+**Second.** Authorize subject-specific study-group participation, documented through a standardized one-page monthly summary of practice change and student response, as a pathway toward licensure renewal hours under existing state mechanisms. No new vendor contract. The PLC structure already exists in most districts; what is added is what counts as documentation.
+
+**Third.** Add to the salary-increment policy, at the next contract revision window, a clause tying one increment tier to demonstrated AI fluency — not seat-time, but a documented practice-change submission reviewed by a peer panel from the same subject area. One clause. The peer-review mechanism already exists in the National Board Certification renewal process.
+
+<!-- → [INFOGRAPHIC: three-step implementation timeline for a superintendent — Step 1 (this week): "Issue administrative letter — 1 memo, 1 signature, 0 new budget lines." Step 2 (this semester): "Authorize study-group PD documentation pathway — 1-page monthly template, uses existing PLC calendar." Step 3 (next contract window): "Add AI-fluency increment tier — 1 clause, peer-review mechanism borrowed from National Board Certification." Each step annotated with: what it requires, what it costs, what institutional signal it sends. The reader is a district leader; the infographic should feel like a decision brief, not a poster.] -->
+
+
+Now here is the thing I want to be honest about: the direct evidence connecting changed incentive structures specifically to changed teacher AI behavior and then to student outcomes is thin. The thicker evidence is about teacher behavior change under recognition frameworks in adjacent domains — which licenses an extrapolation but not a certainty. A two-year district trial in which the recognition layer is changed and no measurable change results would force me to revise the chapter's central claim. If the recognition fix is tried and does not move teacher behavior, then the binding constraint is somewhere else — possibly time, possibly the absence of trusted peer networks, possibly initial-training quality. I would update. The chapter's bet is that the binding constraint is recognition, because recognition is what every other professional-development system that works has treated as non-negotiable. But it is a bet.
+
+---
+
+## What is still unresolved
 
 Three things this chapter does not settle.
 
-The first is whether the specific HarvardX-style content holds up under domain-specificity scrutiny. The PCK literature predicts that subject-specific PD outperforms generic PD; the available HarvardX catalog is mostly generic. The right deployment is probably HarvardX as the foundation layer plus subject-specific study groups as the application layer, but the empirical evidence for that specific stack has not been generated yet.
+The first is whether the HarvardX-style content holds up under subject-specificity. The pedagogical content knowledge literature predicts that subject-specific PD outperforms generic PD. The available HarvardX catalog is mostly generic. The right deployment is probably HarvardX as a foundation layer plus subject-specific study groups as the application layer, but the empirical evidence for that specific stack has not been generated.
 
-The second is whether the incentive fix scales across the U.S. state-licensure patchwork. The fifty states have fifty different professional-development frameworks. A national prescription would have to be translated state by state. The chapter argues that the district-level decision is the right unit of change, but the state-level recognition of district-level decisions is the layer the chapter does not address.
+The second is whether the incentive fix scales across the U.S. state-licensure patchwork. Fifty states, fifty different PD frameworks. The chapter argues that the district-level decision is the right unit of change, but state-level recognition of district-level decisions is a layer the chapter does not address.
 
-The third is whether the peer-review mechanism for the salary-increment piece survives the political economy of the local teachers' union and the local school board. The mechanism exists in medicine and in the National Board Certification process. Whether it survives at the contract-bargaining table is a question this chapter cannot answer from outside the room.
+The third is whether the peer-review mechanism for the salary-increment piece survives the political economy of the local union and local board. It exists in medicine and in National Board Certification. Whether it survives at the contract-bargaining table is a question no chapter can answer from outside the room.
 
 ---
 
-**Tags:** professional development, teacher PD policy, HarvardX, MIT OpenCourseWare, ASSISTments, edX for Business, AI literacy fix, CME analog, PLC documentation, no-cost intervention, three-line prescription, recognition layer
+## LLM Exercises
+
+**Exercise 1 — Incentive audit.**
+Ask your preferred LLM: *"I'm a school principal. My district currently requires 20 hours of annual professional development. Draft a one-page administrative memo recognizing completion of [Course X] as fulfilling 8 of those hours, including a verification mechanism."* Review the output for what the model assumed about the verification mechanism. Is the assumption reasonable? What would you change?
+
+**Exercise 2 — The comparison prompt.**
+Provide the LLM with the ASSISTments $46/student figure and the $1,000/student EdTech procurement figure. Ask it to identify what the comparison implies for AI-PD budget allocation in a district of 3,000 students. Ask it to show its arithmetic. Check the arithmetic yourself. Where does the model make an assumption you'd contest?
+
+**Exercise 3 — Content mapping.**
+Ask the LLM to survey current free AI training offerings from Harvard, MIT, Stanford, and Carnegie Mellon and produce a comparison table: course name, provider, estimated hours, credential type (audit vs. certificate), cost, and subject-area applicability for K–12 teachers. Note which claims you cannot verify without navigating to the source. Verify two of them. What did the model get right? What did it get wrong or leave out?
+
+**Exercise 4 — Policy translation.**
+Describe to the LLM a specific state's teacher licensure framework (use your own state's, or look one up). Ask it to draft the specific PD-policy revision language that would allow documented AI course completion to count under that framework. What does the model do when the state framework doesn't have an obvious slot for this kind of credit? How does it handle the uncertainty?
+
+---
+
+*Trust the teacher means something specific here. It means: trust her to learn when learning is valued. Build the system that values it.*
