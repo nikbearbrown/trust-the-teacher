@@ -38,7 +38,7 @@ The opposite model — phones permitted, teachers manage it case by case in the 
 
 Hold both failures together, because the shared structure is what matters. The ban fails because the rule cannot adjust for the classroom and the learner in front of it; the enforcement cost lands on the children least equipped to absorb it. The no-rule fails because the call falls on a teacher who has not been prepared to make it well; the variance also lands on the children least equipped to absorb it. Both models are making the same mistake. They are trying to solve, at the policy level, a problem that lives at the level of the classroom, the lesson, and the specific student.
 
-![Three governance models compared across rule type, decision-maker, what flexes, and what breaks](images/09-phone-fridays-and-the-room-the-teacher-runs-fig-01.png)
+![Three governance models compared across rule type, decision-maker, what flexes, and what breaks](../images/09-phone-fridays-and-the-room-the-teacher-runs-fig-01.png)
 *Figure 9.01 — The three governance models compared*
 
 ---
@@ -107,12 +107,12 @@ The Tutor CoPilot study gave human tutors an AI assistant during real one-on-one
 
 This is a precise description of what good teaching looks like, empirically induced by a tool that the tutor was using in the background. The student's experience was better human attention. The mechanism by which the better attention happened was AI augmenting the human's judgment in real time. The caveat is real: this is one-on-one chat-based tutoring, not classroom instruction, and the causal chain to a classroom of thirty has not been established in a randomized trial. But the M-Powering Teachers research from Demszky's lab provides a brick-and-mortar version of the same pattern — automated feedback on teacher questioning practice, in real K-12 classrooms, producing a 20 percent increase in focusing questions — and the direction is the same. When a trained human has AI in her corner, the human does more of what good teaching looks like, not less.
 
-![Bar chart: Tutor CoPilot raises mastery 4 percentage points on average and 9 percentage points for lower-rated tutors, with mechanism note on probing-question shift](images/09-phone-fridays-and-the-room-the-teacher-runs-fig-02.png)
+![Bar chart: Tutor CoPilot raises mastery 4 percentage points on average and 9 percentage points for lower-rated tutors, with mechanism note on probing-question shift](../images/09-phone-fridays-and-the-room-the-teacher-runs-fig-02.png)
 *Figure 9.02 — Tutor CoPilot: what an AI in the tutor's corner changes*
 
 The cognitive division of labor that makes this work can be stated plainly. AI handles pattern recognition, recall, factual content delivery, routine first-pass feedback, summarization, translation, generating practice problems at a specified difficulty level. These are cognitively real tasks, but they are the kind of thinking machines do at scale, and having them done by machine is not a loss. What the teacher does that AI cannot is a different category: auditing whether the AI's output actually answers the question correctly in the context this specific student is working in; interpreting what a confused answer reveals about what the student is actually thinking; formulating which question to ask this student right now; and the hour-by-hour relational adjustment that comes from knowing this specific child across this specific year. These are the moves the history teacher is making when she walks the room with the dashboard. They are the moves the English teacher is making when she decides the Gatsby seminar does not need devices. They are not moves AI makes. They are the educational exemption. And the educational exemption only means anything when there is a trained teacher available to exercise it.
 
-![Two-column comparison of what AI handles at scale versus what only the teacher can do in this room with this student](images/09-phone-fridays-and-the-room-the-teacher-runs-fig-03.png)
+![Two-column comparison of what AI handles at scale versus what only the teacher can do in this room with this student](../images/09-phone-fridays-and-the-room-the-teacher-runs-fig-03.png)
 *Figure 9.03 — The cognitive division of labor: Tier 1 vs. Tier 4*
 
 ---
