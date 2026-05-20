@@ -27,7 +27,7 @@ The conclusion is wrong. Not because the studies are bad. Because the average is
 
 Imagine — this is a hypothetical, clearly labeled as such — a meta-analysis that pooled appendectomy outcomes across two groups: trained surgeons performing the operation in modern hospitals, and untrained village barbers performing it on kitchen tables. The trained-surgeon studies would show mortality reductions of ninety-plus percent. The barber studies would show mortality increases of thirty or forty percent. The pooled average would show that surgery "slightly helps but mostly doesn't." No one would believe such a meta-analysis. Anyone reading the methods section would notice that the variance the average is hiding *is the thing the data are actually about*. The average is the wrong question.
 
-![Flowchart: the same scalpel applied by untrained barbers and trained surgeons produces opposite mortality effects; the pooled meta-analytic average reads as "slightly helps but mostly doesn't," hiding the variance that the data are actually about.](images/05-the-professional-tool-fig-01.png)
+![Flowchart: the same scalpel applied by untrained barbers and trained surgeons produces opposite mortality effects; the pooled meta-analytic average reads as "slightly helps but mostly doesn't," hiding the variance that the data are actually about.](../images/05-the-professional-tool-fig-01.png)
 *Figure 5.01 — The appendectomy meta-analysis: why pooling can hide what the data are about*
 
 The right question is what the trained operator does with the tool, and what the untrained operator does with the same tool, and how large the gap between them is. The right answer, in the surgical case, is: enormous. Big enough that the average is a misleading number. Big enough that the variable the meta-analysis should be reporting on is the operator, not the operation.
@@ -56,7 +56,7 @@ The NOVICE Trial enrolled twenty-two residents with four dropouts. The precision
 
 The 1990s injury spike is gone. The instrument is the same. The injury rate is back to baseline. What closed the gap was a six-week box-trainer curriculum that, before the field built it, did not exist. The laparoscope did not become safer. The profession built the training that turned the laparoscope into a capability.
 
-![Line chart of common bile duct injury rate per 1,000 cholecystectomies from 1988 through 2010: a baseline near 2 per 1,000 under the open procedure, a spike to roughly 5 per 1,000 in the early-1990s laparoscopic era, then a steady descent back toward baseline by the mid-2000s as box-trainer simulation curricula became mandated.](images/05-the-professional-tool-fig-02.png)
+![Line chart of common bile duct injury rate per 1,000 cholecystectomies from 1988 through 2010: a baseline near 2 per 1,000 under the open procedure, a spike to roughly 5 per 1,000 in the early-1990s laparoscopic era, then a steady descent back toward baseline by the mid-2000s as box-trainer simulation curricula became mandated.](../images/05-the-professional-tool-fig-02.png)
 *Figure 5.02 — Bile duct injury rate over time*
 
 Three things from this literature go straight into the chapter's argument and don't need to be softened. First: a genuinely better tool can produce worse outcomes when its perceptual demands diverge from what the operator's training has prepared her for. The fulcrum effect — instruments pivoting through a trocar so that the surgeon's hand motion inverts at the tip — is not a problem the open procedure had ever made anyone solve. Two-dimensional monitor view replaces stereoscopic depth. The haptic feedback of fingertips on tissue is replaced by the muted signal of a one-meter lever. These are not deficiencies of the laparoscope. They are properties of the laparoscope that the operator has not yet learned to handle.
@@ -71,7 +71,7 @@ Third — and this is the pattern that will recur three more times in this chapt
 
 The same shape appears on a 4,000-acre Kansas wheat farm, in a literature that almost nobody writing about education has read, and that holds the argument up just as cleanly as the surgical literature does.
 
-![Histogram of farm efficiency scores from the 570-farm, 21-year Kansas Farm Management Association panel, right-skewed toward the efficiency frontier; brackets mark the lower end of the distribution where precision-ag adoption produced meaningful gains and the upper end where gains were negligible.](images/05-the-professional-tool-fig-03.png)
+![Histogram of farm efficiency scores from the 570-farm, 21-year Kansas Farm Management Association panel, right-skewed toward the efficiency frontier; brackets mark the lower end of the distribution where precision-ag adoption produced meaningful gains and the upper end where gains were negligible.](../images/05-the-professional-tool-fig-03.png)
 *Figure 5.03 — The KFMA efficiency distribution: where precision-ag technology moves a farm*
 
 In 2025, Kang Lan and Ruijie Ban published a meta-analysis in the journal *Sustainability* integrating 85 empirical studies and 1,472 independent farm observations from across the global precision-agriculture literature — yield monitors, GPS guidance, grid soil sampling, variable-rate fertilizer prescriptions. The pooled finding: precision-agriculture technology adoption increased average return on investment by 22.3 percent, net profit by 18.5 percent. Nitrogen use efficiency rose 15.1 percent. Pesticide application fell 12.8 percent. Greenhouse gas emissions fell 9.4 percent. The aggregate number is real and substantial.
@@ -129,7 +129,7 @@ Tutor CoPilot — an open-source tool developed at Stanford — was embedded in 
 
 The result: students working with tutors who had access to Tutor CoPilot were 4 percentage points more likely to master topics ($p < 0.01$). For students paired with lower-rated tutors — the ones at the bottom of the practitioner skill distribution — the gain was 9 percentage points.
 
-![Bar chart of percentage-point gain in student topic mastery for tutors who had access to Tutor CoPilot, grouped by tutor rating tercile: lower-rated tutors gained +9 percentage points, mid-rated tutors gained about +4 percentage points, higher-rated tutors gained approximately 0; pooled average +4 pp marked as dashed reference line.](images/05-the-professional-tool-fig-04.png)
+![Bar chart of percentage-point gain in student topic mastery for tutors who had access to Tutor CoPilot, grouped by tutor rating tercile: lower-rated tutors gained +9 percentage points, mid-rated tutors gained about +4 percentage points, higher-rated tutors gained approximately 0; pooled average +4 pp marked as dashed reference line.](../images/05-the-professional-tool-fig-04.png)
 *Figure 5.04 — Tutor CoPilot effect on student topic mastery, by tutor rating tercile*
 
 Four. Nine. Two numbers that have been sitting together in a working paper since October 2024, and that almost nobody teaching in a classroom has read.
