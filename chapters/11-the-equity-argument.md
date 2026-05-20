@@ -14,7 +14,7 @@ What makes this a story about AI and teacher training rather than a story about 
 
 This chapter names that pattern. Then it refuses the easy conclusion.
 
-![Four independent harms converging on the same low-income student population](images/11-the-equity-argument-fig-01.png)
+![Four independent harms converging on the same low-income student population](../images/11-the-equity-argument-fig-01.png)
 *Figure 11.01 — Four harms compounding on the same population*
 
 ---
@@ -44,7 +44,7 @@ The fourth is cognitive offloading in the rooms where scaffolding was thinnest. 
 
 The chain of inference looks like this. Bastani shows an average harm from unguided access. A separate line of research — Evans and Schamberg's 2009 PNAS paper on childhood poverty and working memory, Blair and Raver's program of work on poverty, chronic stress, and the development of executive function — establishes that the self-regulatory systems that would allow a student to resist the in-tool shortcut are, on average, more developed in children who grew up in lower-stress households. A third line — cognitive science on how fluent, frictionless answers produce the feeling of learning without the underlying schema construction — identifies the mechanism by which the shortcut is harmful. The three legs together produce the inference: the student least equipped to resist the unguided tool is the student whose executive function has been most strained by chronic stress. The inference is sound. It is three steps, not one. The chapter says so out loud so the reader can examine each link rather than take the conclusion on faith.
 
-![Three-step causal chain from low SES through chronic stress to reduced self-regulation and vulnerability to unguided AI shortcuts](images/11-the-equity-argument-fig-02.png)
+![Three-step causal chain from low SES through chronic stress to reduced self-regulation and vulnerability to unguided AI shortcuts](../images/11-the-equity-argument-fig-02.png)
 *Figure 11.02 — The causal chain to vulnerability: SES through executive function*
 
 Four harms. Not the same harm, not from the same actor, not coordinated by anyone. Landing on overlapping populations. Compounding. *Compounding* is not metaphor here; it is the empirical pattern of independent harms summing on a population whose capacity to absorb them was already below the mean before any of them arrived. This is the structural shape of every harm this book has documented. Nobody designed the combined outcome. Nobody is accountable for it. The students absorb the sum.
@@ -59,7 +59,7 @@ The in-domain proof is the Wang, Ribeiro, Robinson, Loeb, and Demszky Tutor CoPi
 
 Lower-rated tutors disproportionately work in under-resourced settings. They are the less-experienced, less-credentialed practitioners that programs running on thin margins can afford. The Tutor CoPilot finding is the clearest available demonstration of what happens when you pair AI with the practitioner at the bottom of the skill distribution rather than the top. The tool levels the floor.
 
-![Bar chart of Tutor CoPilot gains by tercile: bottom +9pp middle +4pp top about +1pp showing the floor-lifting pattern](images/11-the-equity-argument-fig-03.png)
+![Bar chart of Tutor CoPilot gains by tercile: bottom +9pp middle +4pp top about +1pp showing the floor-lifting pattern](../images/11-the-equity-argument-fig-03.png)
 *Figure 11.03 — Tutor CoPilot: the catch-up shape by tutor-rating tercile*
 
 The same shape appears in the customer-support literature. Brynjolfsson, Li, and Raymond's *Generative AI at Work* — 5,179 agents, a year of staggered rollout, published in the *Quarterly Journal of Economics* — found an average fourteen percent productivity gain, approximately thirty-four percent for the bottom quartile of pre-AI performance, near zero at the top. The AI was not helping the expert. The AI was doing for the new hire what five years of experience had done for the top performer — surfacing the right move, in the moment, before she had built the intuition to find it herself.
