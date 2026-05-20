@@ -28,7 +28,7 @@ Uttl and colleagues found three problems. The small-sample studies had the large
 
 After proper weighting, bias correction, and re-extraction: the SET-learning correlation in the multisection literature is approximately zero. Student evaluations explain at most one percent of the variance in student learning outcomes. After controlling for the well-documented effect of expected grade on ratings, the correlation tips slightly negative.
 
-![Bar chart of multisection-study correlations Cohen 1981 0.43 Feldman 1989 0.33 Uttl 2017 near zero Uttl Cnudde 2019 0.06 showing drift toward zero with methodological correction](images/10-three-honest-measures-fig-01.png)
+![Bar chart of multisection-study correlations Cohen 1981 0.43 Feldman 1989 0.33 Uttl 2017 near zero Uttl Cnudde 2019 0.06 showing drift toward zero with methodological correction](../images/10-three-honest-measures-fig-01.png)
 *Figure 10.01 — The SET–learning correlation drifts to zero as methodology tightens*
 
 The defenders' rebuttals have each been examined. A 2019 follow-up by Uttl and Cnudde, published in *PeerJ*, looked at the same literature for conflicts of interest. The pattern is visible in the data, following exactly the pattern of pharmaceutical-funded drug trials. Studies with identifiable ties to SET vendors reported large positive correlations. Studies without them reported correlations near zero. Research published before 1981 — when the vendors were establishing their market — showed correlations around $r = 0.31$. Research published after, as independent replication accumulated, showed correlations near $r = 0.06$. The historical evidence that student evaluations measure learning was, in substantial part, produced by the people selling the instruments. This is the pharmaceutical-funder effect, ported into educational measurement, never named as such by the field that adopted the result.
@@ -79,7 +79,7 @@ In 2015, Lillian MacNell, Adam Driscoll, and Andrea Hunt published a study in *I
 
 Students rated the perceived-male identity significantly higher on nearly every dimension. The dimension that should have been impossible to bias was promptness of feedback — feedback returned at literally the same times by both perceived identities. Students rated the perceived-male instructor higher on promptness anyway. A man was rated better for the same act, performed by the same person, at the same moment in time.
 
-![Diagram of the MacNell Driscoll Hunt 2015 name-swap experiment with two instructors each appearing under male and female perceived identities and the rating differentials including promptness](images/10-three-honest-measures-fig-02.png)
+![Diagram of the MacNell Driscoll Hunt 2015 name-swap experiment with two instructors each appearing under male and female perceived identities and the rating differentials including promptness](../images/10-three-honest-measures-fig-02.png)
 *Figure 10.02 — The name-swap experiment: same instructor, same words, different ratings*
 
 The sample is small — one course, forty-three students. The replication did the rest of the work.
