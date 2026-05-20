@@ -13,7 +13,7 @@ A company called Glimpse K12 checked the login data. In 2017 and 2018, they audi
 
 A billion dollars. Per year. Not in failing schools. In all schools, averaged out, as a structural feature of how educational technology gets purchased.
 
-![Three concentric rings labeled $165 billion pure-play software at the center, $310 billion total EdTech in the middle ring, and $6 trillion global education in the outer ring, with a shaded wedge in the outer ring identifying teacher payroll as the plurality line item](images/02-the-app-fig-01.png)
+![Three concentric rings labeled $165 billion pure-play software at the center, $310 billion total EdTech in the middle ring, and $6 trillion global education in the outer ring, with a shaded wedge in the outer ring identifying teacher payroll as the plurality line item](../images/02-the-app-fig-01.png)
 *Figure 2.01 — The three nested denominators of "the EdTech industry"*
 
 The teachers — the humans the software was ostensibly bought *for* — were, in most cases, not asked which platforms they wanted. Were not trained to use the ones that arrived. Were not told how any of it was supposed to fit into the lessons they were already trying to teach.
@@ -72,7 +72,7 @@ Consider five deployments of the same underlying model — a large language mode
 
 *Deployment five.* AI as teacher replacement — the configuration most commonly featured in press releases — in which the student interacts with the AI and no human is in the loop at all.
 
-![Five side-by-side panels showing the same large language model deployed under five different configurations, each diagramming student-model-teacher relationships, with teacher presence rising from panel one (unguided) through panel four (teacher copilot) and collapsing again in panel five (replacement)](images/02-the-app-fig-02.png)
+![Five side-by-side panels showing the same large language model deployed under five different configurations, each diagramming student-model-teacher relationships, with teacher presence rising from panel one (unguided) through panel four (teacher copilot) and collapsing again in panel five (replacement)](../images/02-the-app-fig-02.png)
 *Figure 2.02 — Five deployments of the same LLM, same school, opposite-sign effects*
 
 These five deployments share a press release but not an effect. The same model, deployed in configuration one versus configuration four, can produce outcomes of opposite sign. That is the finding this chapter is built around. It is also, by and large, the finding the EdTech industry is not putting in the marketing deck.
@@ -119,7 +119,7 @@ ASSISTments is a free online math homework platform developed at Worcester Polyt
 
 A tenth of a standard deviation is not transformational. In the language of education research it is small-to-moderate — roughly three or four months of additional learning growth sustained through the following year. The reason to slow down on this number is what produced it.
 
-![Two stacked bar columns side by side, the left labeled ASSISTments at $46 per student with almost all height in a teacher-PD band, the right labeled typical district EdTech buy at about $1,000 per student split across software seats and hardware with a sliver of PD, joined by an arrow indicating an inverted ratio at roughly 22 times the cost](images/02-the-app-fig-03.png)
+![Two stacked bar columns side by side, the left labeled ASSISTments at $46 per student with almost all height in a teacher-PD band, the right labeled typical district EdTech buy at about $1,000 per student split across software seats and hardware with a sliver of PD, joined by an arrow indicating an inverted ratio at roughly 22 times the cost](../images/02-the-app-fig-03.png)
 *Figure 2.03 — Two budgets, inverted: which line item the learning gain actually rides*
 
 WestEd's 2024 cost-effectiveness analysis put the all-in cost of the Maine implementation at $46.23 per student per school year.
@@ -146,7 +146,7 @@ Where Horvath goes beyond his evidence is in what he concludes from these number
 
 The PISA, TIMSS, and PIRLS correlations measure ambient, recreational-grade screen exposure — six hours of unspecified daily computer use, much of it outside school, almost none of it under structured teacher direction.
 
-![Horizontal bar chart of meta-analytic effect sizes by EdTech intervention type, with writing instruction at +0.81 at the top, blended learning and assistive tech at +0.61, intelligent tutoring at +0.52, unrestricted general tech at +0.29, and one-to-one laptops at +0.16 at the bottom, with a dashed vertical line marking the pooled average of +0.29](images/02-the-app-fig-04.png)
+![Horizontal bar chart of meta-analytic effect sizes by EdTech intervention type, with writing instruction at +0.81 at the top, blended learning and assistive tech at +0.61, intelligent tutoring at +0.52, unrestricted general tech at +0.29, and one-to-one laptops at +0.16 at the bottom, with a dashed vertical line marking the pooled average of +0.29](../images/02-the-app-fig-04.png)
 *Figure 2.04 — The variance hidden by the average Horvath averages over*
 
 The meta-analytic average of +0.29 bundles together randomized trials of intelligent tutoring systems (around +0.52), blended learning with bounded online time (around +0.61), assistive technology for students with learning disabilities (around +0.61), writing instruction tools (around +0.81), one-to-one laptop programs (around +0.16), unrestricted general technology use (around +0.29), and a long tail of vendor pilots with no usable comparison group. Averaging these and concluding that EdTech doesn't work is the equivalent of a medical meta-analysis that combines surgeries performed by trained surgeons with surgeries performed by untrained barbers and concludes that surgery slightly helps but mostly isn't worth it. The correct conclusion is not *surgery doesn't work*. The correct conclusion is *surgical training matters*.
@@ -171,7 +171,7 @@ The tractor also did not farm itself.
 
 A tractor without a trained operator is a $90,000 ornament. The first farmers who tried to use early tractors without instruction broke equipment, compacted soil, planted too deep, harvested too early. The training infrastructure — county extension services, state agricultural colleges, USDA demonstration programs — took two decades to build out and was, in the historical record, as important as the machine itself in translating tractor capability into agricultural productivity. The economist Zvi Griliches, in a 1957 paper that became one of the most-cited in economic history, found that the rate at which farmers adopted high-yield hybrid corn was determined not by the corn's agronomic quality — which was the same everywhere — but by the capacity of the local extension service to train farmers to use it. The seed was the same. The training was not.
 
-![Top row of three panels showing tractor plus untrained operator yielding broken equipment, tractor plus trained operator yielding productivity gains, and the same structural diagram applied to platform plus teacher in a classroom yielding either negative or positive learning outcomes; bottom row of three labeled boxes naming the three places the analogy breaks down — active harm, measurement, and AI-as-collaborator](images/02-the-app-fig-05.png)
+![Top row of three panels showing tractor plus untrained operator yielding broken equipment, tractor plus trained operator yielding productivity gains, and the same structural diagram applied to platform plus teacher in a classroom yielding either negative or positive learning outcomes; bottom row of three labeled boxes naming the three places the analogy breaks down — active harm, measurement, and AI-as-collaborator](../images/02-the-app-fig-05.png)
 *Figure 2.05 — The tractor analogy in three panels and three places it bleeds*
 
 The platform is the tractor. The trained teacher is the operator. The school is the farm.
