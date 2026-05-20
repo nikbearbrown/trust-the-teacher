@@ -158,42 +158,4 @@ That institution exists, in most districts, as a set of forms that measure the w
 
 The rubric for a working professional development system is not complicated. The question is whether anyone in the building is grading it.
 
----
 
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the figures in this chapter. Each produces a standalone HTML file you can open in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into your Claude project context before using these prompts. They define the stack, naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 13.1 — Content problem vs incentive problem
-
-Build a two-column diagnostic infographic in D3 v7. Left column header: "1. Content problem — Does high-quality material exist? Can a teacher access it?" with a SOLVED stamp in `var(--color-ink)`. Right column header: "2. Incentive problem — Does the institution recognize completion?" with an UNTOUCHED stamp in `var(--color-secondary)`. Each column body is a tinted card listing five items. Left column items: HarvardX DPI 681M (Goel/Levy/Svoronos), CS50 AI & Prompt Engineering, MIT OpenCourseWare, Stanford Online, Carnegie Mellon. Right column items: salary schedule, licensure hours, evaluation rubric, portable credential, stipend or release time. Below the two columns, render a centered "Where district AI-training dollars go" label, then a flow line bifurcating left and right of center — a solid arrow with marker to the left column labeled "~all spending flows here (vendor workshops on content)" and a dashed neutral line to the right column labeled "negligible flow to recognition." Standalone HTML, D3 v7 from cdnjs 7.9.0, inline CSS/JS, accessible (role="img", title, desc, tabindex on items), ResizeObserver, dark-mode aware via CSS variables.
-
-> Reference implementation: `d3/13-the-fix-fig-01.html`
-
----
-
-### Figure 13.2 — Per-student annual spending
-
-Build a horizontal bar chart in D3 v7 comparing three per-student annual spending patterns on a shared zero baseline from $0 to $1,100. Data: ASSISTments at $46 total (all used, teacher time + coaching, statistically significant math gains); Prevailing EdTech at $1,000 total (split into ~$334 used and ~$666 unused — render the unused portion as a dashed/hatched continuation of the same bar with an inline "~⅔ of licenses never opened" note); Proposed reallocation at $1,000 total (split at $150 HarvardX verified certificate in `var(--color-red)` and $850 reserved per teacher rendered as a dashed-outline empty rectangle, with an inline note "reserved for peer time, study groups, stipends"). Y-axis: row labels with two-line names (label + sub). X-axis: dollar ticks at $0, $250, $500, $750, $1,000. Annotation arc over the chart: "22× spending, no comparable outcome evidence." Legend below: four swatches matching the bar treatments. Standalone HTML, D3 v7 from cdnjs 7.9.0, inline CSS/JS using `var(--color-*)`, accessible, ResizeObserver, dark-mode aware.
-
-> Reference implementation: `d3/13-the-fix-fig-02.html`
-
----
-
-### Figure 13.3 — Medicine vs teaching compliance layers
-
-Build a three-column comparison table in D3 v7 (Dimension / Medicine / Teaching) with four rows. Rows 1–3 are neutral; row 4 is the fault-line row, highlighted with `var(--color-red)` fill in the Dimension cell and `var(--color-red)` borders on the Medicine and Teaching cells. Row data: (1) Accreditor — Medicine: "ACCME, single national body"; Teaching: "State PD frameworks, 50 states, no national equivalent." (2) Required volume — Medicine: "~200 CME credits / 5-year cycle, plus quarterly knowledge assessments"; Teaching: "PD clock-hours / renewal cycle, typically 20–50 hrs/year, no assessment." (3) Assessment tied to practice — Medicine: "Quarterly knowledge questions; case conferences in MOC"; Teaching: "Sign-in sheet; no end-of-activity demonstration." (4) FAULT LINE — Medicine: "Did the physician complete a verified learning activity? (measures change in capability)"; Teaching: "Was the teacher in the room? (measures attendance only)." Below the table, render a connecting U-shaped dashed arrow from the medicine fault cell to the teaching fault cell, then a centered claim: "A system that measures attendance will get attendance. A system that measures learning will get something closer to learning." Standalone HTML, D3 v7 from cdnjs 7.9.0, inline CSS/JS using `var(--color-*)`, accessible (tabindex, aria-label per cell, tooltips on hover), ResizeObserver, dark-mode aware.
-
-> Reference implementation: `d3/13-the-fix-fig-03.html`
-
----
-
-### Figure 13.4 — The one-page superintendent's memo
-
-Build a one-page administrative-memo mockup in D3 v7. The page is a centered rectangle with a 6px `var(--color-ink)` ribbon along the top edge. Letterhead row: "OFFICE OF THE SUPERINTENDENT" left, "MEMORANDUM" right, in `letter-spacing: 0.08em` Inter. Four meta lines below the rule: TO / FROM / RE / DATE — the DATE line reads "Effective immediately · No new budget required." Centered title: "Three administrative decisions, one signature." Then three move-boxes stacked vertically, each a tinted card with a numbered circle (1, 2, 3) on the left — circle 3 uses `var(--color-red)` to mark the only contract-window move. Each move card has a bold move-title, three body lines, a SIGNAL stamp (e.g. "SIGNAL: learning is valued") in white-on-ink (or white-on-red for move 3), and a right-aligned italic note "new budget required: $0." On the left margin, render day-tags ("Tue" next to move 1, "Thu" next to move 3) with small arrows pointing into the page to suggest the Tuesday→Thursday cadence. Bottom: signature line + "— signed, the superintendent." Hover/keyboard focus on a move surfaces a tooltip with the full move text. Standalone HTML, D3 v7 from cdnjs 7.9.0, inline CSS/JS using `var(--color-*)`, accessible, ResizeObserver, dark-mode aware.
-
-> Reference implementation: `d3/13-the-fix-fig-04.html`
