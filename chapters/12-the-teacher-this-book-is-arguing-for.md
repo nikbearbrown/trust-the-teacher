@@ -208,14 +208,4 @@ The teacher is already in the room. The work that remains is to build what she n
 19. Schultz, W., Dayan, P., & Montague, P. R. (1997). "A Neural Substrate of Prediction and Reward." *Science* 275: 1593–1599.
 20. Ballotpedia. Cell phones in schools. https://ballotpedia.org/Cell_phones_in_schools
 
----
 
-## Prompts
-
-### Figure 12.3 — Bastani three-condition closed-book performance
-
-Build a vertical bar chart, 700×440 viewBox, three bars left to right: Control, GPT Tutor (scaffolded), GPT Base (unscaffolded). Y-axis is percent of Control post-test performance with a strict zero baseline running from 0 to 100, ticks every 25. Control and GPT Tutor sit at 100; GPT Base sits at 83. Use warm grayscale only — `#fdfcfb` canvas, `#1a1714` ink, `#4a4540` secondary, `#8a8480` axis, `#c8c4c0` muted. The two near-equal bars take a mid-gray fill; the GPT Base bar takes the darker ink fill so the eye lands on the gap, not on the bars that match. On the right of the GPT Base bar, draw a vertical bracket between y=100 and y=83 with serifs at top and bottom, and label it `−17%` with `vs Control` beneath. Add two dashed annotation arrows: one to the left cluster reading "scaffolded condition: neutral on post-test," one to GPT Base reading "fluent in the moment, underperforms when the tool is taken away." Font stack `'EB Garamond', Georgia, 'Times New Roman', serif` throughout. Caption attributes Bastani et al., PNAS 122(26): e2422633122 (2025). Reference implementation: `images/12-the-teacher-this-book-is-arguing-for-fig-03.svg`.
-
-### Figure 12.4 — The 2025-26 policy ledger
-
-Build a two-column ledger infographic, 700×480 viewBox, that reads as a balance sheet of one policy window. Left column "What we funded" uses solid-ink header and tinted-fill rows; right column "What we did not" uses an outlined header and dashed-border rows on the canvas. Each row is `{big number, label, one-line description}`. Left rows: `$5.2M / LAUSD pouches`, `$29M / NYC pouches`, `$800K / Houston pouches`, and a fourth accent row (dark fill, light text) `33 / state laws / phone bans signed, 2024-26`. Right rows: `frozen / Title II-A funds`, `67% / AI licenses unused`, `rescinded / FCC E-Rate hotspots + bus Wi-Fi`, `0 / state laws funding teacher AI training`. Below each column, a 1px rule and an italicized subtotal line. At the bottom, a single horizontal arrow path bridging the two columns with the caption "The exemption was written. The teacher who would have used it was not funded." Warm grayscale only — same palette as fig-03. Font stack `'EB Garamond', Georgia, 'Times New Roman', serif`. Source attribution: Ballotpedia phone-ban tracker, district procurement filings, Glimpse K-12, FCC. Reference implementation: `images/12-the-teacher-this-book-is-arguing-for-fig-04.svg`.
