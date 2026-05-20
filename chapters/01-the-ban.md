@@ -9,7 +9,7 @@ This is the policy. A billion-dollar industry grew up around it. Twenty-two stat
 New York spent $29 million on pouches and the infrastructure to manage them. Los Angeles spent $5.2 million. Houston allocated $800,000.
 <!-- FACT-CHECK FLAG: UNVERIFIED — Houston $800,000 allocation not directly confirmed in single source. See factchecks/01-the-ban-assertions.md --> The political coalition that built this wave spans left and right, urban and rural, teachers' unions and parent groups who agree on almost nothing else. It is, by any ordinary measure, a successful piece of education policy.
 
-![Paired bar chart of suspension-rate change by demographic subgroup, showing a +16% year-one spike for Black students against ~0% for White and Hispanic peers, with all groups returning toward baseline in year two](images/01-the-ban-fig-01.png)
+![Paired bar chart of suspension-rate change by demographic subgroup, showing a +16% year-one spike for Black students against ~0% for White and Hispanic peers, with all groups returning toward baseline in year two](../images/01-the-ban-fig-01.png)
 *Figure 1.01 — The aggregate verdict was good; the distributional verdict, in year one, was not*
 
 The suspension numbers for Black students in that Florida district rose sixteen percent in year one.
