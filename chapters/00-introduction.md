@@ -139,18 +139,4 @@ Let's begin.
 5. Wang, R. E., Ribeiro, A. T., Robinson, C. D., Loeb, S., & Demszky, D. (2024). "Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise." arXiv:2410.03017. https://arxiv.org/abs/2410.03017
 6. Cuban, L. (1986). *Teachers and Machines: The Classroom Use of Technology Since 1920*. Teachers College Press.
 
----
 
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the figures in this chapter. Each produces a standalone HTML file you can open in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into your Claude project context before using these prompts. They define the stack, naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 0.1 — The shape of the argument
-
-Build a single-figure book map in D3 v7 that lays out the book's twelve chapters in three vertical columns labelled Movement I (The Wrong Answers, Ch. 1–3), Movement II (The Evidence, Ch. 4–7), and Movement III (The Work, Ch. 8–12). Each chapter is a card with chapter number, chapter title, and a one-sentence blurb available on hover. Highlight chapters 2, 5, 6, 8, 9, and 12 as "on the AI+1 teacher thread" with a heavier border; render chapter 12 as the capstone with the heaviest border and bold title. Draw a dashed connector line through those six chapters in the order 2 → 5 → 6 → 8 → 9 → 12, with a small dot at each connection point. Include a legend below the cards distinguishing thread chapters, scaffolding chapters, and the thread line itself. Cards are keyboard-focusable; tooltip on hover and focus shows the blurb. Standalone HTML, D3 v7 from the pinned CDN, inline CSS/JS, accessible markup (role, title, desc, aria-label), responsive via ResizeObserver, dark-mode aware, prefers-reduced-motion respected.
-
-> Reference implementation: `d3/00-introduction-fig-01.html`
