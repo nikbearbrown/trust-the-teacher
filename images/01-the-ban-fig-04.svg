@@ -1,0 +1,104 @@
+<svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttb04-t ttb04-d">
+  <title id="ttb04-t">Medicine's full regulatory stack vs. teaching's partial stack</title>
+  <desc id="ttb04-d">Two four-layer columns. Medicine has all four layers filled (rule, profession-written exceptions, mandatory 50-hour-per-year continuing education, license renewal). Teaching has only the bottom two layers filled (rule, exemption clause) while the top two layers (no required training, no renewal tie) are drawn as empty dashed boxes.</desc>
+  <defs>
+    <marker id="ttb04-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <style>
+      .ti  { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #2a1a0e; }
+      .sub { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #4a4540; }
+      .col { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #2a1a0e; }
+      .lyr { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #2a1a0e; }
+      .det { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .miss{ font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #8a8480; }
+      .det-miss { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #8a8480; font-style: italic; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .ax  { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+    </style>
+  </defs>
+  <rect width="700" height="460" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" text-anchor="middle" class="ti">The legislative move borrowed half of medicine's regulatory model</text>
+  <text x="350" y="50" text-anchor="middle" class="sub">Medicine writes rules with the profession and pays for the training to enforce them. Teaching wrote the rule.</text>
+
+  <!-- Column headers -->
+  <text x="200" y="86" text-anchor="middle" class="col">Medicine</text>
+  <text x="200" y="102" text-anchor="middle" class="sub">full regulatory stack</text>
+  <text x="500" y="86" text-anchor="middle" class="col">Teaching</text>
+  <text x="500" y="102" text-anchor="middle" class="sub">partial regulatory stack</text>
+
+  <!-- Row label gutter (left side, brown) -->
+  <text x="40"  y="148" class="ax">Layer 4</text>
+  <text x="40"  y="220" class="ax">Layer 3</text>
+  <text x="40"  y="292" class="ax">Layer 2</text>
+  <text x="40"  y="364" class="ax">Layer 1</text>
+
+  <!-- ============================================== -->
+  <!-- MEDICINE COLUMN — four filled layers           -->
+  <!-- ============================================== -->
+
+  <!-- Layer 4: License renewal -->
+  <rect x="100" y="120" width="200" height="56" fill="#c8c4c0" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="200" y="142" text-anchor="middle" class="lyr">License renewal</text>
+  <text x="200" y="158" text-anchor="middle" class="det">tied to demonstrated</text>
+  <text x="200" y="170" text-anchor="middle" class="det">continuing learning</text>
+
+  <!-- Layer 3: Mandatory CE 50 hr/yr -->
+  <rect x="100" y="192" width="200" height="56" fill="#8a8480" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="200" y="214" text-anchor="middle" class="lyr" fill="#fdfcfb">Mandatory CE</text>
+  <text x="200" y="230" text-anchor="middle" class="det" fill="#f5f2ee">50 hours / year,</text>
+  <text x="200" y="242" text-anchor="middle" class="det" fill="#f5f2ee">enforced by board</text>
+
+  <!-- Layer 2: Profession-written exceptions -->
+  <rect x="100" y="264" width="200" height="56" fill="#4a4540" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="200" y="286" text-anchor="middle" class="lyr" fill="#fdfcfb">Exceptions written</text>
+  <text x="200" y="300" text-anchor="middle" class="lyr" fill="#fdfcfb">with the profession</text>
+  <text x="200" y="314" text-anchor="middle" class="det" fill="#f5f2ee">trained judgment required</text>
+
+  <!-- Layer 1: Rule -->
+  <rect x="100" y="336" width="200" height="56" fill="#2a1a0e" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="200" y="358" text-anchor="middle" class="lyr" fill="#fdfcfb">The rule</text>
+  <text x="200" y="374" text-anchor="middle" class="det" fill="#f5f2ee">statute &amp; standards of</text>
+  <text x="200" y="386" text-anchor="middle" class="det" fill="#f5f2ee">care, set by legislation</text>
+
+  <!-- ============================================== -->
+  <!-- TEACHING COLUMN — two filled, two missing      -->
+  <!-- ============================================== -->
+
+  <!-- Layer 4 — MISSING -->
+  <rect x="400" y="120" width="200" height="56" fill="#fdfcfb" stroke="#8a8480" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="500" y="142" text-anchor="middle" class="miss">No renewal tie</text>
+  <text x="500" y="158" text-anchor="middle" class="det-miss">recertification, where it exists,</text>
+  <text x="500" y="170" text-anchor="middle" class="det-miss">decoupled from learning</text>
+
+  <!-- Layer 3 — MISSING -->
+  <rect x="400" y="192" width="200" height="56" fill="#fdfcfb" stroke="#8a8480" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="500" y="214" text-anchor="middle" class="miss">No required training</text>
+  <text x="500" y="230" text-anchor="middle" class="det-miss">no sustained, practice-embedded</text>
+  <text x="500" y="242" text-anchor="middle" class="det-miss">PD funded at scale</text>
+
+  <!-- Layer 2 — present but thin: exemption clause -->
+  <rect x="400" y="264" width="200" height="56" fill="#c8c4c0" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="500" y="286" text-anchor="middle" class="lyr">Exemption clause</text>
+  <text x="500" y="300" text-anchor="middle" class="det">"for educational purposes"</text>
+  <text x="500" y="314" text-anchor="middle" class="det">— undefined, untrained</text>
+
+  <!-- Layer 1: Rule -->
+  <rect x="400" y="336" width="200" height="56" fill="#2a1a0e" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="500" y="358" text-anchor="middle" class="lyr" fill="#fdfcfb">The rule</text>
+  <text x="500" y="374" text-anchor="middle" class="det" fill="#f5f2ee">phone-ban statute,</text>
+  <text x="500" y="386" text-anchor="middle" class="det" fill="#f5f2ee">passed in 33 states</text>
+
+  <!-- Connector arrow noting the gap -->
+  <line x1="312" y1="148" x2="388" y2="148" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#ttb04-arrow)"/>
+  <text x="350" y="140" text-anchor="middle" class="det">missing</text>
+
+  <line x1="312" y1="220" x2="388" y2="220" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#ttb04-arrow)"/>
+  <text x="350" y="212" text-anchor="middle" class="det">missing</text>
+
+  <!-- Caption -->
+  <text x="350" y="430" text-anchor="middle" class="cap">A statute that distrusts teachers in the abstract and depends on them in the particulars</text>
+  <text x="350" y="446" text-anchor="middle" class="cap">is a structurally unstable place to leave a policy.</text>
+</svg>

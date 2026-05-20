@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 1.4 — Regulatory stack: medicine vs teaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #2a1a0e;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+
+    --stack-1: #2a1a0e;
+    --stack-2: #4a4540;
+    --stack-3: #8a8480;
+    --stack-4: #c8c4c0;
+    --stack-empty-ink: #8a8480;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+
+      --stack-1: #F0EBE3;
+      --stack-2: #C4BBA8;
+      --stack-3: #8A8174;
+      --stack-4: #4A4540;
+      --stack-empty-ink: #A0978C;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--color-white);
+    color: var(--color-ink);
+    font-family: 'Inter', sans-serif;
+    padding: 24px;
+    line-height: 1.4;
+  }
+  h1 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  p.subtitle {
+    color: var(--color-secondary);
+    font-size: 13px;
+    margin-bottom: 24px;
+    max-width: 65ch;
+    font-family: 'Inter', sans-serif;
+  }
+  #chart { width: 100%; min-height: 480px; }
+  .col-header { font-family: 'EB Garamond', Georgia, serif; font-weight: 700; font-size: 16px; fill: var(--color-ink); }
+  .col-sub    { font-family: 'Inter', sans-serif; font-size: 12px; fill: var(--color-secondary); }
+  .layer-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: var(--color-secondary); }
+  .layer-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; }
+  .layer-detail { font-family: 'Inter', sans-serif; font-size: 11px; }
+  .missing-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; fill: var(--stack-empty-ink); }
+  .missing-detail { font-family: 'Inter', sans-serif; font-style: italic; font-size: 11px; fill: var(--stack-empty-ink); }
+  .gap-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: var(--color-secondary); }
+  .caption { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-style: italic; fill: var(--color-secondary); }
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    background: var(--color-white);
+    color: var(--color-ink);
+    border: 1px solid var(--color-border);
+    padding: 8px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    max-width: 280px;
+    box-shadow: 0 6px 20px -6px rgb(18 18 18 / 0.14);
+  }
+  .tooltip strong { font-weight: 700; }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<h1>Figure 1.4 — The regulatory stack medicine built and teaching skipped</h1>
+<p class="subtitle">Both professions sit under a statutory rule. Medicine layered profession-written exceptions, mandatory continuing education, and renewal accountability on top of the rule. Teaching wrote the rule and stopped. Hover any layer for what it does.</p>
+<div id="chart" role="main"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const stackData = {
+  medicine: [
+    { layer: 1, title: 'The rule', detail: 'statute & standards of care, set by legislation', present: true, tooltip: 'A floor below which no practitioner can drop. The same kind of rule that phone-ban statutes provide for teachers.' },
+    { layer: 2, title: 'Exceptions written with the profession', detail: 'trained judgment required', present: true, tooltip: 'Medical boards co-author exceptions; they presume trained judgment. The exception is a tool, not a loophole.' },
+    { layer: 3, title: 'Mandatory CE', detail: '50 hours / year, enforced by board', present: true, tooltip: 'Sustained, ongoing, board-tracked continuing education — not a one-off webinar. The infrastructure for keeping judgment current.' },
+    { layer: 4, title: 'License renewal', detail: 'tied to demonstrated continuing learning', present: true, tooltip: 'You renew by showing you learned. The accountability that closes the loop on layer 3.' }
+  ],
+  teaching: [
+    { layer: 1, title: 'The rule', detail: 'phone-ban statute, passed in 33 states', present: true, tooltip: 'The bell-to-bell rule. Strong on its own — the part of the stack the legislature did build.' },
+    { layer: 2, title: 'Exemption clause', detail: '"for educational purposes" — undefined, untrained', present: true, tooltip: 'Every U.S. phone-ban statute carries an "educational purposes" exception. None defines the term operationally. Judgment without scaffolding.' },
+    { layer: 3, title: 'No required training', detail: 'no sustained, practice-embedded PD funded at scale', present: false, tooltip: 'Missing layer. The professional preparation that would let a teacher exercise the exemption defensibly does not exist at the scale the statute presumes.' },
+    { layer: 4, title: 'No renewal tie', detail: 'recertification, where it exists, decoupled from learning', present: false, tooltip: 'Missing layer. Teaching recertification, when required at all, is rarely tied to ongoing demonstrated learning the way medical relicensure is.' }
+  ]
+};
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select(container).selectAll('*').remove();
+
+  const width  = container.clientWidth || 800;
+  const height = Math.max(480, Math.min(560, width * 0.62));
+
+  const margin = { top: 88, right: 24, bottom: 56, left: 88 };
+  const chartWidth  = width  - margin.left - margin.right;
+  const chartHeight = height - margin.top  - margin.bottom;
+
+  const svg = d3.select(container).append('svg')
+    .attr('width',  width)
+    .attr('height', height)
+    .attr('role',   'img')
+    .attr('aria-labelledby', 'fig04-title fig04-desc');
+
+  svg.append('title').attr('id', 'fig04-title')
+    .text('Medicine vs teaching: four-layer regulatory stack');
+  svg.append('desc').attr('id', 'fig04-desc')
+    .text('Two columns. Medicine has four filled layers: rule, profession-written exceptions, mandatory continuing education, license renewal. Teaching has the bottom two layers filled (rule, exemption clause) and the top two layers missing (no required training, no renewal tie).');
+
+  const gChart = svg.append('g')
+    .attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Two columns side by side
+  const colGap = 64;
+  const colWidth = (chartWidth - colGap) / 2;
+
+  const columns = [
+    { key: 'medicine', x: 0,                     label: 'Medicine', sub: 'full regulatory stack',    data: stackData.medicine },
+    { key: 'teaching', x: colWidth + colGap,     label: 'Teaching', sub: 'partial regulatory stack', data: stackData.teaching }
+  ];
+
+  // y scale: layer 1 at bottom, layer 4 at top
+  const yScaleBand = d3.scaleBand()
+    .domain([4, 3, 2, 1])
+    .range([0, chartHeight])
+    .padding(0.12);
+
+  // Column headers
+  const gHeaders = svg.append('g').attr('class', 'g-headers');
+  columns.forEach(col => {
+    gHeaders.append('text')
+      .attr('class', 'col-header')
+      .attr('x', margin.left + col.x + colWidth / 2)
+      .attr('y', 50)
+      .attr('text-anchor', 'middle')
+      .text(col.label);
+    gHeaders.append('text')
+      .attr('class', 'col-sub')
+      .attr('x', margin.left + col.x + colWidth / 2)
+      .attr('y', 68)
+      .attr('text-anchor', 'middle')
+      .text(col.sub);
+  });
+
+  // Layer gutter labels (left)
+  const gLayerLabels = gChart.append('g').attr('class', 'g-layer-labels');
+  [4,3,2,1].forEach(L => {
+    gLayerLabels.append('text')
+      .attr('class', 'layer-label')
+      .attr('x', -16)
+      .attr('y', yScaleBand(L) + yScaleBand.bandwidth() / 2 + 4)
+      .attr('text-anchor', 'end')
+      .text(`Layer ${L}`);
+  });
+
+  // Tooltip
+  const tooltip = d3.select('body').selectAll('.tooltip').data([0]).join('div')
+    .attr('class', 'tooltip');
+
+  function showTooltip(event, d) {
+    tooltip
+      .html(`<strong>${d.title}</strong><br>${d.tooltip}`)
+      .style('left', (event.pageX + 12) + 'px')
+      .style('top',  (event.pageY - 28) + 'px')
+      .transition().duration(150).style('opacity', 1);
+  }
+  function moveTooltip(event) {
+    tooltip
+      .style('left', (event.pageX + 12) + 'px')
+      .style('top',  (event.pageY - 28) + 'px');
+  }
+  function hideTooltip() {
+    tooltip.transition().duration(100).style('opacity', 0);
+  }
+
+  // Draw each column
+  columns.forEach(col => {
+    const gCol = gChart.append('g')
+      .attr('class', `g-col g-col-${col.key}`)
+      .attr('transform', `translate(${col.x},0)`);
+
+    const layers = gCol.selectAll('.stack-layer')
+      .data(col.data, d => `${col.key}-${d.layer}`)
+      .join('g')
+        .attr('class', 'stack-layer')
+        .attr('tabindex', 0)
+        .attr('role', 'group')
+        .attr('aria-label', d => `${col.label} layer ${d.layer}: ${d.present ? d.title : 'missing — ' + d.title}. ${d.detail}.`);
+
+    // Fill mapping for medicine (graduated luminance, layer 1 darkest)
+    const fillFor = (col, d) => {
+      if (!d.present) return 'var(--color-white)';
+      if (col.key === 'medicine') {
+        return d.layer === 1 ? 'var(--stack-1)'
+             : d.layer === 2 ? 'var(--stack-2)'
+             : d.layer === 3 ? 'var(--stack-3)'
+             :                  'var(--stack-4)';
+      }
+      // teaching: present layers use stack-1 (rule, dark) and stack-4 (exemption, light)
+      return d.layer === 1 ? 'var(--stack-1)' : 'var(--stack-4)';
+    };
+
+    const inkFor = (col, d) => {
+      if (!d.present) return 'var(--stack-empty-ink)';
+      if (col.key === 'medicine') {
+        return (d.layer === 1 || d.layer === 2) ? 'var(--color-white)' : 'var(--color-ink)';
+      }
+      return d.layer === 1 ? 'var(--color-white)' : 'var(--color-ink)';
+    };
+
+    layers.append('rect')
+      .attr('class', 'layer-rect')
+      .attr('x', 0)
+      .attr('y', d => yScaleBand(d.layer))
+      .attr('width', colWidth)
+      .attr('height', yScaleBand.bandwidth())
+      .attr('fill', d => fillFor(col, d))
+      .attr('stroke', d => d.present ? 'var(--color-ink)' : 'var(--stack-empty-ink)')
+      .attr('stroke-width', 1)
+      .attr('stroke-dasharray', d => d.present ? null : '4 3')
+      .style('cursor', 'pointer');
+
+    layers.append('text')
+      .attr('class', d => d.present ? 'layer-title' : 'missing-title')
+      .attr('x', colWidth / 2)
+      .attr('y', d => yScaleBand(d.layer) + yScaleBand.bandwidth() / 2 - 4)
+      .attr('text-anchor', 'middle')
+      .attr('fill', d => inkFor(col, d))
+      .text(d => d.title);
+
+    layers.append('text')
+      .attr('class', d => d.present ? 'layer-detail' : 'missing-detail')
+      .attr('x', colWidth / 2)
+      .attr('y', d => yScaleBand(d.layer) + yScaleBand.bandwidth() / 2 + 14)
+      .attr('text-anchor', 'middle')
+      .attr('fill', d => inkFor(col, d))
+      .text(d => d.detail);
+
+    layers
+      .on('mouseover', (event, d) => showTooltip(event, d))
+      .on('mousemove', moveTooltip)
+      .on('mouseout',  hideTooltip)
+      .on('focus',     function(event, d) {
+        const bbox = this.getBoundingClientRect();
+        const fakeEvent = { pageX: bbox.left + bbox.width / 2 + window.scrollX,
+                            pageY: bbox.top + window.scrollY };
+        showTooltip(fakeEvent, d);
+      })
+      .on('blur', hideTooltip)
+      .on('keydown', function(event, d) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          const bbox = this.getBoundingClientRect();
+          const fakeEvent = { pageX: bbox.left + bbox.width / 2 + window.scrollX,
+                              pageY: bbox.top + window.scrollY };
+          showTooltip(fakeEvent, d);
+        }
+      });
+  });
+
+  // Gap arrows between columns at missing layers
+  const gGap = gChart.append('g').attr('class', 'g-gap');
+  [3, 4].forEach(L => {
+    const y = yScaleBand(L) + yScaleBand.bandwidth() / 2;
+    const x1 = colWidth + 6;
+    const x2 = colWidth + colGap - 6;
+
+    gGap.append('defs').append('marker')
+      .attr('id', `arrow-${L}`)
+      .attr('markerWidth', 8).attr('markerHeight', 6)
+      .attr('refX', 7).attr('refY', 3).attr('orient', 'auto')
+      .append('polygon').attr('points', '0 0, 8 3, 0 6')
+      .attr('fill', 'var(--color-ink)');
+
+    gGap.append('line')
+      .attr('x1', x1).attr('y1', y).attr('x2', x2).attr('y2', y)
+      .attr('stroke', 'var(--color-ink)')
+      .attr('stroke-width', 1)
+      .attr('stroke-dasharray', '3 3')
+      .attr('marker-end', `url(#arrow-${L})`);
+
+    gGap.append('text')
+      .attr('class', 'gap-label')
+      .attr('x', (x1 + x2) / 2)
+      .attr('y', y - 6)
+      .attr('text-anchor', 'middle')
+      .text('missing');
+  });
+
+  // Caption beneath
+  svg.append('text')
+    .attr('class', 'caption')
+    .attr('x', width / 2)
+    .attr('y', height - 18)
+    .attr('text-anchor', 'middle')
+    .text('A statute that distrusts teachers in the abstract and depends on them in the particulars.');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

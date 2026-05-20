@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 13.2 — Per-student annual spending</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; }
+  #chart { width: 100%; min-height: 440px; position: relative; }
+  .axis text { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: var(--color-secondary); }
+  .axis path, .axis line { stroke: var(--color-secondary); shape-rendering: crispEdges; }
+  .grid line { stroke: var(--color-border); stroke-opacity: 0.6; shape-rendering: crispEdges; }
+  .grid path { stroke: none; }
+  .row-label { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-weight: 700; fill: var(--color-ink); }
+  .row-sub { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .bar-used        { fill: var(--color-ink); transition: opacity 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .bar-unused      { fill: var(--color-secondary); opacity: 0.55; stroke: var(--color-ink); stroke-dasharray: 3 2; stroke-width: 0.6; }
+  .bar-vendor-used { fill: var(--color-secondary); transition: opacity 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .bar-cert        { fill: var(--color-red); transition: opacity 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .bar-reserve     { fill: none; stroke: var(--color-ink); stroke-dasharray: 4 3; stroke-width: 1; }
+  .value-label     { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-weight: 700; fill: var(--color-ink); }
+  .value-label.on-dark { fill: var(--color-white); }
+  .inline-note     { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .inline-note.on-dark { fill: var(--color-white); font-weight: 600; }
+  .legend-text     { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .annot           { font-family: 'EB Garamond', Georgia, serif; font-size: 12px; font-weight: 700; fill: var(--color-ink); }
+  .caption { color: var(--color-secondary); font-size: 12px; margin-top: 16px; font-style: italic; max-width: 80ch; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-size: 12px; font-family: 'Inter', sans-serif; transition: opacity 150ms cubic-bezier(0.2,0.8,0.2,1); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 13.2 — Per-student annual spending</h1>
+<p class="subtitle">Three patterns on a shared zero baseline. Bar length = dollars per student per year.</p>
+<div id="chart" role="img" aria-labelledby="ch-t ch-d"></div>
+<p class="caption">Sources: ASSISTments per-student cost figure from Roschelle et al. (2016); prevailing EdTech procurement and unused-license rate from district audits.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const spendingData = [
+  { id: 'assistments', label: 'ASSISTments',          sub: 'free software, teacher time + coaching', total: 46,   used: 46,  unused: 0,    note: 'statistically significant math gains (state assessments)' },
+  { id: 'edtech',      label: 'Prevailing EdTech',    sub: 'vendor licenses, workshops',             total: 1000, used: 334, unused: 666,  note: '~⅔ of licenses never opened' },
+  { id: 'realloc',     label: 'Proposed reallocation', sub: 'HarvardX cert + reserved per teacher',  total: 1000, cert: 150, reserve: 850, note: '$850 reserved (peer time, study groups, stipends)' }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, html) {
+  tooltip.html(html)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 28) + 'px')
+    .style('opacity', 1);
+}
+function moveTip(event) {
+  tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px');
+}
+function hideTip() { tooltip.style('opacity', 0); }
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+
+  const totalWidth = container.clientWidth || 800;
+  const totalHeight = 440;
+  const margin = { top: 24, right: 40, bottom: 96, left: 200 };
+  const chartWidth = totalWidth - margin.left - margin.right;
+  const chartHeight = totalHeight - margin.top - margin.bottom;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'ch-t ch-d');
+  svg.append('title').attr('id', 'ch-t').text('Per-student annual spending — ASSISTments, prevailing EdTech, proposed reallocation');
+  svg.append('desc').attr('id', 'ch-d').text('Horizontal bar chart of three per-student annual spending patterns at $46, $1000, and a $150/$850 split. Shared zero baseline.');
+
+  const gChart = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const xScaleLinear = d3.scaleLinear().domain([0, 1100]).range([0, chartWidth]);
+  const yScaleBand   = d3.scaleBand().domain(spendingData.map(d => d.id)).range([0, chartHeight]).padding(0.32);
+
+  // Gridlines
+  gChart.append('g').attr('class', 'grid').attr('transform', `translate(0,${chartHeight})`)
+    .call(d3.axisBottom(xScaleLinear).ticks(5).tickSize(-chartHeight).tickFormat(''));
+
+  // Axes
+  gChart.append('g').attr('class', 'axis').attr('transform', `translate(0,${chartHeight})`)
+    .call(d3.axisBottom(xScaleLinear).ticks(5).tickFormat(d => '$' + d3.format(',')(d)));
+
+  // Row labels
+  gChart.selectAll('.row-label-g').data(spendingData).join('g')
+    .attr('class', 'row-label-g')
+    .attr('transform', d => `translate(-12,${yScaleBand(d.id) + yScaleBand.bandwidth() / 2})`)
+    .each(function(d) {
+      const sel = d3.select(this);
+      sel.append('text').attr('class', 'row-label').attr('text-anchor', 'end').attr('y', -4).text(d.label);
+      sel.append('text').attr('class', 'row-sub').attr('text-anchor', 'end').attr('y', 12).text(d.sub);
+    });
+
+  // Bars
+  spendingData.forEach(d => {
+    const y = yScaleBand(d.id);
+    const h = yScaleBand.bandwidth();
+
+    if (d.id === 'realloc') {
+      // Cert segment
+      gChart.append('rect').attr('class', 'bar-cert')
+        .attr('x', 0).attr('y', y).attr('width', xScaleLinear(d.cert)).attr('height', h)
+        .attr('tabindex', 0)
+        .attr('aria-label', `Verified certificate: $${d.cert} per teacher`)
+        .on('mouseover', (event) => showTip(event, `<strong>HarvardX verified certificate</strong><br>$${d.cert} per teacher`))
+        .on('mousemove', moveTip).on('mouseout', hideTip);
+
+      // Reserve segment (dashed outline)
+      gChart.append('rect').attr('class', 'bar-reserve')
+        .attr('x', xScaleLinear(d.cert)).attr('y', y).attr('width', xScaleLinear(d.reserve)).attr('height', h)
+        .attr('tabindex', 0)
+        .attr('aria-label', `Reserved for peer time and stipends: $${d.reserve} per teacher`)
+        .on('mouseover', (event) => showTip(event, `<strong>Reserved per teacher</strong><br>$${d.reserve} for peer time, study groups, stipends`))
+        .on('mousemove', moveTip).on('mouseout', hideTip);
+
+      gChart.append('text').attr('class', 'value-label on-dark')
+        .attr('x', xScaleLinear(d.cert) / 2).attr('y', y + h / 2 + 4)
+        .attr('text-anchor', 'middle').text(`$${d.cert}`);
+
+      gChart.append('text').attr('class', 'inline-note')
+        .attr('x', xScaleLinear(d.cert) + xScaleLinear(d.reserve) / 2)
+        .attr('y', y + h / 2 + 4)
+        .attr('text-anchor', 'middle')
+        .style('font-weight', 600)
+        .text(d.note);
+    } else {
+      // used portion
+      gChart.append('rect').attr('class', d.id === 'assistments' ? 'bar-used' : 'bar-vendor-used')
+        .attr('x', 0).attr('y', y).attr('width', xScaleLinear(d.used)).attr('height', h)
+        .attr('tabindex', 0)
+        .attr('aria-label', `${d.label} used spending: $${d.used} per student`)
+        .on('mouseover', (event) => showTip(event, `<strong>${d.label}</strong><br>Used: $${d.used}`))
+        .on('mousemove', moveTip).on('mouseout', hideTip);
+
+      if (d.unused > 0) {
+        gChart.append('rect').attr('class', 'bar-unused')
+          .attr('x', xScaleLinear(d.used)).attr('y', y).attr('width', xScaleLinear(d.unused)).attr('height', h)
+          .attr('tabindex', 0)
+          .attr('aria-label', `${d.label} unused spending: $${d.unused} per student`)
+          .on('mouseover', (event) => showTip(event, `<strong>${d.label}</strong><br>Unused (~⅔ of licenses): $${d.unused}`))
+          .on('mousemove', moveTip).on('mouseout', hideTip);
+
+        gChart.append('text').attr('class', 'inline-note on-dark')
+          .attr('x', xScaleLinear(d.used) + xScaleLinear(d.unused) / 2)
+          .attr('y', y + h / 2 + 4)
+          .attr('text-anchor', 'middle')
+          .text(d.note);
+      } else {
+        gChart.append('text').attr('class', 'inline-note')
+          .attr('x', xScaleLinear(d.total) + 12).attr('y', y + h / 2 + 4)
+          .text(d.note);
+      }
+
+      // total label at end
+      const lblX = xScaleLinear(d.total) + (d.unused > 0 ? -8 : 8);
+      const anchor = d.unused > 0 ? 'end' : 'start';
+      gChart.append('text').attr('class', 'value-label')
+        .attr('x', lblX).attr('y', y - 6)
+        .attr('text-anchor', anchor)
+        .text(`$${d3.format(',')(d.total)}`);
+    }
+  });
+
+  // Annotation: 22x note
+  const annotY = -8;
+  svg.append('defs').append('marker')
+    .attr('id', 'arrow13b').attr('markerWidth', 8).attr('markerHeight', 6)
+    .attr('refX', 7).attr('refY', 3).attr('orient', 'auto')
+    .append('polygon').attr('points', '0 0, 8 3, 0 6').attr('fill', 'var(--color-ink)');
+
+  gChart.append('text').attr('class', 'annot')
+    .attr('x', chartWidth / 2).attr('y', annotY)
+    .attr('text-anchor', 'middle')
+    .text('22× spending, no comparable outcome evidence');
+
+  // Legend
+  const legendY = chartHeight + 56;
+  const legend = gChart.append('g').attr('transform', `translate(0,${legendY})`);
+  const items = [
+    { color: 'var(--color-ink)',       label: 'teacher time / coaching', kind: 'fill' },
+    { color: 'var(--color-secondary)', label: 'used vendor seats',       kind: 'fill' },
+    { color: 'var(--color-secondary)', label: 'unused vendor seats',     kind: 'unused' },
+    { color: 'var(--color-red)',       label: 'HarvardX verified cert ($150)', kind: 'fill' }
+  ];
+  let lx = 0;
+  items.forEach(item => {
+    const ig = legend.append('g').attr('transform', `translate(${lx},0)`);
+    if (item.kind === 'unused') {
+      ig.append('rect').attr('width', 14).attr('height', 10)
+        .attr('fill', item.color).attr('opacity', 0.55)
+        .attr('stroke', 'var(--color-ink)').attr('stroke-width', 0.6).attr('stroke-dasharray', '3 2');
+    } else {
+      ig.append('rect').attr('width', 14).attr('height', 10).attr('fill', item.color);
+    }
+    ig.append('text').attr('class', 'legend-text').attr('x', 20).attr('y', 9).text(item.label);
+    lx += 30 + item.label.length * 6.5;
+  });
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

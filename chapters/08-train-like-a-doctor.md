@@ -82,6 +82,9 @@ Coaching closes the distance. The coach is in the room, or available on a same-d
 
 One more finding from the Kraft meta-analysis deserves its own sentence. *More coaching hours did not reliably produce larger effects.* Above a threshold of roughly ten contact hours, additional time did not predictably translate into additional gain. What mattered was the structure — the cycles, the content focus, the embeddedness in actual classroom practice, the focused-problem framing — rather than the raw hours. Add more time to a poorly structured intervention and you get more of something that is not working. Restructure the intervention and you get the gain.
 
+![Effect-size-vs-contact-hours line chart with two curves on the same axes. Horizontal axis: contact hours of professional development, 0 to 80. Vertical axis: effect size on instructional practice (Cohen's d), 0.0 to 0.6. Curve 1 (workshop-format PD): flat near d=0 across all hours, shown as a dashed gray line. Curve 2 (Kraft coaching): rises steeply from 0 to about ten hours reaching d≈0.49, then plateaus with no reliable extra gain across the rest of the range. A dashed vertical reference line marks the Yoon (2007) 14-hour threshold below which workshop PD shows no detectable effect on student achievement. The figure illustrates that structure, not raw hours, produces the gain.](../images/08-train-like-a-doctor-fig-04.png)
+*Figure 8.4 — Effect size vs. contact hours: workshops stay flat, coaching plateaus at ~10 hours*
+
 The lesson for the AI moment is precise: the answer is not to make the August workshop a full day instead of half a day, or to require three vendor demos a year instead of one. The answer is to put a trained AI coach in the building for cycles of structured work with grade-level teams across the school year. The intervention has a shape. Adding more of the wrong shape does not produce the right shape.
 
 Laura Desimone named the structural features in 2009: content focus grounded in subject-matter expertise, active learning where teachers do the work rather than watch it, coherence with the curriculum, sufficient duration spread over time, and collective participation by teachers from the same school or department. The Learning Policy Institute's 2017 review added two more: models of effective practice, and coaching with cycles of feedback and reflection. Seven features. Every one maps onto what medical CME does at its best. Almost none describes what the typical U.S. district one-shot AI workshop does.
@@ -276,3 +279,19 @@ Why has the medical CME system held up as well as it has under fifty years of su
 - U.S. Department of Education. *Supporting Effective Instruction State Grants (Title II, Part A)*. https://www.ed.gov/grants-and-programs/formula-grants/school-improvement-grants/supporting-effective-instruction-state-grants-title-ii-part
 - U.S. Department of Education. (2024). *State and District Use of Title II, Part A Funds in 2023–24*. https://www.ed.gov/media/document/state-and-district-use-of-title-ii-part-funds-2023-24-109457.pdf
 - Yoon, K. S., Duncan, T., Lee, S. W.-Y., Scarloss, B., & Shapley, K. (2007). *Reviewing the evidence on how teacher professional development affects student achievement* (Issues & Answers Report, REL 2007–No. 033). Regional Educational Laboratory Southwest. https://files.eric.ed.gov/fulltext/ED498548.pdf
+
+---
+
+## Prompts
+
+Use this prompt with Claude to generate an interactive D3 v7 version of the figure in this chapter. The output is a standalone HTML file you can open in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into your Claude project context before using the prompt. They define the stack, naming conventions, color system, and typography the figure uses.
+
+---
+
+### Figure 8.4 — Effect size vs. contact hours
+
+Build a single two-line chart in D3 v7 showing how effect size on instructional practice (Cohen's d) varies with professional development contact hours. X-axis: contact hours, linear 0 to 80. Y-axis: effect size d, linear 0 to 0.6, zero baseline. Curve 1 — workshop-format PD: flat near d ≈ 0.02 across the full x range, rendered in var(--color-secondary) with a dashed stroke. Curve 2 — sustained coaching (Kraft, Blazar & Hogan 2018): a saturating curve rising from (0, 0) to (~10, 0.49), then plateau with a tiny declining drift above 15 hours; render in var(--color-red), solid 2.5px stroke, monotone-x interpolation. Add a dashed vertical reference line in var(--color-ochre) at x = 14 hours, labeled "Yoon (2007): 14-hour threshold — below = null on student achievement." Mark the (10h, d=0.49) plateau point with a filled circle and a leader-line annotation reading "d ≈ 0.49 at ~10 hours · Kraft, Blazar & Hogan (2018)." Add a secondary annotation along the coaching plateau reading "Plateau: more hours, no reliable extra gain." Standalone HTML, D3 7.9.0 from the pinned cdnjs CDN, inline CSS/JS, accessible (role="img", title, desc, aria-label on the plateau marker), ResizeObserver redraw, hover tooltip with `(event, d)` signature, prefers-reduced-motion respected.
+
+> Reference implementation: `d3/08-train-like-a-doctor-fig-04.html`

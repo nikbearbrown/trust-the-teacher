@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure B.3 — The Measure 3 annual cycle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+    --color-panel:     #F5F2EE;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+      --color-panel:     #1A1714;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 65ch; }
+  #chart { width: 100%; min-height: 480px; }
+  .wedge { fill: var(--color-panel); stroke: var(--color-ink); stroke-width: 1; transition: fill 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .wedge:hover, .wedge.active { fill: var(--color-white); stroke-width: 1.5; }
+  .center-circle { fill: var(--color-white); stroke: var(--color-ink); stroke-width: 1.25; }
+  .step-num   { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-weight: 700; fill: var(--color-ink); }
+  .step-title { font-family: 'EB Garamond', Georgia, serif; font-size: 12px; font-weight: 700; fill: var(--color-ink); }
+  .step-body  { font-family: 'EB Garamond', Georgia, serif; font-size: 10px; fill: var(--color-ink); }
+  .center-bold { font-family: 'EB Garamond', Georgia, serif; font-size: 12px; font-weight: 700; fill: var(--color-ink); }
+  .center      { font-family: 'EB Garamond', Georgia, serif; font-size: 11px; font-style: italic; fill: var(--color-ink); }
+  .yr-label    { font-family: 'EB Garamond', Georgia, serif; font-size: 10px; fill: var(--color-secondary); }
+  .arrow       { stroke: var(--color-ink); stroke-width: 1.25; fill: none; }
+  .caption     { font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 11px; fill: var(--color-secondary); margin-top: 12px; max-width: 65ch; }
+  .tooltip     { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-family: 'Inter', sans-serif; font-size: 12px; max-width: 280px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure B.3 — The Measure 3 annual cycle</h1>
+<p class="subtitle">Four sequential components, looped year over year. Modelled on the ABFM Maintenance of Certification structure: continuous, embedded, low-stakes per step.</p>
+<div id="chart" role="img" aria-labelledby="chart-title chart-desc"></div>
+<p class="caption">Year N's evidence and panel review become the conversation that names Year N+1's growth area. The loop is the point — renewal happens by cycle, not by single audit event.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const stepData = [
+  { id: 1, angle: -Math.PI / 2, title: 'Growth area named',  body: ['Specific, documented,', 'connected downstream.'], tooltip: 'Teacher names, at the start of the cycle, the specific area she intends to grow her practice in. AI-specific practice is a defensible default in 2026.' },
+  { id: 2, angle: 0,            title: 'PD engaged with',     body: ['Coaching, coursework,', 'study group, observation.'], tooltip: 'What did the teacher do — coaching cycles, study groups, peer observation, conference participation, independent reading — connected to the growth area.' },
+  { id: 3, angle: Math.PI / 2,  title: 'Evidence of change',  body: ['Portfolio: artifacts, video,', 'student work, reflection.'], tooltip: 'Load-bearing component. Classroom observation, teacher artifacts, video where possible, student work, narrative reflection. The portfolio is archived.' },
+  { id: 4, angle: Math.PI,      title: 'Peer panel review',   body: ['NBPTS-renewal model,', 'funded peer time.'], tooltip: 'Panel of credentialed peers from the same subject area, structured rubric, written feedback. The political problem is funding the peer time.' }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, d) {
+  tooltip.html(`<strong>Step ${d.id} — ${d.title}</strong><br/>${d.tooltip}`)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTip(event) { tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px'); }
+function hideTip() { tooltip.transition().duration(100).style('opacity', 0); }
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+  const totalWidth  = container.clientWidth || 700;
+  const totalHeight = 480;
+  const margin = { top: 24, right: 24, bottom: 56, left: 24 };
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'chart-title chart-desc');
+  svg.append('title').attr('id', 'chart-title').text('The Measure 3 annual cycle: four components looped year over year');
+  svg.append('desc').attr('id', 'chart-desc').text('A cyclical wheel showing growth area named, PD engaged with, evidence of practice change, peer panel review, in clockwise sequence.');
+
+  const defs = svg.append('defs');
+  defs.append('marker')
+    .attr('id', 'arrowEnd3').attr('markerWidth', 10).attr('markerHeight', 8)
+    .attr('refX', 8).attr('refY', 4).attr('orient', 'auto')
+    .append('polygon').attr('points', '0 0, 10 4, 0 8').attr('fill', 'currentColor');
+
+  const cx = totalWidth / 2;
+  const cy = totalHeight / 2 - 8;
+  const gChart = svg.append('g').attr('transform', `translate(${cx},${cy})`);
+
+  const innerR = 76;
+  const outerR = 160;
+  const padAngle = 0.06;
+
+  const arcGen = d3.arc()
+    .innerRadius(innerR)
+    .outerRadius(outerR)
+    .padAngle(padAngle);
+
+  const wedgeAngle = Math.PI / 2;
+  const wedges = stepData.map(d => {
+    // Each wedge centred on d.angle, spanning ±wedgeAngle/2
+    return {
+      ...d,
+      startAngle: d.angle - wedgeAngle / 2,
+      endAngle:   d.angle + wedgeAngle / 2
+    };
+  });
+  // d3.arc uses angle 0 at 12 o'clock. Our convention: standard math (0 at 3 o'clock).
+  // Convert: d3-angle = math-angle + Math.PI/2.
+  const toD3Angle = a => a + Math.PI / 2;
+
+  gChart.selectAll('.wedge')
+    .data(wedges, d => d.id)
+    .join('path')
+      .attr('class', 'wedge')
+      .attr('d', d => arcGen({ startAngle: toD3Angle(d.startAngle), endAngle: toD3Angle(d.endAngle) }))
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `Step ${d.id}: ${d.title}. ${d.tooltip}`)
+      .on('mouseover', function (event, d) { d3.select(this).classed('active', true); showTip(event, d); })
+      .on('mousemove', moveTip)
+      .on('mouseout',  function () { d3.select(this).classed('active', false); hideTip(); })
+      .on('focus', function (event, d) {
+        const bb = this.getBoundingClientRect();
+        showTip({ pageX: bb.left + bb.width / 2, pageY: bb.top + bb.height / 2 }, d);
+        d3.select(this).classed('active', true);
+      })
+      .on('blur', function () { d3.select(this).classed('active', false); hideTip(); });
+
+  // Center disc
+  gChart.append('circle').attr('class', 'center-circle').attr('r', innerR - 4);
+  gChart.append('text').attr('class', 'center-bold').attr('text-anchor', 'middle').attr('y', -8).text('Measure 3');
+  gChart.append('text').attr('class', 'center').attr('text-anchor', 'middle').attr('y', 10).text('Annual cycle');
+  gChart.append('text').attr('class', 'center').attr('text-anchor', 'middle').attr('y', 26).text('(or biennial)');
+
+  // Labels — positioned at midpoint radius
+  const labelR = (innerR + outerR) / 2;
+  stepData.forEach(d => {
+    const x = labelR * Math.cos(d.angle);
+    const y = labelR * Math.sin(d.angle);
+    // For the top wedge, push labels up; bottom, push down
+    const yOff = d.angle === -Math.PI / 2 ? -28 : (d.angle === Math.PI / 2 ? 6 : -18);
+    gChart.append('text').attr('class', 'step-num').attr('text-anchor', 'middle').attr('x', x).attr('y', y + yOff).text(d.id);
+    gChart.append('text').attr('class', 'step-title').attr('text-anchor', 'middle').attr('x', x).attr('y', y + yOff + 18).text(d.title);
+    d.body.forEach((line, i) => {
+      gChart.append('text').attr('class', 'step-body').attr('text-anchor', 'middle').attr('x', x).attr('y', y + yOff + 34 + i * 12).text(line);
+    });
+  });
+
+  // Curved arrows showing flow between wedges
+  const arrowR = outerR + 12;
+  for (let i = 0; i < stepData.length; i++) {
+    const a1 = stepData[i].angle + wedgeAngle / 2 + 0.04;
+    const a2 = stepData[(i + 1) % stepData.length].angle - wedgeAngle / 2 - 0.04;
+    const x1 = arrowR * Math.cos(a1);
+    const y1 = arrowR * Math.sin(a1);
+    const x2 = arrowR * Math.cos(a2);
+    const y2 = arrowR * Math.sin(a2);
+    gChart.append('path')
+      .attr('class', 'arrow')
+      .attr('d', `M ${x1} ${y1} A ${arrowR} ${arrowR} 0 0 1 ${x2} ${y2}`)
+      .attr('marker-end', 'url(#arrowEnd3)');
+  }
+
+  // Year labels outside
+  gChart.append('text').attr('class', 'yr-label').attr('text-anchor', 'middle').attr('x', -200).attr('y', 0).text('Year N');
+  gChart.append('text').attr('class', 'yr-label').attr('text-anchor', 'middle').attr('x', 200).attr('y', 0).text('Year N+1');
+  gChart.append('path').attr('class', 'arrow').attr('stroke-dasharray', '3 2').attr('d', 'M -180 0 L -168 0');
+  gChart.append('path').attr('class', 'arrow').attr('stroke-dasharray', '3 2').attr('d', 'M 168 0 L 188 0');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

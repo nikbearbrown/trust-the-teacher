@@ -16,6 +16,9 @@ The instrument American education uses to make tenure and contract decisions —
 
 Three measures. None is sufficient alone. Each is used only for what it can defensibly measure. The forbidden use for each is named explicitly, because the failure mode of the current system is exactly the use the literature does not support.
 
+![Three columns side by side — Measure 1 Student Wellbeing, Measure 2 Student Learning Gains, Measure 3 Teacher Learning — each naming what it measures, the defensible use, and the forbidden use, with a binding caption that none is sufficient alone.](../images/14-appendix-b-three-measure-framework-fig-01.png)
+*Figure B.1 — The three-measure framework: none is sufficient alone.*
+
 ### Measure 1 — Student Wellbeing
 
 The instrument you almost certainly already have is some version of the IDEA student perception survey, the ETS Student Instructional Report II, or a locally-administered Likert-scale instrument the district built in the 1990s and has been administering ever since. Keep it. The instrument is psychometrically defensible at what it reliably measures, which is whether students felt respected, intellectually challenged without being humiliated, and treated as people rather than as enrollment units. That dimension matters. [Hattie's synthesis of meta-analyses](https://www.visiblelearningmetax.com) places teacher-student relationships at *d* ≈ 0.72 and psychological safety at *d* ≈ 0.44. The relational climate of a classroom is real, and the student-perception instrument partially captures it.
@@ -35,6 +38,9 @@ The instrument selection for Measure 1 is therefore almost entirely a policy dec
 This is the measure most American districts do not have at all, and the one where the design choices matter most because the failure mode is the most familiar: high-stakes accountability testing that teaches to the test, narrows the curriculum, and produces a generation of students who can execute the specific problem types on the assessment without the foundational understanding that transfers to anything else. The Carrell-West finding is the explicit warning. The instructors who drilled to the Calc I final produced students who failed Calc II. A pre-post system with a shallow post-test reproduces that pathology at scale.
 
 The structural design that survives the Carrell-West warning has six features, each of which exists because removing it produces a specific failure mode the literature has documented.
+
+![Two-column matrix. Left column lists six design features of the student-learning-gains measure (common pre/post, external grading, section-level reporting, pre-test ability control, transfer items, no individual stakes in years 1–3). Right column lists the specific failure mode that emerges when each feature is removed, with the supporting citation.](../images/14-appendix-b-three-measure-framework-fig-02.png)
+*Figure B.2 — Six design features for Measure 2, paired with the failure mode each prevents.*
 
 *Pre and post administration on common, externally-constructed items.* The same instrument given at the start of the course and at the end. *Common* means every section of the same course uses the same items, so that gains are comparable across sections. *Externally-constructed* means the items are not written by the instructor whose gain score is being measured, because if they were, the instructor would optimize her teaching to her own items rather than to the underlying understanding the items are supposed to sample.
 
@@ -57,6 +63,9 @@ This is the measure nobody currently takes. Its absence is why everything else i
 The model is the American Board of Family Medicine's [Maintenance of Certification cycle](https://www.theabfm.org/continue-certification/5-year-cycle/). Five years. Sixty certification points in self-assessment and performance improvement. Two hundred CME credits across the cycle. Twenty-five quarterly knowledge-assessment questions written by content experts who update them as the field changes. The questions are low-stakes per question, embedded in normal practice, designed to keep the practitioner's knowledge current against a field that is moving — not a half-day exam every five years that the practitioner crams for and forgets. The structure is the opposite, in every dimension, of what most American teachers experience as the audit of their professional learning.
 
 The third measure, ported into teaching, is a documented annual or biennial cycle with four components.
+
+![A circular wheel split into four quadrant wedges around a central disc that reads Measure 3 — Annual cycle (or biennial). The four sequential components, clockwise: 1. Growth area named, 2. PD engaged with, 3. Evidence of change, 4. Peer panel review. Curved arrows show the loop from Year N to Year N+1.](../images/14-appendix-b-three-measure-framework-fig-03.png)
+*Figure B.3 — The Measure 3 annual cycle, modelled on Maintenance of Certification.*
 
 *An identified growth area.* The teacher names, at the start of the cycle, the specific area she intends to grow her practice in. For most teachers in 2026 this will reasonably include AI-specific practice — using a tool well in her subject and grade, designing assignments where the fluency the AI provides is not the assessment, integrating formative AI tools into her existing routines. The growth area is not generic ("become a better teacher"). It is specific ("develop a defensible practice for using AI in the formative-feedback step of my seventh-grade writing workshop") and connected to the third-measure documentation downstream.
 
@@ -93,6 +102,9 @@ What the addition cannot do is leave the satisfaction survey untouched in its cu
 ## A worked implementation timeline
 
 The timeline below assumes the superintendent finishes reading this appendix on a Sunday afternoon. The Monday referenced is the next morning. Specific enough that a district administrator could put it on a project plan.
+
+![Horizontal swimlane chart with six parallel tracks — superintendent actions, legal review, pilot school launch, Measure 2 instrument build, Measure 3 cycle launch, and board engagement — running across five time stages from Week 1 to Year 2 / Year 3 and beyond. Filled dots mark milestones with a written artifact; solid lines mark sequenced work within a lane; dashed lines mark waiting or monitoring periods.](../images/14-appendix-b-three-measure-framework-fig-04.png)
+*Figure B.4 — Implementation timeline: six tracks, Week 1 to Year 3+.*
 
 ### Week 1 (the Monday after)
 
@@ -141,6 +153,9 @@ The integration of the three measures with personnel decisions is the work of Ye
 ## Common implementation failure modes
 
 Five failure modes show up in district pilots of new evaluation frameworks often enough that the structural fix for each is worth naming in advance.
+
+![Two-column matrix. Left column names five district-pilot failure modes: pilot becomes high-stakes, post-test gets drilled, peer panel becomes paper exercise, union reads measures as additive, gain measure dominates composite. Right column states the specific structural fix for each, with the last row — keep measures separate, no single composite — drawn with thicker borders to mark it as load-bearing.](../images/14-appendix-b-three-measure-framework-fig-05.png)
+*Figure B.5 — Five common failure modes, paired with the structural fixes that prevent them.*
 
 *Failure mode one: the pilot becomes the new high-stakes instrument.* The district pilots Measure 2 with formative-use-only intent, and within eighteen months, board pressure or a new superintendent or a state-policy shift converts the gain scores into a personnel-decision input. The teaching workforce, having been promised formative use, experiences the conversion as a bait-and-switch. The political coalition that supported the pilot fractures. The structural fix is a written commitment, in the board-approved pilot charter, that the formative-use period extends for a named number of years and that conversion to personnel-decision use requires a specific board action with public notice. The commitment will be tested. The written form is the only thing that makes the test survivable.
 
@@ -226,3 +241,29 @@ The framework is a multi-year project. The change of use is a one-page memo. The
 ---
 
 **Tags:** evaluation framework, three honest measures, SET reform, Carrell-West, Boring-Stark, ASA statement, Maintenance of Certification, peer panel review, district implementation guide, principal action plan
+
+---
+
+## Prompts
+
+Each prompt asks for the structural commitment, not the cosmetic detail. Use these to redraw the figures for a different district, audience, or measure portfolio. The reference implementation is the version that ships with this appendix; the prompt is what to vary.
+
+### Prompt B.1 — Three-measure framework overview
+
+Draw three side-by-side columns, one per measure (Wellbeing, Learning Gains, Teacher Learning). Each column states three things: what it measures, the defensible use, and the forbidden use, in that fixed vertical order. Treat the third column as the load-bearing one — give it a heavier border or an italic eyebrow that names it the missing measure. At the foot, draw a small binding box centred under the columns, connected upward by dashed leader lines, with a single sentence asserting that the three are used together. No icons, no colour-coding by measure; the typographic hierarchy carries the structure. Warm grayscale only; EB Garamond throughout; viewBox 700×460. *Reference implementation: figure B.1 in this appendix.*
+
+### Prompt B.2 — Design features paired with failure modes
+
+Build a two-column matrix where the left column lists a numbered set of design features and the right column lists, row-for-row, the specific failure mode that arrives if the feature is removed. Each row is a horizontal pair connected by a short arrow from feature to failure. Beneath each failure, a brief italic citation names the source. Use warm grayscale panel tint for the feature column and white for the failure column so the eye reads feature-first. Lean on the rhetorical move *if this is removed, this returns* — the figure is a structural argument, not a list. EB Garamond throughout; viewBox 700×480. *Reference implementation: figure B.2 in this appendix.*
+
+### Prompt B.3 — Cyclical annual cycle wheel
+
+Render an annular wheel split into four equal quadrant wedges around a centred disc that labels the cycle name. Each wedge holds one of four sequential components with the same internal layout: numeral, short title, two-line gloss. Curved arrows along the outside of the wheel show clockwise flow between wedges, with the last arrow looping back to the first. Two faint year labels (Year N on the left, Year N+1 on the right, with short dashed leaders) make explicit that this is a loop, not a one-off. Use `d3.arc` with `padAngle` for the wedge geometry. Warm grayscale only; EB Garamond throughout; viewBox 700×460. *Reference implementation: figure B.3 in this appendix.*
+
+### Prompt B.4 — Implementation swimlane
+
+Draw a horizontal swimlane with six labelled lanes stacked top-to-bottom and five time stages running left-to-right. Each lane shows a sequence of milestones plotted at the stage at which they occur, connected by solid lines where the sequence is causal and dashed lines where the lane is in monitoring mode. Filled dots mean a written artifact exists at that milestone; open dots mean a milestone contingent on upstream completion. Use `scaleBand` for the lane tracks and `scalePoint` for the stage axis. Lane label cells go on the left at fixed width; the time axis sits above the lanes with stage names and subtitles. Warm grayscale only; EB Garamond throughout; viewBox 700×540 (height extended for swimlane). *Reference implementation: figure B.4 in this appendix.*
+
+### Prompt B.5 — Failure modes matrix
+
+Build a numbered two-column matrix mapping five recurring failure modes (left) to the specific structural fix that prevents each (right). Each row is a horizontal pair connected by a short arrow. The left column carries a warm grayscale panel tint; the right column is white. The fix column should be wordier than the failure column — it is doing the work — but kept to three short lines max. Treat the last row as the load-bearing one and draw its borders slightly thicker. The caption beneath says the fixes belong in the pilot charter before launch, not after a failure. Warm grayscale only; EB Garamond throughout; viewBox 700×460. *Reference implementation: figure B.5 in this appendix.*

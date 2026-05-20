@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 13.3 — Medicine vs teaching compliance layers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; }
+  #chart { width: 100%; min-height: 520px; position: relative; }
+  .col-header rect { fill: var(--color-ink); }
+  .col-header text { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; fill: var(--color-white); letter-spacing: 0.04em; }
+  .cell             { fill: var(--color-white); stroke: var(--color-ink); stroke-width: 0.8; }
+  .cell.dim         { fill: #F5F2EE; }
+  @media (prefers-color-scheme: dark) { .cell.dim { fill: #1a1a1a; } }
+  .cell.fault       { fill: var(--color-red); stroke: var(--color-ink); }
+  .cell.fault-out   { fill: var(--color-white); stroke: var(--color-red); stroke-width: 1.6; }
+  .row-label        { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-weight: 700; fill: var(--color-ink); }
+  .row-label.on-red { fill: var(--color-white); }
+  .row-sub          { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .row-sub.on-red   { fill: var(--color-white); }
+  .cell-title       { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-weight: 700; fill: var(--color-ink); }
+  .cell-sub         { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .fault-claim      { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; font-weight: 700; fill: var(--color-ink); }
+  .fault-tag        { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-weight: 700; fill: var(--color-ink); }
+  .caption { color: var(--color-secondary); font-size: 12px; margin-top: 16px; font-style: italic; max-width: 80ch; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-size: 12px; font-family: 'Inter', sans-serif; transition: opacity 150ms cubic-bezier(0.2,0.8,0.2,1); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 13.3 — Medicine vs teaching compliance layers</h1>
+<p class="subtitle">The fault line is what the audit asks at the end of the activity.</p>
+<div id="chart" role="img" aria-labelledby="ch-t ch-d"></div>
+<p class="caption">Sources: ACCME Annual Data Report; ABFM 5-year cycle requirements; state PD framework summaries. The content layer is not where the fields differ — the audit question is.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const rowData = [
+  {
+    dim: 'Accreditor',
+    dimSub: 'who decides what counts',
+    medicine: { title: 'ACCME', sub: 'Accreditation Council for Continuing Medical Education — single national body' },
+    teaching: { title: 'State PD frameworks', sub: '50 states · 50 different rule sets · no equivalent national accreditor' },
+    fault: false
+  },
+  {
+    dim: 'Required volume',
+    dimSub: 'over a cycle',
+    medicine: { title: '~200 CME credits / 5-year cycle', sub: 'ABFM example — plus quarterly knowledge assessments' },
+    teaching: { title: 'PD clock-hours / renewal cycle', sub: 'typically 20–50 hours per year, no quarterly assessment' },
+    fault: false
+  },
+  {
+    dim: 'Assessment',
+    dimSub: 'tied to practice',
+    medicine: { title: 'Quarterly knowledge questions', sub: 'tied to clinical reasoning; case conferences in MOC programs' },
+    teaching: { title: 'Sign-in sheet', sub: 'attendance recorded; no end-of-activity demonstration' },
+    fault: false
+  },
+  {
+    dim: 'What the audit asks at the end',
+    dimSub: '— the fault line —',
+    medicine: { title: 'Did the physician complete a verified learning activity?', sub: 'measures: change in capability' },
+    teaching: { title: 'Was the teacher in the room?', sub: 'measures: attendance only — no question about end-state capability or student response' },
+    fault: true
+  }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, html) {
+  tooltip.html(html).style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px').style('opacity', 1);
+}
+function moveTip(event) { tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px'); }
+function hideTip() { tooltip.style('opacity', 0); }
+
+function wrapLines(text, maxChars) {
+  const words = text.split(/\s+/);
+  const lines = [];
+  let line = '';
+  for (const w of words) {
+    if ((line + ' ' + w).trim().length > maxChars) { lines.push(line.trim()); line = w; }
+    else line = (line + ' ' + w).trim();
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+
+  const totalWidth = container.clientWidth || 800;
+  const margin = { top: 24, right: 24, bottom: 90, left: 24 };
+  const innerWidth = totalWidth - margin.left - margin.right;
+
+  const colWidths = [0.20, 0.40, 0.40].map(f => f * innerWidth);
+  const headerH = 36;
+  const rowH = 80;
+  const faultRowH = 100;
+  const claimBlockH = 60;
+
+  const tableHeight = headerH + rowData.reduce((acc, r) => acc + (r.fault ? faultRowH : rowH), 0);
+  const totalHeight = margin.top + tableHeight + claimBlockH + margin.bottom;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'ch-t ch-d');
+  svg.append('title').attr('id', 'ch-t').text('Compliance layers compared — medicine measures verified learning, teaching measures seat-time');
+  svg.append('desc').attr('id', 'ch-d').text('Side-by-side comparison table of medicine and teaching compliance layers across four dimensions, ending in a fault-line row about what the audit asks.');
+
+  svg.append('defs').append('marker')
+    .attr('id', 'arrow13c').attr('markerWidth', 8).attr('markerHeight', 6)
+    .attr('refX', 7).attr('refY', 3).attr('orient', 'auto')
+    .append('polygon').attr('points', '0 0, 8 3, 0 6').attr('fill', 'var(--color-red)');
+
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Column headers
+  const headers = ['Dimension', 'Medicine', 'Teaching'];
+  let x = 0;
+  headers.forEach((h, i) => {
+    const hg = g.append('g').attr('class', 'col-header').attr('transform', `translate(${x},0)`);
+    hg.append('rect').attr('width', colWidths[i]).attr('height', headerH);
+    hg.append('text').attr('x', colWidths[i] / 2).attr('y', 23).attr('text-anchor', 'middle').text(h);
+    x += colWidths[i];
+  });
+
+  // Rows
+  let y = headerH;
+  rowData.forEach(row => {
+    const h = row.fault ? faultRowH : rowH;
+    let cx = 0;
+    // Dimension cell
+    g.append('rect').attr('class', row.fault ? 'cell fault' : 'cell dim')
+      .attr('x', cx).attr('y', y).attr('width', colWidths[0]).attr('height', h);
+    g.append('text').attr('class', row.fault ? 'row-label on-red' : 'row-label')
+      .attr('x', cx + colWidths[0] / 2).attr('y', y + h / 2 - 4).attr('text-anchor', 'middle').text(row.dim);
+    g.append('text').attr('class', row.fault ? 'row-sub on-red' : 'row-sub')
+      .attr('x', cx + colWidths[0] / 2).attr('y', y + h / 2 + 14).attr('text-anchor', 'middle').text(row.dimSub);
+    cx += colWidths[0];
+
+    // Medicine cell
+    g.append('rect').attr('class', row.fault ? 'cell fault-out' : 'cell')
+      .attr('x', cx).attr('y', y).attr('width', colWidths[1]).attr('height', h)
+      .attr('tabindex', 0)
+      .attr('aria-label', `Medicine, ${row.dim}: ${row.medicine.title}. ${row.medicine.sub}`)
+      .on('mouseover', (event) => showTip(event, `<strong>Medicine — ${row.dim}</strong><br>${row.medicine.title}<br><em>${row.medicine.sub}</em>`))
+      .on('mousemove', moveTip).on('mouseout', hideTip);
+    const medTitleLines = wrapLines(row.medicine.title, 42);
+    medTitleLines.forEach((ln, li) => {
+      g.append('text').attr('class', 'cell-title').attr('x', cx + 12).attr('y', y + 22 + li * 16).text(ln);
+    });
+    const medSubLines = wrapLines(row.medicine.sub, 50);
+    medSubLines.forEach((ln, li) => {
+      g.append('text').attr('class', 'cell-sub').attr('x', cx + 12).attr('y', y + 22 + medTitleLines.length * 16 + 4 + li * 14).text(ln);
+    });
+    cx += colWidths[1];
+
+    // Teaching cell
+    g.append('rect').attr('class', row.fault ? 'cell fault-out' : 'cell')
+      .attr('x', cx).attr('y', y).attr('width', colWidths[2]).attr('height', h)
+      .attr('tabindex', 0)
+      .attr('aria-label', `Teaching, ${row.dim}: ${row.teaching.title}. ${row.teaching.sub}`)
+      .on('mouseover', (event) => showTip(event, `<strong>Teaching — ${row.dim}</strong><br>${row.teaching.title}<br><em>${row.teaching.sub}</em>`))
+      .on('mousemove', moveTip).on('mouseout', hideTip);
+    const teaTitleLines = wrapLines(row.teaching.title, 42);
+    teaTitleLines.forEach((ln, li) => {
+      g.append('text').attr('class', 'cell-title').attr('x', cx + 12).attr('y', y + 22 + li * 16).text(ln);
+    });
+    const teaSubLines = wrapLines(row.teaching.sub, 50);
+    teaSubLines.forEach((ln, li) => {
+      g.append('text').attr('class', 'cell-sub').attr('x', cx + 12).attr('y', y + 22 + teaTitleLines.length * 16 + 4 + li * 14).text(ln);
+    });
+
+    y += h;
+  });
+
+  // Connecting fault arrow / claim line
+  const claimY = y + 30;
+  const medCenter = colWidths[0] + colWidths[1] / 2;
+  const teaCenter = colWidths[0] + colWidths[1] + colWidths[2] / 2;
+  g.append('path')
+    .attr('d', `M ${medCenter} ${y + 6} L ${medCenter} ${y + 18} L ${teaCenter} ${y + 18} L ${teaCenter} ${y + 6}`)
+    .attr('fill', 'none').attr('stroke', 'var(--color-red)').attr('stroke-width', 1.2).attr('stroke-dasharray', '4 3')
+    .attr('marker-end', 'url(#arrow13c)');
+
+  g.append('text').attr('class', 'fault-claim')
+    .attr('x', innerWidth / 2).attr('y', claimY + 10)
+    .attr('text-anchor', 'middle')
+    .text('A system that measures attendance will get attendance.');
+  g.append('text').attr('class', 'cell-sub')
+    .attr('x', innerWidth / 2).attr('y', claimY + 28)
+    .attr('text-anchor', 'middle')
+    .text('A system that measures learning will get something closer to learning.');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

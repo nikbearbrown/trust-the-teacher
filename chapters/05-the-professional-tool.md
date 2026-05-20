@@ -194,6 +194,9 @@ Here is the move that the structural conversation in education keeps failing to 
 
 Every policy discussion I have read frames the question as binary: with-AI, or without-AI. Should we allow AI in classrooms? Should we ban it? What does the literature say about AI versus no-AI? These are the wrong two conditions. There are three objects, not two. The trained teacher with AI. The untrained teacher with AI. The trained teacher without AI.
 
+![Three-panel infographic: Object 1 is the trained teacher with AI, Object 2 is the untrained teacher with AI, Object 3 is the trained teacher without AI, each labelled with what the operator can and cannot do; brackets below show Objects 1 and 2 being averaged together into a single "with-AI" condition, with the "without-AI" comparison drawn alongside.](../images/05-the-professional-tool-fig-05.png)
+*Figure 5.5 — Three objects, not two: what the binary framing keeps averaging together*
+
 The trained teacher with Claude is not a larger version of the AI platform. She is a different instrument. The platform — the large language model, the vendor dashboard, the dispatching algorithm — handles what the platform handles: the lookup, the first draft, the templated worksheet, the auto-scored multiple-choice. She generates the specific question that unlocks this particular student's confusion about this particular concept on this particular day. She notices the wrong note — the student producing correct answers but unable to explain why. She groups the students who would benefit from working together today and separates the students whose pairing yesterday produced a fight rather than a conversation. She differentiates the same Civil War primary source at three reading levels in the time it used to take to write one. She catches the student whose home is rough this week and gives her the assignment as the version with the lower cognitive load, without making a thing of it, because the AI drafted both versions in the same prompt and the teacher decided which one this student should see today.
 
 The tool handles what the tool handles. She handles what only she can handle. The classroom outcome depends on both moves working — and on her judgment about when each one applies.
@@ -268,3 +271,19 @@ There is also something puzzling, and a little wonderful, about a finding this c
 
 - Wang, R. E., Ribeiro, A. T., Robinson, C. D., Loeb, S., & Demszky, D. (2024). Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise. arXiv:2410.03017. [https://arxiv.org/abs/2410.03017](https://arxiv.org/abs/2410.03017)
 - Nickow, A., Oreopoulos, P., & Quan, V. (2020). The Impressive Effects of Tutoring on PreK-12 Learning: A Systematic Review and Meta-Analysis of the Experimental Evidence. *NBER Working Paper 27476*. [https://www.nber.org/papers/w27476](https://www.nber.org/papers/w27476)
+
+---
+
+## Prompts
+
+Use this prompt with Claude to generate an interactive D3 v7 version of the new infographic in this chapter. It produces a standalone HTML file you can open in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into your Claude project context before using this prompt. They define the stack, naming conventions, color system, and typography the figure uses.
+
+---
+
+### Figure 5.5 — Three objects, not two
+
+Build a three-panel infographic that names the three distinct operator conditions the chapter argues policy must distinguish, and then shows the binary collapse the field keeps performing. Layout: three equal-width labelled panels arranged left-to-right above a two-box "binary framing" band, connected by bracket lines. Panel 1 ("Object 1 — Trained teacher with AI") and panel 2 ("Object 2 — Untrained teacher with AI") share a single bracket that descends into a "with-AI" box; panel 3 ("Object 3 — Trained teacher without AI") connects directly to a "without-AI" box beside it. Each panel contains two sections — "Can do" and "Cannot do / Cannot avoid" — with three short bullets in the first and one in the second. Highlight panel 1 with a `var(--color-red)` frame to mark the condition the cross-profession evidence predicts. Between the two binary boxes draw a dashed red line labelled "averaged" to mark the conflation. Below the binary band, render a two-line closing in EB Garamond: a bold sentence ("The field studies two conditions and reports one number.") and an italic continuation ("The number is small because the average is hiding Object 1 inside Object 2."). Standalone HTML, D3 v7 from the pinned CDN, inline CSS/JS, accessible (role, title, desc, keyboard-reachable panel hit areas with tooltips), responsive via ResizeObserver, `prefers-reduced-motion` honoured. All colors via `var(--color-*)`; no hardcoded hex.
+
+> Reference implementation: `d3/05-the-professional-tool-fig-05.html`

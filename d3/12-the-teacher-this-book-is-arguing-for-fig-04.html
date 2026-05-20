@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 12.4 — The 2025-26 policy ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 70ch; }
+  #ledger { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .col { display: flex; flex-direction: column; gap: 12px; }
+  .col-header { padding: 16px 20px; }
+  .col-header.funded { background: var(--color-ink); color: var(--color-white); }
+  .col-header.unfunded { background: var(--color-white); color: var(--color-ink); border: 1.5px solid var(--color-ink); }
+  .col-header .h { font-family: 'EB Garamond', Georgia, serif; font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+  .col-header .sub { font-family: 'Inter', sans-serif; font-size: 12px; opacity: 0.85; }
+  .row { padding: 14px 20px; transition: background-color 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .row.funded { background: color-mix(in srgb, var(--color-ink) 6%, var(--color-white)); border: 1px solid var(--color-border); }
+  .row.unfunded { background: var(--color-white); border: 1px dashed var(--color-ink); }
+  .row.accent { background: var(--color-ink); color: var(--color-white); border-color: var(--color-ink); }
+  .row .num { font-family: 'EB Garamond', Georgia, serif; font-size: 28px; font-weight: 500; line-height: 1; margin-bottom: 6px; }
+  .row.unfunded .num { color: var(--color-red); }
+  .row .label { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .row .desc { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--color-secondary); }
+  .row.accent .desc { color: var(--color-border); }
+  .footnote { font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 13px; color: var(--color-secondary); padding: 12px 20px; border-top: 1px solid var(--color-border); }
+  .bridge { grid-column: 1 / -1; text-align: center; padding: 16px 20px; margin-top: 8px; font-family: 'EB Garamond', Georgia, serif; font-size: 16px; color: var(--color-ink); }
+  .bridge::before, .bridge::after { content: ''; display: inline-block; vertical-align: middle; width: 60px; height: 1px; background: var(--color-ink); margin: 0 12px; }
+  .caption { color: var(--color-secondary); font-size: 12px; margin-top: 16px; max-width: 70ch; }
+  .row:focus, .row:hover { outline: 2px solid var(--color-red); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  @media (max-width: 720px) { #ledger { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<h1>Figure 12.4 — The 2025-26 policy ledger</h1>
+<p class="subtitle">Two columns, same policy window. On the left, what passed and what we spent. On the right, the things the same statutes assumed but did not fund.</p>
+
+<div id="ledger" role="img" aria-labelledby="ledger-title ledger-desc">
+  <span id="ledger-title" style="position:absolute;left:-9999px">2025-26 policy ledger</span>
+  <span id="ledger-desc" style="position:absolute;left:-9999px">Side-by-side comparison: what we funded (LAUSD 5.2 million, NYC 29 million, Houston 800 thousand, 33 state phone-ban laws) versus what we did not (Title II-A frozen in a 14-district legal dispute, 67 percent of EdTech licenses unused, FCC E-Rate hotspots rescinded, zero state laws funding teacher AI training).</span>
+
+  <div class="col" id="col-funded"></div>
+  <div class="col" id="col-unfunded"></div>
+
+  <div class="bridge">The exemption was written. The teacher who would have used it was not funded.</div>
+</div>
+
+<p class="caption">Sources: Ballotpedia phone-ban tracker (retrieved 2026-05); LAUSD, NYC DOE, Houston ISD procurement filings; Glimpse K-12 license audit; FCC declaratory ruling on off-premises E-Rate (2025).</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const fundedRows = [
+  { num: '$5.2M', label: 'LAUSD pouches', desc: 'Los Angeles district-wide phone storage', accent: false },
+  { num: '$29M',  label: 'NYC pouches',   desc: 'New York City multi-year procurement', accent: false },
+  { num: '$800K', label: 'Houston pouches', desc: 'Houston ISD lockable-pouch contract', accent: false },
+  { num: '33',    label: 'state laws',    desc: 'Phone bans signed, 2024-26 — covering a majority of U.S. K-12 enrollment', accent: true }
+];
+
+const unfundedRows = [
+  { num: 'frozen',    label: 'Title II-A funds',           desc: '$2.19B annual appropriation, locked in a 14-district legal dispute' },
+  { num: '67%',       label: 'AI / EdTech licenses unused', desc: '~$1B/year on shelves (Glimpse K-12 audit)' },
+  { num: 'rescinded', label: 'FCC E-Rate hotspots + bus Wi-Fi', desc: 'Federal substitute mechanism withdrawn in the same window' },
+  { num: '0',         label: 'state laws funding teacher AI training', desc: 'No enacted statute pairs the ban with the training the exemption assumes' }
+];
+
+function renderColumn(selector, rows, kind, header) {
+  const root = d3.select(selector);
+  root.selectAll('*').remove();
+  root.append('div').attr('class', `col-header ${kind}`).html(`
+    <div class="h">${header.h}</div>
+    <div class="sub">${header.sub}</div>
+  `);
+  root.selectAll('.row')
+    .data(rows)
+    .join('div')
+      .attr('class', d => `row ${kind}${d.accent ? ' accent' : ''}`)
+      .attr('tabindex', 0)
+      .attr('role', 'group')
+      .each(function(d) {
+        d3.select(this)
+          .attr('aria-label', `${d.num} — ${d.label}: ${d.desc}`)
+          .html(`
+            <div class="num">${d.num}</div>
+            <div class="label">${d.label}</div>
+            <div class="desc">${d.desc}</div>
+          `);
+      });
+  root.append('div').attr('class', 'footnote').text(header.footnote);
+}
+
+function draw() {
+  renderColumn('#col-funded', fundedRows, 'funded', {
+    h: 'What we funded',
+    sub: 'spending we passed in 2025-26',
+    footnote: 'Combined: ~$35M in pouches plus 33 statutes. Device removal funded at scale, on schedule, on time.'
+  });
+  renderColumn('#col-unfunded', unfundedRows, 'unfunded', {
+    h: 'What we did not',
+    sub: 'the unfunded ledger — same window',
+    footnote: 'Combined: zero new training dollars plus access closed. The substitute the exemption presumes was not funded.'
+  });
+}
+
+draw();
+// Re-render on resize so dynamic content remains consistent if data swapped at runtime
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('ledger'));
+</script>
+</body>
+</html>

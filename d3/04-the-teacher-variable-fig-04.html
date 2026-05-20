@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 4.4 — A three-story building of aggregation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 500; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 70ch; }
+  #chart { width: 100%; height: 520px; }
+  .floor-rect { stroke: var(--color-ink); stroke-width: 1; transition: opacity 200ms cubic-bezier(0.2,0.8,0.2,1); cursor: pointer; }
+  .floor-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; }
+  .floor-detail { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; }
+  .floor-note { font-family: 'EB Garamond', Georgia, serif; font-size: 11px; fill: var(--color-secondary); }
+  .arrow-path { stroke: var(--color-secondary); stroke-width: 1; fill: none; }
+  .unit-path { stroke: var(--color-ink); stroke-width: 1; fill: none; stroke-dasharray: 4 3; }
+  .annotation { font-family: 'EB Garamond', Georgia, serif; font-size: 12px; fill: var(--color-ink); }
+  .annotation-em { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 12px; fill: var(--color-ochre); }
+  .brick { fill: var(--color-ink); opacity: 0.16; }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 16px; max-width: 72ch; font-family: 'EB Garamond', Georgia, serif; font-style: italic; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 8px 12px; font-family: 'Inter', sans-serif; font-size: 12px; max-width: 260px; line-height: 1.4; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 4.4 — A three-story building of aggregation</h1>
+<p class="subtitle">Each floor compresses the floor below it. Cohen's <em>d</em> is the unit that travels — and so is whatever bias it carried at floor 1.</p>
+<div id="chart" role="img" aria-labelledby="chart-title chart-desc"></div>
+<p class="caption">Roughly 130,000 individual studies → ~2,100 meta-analyses → 1 meta-meta-analysis. Approximately 300 million students sit at the base of the stack (MetaX 1.3, late 2024).</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const floors = [
+  {
+    id: 'floor3',
+    level: 3,
+    name: 'Floor 3 — Meta-meta-analysis',
+    summary: '1 synthesis',
+    detail: 'Visible Learning. One ranked list. Average d ≈ 0.42 across the corpus; "hinge" d = 0.40.',
+    tooltip: 'Floor 3 aggregates Floor 2. One ranked list of ~360 influences. Inherits whatever bias the lower floors carried up.',
+    fillVar: '--color-ink',
+    textOnDark: true
+  },
+  {
+    id: 'floor2',
+    level: 2,
+    name: 'Floor 2 — Meta-analyses',
+    summary: '~2,100 meta-analyses',
+    detail: 'Each averages many studies into one d. Sample overlaps between meta-analyses go largely unflagged.',
+    tooltip: 'Floor 2 holds ~2,100 meta-analyses. Each one is itself a small study-of-studies. Wecker (2017) showed the same underlying studies are sometimes counted in multiple Floor 2 entries.',
+    fillVar: '--color-secondary',
+    textOnDark: true
+  },
+  {
+    id: 'floor1',
+    level: 1,
+    name: 'Floor 1 — Individual studies',
+    summary: '~130,000 studies',
+    detail: 'Small-sample, brief-duration, quasi-experimental designs all enter at this level. Each yields a single Cohen’s d.',
+    tooltip: 'Floor 1 is the ground floor. ~130,000 underlying studies, covering roughly 300 million students. Slavin (2018): weak designs inflate effect sizes at this level, and the inflation rides up.',
+    fillVar: '--color-border',
+    textOnDark: false
+  }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, d) {
+  tooltip.html(`<strong>${d.name}</strong><br>${d.tooltip}`)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 12) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTip(event) {
+  tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 12) + 'px');
+}
+function hideTip() {
+  tooltip.transition().duration(100).style('opacity', 0);
+}
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+
+  const totalWidth  = container.clientWidth  || 800;
+  const totalHeight = container.clientHeight || 520;
+  const margin = { top: 56, right: 32, bottom: 32, left: 32 };
+  const chartWidth  = totalWidth  - margin.left - margin.right;
+  const chartHeight = totalHeight - margin.top  - margin.bottom;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width',  totalWidth)
+    .attr('height', totalHeight)
+    .attr('role', 'img')
+    .attr('aria-labelledby', 'chart-title chart-desc');
+  svg.append('title').attr('id', 'chart-title').text('Three-story aggregation behind Visible Learning');
+  svg.append('desc').attr('id', 'chart-desc').text('Diagram of meta-meta-analytic aggregation. ~130,000 individual studies feed into ~2,100 meta-analyses, which feed into one meta-meta-analysis.');
+
+  const gChart = svg.append('g').attr('class', 'g-chart')
+    .attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Layout: vertical stack, narrowest on top.
+  // Widths chosen to evoke a pyramid of aggregation while leaving annotation gutters.
+  const widths = { 3: 0.34, 2: 0.62, 1: 0.92 };
+  const floorHeight = 64;
+  const gap = 36;
+  const baseY = chartHeight - floorHeight;
+
+  const positions = floors.map((f, i) => {
+    const w = chartWidth * widths[f.level];
+    const x = (chartWidth - w) / 2;
+    const y = baseY - i * (floorHeight + gap);
+    return { ...f, x, y, w, h: floorHeight };
+  });
+
+  // Draw connecting arrows between adjacent floors (lower → upper)
+  const arrowDefs = svg.append('defs');
+  arrowDefs.append('marker')
+    .attr('id', 'arrowhead-04')
+    .attr('markerWidth', 9).attr('markerHeight', 7)
+    .attr('refX', 8).attr('refY', 3.5)
+    .attr('orient', 'auto')
+    .append('polygon')
+      .attr('points', '0 0, 9 3.5, 0 7')
+      .attr('fill', 'var(--color-secondary)');
+
+  for (let i = 0; i < positions.length - 1; i++) {
+    const lower = positions[i];      // i = 0 is floor 1 (bottom)... no, positions[0] is floor3 because floors array starts with floor3
+  }
+  // Because `floors` is declared top-down (floor 3 first), positions[0] is floor 3 (top).
+  // Rebuild arrows by sorting by level ascending.
+  const ascending = [...positions].sort((a, b) => a.level - b.level);
+  for (let i = 0; i < ascending.length - 1; i++) {
+    const lower = ascending[i];
+    const upper = ascending[i + 1];
+    const xs = [0.25, 0.5, 0.75];
+    xs.forEach(t => {
+      const x1 = lower.x + lower.w * t;
+      const x2 = upper.x + upper.w * t;
+      const y1 = lower.y;
+      const y2 = upper.y + upper.h;
+      gChart.append('path')
+        .attr('class', 'arrow-path')
+        .attr('marker-end', 'url(#arrowhead-04)')
+        .attr('d', `M ${x1} ${y1} C ${x1} ${(y1 + y2) / 2}, ${x2} ${(y1 + y2) / 2}, ${x2} ${y2 + 2}`);
+    });
+  }
+
+  // Draw floor rectangles
+  const fg = gChart.selectAll('.floor-group')
+    .data(positions, d => d.id)
+    .join('g')
+      .attr('class', 'floor-group')
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `${d.name}: ${d.summary}. ${d.detail}`)
+      .on('mouseover', (event, d) => showTip(event, d))
+      .on('mousemove', moveTip)
+      .on('mouseout',  hideTip)
+      .on('focus',     (event, d) => showTip(event, d))
+      .on('blur',      hideTip);
+
+  fg.append('rect')
+    .attr('class', 'floor-rect')
+    .attr('x', d => d.x)
+    .attr('y', d => d.y)
+    .attr('width',  d => d.w)
+    .attr('height', d => d.h)
+    .attr('fill', d => `var(${d.fillVar})`);
+
+  // Floor labels inside the rectangle
+  fg.append('text')
+    .attr('class', 'floor-label')
+    .attr('x', d => d.x + d.w / 2)
+    .attr('y', d => d.y + 22)
+    .attr('text-anchor', 'middle')
+    .attr('fill', d => d.textOnDark ? 'var(--color-white)' : 'var(--color-ink)')
+    .text(d => d.name);
+
+  fg.append('text')
+    .attr('class', 'floor-detail')
+    .attr('x', d => d.x + d.w / 2)
+    .attr('y', d => d.y + 40)
+    .attr('text-anchor', 'middle')
+    .attr('fill', d => d.textOnDark ? 'var(--color-white)' : 'var(--color-ink)')
+    .text(d => d.summary);
+
+  fg.append('text')
+    .attr('class', 'floor-detail')
+    .attr('x', d => d.x + d.w / 2)
+    .attr('y', d => d.y + 56)
+    .attr('text-anchor', 'middle')
+    .attr('fill', d => d.textOnDark ? 'var(--color-white)' : 'var(--color-ink)')
+    .style('font-style', 'italic')
+    .style('font-size', '11px')
+    .text(d => d.detail.length > 80 ? d.detail.slice(0, 78) + '…' : d.detail);
+
+  // Right gutter annotation: the unit that travels up
+  const rightX = chartWidth - 12;
+  const f1 = ascending[0], f3 = ascending[2];
+  gChart.append('path')
+    .attr('class', 'unit-path')
+    .attr('marker-end', 'url(#arrowhead-04)')
+    .attr('d', `M ${rightX} ${f1.y + f1.h / 2} L ${rightX} ${f3.y + f3.h / 2 + 4}`);
+  gChart.append('text')
+    .attr('class', 'annotation-em')
+    .attr('x', rightX - 6)
+    .attr('y', (f1.y + f3.y) / 2)
+    .attr('text-anchor', 'end')
+    .text('Cohen’s d travels up');
+
+  // Left gutter annotation: the student base
+  gChart.append('text')
+    .attr('class', 'annotation')
+    .attr('x', 12).attr('y', f1.y - 12)
+    .text('~300M students at the base');
+  gChart.append('text')
+    .attr('class', 'floor-note')
+    .attr('x', 12).attr('y', f1.y + 4)
+    .text('MetaX 1.3, late 2024');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

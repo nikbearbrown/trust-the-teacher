@@ -7,22 +7,22 @@
   <rect width="700" height="420" fill="#fdfcfb"/>
 
   <!-- Title -->
-  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Where precision-ag tech moves a farm: 570 KFMA farms, 21 years</text>
+  <text x="350" y="32" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Where precision-ag tech moves a farm: 570 KFMA farms, 21 years</text>
 
   <!-- Plot frame -->
   <line x1="96" y1="80" x2="96" y2="320" stroke="#8a8480" stroke-width="1"/>
   <line x1="96" y1="320" x2="640" y2="320" stroke="#8a8480" stroke-width="1"/>
 
   <!-- y-axis labels -->
-  <text x="88" y="324" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">0</text>
-  <text x="88" y="276" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">30</text>
-  <text x="88" y="228" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">60</text>
-  <text x="88" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">90</text>
-  <text x="88" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">120</text>
-  <text x="88" y="84" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">150</text>
+  <text x="88" y="324" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">0</text>
+  <text x="88" y="276" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">30</text>
+  <text x="88" y="228" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">60</text>
+  <text x="88" y="180" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">90</text>
+  <text x="88" y="132" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">120</text>
+  <text x="88" y="84" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="end">150</text>
 
   <!-- y-axis title -->
-  <text x="40" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle" transform="rotate(-90 40 200)">Number of farms</text>
+  <text x="40" y="200" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle" transform="rotate(-90 40 200)">Number of farms</text>
 
   <!-- Histogram bars (10 bins from 0.50 to 1.00 efficiency) -->
   <!-- Bar widths fit between x=96 and x=640 -> 54.4 each; use 52 wide with 2.4 gap -->
@@ -41,25 +41,25 @@
   <rect x="587.6" y="298" width="52" height="22" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
 
   <!-- x-axis tick labels -->
-  <text x="124" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.50</text>
-  <text x="233" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.65</text>
-  <text x="342" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.75</text>
-  <text x="451" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.85</text>
-  <text x="613" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">1.00</text>
-  <text x="350" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">Farm efficiency score (1.0 = frontier)</text>
+  <text x="124" y="340" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.50</text>
+  <text x="233" y="340" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.65</text>
+  <text x="342" y="340" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.75</text>
+  <text x="451" y="340" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">0.85</text>
+  <text x="613" y="340" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">1.00</text>
+  <text x="350" y="360" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">Farm efficiency score (1.0 = frontier)</text>
 
   <!-- Brackets indicating where gains concentrate vs. negligible -->
   <line x1="98" y1="92" x2="313" y2="92" stroke="#1a1714" stroke-width="1.2"/>
   <line x1="98" y1="88" x2="98" y2="96" stroke="#1a1714" stroke-width="1.2"/>
   <line x1="313" y1="88" x2="313" y2="96" stroke="#1a1714" stroke-width="1.2"/>
-  <text x="205" y="80" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">Catch-up gains here</text>
+  <text x="205" y="80" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">Catch-up gains here</text>
 
   <line x1="479" y1="92" x2="640" y2="92" stroke="#1a1714" stroke-width="1.2"/>
   <line x1="479" y1="88" x2="479" y2="96" stroke="#1a1714" stroke-width="1.2"/>
   <line x1="640" y1="88" x2="640" y2="96" stroke="#1a1714" stroke-width="1.2"/>
-  <text x="560" y="80" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">Negligible gains here</text>
+  <text x="560" y="80" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">Negligible gains here</text>
 
   <!-- Caption -->
-  <text x="350" y="386" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Less efficient farms gain the most from precision-ag technology;</text>
-  <text x="350" y="402" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">farms at the frontier capture little. Source: Fiechter, Brewer, Ifft, &amp; Boehlje (2025), JAAE.</text>
+  <text x="350" y="386" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">Less efficient farms gain the most from precision-ag technology;</text>
+  <text x="350" y="402" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">farms at the frontier capture little. Source: Fiechter, Brewer, Ifft, &amp; Boehlje (2025), JAAE.</text>
 </svg>

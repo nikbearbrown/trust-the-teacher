@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 440" role="img" aria-labelledby="t-fig01 d-fig01">
+  <title id="t-fig01">Students versus teachers — AI adoption asymmetry</title>
+  <desc id="d-fig01">Two grouped bar columns: student regular and assessed-coursework AI use at 92 and 94 percent and middle/high-school use at 62 percent on the left, versus K-12 teacher daily use at 12 to 15 percent and business-school faculty daily use at 7 percent on the right. The two columns sit at radically different heights.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .val { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #1a1714; }
+    </style>
+    <marker id="ar1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="440" fill="#fdfcfb"/>
+
+  <!-- Title block -->
+  <text x="350" y="32" class="ti" text-anchor="middle">Two numbers, same classroom</text>
+  <text x="350" y="50" class="sm" text-anchor="middle">Student use of generative AI vs. teacher daily use of the same tools, 2025–26</text>
+
+  <!-- Shared y-axis (0–100%) -->
+  <line x1="92" y1="80" x2="92" y2="360" stroke="#1a1714" stroke-width="1"/>
+  <line x1="92" y1="360" x2="660" y2="360" stroke="#1a1714" stroke-width="1"/>
+
+  <!-- y-axis ticks: 0, 25, 50, 75, 100 -->
+  <line x1="90" y1="360" x2="92" y2="360" stroke="#4a4540"/>
+  <text x="86" y="363" class="sm" text-anchor="end">0%</text>
+  <line x1="90" y1="290" x2="92" y2="290" stroke="#4a4540"/>
+  <text x="86" y="293" class="sm" text-anchor="end">25%</text>
+  <line x1="90" y1="220" x2="92" y2="220" stroke="#4a4540"/>
+  <text x="86" y="223" class="sm" text-anchor="end">50%</text>
+  <line x1="90" y1="150" x2="92" y2="150" stroke="#4a4540"/>
+  <text x="86" y="153" class="sm" text-anchor="end">75%</text>
+  <line x1="90" y1="80" x2="92" y2="80" stroke="#4a4540"/>
+  <text x="86" y="83" class="sm" text-anchor="end">100%</text>
+
+  <!-- gridlines (faint) -->
+  <line x1="92" y1="80"  x2="660" y2="80"  stroke="#c8c4c0" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="92" y1="150" x2="660" y2="150" stroke="#c8c4c0" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="92" y1="220" x2="660" y2="220" stroke="#c8c4c0" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="92" y1="290" x2="660" y2="290" stroke="#c8c4c0" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+  <!-- Column divider (between the two groups) -->
+  <line x1="376" y1="80" x2="376" y2="360" stroke="#c8c4c0" stroke-width="0.75"/>
+
+  <!-- ====== LEFT GROUP: STUDENTS ====== -->
+  <!-- y = 360 - (val/100)*280 -->
+  <!-- bar widths 56, gaps 12, starting x=130 -->
+
+  <!-- Student regular use 92% -->
+  <rect x="130" y="102.4" width="56" height="257.6" fill="#1a1714"/>
+  <text x="158" y="96" class="val" text-anchor="middle">92%</text>
+  <!-- Assessed coursework 94% -->
+  <rect x="198" y="96.8" width="56" height="263.2" fill="#1a1714"/>
+  <text x="226" y="90" class="val" text-anchor="middle">94%</text>
+  <!-- US middle/high 62% -->
+  <rect x="266" y="186.4" width="56" height="173.6" fill="#4a4540"/>
+  <text x="294" y="180" class="val" text-anchor="middle">62%</text>
+
+  <!-- Group label STUDENTS -->
+  <text x="226" y="378" class="lb" text-anchor="middle" font-weight="bold">Students</text>
+
+  <!-- Sub-labels -->
+  <text x="158" y="395" class="sm" text-anchor="middle">University,</text>
+  <text x="158" y="407" class="sm" text-anchor="middle">regular use</text>
+  <text x="226" y="395" class="sm" text-anchor="middle">Assessed</text>
+  <text x="226" y="407" class="sm" text-anchor="middle">coursework</text>
+  <text x="294" y="395" class="sm" text-anchor="middle">US mid/high</text>
+  <text x="294" y="407" class="sm" text-anchor="middle">school</text>
+
+  <!-- ====== RIGHT GROUP: TEACHERS ====== -->
+  <!-- K-12 daily 12-15% — use midpoint 13.5% -->
+  <rect x="430" y="322.2" width="56" height="37.8" fill="#c8c4c0" stroke="#1a1714" stroke-width="0.75"/>
+  <text x="458" y="316" class="val" text-anchor="middle">12–15%</text>
+  <!-- Business-school faculty daily 7% -->
+  <rect x="498" y="340.4" width="56" height="19.6" fill="#c8c4c0" stroke="#1a1714" stroke-width="0.75"/>
+  <text x="526" y="334" class="val" text-anchor="middle">7%</text>
+  <!-- Spacer for visual symmetry: tiny "occasional" reference bar (~67% two-thirds) -->
+  <rect x="566" y="172.4" width="56" height="187.6" fill="none" stroke="#8a8480" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <text x="594" y="166" class="val" text-anchor="middle">~67%</text>
+
+  <!-- Group label TEACHERS -->
+  <text x="526" y="378" class="lb" text-anchor="middle" font-weight="bold">Teachers</text>
+
+  <!-- Sub-labels -->
+  <text x="458" y="395" class="sm" text-anchor="middle">K-12,</text>
+  <text x="458" y="407" class="sm" text-anchor="middle">daily use</text>
+  <text x="526" y="395" class="sm" text-anchor="middle">B-school,</text>
+  <text x="526" y="407" class="sm" text-anchor="middle">daily use</text>
+  <text x="594" y="395" class="sm" text-anchor="middle">B-school,</text>
+  <text x="594" y="407" class="sm" text-anchor="middle">occasional</text>
+
+  <!-- Asymmetry callout — diagonal arrow from peak of student bars to top of teacher bars -->
+  <path d="M 226 84 C 320 70, 400 70, 458 314" fill="none" stroke="#1a1714" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar1)"/>
+  <text x="396" y="64" class="lb" text-anchor="middle">94% on one side, 7–15% on the other</text>
+
+  <!-- Caption -->
+  <text x="350" y="430" class="cap" text-anchor="middle">Same classroom. Same tool. Two professional populations on opposite sides of fluency.</text>
+</svg>

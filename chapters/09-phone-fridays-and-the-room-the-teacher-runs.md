@@ -71,6 +71,9 @@ The fourth — and this is the component without which the third collapses back 
 
 The fifth is *institutional backup*. Administrative support for the teacher's enforcement and integration decisions. Acceptable-use policies written to define the educational exemption with enough specificity to be teachable, not just enough generality to be defensible. Principals who back the teacher's call when a parent phones to ask why her daughter's class had device time and her son's did not. Building-level coherence about what the structured time is for, developed through collaborative planning rather than left to each teacher to improvise alone.
 
+![Stacked-pillar diagram of the five components — default-off at the base, scheduled structured-tech time, teacher contextual discretion, and trained discretion in the middle, institutional backup at the top — with side arrows naming what each layer's removal collapses the structure into](../images/09-phone-fridays-and-the-room-the-teacher-runs-fig-04.png)
+*Figure 9.4 — The five components, as a load-bearing stack*
+
 Stillwater Area Public Schools in Minnesota, which adopted Policy 524.5 for the 2025–26 school year, is a well-implemented version of the first model with a theoretical escape valve. Phones are prohibited bell-to-bell. Lockboxes exist in every room. Exceptions are written for medical use, IEP accommodations, and — here is the escape valve — "other exceptions at the discretion of the school principal." <!-- [verify 2026-05-16] Policy 524.5 existence + medical/IEP exception structure CONFIRMED. The verbatim quoted phrase "other exceptions at the discretion of the school principal" needs to be checked against the actual policy text. If wording differs, convert to paraphrase. --> The escape valve routes the call to the principal, provides no training for making it systematically, and offers no scheduled time when the educational exemption could be operationalized as a lesson rather than as an administrative favor. Stillwater has components one and five in solid form. Components two, three, and four are absent. The building above the foundation has not yet been erected.
 
 Los Angeles Unified tried a different path and documented a different failure. The district spent roughly five million dollars on Yondr pouches <!-- [verify 2026-05-16] $5.2M in 2023-24 confirmed (NBC News, EdSource, VNHS Mirror). Consider adding year specificity. Cumulative across years may be higher (~$7M per VNHS Mirror). --> — the magnetic-locking fabric cases that prevent students from using their phones without physically leaving the room to unlock them. Students discovered within weeks that neodymium magnets, available online for a few dollars, open the pouches. Others brought decoy phones. The pouches became compliance theater. The Yondr pouch is not a system. It is a structural intervention that bets the structure can replace judgment. When students find the structure can be defeated, what is revealed is that the judgment was never built underneath it.
@@ -179,3 +182,24 @@ We have not been. The argument of this book is that we should be. The room she r
 
 - State Educational Technology Directors Association (SETDA, November 2025). *Improving Professional Learning Systems to Better Support Today's Educators.* [https://www.setda.org/wp-content/uploads/2025/11/Improving-Professional-Learning-Systems-to-Better-Support-Todays-Educators-2.pdf](https://www.setda.org/wp-content/uploads/2025/11/Improving-Professional-Learning-Systems-to-Better-Support-Todays-Educators-2.pdf)
 - Brown, N. B. *Irreducibly Human: What AI Can and Can't Do.* Bear Brown & Company. [https://irreducibly.xyz](https://irreducibly.xyz)
+
+---
+
+## Prompts
+
+Use this prompt with Claude to generate an interactive D3 v7 version of the
+infographic in this chapter. It produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using this prompt. They define the stack,
+naming conventions, color system, and typography the figure uses.
+
+---
+
+### Figure 9.4 — The five components, as a load-bearing stack
+
+Build a single-panel D3 v7 infographic of the third model as a five-row vertical stack. Base to top: (1) Default-off, (2) Scheduled structured-tech time, (3) Teacher contextual discretion, (4) Trained discretion, (5) Institutional backup. Each row is full-width with a 1.2px `var(--color-ink)` border and a 6px `var(--color-ochre)` left accent — except Layer 1, filled `var(--color-ink)` with white text. Inside each row, place a bold EB Garamond title and Inter 12px description. Left of the stack, draw a vertical `var(--color-ink)` "load of the call presses down" arrow with marker arrowhead, label rotated -90°. Right of each row, draw a short horizontal `var(--color-ochre)` arrow ending in a one-line collapse outcome. Above and below the stack, render uppercase axis labels naming top and base. Hover or focus on a row reveals a tooltip with full description plus collapse outcome. Beneath the stack, a diagnostic-key footer pins LAUSD, NYC 2006–15, Stillwater 524.5, Finland 2025, and Estonia against the five layers. Standalone HTML, D3 7.9.0 from cdnjs, EB Garamond / Inter / JetBrains Mono via Google Fonts, dark-mode aware, ResizeObserver redraw, `prefers-reduced-motion` respected, ARIA `role="img"` with title and desc, no hardcoded hex.
+
+> Reference implementation: `d3/09-phone-fridays-and-the-room-the-teacher-runs-fig-04.html`
+

@@ -7,50 +7,50 @@
   <rect width="700" height="420" fill="#fdfcfb"/>
 
   <!-- Title -->
-  <text x="350" y="36" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Cost per standard deviation of learning gain — both numbers are too thin to settle the buy</text>
+  <text x="350" y="36" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Cost per standard deviation of learning gain — both numbers are too thin to settle the buy</text>
 
   <!-- Two columns -->
   <!-- Left: Class-size reduction -->
   <rect x="48" y="80" width="280" height="240" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
-  <text x="188" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Class-size reduction</text>
-  <text x="188" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">(Tennessee STAR-style: 22 → 15)</text>
+  <text x="188" y="104" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Class-size reduction</text>
+  <text x="188" y="120" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">(Tennessee STAR-style: 22 → 15)</text>
   <line x1="64" y1="132" x2="312" y2="132" stroke="#8a8480" stroke-width="0.5"/>
-  <text x="64" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Annual cost</text>
-  <text x="312" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="end">$3,000 / student</text>
-  <text x="64" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Effect size</text>
-  <text x="312" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="end">d ≈ 0.21</text>
+  <text x="64" y="156" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Annual cost</text>
+  <text x="312" y="156" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="end">$3,000 / student</text>
+  <text x="64" y="180" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Effect size</text>
+  <text x="312" y="180" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="end">d ≈ 0.21</text>
   <line x1="64" y1="196" x2="312" y2="196" stroke="#8a8480" stroke-width="0.5"/>
-  <text x="64" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Cost per SD gain</text>
-  <text x="312" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="bold" fill="#1a1714" text-anchor="end">≈ $14,000</text>
+  <text x="64" y="220" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Cost per SD gain</text>
+  <text x="312" y="220" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="14" font-weight="bold" fill="#1a1714" text-anchor="end">≈ $14,000</text>
 
   <!-- Visualize as a bar -->
   <rect x="64" y="248" width="248" height="36" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
-  <text x="188" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#fdfcfb" text-anchor="middle">$14,000 per SD</text>
-  <text x="188" y="302" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">(per Krueger 1999 reanalysis of STAR)</text>
+  <text x="188" y="270" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#fdfcfb" text-anchor="middle">$14,000 per SD</text>
+  <text x="188" y="302" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">(per Krueger 1999 reanalysis of STAR)</text>
 
   <!-- Right: AI tutoring supplemental -->
   <rect x="372" y="80" width="280" height="240" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
-  <text x="512" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">AI tutoring (supplemental)</text>
-  <text x="512" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">(typical district licensing + early RCTs)</text>
+  <text x="512" y="104" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">AI tutoring (supplemental)</text>
+  <text x="512" y="120" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">(typical district licensing + early RCTs)</text>
   <line x1="388" y1="132" x2="636" y2="132" stroke="#8a8480" stroke-width="0.5"/>
-  <text x="388" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Annual cost</text>
-  <text x="636" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="end">$50–$100 / student</text>
-  <text x="388" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Effect size</text>
-  <text x="636" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="end">d ≈ 0.17</text>
+  <text x="388" y="156" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Annual cost</text>
+  <text x="636" y="156" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="end">$50–$100 / student</text>
+  <text x="388" y="180" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Effect size</text>
+  <text x="636" y="180" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="end">d ≈ 0.17</text>
   <line x1="388" y1="196" x2="636" y2="196" stroke="#8a8480" stroke-width="0.5"/>
-  <text x="388" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Cost per SD gain</text>
-  <text x="636" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="bold" fill="#1a1714" text-anchor="end">≈ $300</text>
+  <text x="388" y="220" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Cost per SD gain</text>
+  <text x="636" y="220" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="14" font-weight="bold" fill="#1a1714" text-anchor="end">≈ $300</text>
 
   <!-- Visualize as a tiny bar -->
   <rect x="388" y="248" width="6" height="36" fill="#4a4540" stroke="#1a1714" stroke-width="1"/>
-  <text x="408" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">$300 per SD</text>
-  <text x="512" y="302" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">(Bloom et al. 2025; WestEd Khanmigo; EEF trial)</text>
+  <text x="408" y="270" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">$300 per SD</text>
+  <text x="512" y="302" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">(Bloom et al. 2025; WestEd Khanmigo; EEF trial)</text>
 
   <!-- Ratio annotation -->
-  <text x="350" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Ratio: ~40× more cost-effective per SD</text>
-  <text x="350" y="358" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">Both numbers are too thin to be the right buy alone.</text>
-  <text x="350" y="376" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-style="italic" fill="#1a1714" text-anchor="middle">Both miss the variable the chapter is naming: teacher training.</text>
+  <text x="350" y="340" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Ratio: ~40× more cost-effective per SD</text>
+  <text x="350" y="358" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">Both numbers are too thin to be the right buy alone.</text>
+  <text x="350" y="376" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-style="italic" fill="#1a1714" text-anchor="middle">Both miss the variable the chapter is naming: teacher training.</text>
 
   <!-- Caption -->
-  <text x="350" y="402" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">The threshold framing has been hiding the cost-effectiveness conversation the field has not been having.</text>
+  <text x="350" y="402" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">The threshold framing has been hiding the cost-effectiveness conversation the field has not been having.</text>
 </svg>

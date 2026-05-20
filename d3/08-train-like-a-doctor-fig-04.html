@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 8.4 — Effect size vs. contact hours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 65ch; }
+  #chart { width: 100%; height: 480px; }
+  .axis text { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: var(--color-secondary); }
+  .axis path, .axis line { stroke: var(--color-secondary); shape-rendering: crispEdges; }
+  .axis-title { font-family: 'Inter', sans-serif; font-size: 12px; fill: var(--color-secondary); }
+  .gridline { stroke: var(--color-border); stroke-opacity: 0.6; shape-rendering: crispEdges; }
+  .curve-coaching { fill: none; stroke: var(--color-red); stroke-width: 2.5; }
+  .curve-workshop { fill: none; stroke: var(--color-secondary); stroke-width: 2; stroke-dasharray: 6 4; }
+  .threshold-line { stroke: var(--color-ochre); stroke-width: 1.25; stroke-dasharray: 4 3; }
+  .plateau-marker { fill: var(--color-red); stroke: var(--color-white); stroke-width: 1.5; }
+  .annotation { font-family: 'Inter', sans-serif; font-size: 12px; fill: var(--color-ink); }
+  .annotation-secondary { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); font-style: italic; }
+  .annotation-strong { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; fill: var(--color-ink); }
+  .legend-text { font-family: 'Inter', sans-serif; font-size: 12px; fill: var(--color-ink); }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 16px; max-width: 65ch; font-style: italic; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-size: 12px; font-family: 'Inter', sans-serif; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 8.4 — Effect size vs. contact hours</h1>
+<p class="subtitle">Workshops stay flat across every duration. Coaching rises to d &asymp; 0.49 by ten hours and plateaus. Structure, not raw time, produces the gain.</p>
+<div id="chart" role="img" aria-labelledby="chart-title chart-desc"></div>
+<p class="caption">The dashed vertical reference marks the Yoon (2007) 14-hour threshold below which workshop-format PD shows no detectable effect on student achievement. Coaching plateau effect from Kraft, Blazar &amp; Hogan (2018).</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+// Synthetic curves anchored to published anchor points.
+// Workshop-format PD: flat, small noise around d = 0.02.
+// Coaching: saturating curve to d = 0.49 by ~10h, slow plateau-to-decay above.
+const workshopData = d3.range(0, 81, 2).map(h => ({
+  hours: h,
+  d: 0.02 + 0.012 * Math.sin(h * 0.55)
+}));
+
+const coachingData = d3.range(0, 81, 1).map(h => {
+  // Saturating exponential: rises sharply, plateaus near 0.49
+  const plateau = 0.49;
+  const k = 0.28;
+  const base = plateau * (1 - Math.exp(-k * h));
+  // Tiny declining drift above 15h to suggest no reliable extra gain
+  const drift = h > 15 ? -0.0006 * (h - 15) : 0;
+  return { hours: h, d: Math.max(0, base + drift) };
+});
+
+const YOON_THRESHOLD = 14;
+const KRAFT_PLATEAU_HOUR = 10;
+const KRAFT_PLATEAU_D = 0.49;
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+
+function showTip(event, html) {
+  tooltip.html(html)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top', (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTip(event) {
+  tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px');
+}
+function hideTip() {
+  tooltip.transition().duration(100).style('opacity', 0);
+}
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+
+  const totalWidth = container.clientWidth || 800;
+  const totalHeight = container.clientHeight || 480;
+  const margin = { top: 56, right: 40, bottom: 64, left: 64 };
+  const chartWidth = totalWidth - margin.left - margin.right;
+  const chartHeight = totalHeight - margin.top - margin.bottom;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth)
+    .attr('height', totalHeight)
+    .attr('role', 'img')
+    .attr('aria-labelledby', 'chart-title chart-desc');
+
+  svg.append('title').attr('id', 'chart-title')
+    .text('Effect size vs. contact hours: workshop-format PD vs. Kraft coaching');
+  svg.append('desc').attr('id', 'chart-desc')
+    .text('Two curves on the same axes. Workshop-format PD stays flat near d=0 across all contact hours; sustained coaching rises steeply to about d=0.49 by ten hours, then plateaus. A dashed vertical reference marks the Yoon 14-hour threshold below which student-achievement effects are null.');
+
+  const gChart = svg.append('g')
+    .attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const xScaleLinear = d3.scaleLinear()
+    .domain([0, 80])
+    .range([0, chartWidth]);
+
+  const yScaleLinear = d3.scaleLinear()
+    .domain([0, 0.6])
+    .range([chartHeight, 0]);
+
+  // Gridlines (horizontal)
+  gChart.append('g').attr('class', 'g-gridlines')
+    .selectAll('line')
+    .data(yScaleLinear.ticks(6))
+    .join('line')
+      .attr('class', 'gridline')
+      .attr('x1', 0)
+      .attr('x2', chartWidth)
+      .attr('y1', d => yScaleLinear(d))
+      .attr('y2', d => yScaleLinear(d))
+      .attr('aria-hidden', 'true');
+
+  // Axes
+  const xAxis = d3.axisBottom(xScaleLinear).ticks(8).tickFormat(d => d);
+  const yAxis = d3.axisLeft(yScaleLinear).ticks(6).tickFormat(d3.format('.1f'));
+
+  gChart.append('g').attr('class', 'axis')
+    .attr('transform', `translate(0,${chartHeight})`)
+    .call(xAxis);
+
+  gChart.append('g').attr('class', 'axis')
+    .call(yAxis);
+
+  // Axis titles
+  gChart.append('text').attr('class', 'axis-title')
+    .attr('x', chartWidth / 2)
+    .attr('y', chartHeight + 44)
+    .attr('text-anchor', 'middle')
+    .text('Contact hours of professional development');
+
+  gChart.append('text').attr('class', 'axis-title')
+    .attr('transform', `translate(${-46},${chartHeight / 2}) rotate(-90)`)
+    .attr('text-anchor', 'middle')
+    .text('Effect size on instructional practice (d)');
+
+  // Line generator
+  const lineGen = d3.line()
+    .x(d => xScaleLinear(d.hours))
+    .y(d => yScaleLinear(d.d))
+    .curve(d3.curveMonotoneX);
+
+  // Workshop curve
+  gChart.append('path')
+    .datum(workshopData)
+    .attr('class', 'curve-workshop')
+    .attr('d', lineGen)
+    .attr('aria-label', 'Workshop-format PD: flat around d = 0 across all contact hours');
+
+  // Coaching curve
+  gChart.append('path')
+    .datum(coachingData)
+    .attr('class', 'curve-coaching')
+    .attr('d', lineGen)
+    .attr('aria-label', 'Sustained coaching: rises to d = 0.49 by ten contact hours, then plateaus');
+
+  // Yoon 14-hour threshold reference line
+  const xYoon = xScaleLinear(YOON_THRESHOLD);
+  gChart.append('line')
+    .attr('class', 'threshold-line')
+    .attr('x1', xYoon).attr('x2', xYoon)
+    .attr('y1', 0).attr('y2', chartHeight)
+    .attr('aria-hidden', 'true');
+
+  gChart.append('text')
+    .attr('class', 'annotation-secondary')
+    .attr('x', xYoon)
+    .attr('y', -18)
+    .attr('text-anchor', 'middle')
+    .text('Yoon (2007): 14-hour threshold');
+  gChart.append('text')
+    .attr('class', 'annotation-secondary')
+    .attr('x', xYoon)
+    .attr('y', -4)
+    .attr('text-anchor', 'middle')
+    .text('below = null on student achievement');
+
+  // Plateau marker (d = 0.49 at 10h)
+  const xPlateau = xScaleLinear(KRAFT_PLATEAU_HOUR);
+  const yPlateau = yScaleLinear(KRAFT_PLATEAU_D);
+
+  gChart.append('circle')
+    .attr('class', 'plateau-marker')
+    .attr('cx', xPlateau)
+    .attr('cy', yPlateau)
+    .attr('r', 5)
+    .attr('tabindex', 0)
+    .attr('aria-label', 'Kraft coaching plateau: d equals 0.49 at ten contact hours')
+    .on('mouseover', (event) => showTip(event, '<strong>Kraft plateau</strong><br>d &asymp; 0.49 at ~10 hours<br>more hours, no reliable extra gain'))
+    .on('mousemove', moveTip)
+    .on('mouseout', hideTip)
+    .on('focus', (event) => showTip(event, '<strong>Kraft plateau</strong><br>d &asymp; 0.49 at ~10 hours'))
+    .on('blur', hideTip);
+
+  // Annotation arrow to plateau
+  const annoX = xPlateau + 90;
+  const annoY = yPlateau - 24;
+  gChart.append('line')
+    .attr('x1', xPlateau + 6).attr('y1', yPlateau - 4)
+    .attr('x2', annoX - 4).attr('y2', annoY + 6)
+    .attr('stroke', 'var(--color-ink)').attr('stroke-width', 0.8);
+  gChart.append('text')
+    .attr('class', 'annotation-strong')
+    .attr('x', annoX).attr('y', annoY)
+    .text('d ≈ 0.49 at ~10 hours');
+  gChart.append('text')
+    .attr('class', 'annotation-secondary')
+    .attr('x', annoX).attr('y', annoY + 14)
+    .text('Kraft, Blazar & Hogan (2018)');
+
+  // Plateau annotation further along the coaching curve
+  const xPlateauMid = xScaleLinear(45);
+  const yPlateauMid = yScaleLinear(0.485);
+  gChart.append('line')
+    .attr('x1', xPlateauMid).attr('y1', yPlateauMid + 4)
+    .attr('x2', xPlateauMid).attr('y2', yPlateauMid + 38)
+    .attr('stroke', 'var(--color-secondary)').attr('stroke-width', 0.8)
+    .attr('stroke-dasharray', '3 3');
+  gChart.append('text')
+    .attr('class', 'annotation-secondary')
+    .attr('x', xPlateauMid).attr('y', yPlateauMid + 52)
+    .attr('text-anchor', 'middle')
+    .text('Plateau: more hours,');
+  gChart.append('text')
+    .attr('class', 'annotation-secondary')
+    .attr('x', xPlateauMid).attr('y', yPlateauMid + 66)
+    .attr('text-anchor', 'middle')
+    .text('no reliable extra gain');
+
+  // Workshop label
+  const xWorkLabel = xScaleLinear(62);
+  const yWorkLabel = yScaleLinear(0.02);
+  gChart.append('text')
+    .attr('class', 'annotation-secondary')
+    .attr('x', xWorkLabel).attr('y', yWorkLabel - 14)
+    .attr('text-anchor', 'middle')
+    .text('Workshop-format PD: flat at d ≈ 0');
+  gChart.append('line')
+    .attr('x1', xWorkLabel).attr('y1', yWorkLabel - 10)
+    .attr('x2', xWorkLabel).attr('y2', yWorkLabel - 2)
+    .attr('stroke', 'var(--color-secondary)').attr('stroke-width', 0.8);
+
+  // Legend
+  const legendY = chartHeight + 56;
+  const legend = gChart.append('g').attr('class', 'g-legend')
+    .attr('transform', `translate(0,${legendY})`);
+
+  legend.append('line')
+    .attr('x1', 8).attr('x2', 38).attr('y1', 0).attr('y2', 0)
+    .attr('stroke', 'var(--color-red)').attr('stroke-width', 2.5);
+  legend.append('text')
+    .attr('class', 'legend-text')
+    .attr('x', 44).attr('y', 4)
+    .text('Sustained coaching (Kraft 2018)');
+
+  legend.append('line')
+    .attr('x1', 240).attr('x2', 270).attr('y1', 0).attr('y2', 0)
+    .attr('stroke', 'var(--color-secondary)').attr('stroke-width', 2)
+    .attr('stroke-dasharray', '6 4');
+  legend.append('text')
+    .attr('class', 'legend-text')
+    .attr('x', 276).attr('y', 4)
+    .text('Workshop-format PD');
+
+  // Hover regions on the coaching curve for tooltip readout
+  const bisect = d3.bisector(d => d.hours).left;
+  const hoverRect = gChart.append('rect')
+    .attr('class', 'hover-capture')
+    .attr('width', chartWidth)
+    .attr('height', chartHeight)
+    .attr('fill', 'transparent')
+    .style('cursor', 'crosshair');
+
+  const focusDot = gChart.append('circle')
+    .attr('r', 4)
+    .attr('fill', 'var(--color-ink)')
+    .attr('opacity', 0)
+    .attr('aria-hidden', 'true');
+
+  hoverRect
+    .on('mousemove', (event) => {
+      const [mx] = d3.pointer(event, hoverRect.node());
+      const h = xScaleLinear.invert(mx);
+      const idx = Math.max(0, Math.min(coachingData.length - 1, bisect(coachingData, h)));
+      const d = coachingData[idx];
+      focusDot.attr('cx', xScaleLinear(d.hours)).attr('cy', yScaleLinear(d.d)).attr('opacity', 1);
+      showTip(event, `<strong>${d.hours} contact hours</strong><br>coaching d &asymp; ${d.d.toFixed(2)}`);
+    })
+    .on('mouseout', () => {
+      focusDot.attr('opacity', 0);
+      hideTip();
+    });
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

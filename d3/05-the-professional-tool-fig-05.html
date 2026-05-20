@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 5.5 — Three objects, not two</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--color-white);
+    color: var(--color-ink);
+    font-family: 'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+    padding: 24px;
+  }
+  h1 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  p.subtitle {
+    color: var(--color-secondary);
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  #chart { width: 100%; }
+  .panel-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    fill: var(--color-secondary);
+  }
+  .panel-title {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 20px;
+    font-weight: 500;
+    fill: var(--color-ink);
+  }
+  .panel-divider { stroke: var(--color-border); stroke-width: 1; }
+  .panel-frame { fill: var(--color-white); stroke: var(--color-ink); stroke-width: 1.25; }
+  .panel-frame.active { stroke: var(--color-red); }
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    fill: var(--color-ink);
+  }
+  .bullet {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 14px;
+    fill: var(--color-ink);
+  }
+  .binary-box { fill: var(--color-white); stroke: var(--color-ink); stroke-width: 1; }
+  .binary-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    fill: var(--color-ink);
+  }
+  .binary-sub {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    fill: var(--color-secondary);
+  }
+  .connector { stroke: var(--color-secondary); stroke-width: 1; fill: none; }
+  .conflate {
+    stroke: var(--color-red);
+    stroke-width: 1.25;
+    fill: none;
+    stroke-dasharray: 4 3;
+  }
+  .conflate-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--color-red);
+  }
+  .closing {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 14px;
+    fill: var(--color-ink);
+  }
+  .closing.italic { font-style: italic; fill: var(--color-secondary); }
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    background: var(--color-ink);
+    color: var(--color-white);
+    padding: 6px 10px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 4px;
+    max-width: 280px;
+  }
+  .panel-hit { fill: transparent; cursor: pointer; }
+  .panel-hit:focus { outline: 2px solid var(--color-red); outline-offset: 2px; }
+  .caption {
+    color: var(--color-secondary);
+    font-size: 13px;
+    margin-top: 16px;
+    max-width: 65ch;
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 5.5 — Three objects, not two</h1>
+<p class="subtitle">Policy keeps asking "with-AI vs. without-AI" — and averaging two distinct operator conditions inside the "with" column.</p>
+<div id="chart" role="main"></div>
+<p class="caption">Three operator conditions live behind the binary framing: the trained teacher with AI, the untrained teacher with AI, and the trained teacher without AI. Studies that pool the first two report a small effect — not because the tool is weak, but because the average is hiding the trained condition inside the untrained one.</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const FALLBACK_DATA = {
+  panels: [
+    {
+      id: 'trained-with',
+      eyebrow: 'OBJECT 1',
+      title: 'Trained teacher with AI',
+      can: [
+        'diagnose misconceptions',
+        'differentiate at three reading levels',
+        'Socratic probing in real time'
+      ],
+      cannot: ['avoid deciding when each move applies, student by student'],
+      tooltip: 'The condition the cross-profession evidence predicts. Tutor CoPilot operationalises it on a 1:1 scale.',
+      active: true
+    },
+    {
+      id: 'untrained-with',
+      eyebrow: 'OBJECT 2',
+      title: 'Untrained teacher with AI',
+      can: [
+        'paste the first draft output',
+        'auto-grade what scales easily',
+        'accept the default suggestion'
+      ],
+      cannot: ['read the wrong-note pattern the tool surfaces'],
+      tooltip: 'The condition that drops the average. Tool delivered without a curriculum that teaches interpretation.',
+      active: false
+    },
+    {
+      id: 'trained-without',
+      eyebrow: 'OBJECT 3',
+      title: 'Trained teacher without AI',
+      can: [
+        'everything pedagogy alone has ever been able to do',
+        'at a 30-student scale'
+      ],
+      cannot: ['three differentiated drafts in the time of one'],
+      tooltip: 'The counterfactual against which "with-AI" gets reported. The fair comparison most studies skip.',
+      active: false
+    }
+  ]
+};
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, html) {
+  tooltip.html(html)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top', (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTip(event) {
+  tooltip
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top', (event.pageY - 28) + 'px');
+}
+function hideTip() {
+  tooltip.transition().duration(100).style('opacity', 0);
+}
+
+function draw(data) {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+
+  const totalWidth = container.clientWidth || 900;
+  const totalHeight = 560;
+  const margin = { top: 56, right: 24, bottom: 64, left: 24 };
+  const chartWidth = totalWidth - margin.left - margin.right;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth)
+    .attr('height', totalHeight)
+    .attr('role', 'img')
+    .attr('aria-labelledby', 'fig5-title fig5-desc')
+    .attr('viewBox', `0 0 ${totalWidth} ${totalHeight}`);
+
+  svg.append('title').attr('id', 'fig5-title')
+    .text('Three objects, not two: trained teacher with AI, untrained teacher with AI, trained teacher without AI.');
+  svg.append('desc').attr('id', 'fig5-desc')
+    .text('Three side-by-side panels label distinct operator conditions; brackets show how policy collapses the first two into a single "with-AI" measurement.');
+
+  const gChart = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Heading
+  gChart.append('text')
+    .attr('x', chartWidth / 2)
+    .attr('y', -28)
+    .attr('text-anchor', 'middle')
+    .style('font-family', "'EB Garamond', Georgia, serif")
+    .style('font-size', '20px')
+    .style('fill', 'var(--color-ink)')
+    .text('Three objects, not two');
+
+  gChart.append('text')
+    .attr('x', chartWidth / 2)
+    .attr('y', -8)
+    .attr('text-anchor', 'middle')
+    .style('font-family', "'EB Garamond', Georgia, serif")
+    .style('font-size', '13px')
+    .style('font-style', 'italic')
+    .style('fill', 'var(--color-secondary)')
+    .text('what the binary framing keeps averaging together');
+
+  // Panels
+  const panelGap = 16;
+  const panelWidth = (chartWidth - panelGap * 2) / 3;
+  const panelHeight = 240;
+  const panelY = 20;
+
+  const xScalePanel = d3.scaleBand()
+    .domain(data.panels.map(p => p.id))
+    .range([0, chartWidth])
+    .paddingInner(panelGap / panelWidth);
+
+  const gPanels = gChart.append('g').attr('class', 'g-panels');
+
+  const panelG = gPanels.selectAll('.panel')
+    .data(data.panels)
+    .join('g')
+      .attr('class', 'panel')
+      .attr('transform', d => `translate(${xScalePanel(d.id)},${panelY})`);
+
+  panelG.append('rect')
+    .attr('class', d => d.active ? 'panel-frame active' : 'panel-frame')
+    .attr('x', 0).attr('y', 0)
+    .attr('width', panelWidth)
+    .attr('height', panelHeight);
+
+  panelG.append('text')
+    .attr('class', 'panel-eyebrow')
+    .attr('x', panelWidth / 2)
+    .attr('y', 22)
+    .attr('text-anchor', 'middle')
+    .text(d => d.eyebrow);
+
+  panelG.append('text')
+    .attr('class', 'panel-title')
+    .attr('x', panelWidth / 2)
+    .attr('y', 50)
+    .attr('text-anchor', 'middle')
+    .text(d => d.title);
+
+  panelG.append('line')
+    .attr('class', 'panel-divider')
+    .attr('x1', 20).attr('x2', panelWidth - 20)
+    .attr('y1', 66).attr('y2', 66);
+
+  panelG.append('text')
+    .attr('class', 'section-label')
+    .attr('x', 20).attr('y', 86)
+    .text('Can do');
+
+  panelG.each(function(d) {
+    const g = d3.select(this);
+    d.can.forEach((line, i) => {
+      g.append('text')
+        .attr('class', 'bullet')
+        .attr('x', 20)
+        .attr('y', 106 + i * 18)
+        .text('— ' + line);
+    });
+    const cannotY = 106 + d.can.length * 18 + 16;
+    g.append('text')
+      .attr('class', 'section-label')
+      .attr('x', 20)
+      .attr('y', cannotY)
+      .text('Cannot do');
+    d.cannot.forEach((line, i) => {
+      g.append('text')
+        .attr('class', 'bullet')
+        .attr('x', 20)
+        .attr('y', cannotY + 20 + i * 18)
+        .text('— ' + line);
+    });
+  });
+
+  // Hit areas for keyboard / tooltip access
+  panelG.append('rect')
+    .attr('class', 'panel-hit')
+    .attr('x', 0).attr('y', 0)
+    .attr('width', panelWidth)
+    .attr('height', panelHeight)
+    .attr('tabindex', 0)
+    .attr('role', 'button')
+    .attr('aria-label', d => `${d.title}. ${d.tooltip}`)
+    .on('mouseover', (event, d) => showTip(event, `<strong>${d.title}</strong><br>${d.tooltip}`))
+    .on('mousemove', moveTip)
+    .on('mouseout', hideTip)
+    .on('focus', function(event) {
+      const d = d3.select(this).datum();
+      const bbox = this.getBoundingClientRect();
+      showTip({ pageX: bbox.left + window.scrollX + bbox.width / 2, pageY: bbox.top + window.scrollY }, `<strong>${d.title}</strong><br>${d.tooltip}`);
+    })
+    .on('blur', hideTip)
+    .on('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        const d = d3.select(this).datum();
+        const bbox = this.getBoundingClientRect();
+        showTip({ pageX: bbox.left + window.scrollX + bbox.width / 2, pageY: bbox.top + window.scrollY }, `<strong>${d.title}</strong><br>${d.tooltip}`);
+      }
+    });
+
+  // Brackets and binary band
+  const bracketY = panelY + panelHeight + 24;
+  const binaryY = bracketY + 28;
+  const binaryHeight = 56;
+
+  // Trained + untrained collapse into "with-AI"
+  const p1x = xScalePanel('trained-with') + panelWidth / 2;
+  const p2x = xScalePanel('untrained-with') + panelWidth / 2;
+  const p3x = xScalePanel('trained-without') + panelWidth / 2;
+
+  // Bracket connecting panel 1 and 2 down to "with-AI"
+  const withX = (p1x + p2x) / 2;
+  const withBoxW = Math.max(180, panelWidth);
+  const withoutBoxW = Math.max(180, panelWidth);
+
+  gChart.append('path')
+    .attr('class', 'connector')
+    .attr('d', `M ${p1x} ${bracketY - 4} V ${bracketY + 10} H ${p2x} V ${bracketY - 4}`);
+  gChart.append('path')
+    .attr('class', 'connector')
+    .attr('d', `M ${withX} ${bracketY + 10} V ${binaryY}`)
+    .attr('marker-end', 'url(#fig5-arrow)');
+
+  // Bracket from panel 3 down to "without-AI"
+  gChart.append('path')
+    .attr('class', 'connector')
+    .attr('d', `M ${p3x} ${bracketY - 4} V ${binaryY}`)
+    .attr('marker-end', 'url(#fig5-arrow)');
+
+  // Arrow marker defs
+  const defs = svg.append('defs');
+  defs.append('marker')
+    .attr('id', 'fig5-arrow')
+    .attr('markerWidth', 8).attr('markerHeight', 6)
+    .attr('refX', 7).attr('refY', 3)
+    .attr('orient', 'auto')
+    .append('polygon')
+      .attr('points', '0 0, 8 3, 0 6')
+      .attr('fill', 'var(--color-secondary)');
+
+  // Binary boxes
+  gChart.append('rect')
+    .attr('class', 'binary-box')
+    .attr('x', withX - withBoxW / 2)
+    .attr('y', binaryY)
+    .attr('width', withBoxW)
+    .attr('height', binaryHeight);
+  gChart.append('text')
+    .attr('class', 'binary-label')
+    .attr('x', withX)
+    .attr('y', binaryY + 22)
+    .attr('text-anchor', 'middle')
+    .text('"with-AI"');
+  gChart.append('text')
+    .attr('class', 'binary-sub')
+    .attr('x', withX)
+    .attr('y', binaryY + 42)
+    .attr('text-anchor', 'middle')
+    .text('trained and untrained averaged together');
+
+  gChart.append('rect')
+    .attr('class', 'binary-box')
+    .attr('x', p3x - withoutBoxW / 2)
+    .attr('y', binaryY)
+    .attr('width', withoutBoxW)
+    .attr('height', binaryHeight);
+  gChart.append('text')
+    .attr('class', 'binary-label')
+    .attr('x', p3x)
+    .attr('y', binaryY + 22)
+    .attr('text-anchor', 'middle')
+    .text('"without-AI"');
+  gChart.append('text')
+    .attr('class', 'binary-sub')
+    .attr('x', p3x)
+    .attr('y', binaryY + 42)
+    .attr('text-anchor', 'middle')
+    .text('the comparison the studies report');
+
+  // Conflation arrow between the two binary boxes
+  const leftEdge = withX + withBoxW / 2;
+  const rightEdge = p3x - withoutBoxW / 2;
+  if (rightEdge > leftEdge + 12) {
+    gChart.append('path')
+      .attr('class', 'conflate')
+      .attr('d', `M ${leftEdge + 4} ${binaryY + binaryHeight / 2} L ${rightEdge - 4} ${binaryY + binaryHeight / 2}`);
+    gChart.append('text')
+      .attr('class', 'conflate-label')
+      .attr('x', (leftEdge + rightEdge) / 2)
+      .attr('y', binaryY + binaryHeight / 2 - 6)
+      .attr('text-anchor', 'middle')
+      .text('averaged');
+  }
+
+  // Closing text
+  const closingY = binaryY + binaryHeight + 28;
+  gChart.append('text')
+    .attr('class', 'closing')
+    .attr('x', chartWidth / 2)
+    .attr('y', closingY)
+    .attr('text-anchor', 'middle')
+    .style('font-weight', '600')
+    .text('The field studies two conditions and reports one number.');
+  gChart.append('text')
+    .attr('class', 'closing italic')
+    .attr('x', chartWidth / 2)
+    .attr('y', closingY + 18)
+    .attr('text-anchor', 'middle')
+    .text('The number is small because the average is hiding Object 1 inside Object 2.');
+}
+
+async function loadData() {
+  try {
+    return await d3.json('./05-the-professional-tool-fig-05.data.json');
+  } catch {
+    return FALLBACK_DATA;
+  }
+}
+
+let cachedData = null;
+loadData().then(data => {
+  cachedData = data;
+  draw(cachedData);
+  const ro = new ResizeObserver(() => draw(cachedData));
+  ro.observe(document.getElementById('chart'));
+});
+</script>
+</body>
+</html>

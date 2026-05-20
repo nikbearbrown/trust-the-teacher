@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" role="img" aria-labelledby="t-fig03 d-fig03">
+  <title id="t-fig03">K-12 educator AI professional-development access, 2026</title>
+  <desc id="d-fig03">A horizontal segmented bar showing four tiers of K-12 educator AI professional development access: forty-four percent none, twenty-nine percent exactly one workshop, nineteen percent intermediate exposure, eight percent systematic ongoing training. The trained tier is the smallest sliver on the right.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .val { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .seglabel { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; }
+    </style>
+    <marker id="ar3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" class="ti" text-anchor="middle">How thin the "trained" tier actually is</text>
+  <text x="350" y="50" class="sm" text-anchor="middle">K-12 educator AI professional-development access (Education Week, 2026; n ≈ all US K-12 teachers)</text>
+
+  <!-- Single horizontal bar — width 560, x from 70 to 630, y centered at 180, height 60 -->
+  <!-- Total bar represents 100% -->
+  <!-- Tier 1: 44% no PD          → width 246.4 → x 70..316.4    → dark ink #1a1714 -->
+  <!-- Tier 2: 29% exactly one    → width 162.4 → x 316.4..478.8 → mid gray #545454 -->
+  <!-- Tier 3: 19% intermediate   → width 106.4 → x 478.8..585.2 → light gray #8a8480 -->
+  <!-- Tier 4: 8% systematic      → width 44.8  → x 585.2..630   → ochre #c8860e -->
+
+  <!-- Bar segments -->
+  <rect x="70"    y="180" width="246.4" height="60" fill="#1a1714"/>
+  <rect x="316.4" y="180" width="162.4" height="60" fill="#545454"/>
+  <rect x="478.8" y="180" width="106.4" height="60" fill="#8a8480"/>
+  <rect x="585.2" y="180" width="44.8"  height="60" fill="#c8860e"/>
+
+  <!-- Segment border -->
+  <rect x="70" y="180" width="560" height="60" fill="none" stroke="#1a1714" stroke-width="0.75"/>
+
+  <!-- In-segment percentages (white text on dark, ink text on light) -->
+  <text x="193.2" y="216" class="val" fill="#fdfcfb" text-anchor="middle">44%</text>
+  <text x="397.6" y="216" class="val" fill="#fdfcfb" text-anchor="middle">29%</text>
+  <text x="532"   y="216" class="val" text-anchor="middle">19%</text>
+  <text x="607.6" y="216" class="val" text-anchor="middle">8%</text>
+
+  <!-- Above-bar tier headers — short, sentence case -->
+  <text x="193.2" y="160" class="seglabel" fill="#1a1714" text-anchor="middle">No PD</text>
+  <text x="397.6" y="160" class="seglabel" fill="#1a1714" text-anchor="middle">One workshop</text>
+  <text x="532"   y="160" class="seglabel" fill="#1a1714" text-anchor="middle">Intermediate</text>
+  <text x="607.6" y="160" class="seglabel" fill="#1a1714" text-anchor="middle">Systematic</text>
+
+  <!-- Sub-labels under the headers -->
+  <text x="193.2" y="174" class="sm" text-anchor="middle">none at all</text>
+  <text x="397.6" y="174" class="sm" text-anchor="middle">exactly one</text>
+  <text x="532"   y="174" class="sm" text-anchor="middle">scattered exposure</text>
+  <text x="607.6" y="174" class="sm" text-anchor="middle">ongoing, structured</text>
+
+  <!-- Cumulative tick marks below the bar -->
+  <line x1="70"    y1="240" x2="70"    y2="252" stroke="#4a4540"/>
+  <text x="70"    y="266" class="sm" text-anchor="middle">0%</text>
+  <line x1="316.4" y1="240" x2="316.4" y2="252" stroke="#4a4540"/>
+  <text x="316.4" y="266" class="sm" text-anchor="middle">44%</text>
+  <line x1="478.8" y1="240" x2="478.8" y2="252" stroke="#4a4540"/>
+  <text x="478.8" y="266" class="sm" text-anchor="middle">73%</text>
+  <line x1="585.2" y1="240" x2="585.2" y2="252" stroke="#4a4540"/>
+  <text x="585.2" y="266" class="sm" text-anchor="middle">92%</text>
+  <line x1="630"   y1="240" x2="630"   y2="252" stroke="#4a4540"/>
+  <text x="630"   y="266" class="sm" text-anchor="middle">100%</text>
+
+  <!-- The big takeaway annotation — pointer at the 8% segment -->
+  <path d="M 607.6 290 L 607.6 250" fill="none" stroke="#1a1714" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar3)"/>
+  <text x="607.6" y="305" class="lb" text-anchor="middle">8% of the profession</text>
+  <text x="607.6" y="320" class="sm" text-anchor="middle">has the training</text>
+  <text x="607.6" y="332" class="sm" text-anchor="middle">the moment requires</text>
+
+  <!-- Left-side framing annotation -->
+  <path d="M 193.2 290 L 193.2 250" fill="none" stroke="#1a1714" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar3)"/>
+  <text x="193.2" y="305" class="lb" text-anchor="middle">Nearly half</text>
+  <text x="193.2" y="320" class="sm" text-anchor="middle">have received zero</text>
+  <text x="193.2" y="332" class="sm" text-anchor="middle">AI training of any kind</text>
+
+  <!-- Caption -->
+  <text x="350" y="385" class="cap" text-anchor="middle">"We're at a disadvantage." The phrase educators used, unprompted, when describing</text>
+  <text x="350" y="399" class="cap" text-anchor="middle">their own situation. Not 44% inadequate. 44% none.</text>
+</svg>

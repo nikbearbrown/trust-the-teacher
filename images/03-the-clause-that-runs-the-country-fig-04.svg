@@ -1,0 +1,70 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t04 d04">
+  <title id="t04">Three frameworks, three units of analysis, none usable in thirty seconds</title>
+  <desc id="d04">Three-row comparison of the AAP 5 Cs, Richard Culatta's knowledge-constructor test, and the productive-friction framework, showing each framework's origin context, native unit of analysis, and the reason it cannot deliver a thirty-second classroom decision.</desc>
+  <defs>
+    <marker id="ar4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="28" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Three frameworks for the educational-purposes question</text>
+  <text x="350" y="44" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">Each is correct in its native unit of analysis. None reaches the teacher in thirty seconds.</text>
+
+  <!-- Column headers -->
+  <text x="180" y="76" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Origin context</text>
+  <text x="380" y="76" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Native unit of analysis</text>
+  <text x="580" y="76" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Why it stalls at thirty seconds</text>
+
+  <!-- Header underline -->
+  <line x1="32" y1="84" x2="668" y2="84" stroke="#1a1714" stroke-width="1"/>
+
+  <!-- Row 1: AAP 5 Cs -->
+  <text x="32" y="108" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714">AAP 5 Cs of Media Use</text>
+  <text x="32" y="122" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">Child · Content · Calm · Crowding Out · Communication</text>
+  <text x="180" y="148" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Pediatric well-child</text>
+  <text x="180" y="160" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">visit, one family,</text>
+  <text x="180" y="172" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">twenty-minute window</text>
+  <text x="380" y="148" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">One child, one home,</text>
+  <text x="380" y="160" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">one clinician with</text>
+  <text x="380" y="172" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">prior chart access</text>
+  <text x="580" y="148" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Cannot run a 5-C</text>
+  <text x="580" y="160" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">interview with thirty</text>
+  <text x="580" y="172" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">students mid-lesson</text>
+
+  <line x1="32" y1="190" x2="668" y2="190" stroke="#c8c4c0" stroke-width="0.5"/>
+
+  <!-- Row 2: Culatta -->
+  <text x="32" y="214" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714">Culatta's knowledge-constructor test</text>
+  <text x="32" y="228" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">Is the device producing constructors and problem-solvers, or passive consumers?</text>
+  <text x="180" y="254" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">ISTE+ASCD system</text>
+  <text x="180" y="266" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">leadership, district</text>
+  <text x="180" y="278" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">technology strategy</text>
+  <text x="380" y="254" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">A district or state,</text>
+  <text x="380" y="266" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">policy direction set</text>
+  <text x="380" y="278" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">over a school year</text>
+  <text x="580" y="254" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Restates the question</text>
+  <text x="580" y="266" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">("is this educational?")</text>
+  <text x="580" y="278" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">without resolving it</text>
+
+  <line x1="32" y1="296" x2="668" y2="296" stroke="#c8c4c0" stroke-width="0.5"/>
+
+  <!-- Row 3: Productive friction -->
+  <text x="32" y="320" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714">Productive-friction framework</text>
+  <text x="32" y="334" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540">Tech is educational when it requires cognitive effort; harmful when it removes it.</text>
+  <text x="180" y="360" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Ed-research literature,</text>
+  <text x="180" y="372" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Bastani et al. PNAS</text>
+  <text x="180" y="384" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">2025 confirmation</text>
+  <text x="380" y="360" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">One student, one task,</text>
+  <text x="380" y="372" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">a single cognitive</text>
+  <text x="380" y="384" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">moment, observed</text>
+  <text x="580" y="360" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">Only the teacher in</text>
+  <text x="580" y="372" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">the room can read</text>
+  <text x="580" y="384" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">the effort in real time</text>
+
+  <!-- Bottom rule + arrow back to the teacher -->
+  <line x1="32" y1="396" x2="668" y2="396" stroke="#1a1714" stroke-width="1"/>
+  <path d="M 200 408 L 500 408" fill="none" stroke="#1a1714" stroke-width="1" marker-end="url(#ar4)"/>
+  <text x="350" y="416" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#4a4540" text-anchor="middle">Every framework points back at the trained teacher in the room.</text>
+</svg>

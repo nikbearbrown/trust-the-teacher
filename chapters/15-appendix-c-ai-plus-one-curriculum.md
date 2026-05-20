@@ -14,6 +14,9 @@ The American teacher in 2026 has received, on average, a two-and-a-half-hour ven
 
 ## The curriculum
 
+![Five-domain AI+1 curriculum map showing Domain 1 AI Fundamentals as a once-and-done foundation block feeding the four recurring domains — Subject-Specific Pedagogy, Cognitive Offloading, Equity, and Evaluation & Assessment — each labeled with its demonstration artifact.](../images/15-appendix-c-ai-plus-one-curriculum-fig-01.png)
+*Figure C.1 — Five domains, one foundation*
+
 Five domains. None is generic. Each is delivered in subject-specific and grade-band-specific versions, because the seventh-grade humanities teacher and the AP physics teacher and the K-2 phonics teacher use AI in their classrooms in ways that have almost nothing in common at the level of the actual instructional move. The domains describe what every AI+1 teacher needs to be competent at. The specific content under each domain is built by people who teach the subject at the grade.
 
 ### Domain 1 — AI fundamentals
@@ -60,6 +63,9 @@ The training in this domain produces the teacher who can defend, to a parent or 
 
 ## The credential structure
 
+![Side-by-side mapping of the ACCME/ABFM medical model to the AI+1 teaching analog across five structural components — cycle length, hour minimum, demonstrations, peer review, and credential authority — with the four vendor-capture defenses listed beneath.](../images/15-appendix-c-ai-plus-one-curriculum-fig-02.png)
+*Figure C.2 — The medical model, translated*
+
 The minimum viable version and the full version share the same logical structure. They differ in scale, in funding source, and in the legitimacy of the credential the participant earns.
 
 The structural model is the ACCME / ABFM five-year cycle, translated for teaching. A documented cycle, hour minimums, demonstration components, peer review, and renewal tied to continued recognition.
@@ -100,6 +106,9 @@ The argument fails if districts capture the AI dividend as cost savings rather t
 
 The variance finding in the [Teacher Knowledge Survey 2024](https://www.oecd.org/en/publications/results-from-the-teacher-knowledge-survey_7d1c1e60-en/united-states_9a456423-en.html) — the U.S. has the world's highest share of teachers at advanced general pedagogical knowledge (51 percent at Level 3) and an above-average share at the foundational level (20 percent at Level 1), with a 57-point interquartile range that is the largest in the comparison set — sharpens rather than weakens the case for the curriculum. The bottom quartile is the leverage point for the coaching layer (Domain 2 study groups, Domain 5 formative-assessment training). The top quartile is the cohort that builds the credential layer (the DigiErko-analog specialization, the peer-panel reviewers, the university-program faculty). The variance is the case for the tiered structure the appendix is recommending.
 
+![Side-by-side comparison of the minimum viable district-level version and the state-funded full version across five dimensions — scale, funding source, credential issuer, timeline, and peer panel composition. The MVP is six teachers at one school; the full version scales to a thousand new credentialed teachers per year.](../images/15-appendix-c-ai-plus-one-curriculum-fig-03.png)
+*Figure C.3 — The seed and what grows from it*
+
 ## The minimum viable version — deployable Q1 of next academic year
 
 A small district with no new budget, no new vendor contracts, no state-level investment, and no legislative window can deploy the minimum viable AI+1 curriculum starting the Monday after the superintendent finishes reading this appendix. The components are all in Chapter 13 and Chapter 8. The appendix integrates them into a curriculum framework.
@@ -130,6 +139,9 @@ Years 3 through 5 also scale the credential cohorts. The consortium delivers app
 
 The full version's deliverables are: a published state credential standard, a university consortium issuing the credential under quality controls the state has approved, a tutor-teacher network in every building that funds the in-building coaching the Kraft meta-analysis identifies as the effective intervention, an accreditation body that audits the credential against the published standard, and a recognized state credential that the labor market reads as a professional qualification and that the district's salary schedule can reference for differential compensation. The credential connects, through Appendix B's Measure 3, to the evaluation framework that rewards demonstrated practice change. The two appendices, together, build the infrastructure the rest of the book has been arguing for.
 
+![Ten-month Gantt-style MVP pacing guide. Months 1–3 cover Domain 1 coursework. Months 4–8 cycle Domains 2 through 5 with one artifact per month. Months 9–10 run the peer-panel portfolio review. Artifact deliverables — one-page reflection, assignment redesign, offloading assignment, equity lesson, formative defense, full portfolio, building-level certificate — are labeled at each stage.](../images/15-appendix-c-ai-plus-one-curriculum-fig-04.png)
+*Figure C.4 — Ten-month MVP pacing*
+
 ## A worked implementation timeline
 
 ### Week 1 (the Monday after, for the minimum viable version)
@@ -159,6 +171,9 @@ The cohort meets twice in the spring for portfolio review. The first session rev
 ### Year 1 close
 
 The district produces a synthesis report documenting what the pilot cohort accomplished, what the cost was (substantively close to zero in marginal funding; the actual cost is the teacher time, which is the asymmetric-load argument's load side), and what the recommendation is for Year 2. The board receives the report. The recommendation is the expansion to a second cohort at a second school, plus the recruitment of the first cohort's strongest participants as cohort leads for the second-year cohorts.
+
+![Five-year state-level scaling timeline. Three workstream rows — Design, Cohorts, Tutor network — span Year 1 through Year 5+ above a cumulative credentialed-teacher trajectory that climbs from zero in Year 1 to approximately 1,800 by end of Year 5, trending toward a steady state of one thousand new credentialed teachers per year.](../images/15-appendix-c-ai-plus-one-curriculum-fig-05.png)
+*Figure C.5 — Five years to a state-level program*
 
 ### State-level timeline (the full version)
 
@@ -263,3 +278,51 @@ The full version requires a state legislative window. The minimum version requir
 ---
 
 **Tags:** AI+1 curriculum, DigiErko, ACCME analog, tutoropettaja, peer panel review, vendor capture, university-issued credential, subject-specific pedagogy, minimum viable PD, Chapter 8 implementation guide, Chapter 13 scaling, asymmetric load
+
+---
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the figures in this appendix. Each produces a standalone HTML file you can open in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into your Claude project context before using these prompts. They define the stack, naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure C.1 — Five domains, one foundation
+
+Build a two-column D3 v7 figure mapping the AI+1 curriculum. Left column: a tall foundation card for Domain 1 (AI Fundamentals) labeled "Foundation (once)" with a short description and an artifact panel naming "Defined-slate completion certificates" (five to eight HarvardX / MITx / Stanford courses). Right column under the eyebrow "Recurring (every cycle)": four stacked cards for Domain 2 Subject-Specific Pedagogy, Domain 3 Cognitive Offloading, Domain 4 Equity, Domain 5 Evaluation & Assessment. Each recurring card pairs a body block (domain title and one-line description) with an artifact card (assignment-redesign portfolio, offloading-vs-engagement assignment, equity-focused lesson redesign, formative-assessment defense). Draw dashed flow lines with arrowheads from the foundation card to each recurring card. Use only `var(--color-*)` tokens; the foundation card is the dark accent; recurring cards are white with secondary borders. Standalone HTML, D3 7.9.0 from the pinned CDN, ResizeObserver redraw, tooltip on hover showing the domain's full blurb, role / title / desc accessibility markup.
+
+> Reference implementation: `d3/15-appendix-c-ai-plus-one-curriculum-fig-01.html`
+
+---
+
+### Figure C.2 — The medical model, translated
+
+Build a row-by-row mapping in plain HTML/CSS with D3 v7 used to bind the data and render the rows. Three columns: a left "Component" label column, a middle "Medicine — ACCME / ABFM" card, and a right "Teaching — AI+1 analog" card with an arrow glyph between them. Five rows: Cycle length (5 years → 3 years), Hour minimum (~200 CME credits / 5 yrs → 50 hrs/yr × 3 yrs), Demonstrations (quarterly knowledge / MOC modules → five-domain artifact portfolio), Peer review (specialty-board audit → 3–5 peer panel, NBPTS-style), Credential authority (specialty board + ACCME → university consortium with vendor cap). Below the table: a separate four-card grid titled "Vendor capture risk — four structural defenses" — university-issued credential, independent accreditation, COI rules published, vendor funding capped. Use only `var(--color-*)` tokens; medical column lightly tinted; teaching column white; arrows in secondary; defense numerals in red. Mobile breakpoint collapses to single column. Standalone HTML, D3 7.9.0, accessible roles / aria-labels.
+
+> Reference implementation: `d3/15-appendix-c-ai-plus-one-curriculum-fig-02.html`
+
+---
+
+### Figure C.3 — The seed and what grows from it
+
+Build a two-column comparison in HTML/CSS, with D3 v7 binding the data. Each column has a bordered header card (MVP / Full Version) with subtitle, then five stacked dimension rows: Scale, Funding source, Credential issuer, Timeline, Peer panel. Each row uses an eyebrow label, a large numeric in red (e.g. "6", "$0", "10", "100–200", "$100M", "5", "3–5"), a unit / note pairing in ink and secondary, and a one-paragraph detail in secondary. The grid stacks to one column under 720px. Use only `var(--color-*)` tokens. The MVP column's big numerals show district-scale facts; the Full Version column's show state-scale facts. Standalone HTML, D3 7.9.0 from the pinned CDN, hoverable rows with red border on hover, role / aria-label on each dimension row.
+
+> Reference implementation: `d3/15-appendix-c-ai-plus-one-curriculum-fig-03.html`
+
+---
+
+### Figure C.4 — Ten-month MVP pacing
+
+Build a horizontal Gantt-style timeline in D3 v7 across ten months (x-axis at top). Three phase bands behind the bars: Phase A Foundation (months 1–3), Phase B Domain rotation (months 4–8), Phase C Peer review (months 9–10) — Phase C tinted red. Seven domain bars on a single row: Domain 1 spans months 1–3 (ink-filled, white text), single-month bars for D2 / D3 / D4 / D5 (secondary fill, white text), a Synthesis bar in month 8 (light secondary, dark text), a Peer panel review bar spanning months 9–10 (ink-filled). Below the bars, an "Artifact delivered" row with dashed stems dropping from each delivery month to a red dot, labeled artifact title and italic note (M3 reflection, M4 assignment redesign, M5 offloading assignment, M6 equity redesign, M7 formative defense, M8 portfolio assembled, M10 building-level certificate). Below that, a "Cohort meeting cadence" row of small circles per month (open = orientation/debug, solid = domain meeting, larger solid = panel). Use only `var(--color-*)` tokens — no hex. Tooltip on hover for each bar. Standalone HTML, D3 7.9.0, ResizeObserver redraw, role / title / desc accessibility markup.
+
+> Reference implementation: `d3/15-appendix-c-ai-plus-one-curriculum-fig-04.html`
+
+---
+
+### Figure C.5 — Five years to a state-level program
+
+Build a two-section D3 v7 figure. Top section: three workstream rows — Design, Cohorts, Tutor network — labeled in the left margin, spanning Year 1 through Year 5+ along the top axis. Each row contains rectangular blocks at the appropriate year columns. Design: a primary block "consortium forms" at Year 1, then a thin maintenance band "standard revision" spanning Years 2–5. Cohorts: blocks at Y2 "pilot · 100–200" (middle fill), Y3 "+300 / yr" (light), Y4 "+500 / yr" (middle), Y5 "1,000 / yr" (primary). Tutor network: blocks at Y3 "network seeded" (light), Y4 "every building" (middle), Y5 "formula appropriation" (primary). Bottom section: a line chart titled "Cumulative credentialed AI+1 teachers" with x-axis = end of Year 1 through 5, y-axis 0 to 2,000, plotting a monotone curve through (0, ~150, ~450, ~900, ~1,800) with red dots, value labels above each dot, and a dashed annotation arrow pointing to the Year 5 dot reading "steady state: +1,000 / yr". Use only `var(--color-*)` tokens; primary blocks are ink-filled, middle blocks are secondary, light blocks use color-mix to blend toward white. Tooltip on each block showing the workstream blurb. Standalone HTML, D3 7.9.0, ResizeObserver redraw.
+
+> Reference implementation: `d3/15-appendix-c-ai-plus-one-curriculum-fig-05.html`

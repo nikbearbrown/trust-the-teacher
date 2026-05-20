@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 440" role="img" aria-labelledby="t-fig02 d-fig02">
+  <title id="t-fig02">Clock-speed mismatch between AI capability releases and institutional PD</title>
+  <desc id="d-fig02">Two parallel timelines spanning eighteen months. The top line marks roughly fourteen AI capability releases at four to six week cadence. The bottom line marks a single annual professional-development module that, by the time it ships, has been overtaken twice.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .tick { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 9px; fill: #4a4540; }
+    </style>
+    <marker id="ar2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+    <marker id="ar2-secondary" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4a4540"/>
+    </marker>
+  </defs>
+  <rect width="700" height="440" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" class="ti" text-anchor="middle">Two clocks running at incompatible speeds</text>
+  <text x="350" y="50" class="sm" text-anchor="middle">Generative-AI capability releases versus institutional professional-development cycles, eighteen months</text>
+
+  <!-- ====== TOP TIMELINE: AI CAPABILITY RELEASES ====== -->
+  <text x="60" y="100" class="lb" font-weight="bold">AI capability releases</text>
+  <text x="60" y="114" class="sm">cadence: 4–6 weeks</text>
+
+  <!-- Main horizontal line — 18 months across, x from 80 to 640 -->
+  <line x1="80" y1="150" x2="640" y2="150" stroke="#1a1714" stroke-width="1.25"/>
+
+  <!-- 14 release markers along the line — distributed at ~40px intervals (~6 weeks per ~40px) -->
+  <!-- spacing: 560 / 13 ≈ 43px between releases -->
+  <g>
+    <circle cx="80"  cy="150" r="5" fill="#1a1714"/>
+    <circle cx="123" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="166" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="209" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="252" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="295" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="338" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="381" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="424" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="467" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="510" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="553" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="596" cy="150" r="5" fill="#1a1714"/>
+    <circle cx="640" cy="150" r="5" fill="#1a1714"/>
+  </g>
+
+  <!-- Tick labels at strategic releases -->
+  <text x="80"  y="135" class="tick" text-anchor="middle">v1</text>
+  <text x="209" y="135" class="tick" text-anchor="middle">v4</text>
+  <text x="338" y="135" class="tick" text-anchor="middle">v7</text>
+  <text x="467" y="135" class="tick" text-anchor="middle">v10</text>
+  <text x="596" y="135" class="tick" text-anchor="middle">v13</text>
+  <text x="640" y="135" class="tick" text-anchor="middle">v14</text>
+
+  <!-- Annotation: "≈14 substantive upgrades in 18 months" -->
+  <text x="350" y="178" class="sm" text-anchor="middle">14 substantive capability releases in this window</text>
+
+  <!-- ====== BOTTOM TIMELINE: INSTITUTIONAL PD ====== -->
+  <text x="60" y="240" class="lb" font-weight="bold">Institutional PD cycle</text>
+  <text x="60" y="254" class="sm">cadence: annual at best, biennial typical</text>
+
+  <!-- Main horizontal line -->
+  <line x1="80" y1="295" x2="640" y2="295" stroke="#4a4540" stroke-width="1.25"/>
+
+  <!-- Stages of a single PD module — show only ONE module shipping in this period -->
+  <!-- Funding approved (x=80), design (180), schedule (340), deliver (560) -->
+  <circle cx="80"  cy="295" r="4" fill="#4a4540"/>
+  <text x="80" y="280" class="tick" text-anchor="middle">funded</text>
+
+  <line x1="80" y1="295" x2="180" y2="295" stroke="#4a4540" stroke-width="3" opacity="0.35"/>
+  <circle cx="180" cy="295" r="4" fill="#4a4540"/>
+  <text x="180" y="280" class="tick" text-anchor="middle">designed</text>
+
+  <line x1="180" y1="295" x2="340" y2="295" stroke="#4a4540" stroke-width="3" opacity="0.35"/>
+  <circle cx="340" cy="295" r="4" fill="#4a4540"/>
+  <text x="340" y="280" class="tick" text-anchor="middle">scheduled</text>
+
+  <line x1="340" y1="295" x2="560" y2="295" stroke="#4a4540" stroke-width="3" opacity="0.35"/>
+  <circle cx="560" cy="295" r="7" fill="none" stroke="#1a1714" stroke-width="1.5"/>
+  <text x="560" y="280" class="tick" text-anchor="middle" font-weight="bold">delivered</text>
+
+  <!-- Annotation under: shipping describes a tool that has changed -->
+  <text x="350" y="320" class="sm" text-anchor="middle">One module ships. The tool it describes has already changed twice.</text>
+
+  <!-- Month axis at bottom -->
+  <line x1="80" y1="345" x2="640" y2="345" stroke="#c8c4c0" stroke-width="0.5"/>
+  <text x="80"  y="358" class="tick" text-anchor="middle">month 0</text>
+  <text x="267" y="358" class="tick" text-anchor="middle">month 6</text>
+  <text x="453" y="358" class="tick" text-anchor="middle">month 12</text>
+  <text x="640" y="358" class="tick" text-anchor="middle">month 18</text>
+
+  <!-- Overtaken-twice annotation: arrow from delivered point UP to the AI release that happened by then -->
+  <!-- between month 12 and 18, multiple releases shipped — pick two specific ones -->
+  <path d="M 560 285 L 560 200 L 510 160" fill="none" stroke="#1a1714" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar2)"/>
+  <text x="540" y="225" class="sm" text-anchor="end">overtaken once</text>
+  <path d="M 568 285 L 596 200 L 596 160" fill="none" stroke="#1a1714" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar2)"/>
+  <text x="606" y="225" class="sm">overtaken twice</text>
+
+  <!-- Vertical band: highlight the structural gap -->
+  <rect x="498" y="80" width="142" height="265" fill="#c8860e" opacity="0.10"/>
+  <text x="569" y="92" class="sm" text-anchor="middle" font-weight="bold">delivery window</text>
+
+  <!-- Caption -->
+  <text x="350" y="408" class="cap" text-anchor="middle">A structural mismatch, not a failure of will. No individual teacher can attend workshops that</text>
+  <text x="350" y="422" class="cap" text-anchor="middle">have not yet been funded, designed, scheduled, or delivered.</text>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "name": "trust-the-teacher",
+  "version": "1.0.0",
+  "description": "**Nik Bear Brown · Bear Brown, LLC · 2026**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikbearbrown/trust-the-teacher.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikbearbrown/trust-the-teacher/issues"
+  },
+  "homepage": "https://github.com/nikbearbrown/trust-the-teacher#readme",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

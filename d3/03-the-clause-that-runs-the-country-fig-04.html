@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 3.4 — Three frameworks, three units of analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white: #FFFFFF;
+    --color-ink: #121212;
+    --color-red: #C8102E;
+    --color-secondary: #545454;
+    --color-border: #D4D4D4;
+    --color-ochre: #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white: #111111;
+      --color-ink: #F0EBE3;
+      --color-red: #E8243A;
+      --color-secondary: #A0978C;
+      --color-border: #2E2E2E;
+      --color-ochre: #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--color-white);
+    color: var(--color-ink);
+    font-family: 'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+    padding: 24px;
+  }
+  h1 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  p.subtitle {
+    color: var(--color-secondary);
+    font-size: 13px;
+    margin-bottom: 24px;
+    max-width: 80ch;
+  }
+  #chart { width: 100%; }
+  .frame { fill: var(--color-white); stroke: var(--color-border); stroke-width: 1; }
+  .col-header {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    fill: var(--color-ink);
+  }
+  .row-label {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 700;
+    font-size: 14px;
+    fill: var(--color-ink);
+  }
+  .row-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    fill: var(--color-secondary);
+  }
+  .cell {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    fill: var(--color-ink);
+  }
+  .cell.failure { fill: var(--color-red); }
+  .divider { stroke: var(--color-border); stroke-width: 1; }
+  .axis-rule { stroke: var(--color-ink); stroke-width: 1.25; }
+  .row-rect {
+    fill: var(--color-white);
+    stroke: transparent;
+    transition: fill 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: pointer;
+  }
+  .row-rect:hover, .row-rect:focus {
+    fill: color-mix(in srgb, var(--color-ochre) 10%, var(--color-white));
+    outline: none;
+  }
+  .row-rect:focus { stroke: var(--color-red); stroke-width: 2; }
+  .arrow-label {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    fill: var(--color-secondary);
+  }
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    background: var(--color-ink);
+    color: var(--color-white);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    max-width: 320px;
+    line-height: 1.4;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<h1>Figure 3.4 — Three frameworks, three units of analysis</h1>
+<p class="subtitle">Each of the three best frameworks for the educational-purposes question is correct in its native context — and unusable at the unit of analysis the statute hands to the teacher. Hover or focus a row to read the long-form note.</p>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const FRAMEWORKS = [
+  {
+    id: 'aap',
+    title: 'AAP 5 Cs of Media Use',
+    sub: 'Child · Content · Calm · Crowding Out · Communication',
+    origin: 'Pediatric well-child visit, one family, twenty-minute window',
+    unit: 'One child, one home, one clinician with prior chart access',
+    failure: 'Cannot run a 5-C interview with thirty students mid-lesson',
+    note: 'The 5 Cs were designed by the American Academy of Pediatrics for clinicians counseling families. The framework operationalizes the right question — when is media use helpful — at a unit (family, longitudinal) the teacher cannot reach.'
+  },
+  {
+    id: 'culatta',
+    title: "Culatta's knowledge-constructor test",
+    sub: 'Is the device producing constructors and problem-solvers, or passive consumers?',
+    origin: 'ISTE+ASCD system leadership, district technology strategy',
+    unit: 'A district or state, policy direction set over a school year',
+    failure: 'Restates the question ("is this educational?") without resolving it',
+    note: 'Useful as direction-of-travel for a superintendent setting strategy. At the level of a 30-second decision in a single classroom, "is this producing value?" is the same question the statute already failed to answer.'
+  },
+  {
+    id: 'friction',
+    title: 'Productive-friction framework',
+    sub: 'Tech is educational when it requires cognitive effort; harmful when it removes it.',
+    origin: 'Ed-research literature, Bastani et al. PNAS 2025 confirmation',
+    unit: 'One student, one task, a single cognitive moment, observed',
+    failure: 'Only the teacher in the room can read the effort in real time',
+    note: 'The framework points to a real distinction — cognition that builds capacity vs cognition that outsources it. It can be specified at the level the law operates. It cannot be specified in advance; it requires a trained teacher present in the moment.'
+  }
+];
+
+const COLUMNS = [
+  { id: 'origin',  header: 'Origin context' },
+  { id: 'unit',    header: 'Native unit of analysis' },
+  { id: 'failure', header: 'Why it stalls at thirty seconds' }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+
+function showTooltip(event, d) {
+  tooltip
+    .html(`<strong>${d.title}</strong><br>${d.note}`)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTooltip(event) {
+  tooltip
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 28) + 'px');
+}
+function hideTooltip() {
+  tooltip.transition().duration(100).style('opacity', 0);
+}
+
+function draw() {
+  d3.select('#chart').selectAll('*').remove();
+  const container = document.getElementById('chart');
+  const totalWidth = container.clientWidth || 900;
+  const totalHeight = 460;
+  const margin = { top: 56, right: 32, bottom: 56, left: 32 };
+  const chartWidth = totalWidth - margin.left - margin.right;
+  const chartHeight = totalHeight - margin.top - margin.bottom;
+
+  const svg = d3.select('#chart')
+    .append('svg')
+      .attr('width', totalWidth)
+      .attr('height', totalHeight)
+      .attr('role', 'img')
+      .attr('aria-labelledby', 'chart-title chart-desc');
+
+  svg.append('title').attr('id', 'chart-title')
+    .text('Three frameworks for the educational-purposes question');
+  svg.append('desc').attr('id', 'chart-desc')
+    .text('Three-row comparison of the AAP 5 Cs, Culatta knowledge-constructor test, and productive-friction framework — each shown by its native unit of analysis and the reason it cannot deliver a thirty-second classroom decision.');
+
+  const gChart = svg.append('g')
+    .attr('class', 'g-chart')
+    .attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Column geometry: row label column + three data columns
+  const labelColumnWidth = Math.min(260, chartWidth * 0.30);
+  const dataColumnWidth  = (chartWidth - labelColumnWidth) / COLUMNS.length;
+  const rowHeight = chartHeight / FRAMEWORKS.length;
+
+  // Column headers
+  const gHeaders = gChart.append('g').attr('class', 'g-headers');
+  COLUMNS.forEach((c, i) => {
+    const cx = labelColumnWidth + i * dataColumnWidth + dataColumnWidth / 2;
+    gHeaders.append('text')
+      .attr('class', 'col-header')
+      .attr('x', cx)
+      .attr('y', -18)
+      .attr('text-anchor', 'middle')
+      .text(c.header);
+  });
+
+  // Top axis rule
+  gChart.append('line')
+    .attr('class', 'axis-rule')
+    .attr('x1', 0).attr('y1', -8)
+    .attr('x2', chartWidth).attr('y2', -8)
+    .attr('aria-hidden', 'true');
+
+  // Rows
+  const gRows = gChart.append('g').attr('class', 'g-rows');
+  const rows = gRows.selectAll('.row')
+    .data(FRAMEWORKS, d => d.id)
+    .join('g')
+      .attr('class', 'row')
+      .attr('transform', (d, i) => `translate(0,${i * rowHeight})`);
+
+  // Hit area (whole row)
+  rows.append('rect')
+    .attr('class', 'row-rect')
+    .attr('x', 0)
+    .attr('y', 0)
+    .attr('width', chartWidth)
+    .attr('height', rowHeight)
+    .attr('tabindex', 0)
+    .attr('role', 'group')
+    .attr('aria-label', (d) => `${d.title}. Origin: ${d.origin}. Unit: ${d.unit}. Failure mode: ${d.failure}.`)
+    .on('mouseover', (event, d) => showTooltip(event, d))
+    .on('mousemove', moveTooltip)
+    .on('mouseout', hideTooltip)
+    .on('focus', function(event, d) {
+      const bbox = this.getBoundingClientRect();
+      showTooltip({ pageX: bbox.left + bbox.width / 2, pageY: bbox.top + window.scrollY }, d);
+    })
+    .on('blur', hideTooltip)
+    .on('keydown', function(event, d) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        const bbox = this.getBoundingClientRect();
+        showTooltip({ pageX: bbox.left + bbox.width / 2, pageY: bbox.top + window.scrollY }, d);
+      }
+    });
+
+  // Row label (left column)
+  rows.append('text')
+    .attr('class', 'row-label')
+    .attr('x', 8)
+    .attr('y', 24)
+    .text(d => d.title);
+  rows.append('text')
+    .attr('class', 'row-sub')
+    .attr('x', 8)
+    .attr('y', 44)
+    .text(d => d.sub);
+
+  // Data cells
+  rows.each(function(d) {
+    const row = d3.select(this);
+    COLUMNS.forEach((c, i) => {
+      const cx = labelColumnWidth + i * dataColumnWidth + dataColumnWidth / 2;
+      const cy = rowHeight / 2;
+      const words = d[c.id].split(' ');
+      const lines = [];
+      let line = '';
+      const maxChars = Math.floor(dataColumnWidth / 7);
+      words.forEach(w => {
+        const candidate = line ? line + ' ' + w : w;
+        if (candidate.length > maxChars) {
+          lines.push(line);
+          line = w;
+        } else {
+          line = candidate;
+        }
+      });
+      if (line) lines.push(line);
+      const lineHeight = 16;
+      const startY = cy - ((lines.length - 1) * lineHeight) / 2;
+      const cellGroup = row.append('text')
+        .attr('class', c.id === 'failure' ? 'cell failure' : 'cell')
+        .attr('x', cx)
+        .attr('text-anchor', 'middle');
+      lines.forEach((ln, li) => {
+        cellGroup.append('tspan')
+          .attr('x', cx)
+          .attr('y', startY + li * lineHeight)
+          .text(ln);
+      });
+    });
+  });
+
+  // Row dividers
+  for (let i = 1; i < FRAMEWORKS.length; i++) {
+    gChart.append('line')
+      .attr('class', 'divider')
+      .attr('x1', 0).attr('x2', chartWidth)
+      .attr('y1', i * rowHeight).attr('y2', i * rowHeight)
+      .attr('aria-hidden', 'true');
+  }
+
+  // Bottom axis rule + arrow back to the teacher
+  gChart.append('line')
+    .attr('class', 'axis-rule')
+    .attr('x1', 0).attr('y1', chartHeight + 4)
+    .attr('x2', chartWidth).attr('y2', chartHeight + 4)
+    .attr('aria-hidden', 'true');
+
+  const defs = svg.append('defs');
+  defs.append('marker')
+    .attr('id', 'arrow-back')
+    .attr('markerWidth', 8).attr('markerHeight', 6)
+    .attr('refX', 7).attr('refY', 3)
+    .attr('orient', 'auto')
+    .append('polygon')
+      .attr('points', '0 0, 8 3, 0 6')
+      .attr('fill', 'var(--color-ink)');
+
+  gChart.append('path')
+    .attr('d', `M ${chartWidth * 0.25} ${chartHeight + 24} L ${chartWidth * 0.75} ${chartHeight + 24}`)
+    .attr('fill', 'none')
+    .attr('stroke', 'var(--color-ink)')
+    .attr('stroke-width', 1)
+    .attr('marker-end', 'url(#arrow-back)')
+    .attr('aria-hidden', 'true');
+
+  gChart.append('text')
+    .attr('class', 'arrow-label')
+    .attr('x', chartWidth / 2)
+    .attr('y', chartHeight + 44)
+    .attr('text-anchor', 'middle')
+    .text('Every framework points back at the trained teacher in the room.');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

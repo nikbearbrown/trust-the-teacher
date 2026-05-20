@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" role="img" aria-labelledby="t14-03 d14-03">
+  <title id="t14-03">The Measure 3 annual cycle — four sequential components, looped year over year</title>
+  <desc id="d14-03">A cyclical wheel showing the four components of the teacher-learning cycle: name growth area, engage with PD, gather evidence of practice change, submit to peer panel review. Arrows return the cycle to the next year's growth area, modelled on the ABFM Maintenance of Certification structure.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .sub { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #4a4540; font-style: italic; }
+      .step-num { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .step-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold; fill: #1a1714; }
+      .step-body { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #1a1714; }
+      .center { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; font-style: italic; }
+      .center-bold { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold; fill: #1a1714; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .yr-label { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+    </style>
+    <marker id="ar14-03" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="460" fill="#fdfcfb"/>
+
+  <text x="350" y="28" class="ti" text-anchor="middle">The Measure 3 cycle — four components, looped year over year</text>
+  <text x="350" y="44" class="sub" text-anchor="middle">Modelled on the American Board of Family Medicine Maintenance of Certification structure.</text>
+
+  <!-- Center at (350, 240), outer radius 160, inner 80. -->
+  <!-- Four quadrant wedges. Each is a thick annular sector spanning ~80°, with 10° gap between. -->
+  <g transform="translate(350,240)">
+    <!-- Wedge 1: top (NW + NE), spans -125° to -55° -->
+    <path d="M -91.8512,-131.244 A 160,160 0 0,1 91.8512,-131.244 L 45.9256,-65.6220 A 80,80 0 0,0 -45.9256,-65.6220 Z" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <!-- Wedge 2: right -->
+    <path d="M 131.244,-91.8512 A 160,160 0 0,1 131.244,91.8512 L 65.6220,45.9256 A 80,80 0 0,0 65.6220,-45.9256 Z" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <!-- Wedge 3: bottom -->
+    <path d="M 91.8512,131.244 A 160,160 0 0,1 -91.8512,131.244 L -45.9256,65.6220 A 80,80 0 0,0 45.9256,65.6220 Z" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+    <!-- Wedge 4: left -->
+    <path d="M -131.244,91.8512 A 160,160 0 0,1 -131.244,-91.8512 L -65.6220,-45.9256 A 80,80 0 0,0 -65.6220,45.9256 Z" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+
+    <!-- Center disc -->
+    <circle cx="0" cy="0" r="76" fill="#fdfcfb" stroke="#1a1714" stroke-width="1.25"/>
+    <text x="0" y="-8" class="center-bold" text-anchor="middle">Measure 3</text>
+    <text x="0" y="10" class="center" text-anchor="middle">Annual cycle</text>
+    <text x="0" y="26" class="center" text-anchor="middle">(or biennial)</text>
+
+    <!-- Step labels at center of each wedge. midpoint radius ~115 -->
+    <!-- Step 1 (top, angle -90°) -->
+    <text x="0" y="-128" class="step-num" text-anchor="middle">1</text>
+    <text x="0" y="-110" class="step-title" text-anchor="middle">Growth area named</text>
+    <text x="0" y="-94" class="step-body" text-anchor="middle">Specific, documented,</text>
+    <text x="0" y="-82" class="step-body" text-anchor="middle">connected downstream.</text>
+
+    <!-- Step 2 (right, angle 0°) -->
+    <text x="113" y="-22" class="step-num" text-anchor="middle">2</text>
+    <text x="113" y="-4" class="step-title" text-anchor="middle">PD engaged with</text>
+    <text x="113" y="12" class="step-body" text-anchor="middle">Coaching, coursework,</text>
+    <text x="113" y="24" class="step-body" text-anchor="middle">study group, observation.</text>
+
+    <!-- Step 3 (bottom, angle 90°) -->
+    <text x="0" y="92" class="step-num" text-anchor="middle">3</text>
+    <text x="0" y="110" class="step-title" text-anchor="middle">Evidence of change</text>
+    <text x="0" y="126" class="step-body" text-anchor="middle">Portfolio: artifacts, video,</text>
+    <text x="0" y="138" class="step-body" text-anchor="middle">student work, reflection.</text>
+
+    <!-- Step 4 (left, angle 180°) -->
+    <text x="-113" y="-22" class="step-num" text-anchor="middle">4</text>
+    <text x="-113" y="-4" class="step-title" text-anchor="middle">Peer panel review</text>
+    <text x="-113" y="12" class="step-body" text-anchor="middle">NBPTS-renewal model,</text>
+    <text x="-113" y="24" class="step-body" text-anchor="middle">funded peer time.</text>
+
+    <!-- Curved arrows between wedges showing direction of flow (clockwise) -->
+    <!-- Arrow top to right -->
+    <path d="M 110 -132 A 172 172 0 0 1 132 -110" fill="none" stroke="#1a1714" stroke-width="1.25" marker-end="url(#ar14-03)"/>
+    <!-- Arrow right to bottom -->
+    <path d="M 132 110 A 172 172 0 0 1 110 132" fill="none" stroke="#1a1714" stroke-width="1.25" marker-end="url(#ar14-03)"/>
+    <!-- Arrow bottom to left -->
+    <path d="M -110 132 A 172 172 0 0 1 -132 110" fill="none" stroke="#1a1714" stroke-width="1.25" marker-end="url(#ar14-03)"/>
+    <!-- Arrow left back to top -->
+    <path d="M -132 -110 A 172 172 0 0 1 -110 -132" fill="none" stroke="#1a1714" stroke-width="1.25" marker-end="url(#ar14-03)"/>
+  </g>
+
+  <!-- "Next year's growth area" annotation -->
+  <text x="350" y="430" class="cap" text-anchor="middle">Year N's evidence and panel review become the conversation that names Year N+1's growth area.</text>
+  <text x="350" y="446" class="cap" text-anchor="middle">The loop is the point. Renewal happens by cycle, not by single audit event.</text>
+
+  <!-- Year label outside the wheel -->
+  <text x="120" y="240" class="yr-label" text-anchor="middle">Year N</text>
+  <text x="580" y="240" class="yr-label" text-anchor="middle">Year N+1</text>
+  <path d="M 145 240 L 175 240" stroke="#4a4540" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <path d="M 525 240 L 555 240" stroke="#4a4540" stroke-width="0.75" stroke-dasharray="3 2"/>
+</svg>

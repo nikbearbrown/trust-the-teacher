@@ -169,6 +169,9 @@ A third attempt, scattered across the work of several researchers — Lisa Guern
 <!-- FACT-CHECK FLAG: PARTIAL — All three researchers (Guernsey, Reich, Halverson) are real and in ed-tech research. "Productive friction" exists in education literature, but the specific attribution to these three as joint originators of the term is UNVERIFIED. The concept appears more prominently in WestEd's "Friction by Design" (2025) and other recent commentary. Bastani et al. PNAS 2025 CONFIRMED (see Ch 2 factcheck). Recommend grounding the productive-friction attribution to a specific paper. See factchecks/03-the-clause-that-runs-the-country-assertions.md -->
 
 
+![Three-row comparison of the AAP 5 Cs, Richard Culatta's knowledge-constructor test, and the productive-friction framework — each row showing the framework's origin context, its native unit of analysis (pediatric well-child visit, district technology strategy, individual cognitive moment), and the specific reason it cannot deliver a thirty-second classroom call](../images/03-the-clause-that-runs-the-country-fig-04.png)
+*Figure 3.4 — Three frameworks, three units of analysis, none usable in thirty seconds*
+
 The trouble: "Is the student exerting cognitive effort?" is a question only the teacher in the room can answer in real time, watching the student's face, knowing the student's history, understanding the assignment's design. The productive-friction framework, properly applied, points at exactly the same conclusion this chapter has been approaching since the cold open. The distinction between educational use and distraction is real. It is not arbitrary. It can be specified — at the level of the individual student, in a particular moment, by someone with relevant training and presence. No statute can capture it. No district policy can resolve it in advance. The frameworks are useful as training material for the teacher who will make the call. They are not substitutes for her.
 
 ---
@@ -269,5 +272,21 @@ It is the right blank. We have done almost nothing to fill it.
 - **OECD TALIS 2024 US country note** — [OECD page](https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/united-states_66573a34-en.html)
 - **Walton Family Foundation / Gallup "Teaching for Tomorrow" (Aug 2025)** — [Gallup poll release](https://news.gallup.com/poll/691967/three-teachers-weekly-saving-six-weeks-year.aspx); [WFF announcement](https://www.waltonfamilyfoundation.org/the-ai-dividend-new-survey-shows-ai-is-helping-teachers-reclaim-valuable-time)
 - **EdWeek phone-ban implementation coverage** — [Do Cellphone Bans Curb Teacher Burnout? (Nov 2025)](https://www.edweek.org/teaching-learning/do-cellphone-bans-curb-teacher-burnout/2025/11); [Ingredients for a Successful Cellphone Ban (Jan 2026)](https://www.edweek.org/technology/the-ingredients-for-a-successful-cellphone-ban-what-teachers-say/2026/01)
+
+---
+
+## Prompts
+
+Use this prompt with Claude to generate an interactive D3 v7 version of the figure above. The output is a standalone HTML file you can open in any browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into your Claude project context first. They define the stack, color tokens, and typography the figure depends on.
+
+---
+
+### Figure 3.4 — Three frameworks, three units of analysis
+
+Build a three-row comparison figure of three frameworks for the educational-purposes question, rendered as a structured table-graphic rather than a chart. Rows: (1) AAP 5 Cs of Media Use — subtitle "Child, Content, Calm, Crowding Out, Communication"; (2) Culatta's knowledge-constructor test; (3) productive-friction framework. Columns: Origin context · Native unit of analysis · Why it stalls at thirty seconds. Each row's failure-mode cell renders in `var(--color-red)`; all other cells use `var(--color-ink)`. Row labels use EB Garamond bold 14px; column headers use Inter 700 12px; cells use Inter 12px with multi-line wrap inside each cell width. Top and bottom of the figure carry a 1.25px `--color-ink` rule. Between the two rules, a left-to-right arrow with the italic caption "Every framework points back at the trained teacher in the room." Each row is a focusable, hoverable group that opens a tooltip with a longer note. Standalone HTML, D3 v7 from the pinned CDN, inline CSS/JS, `role="img"` with `<title>` and `<desc>`, `prefers-reduced-motion` honored, ResizeObserver-driven redraw.
+
+> Reference implementation: `d3/03-the-clause-that-runs-the-country-fig-04.html`
 
 ---

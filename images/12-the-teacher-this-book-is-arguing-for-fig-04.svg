@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" role="img" aria-labelledby="t12-04 d12-04">
+  <title id="t12-04">2025-26 policy window — what we funded versus what we did not</title>
+  <desc id="d12-04">Side-by-side ledger comparing funded items in the 2025-26 phone-ban window (LAUSD pouches 5.2 million, NYC pouches 29 million, Houston pouches 800 thousand, 33 state phone-ban laws) against unfunded items (Title II-A frozen in a 14-district legal dispute, 67 percent of AI licenses unused, FCC E-Rate hotspots rescinded).</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .colh { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #fdfcfb; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; }
+      .lbw { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #fdfcfb; }
+      .num { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .numw { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #fdfcfb; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .smw { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #c8c4c0; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+    </style>
+    <marker id="ar04" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="480" fill="#fdfcfb"/>
+
+  <!-- Title block -->
+  <text x="350" y="32" text-anchor="middle" class="ti">The 2025-26 policy ledger — what we funded, what we did not</text>
+  <text x="350" y="50" text-anchor="middle" class="sm">A side-by-side reading of the same policy window. The pouches passed. The training did not.</text>
+
+  <!-- Two column headers — LEFT (funded, dark/filled), RIGHT (unfunded, outline) -->
+  <rect x="32" y="68" width="312" height="40" fill="#1a1714" stroke="#1a1714"/>
+  <text x="188" y="86" text-anchor="middle" class="colh">What we funded</text>
+  <text x="188" y="100" text-anchor="middle" class="smw">spending we passed in 2025-26</text>
+
+  <rect x="356" y="68" width="312" height="40" fill="#fdfcfb" stroke="#1a1714" stroke-width="1.5"/>
+  <text x="512" y="86" text-anchor="middle" class="ti">What we did not</text>
+  <text x="512" y="100" text-anchor="middle" class="sm">the unfunded ledger — same window</text>
+
+  <!-- LEFT COLUMN — funded items -->
+  <!-- Row 1: LAUSD $5.2M -->
+  <rect x="32" y="116" width="312" height="56" fill="#f5f2ee" stroke="#1a1714"/>
+  <text x="44" y="138" class="num">$5.2M</text>
+  <text x="44" y="155" class="lb">LAUSD pouches</text>
+  <text x="44" y="168" class="sm">Los Angeles district-wide phone storage</text>
+
+  <!-- Row 2: NYC $29M -->
+  <rect x="32" y="176" width="312" height="56" fill="#f5f2ee" stroke="#1a1714"/>
+  <text x="44" y="198" class="num">$29M</text>
+  <text x="44" y="215" class="lb">NYC pouches</text>
+  <text x="44" y="228" class="sm">New York City multi-year procurement</text>
+
+  <!-- Row 3: Houston $800K -->
+  <rect x="32" y="236" width="312" height="56" fill="#f5f2ee" stroke="#1a1714"/>
+  <text x="44" y="258" class="num">$800K</text>
+  <text x="44" y="275" class="lb">Houston pouches</text>
+  <text x="44" y="288" class="sm">Houston ISD lockable-pouch contract</text>
+
+  <!-- Row 4: 33 state laws -->
+  <rect x="32" y="296" width="312" height="56" fill="#1a1714" stroke="#1a1714"/>
+  <text x="44" y="318" class="numw">33</text>
+  <text x="80" y="318" class="lbw">state laws</text>
+  <text x="44" y="335" class="lbw">phone bans signed, 2024-26</text>
+  <text x="44" y="348" class="smw">covering majority of U.S. K-12 enrollment</text>
+
+  <!-- Left column subtotal annotation -->
+  <line x1="32" y1="368" x2="344" y2="368" stroke="#1a1714" stroke-width="0.5"/>
+  <text x="44" y="384" class="lb">Combined: ~$35M in pouches + 33 statutes</text>
+  <text x="44" y="398" class="sm">device removal funded at scale, on schedule, on time</text>
+
+  <!-- RIGHT COLUMN — unfunded items -->
+  <!-- Row 1: Title II-A frozen -->
+  <rect x="356" y="116" width="312" height="56" fill="#fdfcfb" stroke="#1a1714" stroke-dasharray="3 2"/>
+  <text x="368" y="138" class="num">frozen</text>
+  <text x="368" y="155" class="lb">Title II-A funds</text>
+  <text x="368" y="168" class="sm">$2.19B annual appropriation, 14-district dispute</text>
+
+  <!-- Row 2: 67% unused licenses -->
+  <rect x="356" y="176" width="312" height="56" fill="#fdfcfb" stroke="#1a1714" stroke-dasharray="3 2"/>
+  <text x="368" y="198" class="num">67%</text>
+  <text x="368" y="215" class="lb">AI / EdTech licenses unused</text>
+  <text x="368" y="228" class="sm">~$1B/yr on shelves (Glimpse K-12 audit)</text>
+
+  <!-- Row 3: E-Rate hotspots rescinded -->
+  <rect x="356" y="236" width="312" height="56" fill="#fdfcfb" stroke="#1a1714" stroke-dasharray="3 2"/>
+  <text x="368" y="258" class="num">rescinded</text>
+  <text x="368" y="275" class="lb">FCC E-Rate hotspots + bus Wi-Fi</text>
+  <text x="368" y="288" class="sm">federal substitute mechanism withdrawn</text>
+
+  <!-- Row 4: zero — teacher AI training laws -->
+  <rect x="356" y="296" width="312" height="56" fill="#fdfcfb" stroke="#1a1714" stroke-dasharray="3 2"/>
+  <text x="368" y="318" class="num">0</text>
+  <text x="388" y="318" class="lb">state laws funding teacher AI training</text>
+  <text x="368" y="335" class="lb">in the same policy window</text>
+  <text x="368" y="348" class="sm">no enacted statute pairs the ban with training</text>
+
+  <!-- Right column subtotal annotation -->
+  <line x1="356" y1="368" x2="668" y2="368" stroke="#1a1714" stroke-width="0.5"/>
+  <text x="368" y="384" class="lb">Combined: zero new training dollars + access closed</text>
+  <text x="368" y="398" class="sm">the substitute the exemption presumes was not funded</text>
+
+  <!-- Bridge arrow between columns at the bottom — the asymmetry -->
+  <path d="M 188 414 C 188 432 350 432 350 432 C 350 432 512 432 512 414" fill="none" stroke="#1a1714" stroke-width="1" marker-end="url(#ar04)"/>
+  <text x="350" y="448" text-anchor="middle" class="lb">The exemption was written. The teacher who would have used it was not funded.</text>
+
+  <!-- Caption -->
+  <text x="350" y="468" text-anchor="middle" class="cap">Sources: Ballotpedia phone-ban tracker (2025-26); LAUSD, NYC DOE, Houston ISD procurement filings; Glimpse K-12; FCC declaratory rulings.</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t04 d04">
+  <title id="t04">Stroebe's four-step feedback cycle producing the stable bad equilibrium</title>
+  <desc id="d04">Four labeled nodes arranged as a closed loop with arrows showing how student ratings, contract incentives, grade inflation, and student course-shopping reinforce each other into a stable bad equilibrium where grades and evaluations drift up while learning stays flat.</desc>
+  <defs>
+    <marker id="arrow04" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="460" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1714">The feedback loop that ate both signals</text>
+  <text x="350" y="48" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#4a4540">Stroebe's four propositions (2020) — a closed cycle producing a stable bad equilibrium</text>
+
+  <!-- Four nodes arranged in a diamond-ish loop -->
+  <!-- Node 1: TOP — Students reward good grades & ease with positive ratings -->
+  <rect x="270" y="78" width="160" height="68" rx="6" fill="#fdfcfb" stroke="#1a1714" stroke-width="1.5"/>
+  <text x="350" y="98" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">1. Students reward</text>
+  <text x="350" y="114" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">good grades &amp; easy courses</text>
+  <text x="350" y="128" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">with positive evaluations</text>
+  <text x="350" y="142" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" text-anchor="middle" fill="#8a8480">propositions 1 &amp; 2</text>
+
+  <!-- Node 2: RIGHT — Instructors need ratings for contracts -->
+  <rect x="500" y="208" width="160" height="68" rx="6" fill="#fdfcfb" stroke="#1a1714" stroke-width="1.5"/>
+  <text x="580" y="228" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">2. Instructors need</text>
+  <text x="580" y="244" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">good evaluations for</text>
+  <text x="580" y="258" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">contract renewal</text>
+  <text x="580" y="272" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" text-anchor="middle" fill="#8a8480">proposition 4</text>
+
+  <!-- Node 3: BOTTOM — Instructors inflate grades -->
+  <rect x="270" y="338" width="160" height="68" rx="6" fill="#fdfcfb" stroke="#1a1714" stroke-width="1.5"/>
+  <text x="350" y="358" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">3. Instructors inflate</text>
+  <text x="350" y="374" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">grades and lower demands</text>
+  <text x="350" y="388" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">to protect their scores</text>
+  <text x="350" y="402" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" text-anchor="middle" fill="#8a8480">mechanism</text>
+
+  <!-- Node 4: LEFT — Students shop for inflators -->
+  <rect x="40" y="208" width="160" height="68" rx="6" fill="#fdfcfb" stroke="#1a1714" stroke-width="1.5"/>
+  <text x="120" y="228" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">4. Students choose</text>
+  <text x="120" y="244" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">courses that promise</text>
+  <text x="120" y="258" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">good grades</text>
+  <text x="120" y="272" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" text-anchor="middle" fill="#8a8480">proposition 3</text>
+
+  <!-- Arrows around the loop, clockwise -->
+  <!-- Top -> Right -->
+  <path d="M 430 130 Q 510 150 510 220" fill="none" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow04)"/>
+  <!-- Right -> Bottom -->
+  <path d="M 510 276 Q 510 350 430 360" fill="none" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow04)"/>
+  <!-- Bottom -> Left -->
+  <path d="M 270 356 Q 190 350 190 268" fill="none" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow04)"/>
+  <!-- Left -> Top -->
+  <path d="M 190 208 Q 190 144 270 134" fill="none" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow04)"/>
+
+  <!-- Center equilibrium box -->
+  <rect x="285" y="208" width="130" height="68" rx="4" fill="#f5f2ee" stroke="#c8860e" stroke-width="1.5"/>
+  <text x="350" y="228" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">stable bad</text>
+  <text x="350" y="244" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">equilibrium</text>
+  <text x="350" y="260" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="9" font-style="italic" text-anchor="middle" fill="#4a4540">grades ↑ · evals ↑</text>
+  <text x="350" y="270" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="9" font-style="italic" text-anchor="middle" fill="#4a4540">learning flat</text>
+
+  <!-- Caption -->
+  <text x="350" y="436" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">Each proposition is mild on its own. Closed into a loop, the four reinforce a settlement in which</text>
+  <text x="350" y="450" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">both metrics drift upward together and neither carries reliable information about teaching or learning.</text>
+</svg>

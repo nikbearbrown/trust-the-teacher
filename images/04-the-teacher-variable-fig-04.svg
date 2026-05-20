@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" role="img" aria-labelledby="t04 d04">
+  <title id="t04">Three-story aggregation behind Visible Learning</title>
+  <desc id="d04">A diagram of the meta-meta-analytic stack: roughly 130,000 individual studies on the ground floor feed into about 2,100 meta-analyses on the second floor, which feed into one meta-meta-analysis on the top floor. Cohen's d is the unit that travels up each level. The corpus spans approximately 300 million students.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+    </style>
+    <marker id="ar04" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="28" text-anchor="middle" class="ti">A three-story building of aggregation</text>
+  <text x="350" y="44" text-anchor="middle" class="sm">Cohen's d travels up each level — the unit stays the same, the noise compounds</text>
+
+  <!-- TOP FLOOR (3): meta-meta-analysis, one block, darkest -->
+  <g>
+    <rect x="290" y="70" width="120" height="56" fill="#1a1714" stroke="#1a1714" stroke-width="1"/>
+    <text x="350" y="92" text-anchor="middle" class="lb" fill="#fdfcfb">Floor 3</text>
+    <text x="350" y="108" text-anchor="middle" class="sm" fill="#fdfcfb">1 meta-meta-analysis</text>
+    <text x="350" y="121" text-anchor="middle" class="sm" fill="#fdfcfb">Visible Learning</text>
+  </g>
+  <text x="418" y="86" class="sm">averaged d ≈ 0.42</text>
+  <text x="418" y="100" class="sm">"hinge" d = 0.40</text>
+  <text x="418" y="114" class="sm">one ranked list</text>
+
+  <!-- Arrows from floor 2 to floor 3 -->
+  <path d="M 320 188 Q 330 158 340 130" fill="none" stroke="#4a4540" stroke-width="1" marker-end="url(#ar04)"/>
+  <path d="M 350 188 L 350 130" fill="none" stroke="#4a4540" stroke-width="1" marker-end="url(#ar04)"/>
+  <path d="M 380 188 Q 370 158 360 130" fill="none" stroke="#4a4540" stroke-width="1" marker-end="url(#ar04)"/>
+
+  <!-- FLOOR 2: ~2,100 meta-analyses, mid grayscale -->
+  <g>
+    <rect x="170" y="190" width="360" height="44" fill="#8a8480" stroke="#1a1714" stroke-width="1"/>
+    <text x="350" y="208" text-anchor="middle" class="lb" fill="#fdfcfb">Floor 2</text>
+    <text x="350" y="223" text-anchor="middle" class="sm" fill="#fdfcfb">~2,100 meta-analyses — each averages many studies into one d</text>
+  </g>
+  <!-- bricks across floor 2 to suggest count -->
+  <g fill="#1a1714" opacity="0.18">
+    <rect x="180" y="240" width="6" height="6"/>
+    <rect x="190" y="240" width="6" height="6"/>
+    <rect x="200" y="240" width="6" height="6"/>
+    <rect x="210" y="240" width="6" height="6"/>
+    <rect x="220" y="240" width="6" height="6"/>
+    <rect x="230" y="240" width="6" height="6"/>
+    <rect x="240" y="240" width="6" height="6"/>
+    <rect x="250" y="240" width="6" height="6"/>
+    <rect x="260" y="240" width="6" height="6"/>
+    <rect x="270" y="240" width="6" height="6"/>
+    <rect x="280" y="240" width="6" height="6"/>
+    <rect x="290" y="240" width="6" height="6"/>
+    <rect x="300" y="240" width="6" height="6"/>
+    <rect x="310" y="240" width="6" height="6"/>
+    <rect x="320" y="240" width="6" height="6"/>
+    <rect x="330" y="240" width="6" height="6"/>
+    <rect x="340" y="240" width="6" height="6"/>
+    <rect x="350" y="240" width="6" height="6"/>
+    <rect x="360" y="240" width="6" height="6"/>
+    <rect x="370" y="240" width="6" height="6"/>
+    <rect x="380" y="240" width="6" height="6"/>
+    <rect x="390" y="240" width="6" height="6"/>
+    <rect x="400" y="240" width="6" height="6"/>
+    <rect x="410" y="240" width="6" height="6"/>
+    <rect x="420" y="240" width="6" height="6"/>
+    <rect x="430" y="240" width="6" height="6"/>
+    <rect x="440" y="240" width="6" height="6"/>
+    <rect x="450" y="240" width="6" height="6"/>
+    <rect x="460" y="240" width="6" height="6"/>
+    <rect x="470" y="240" width="6" height="6"/>
+    <rect x="480" y="240" width="6" height="6"/>
+    <rect x="490" y="240" width="6" height="6"/>
+    <rect x="500" y="240" width="6" height="6"/>
+    <rect x="510" y="240" width="6" height="6"/>
+    <rect x="520" y="240" width="6" height="6"/>
+  </g>
+
+  <!-- Arrows from floor 1 to floor 2 -->
+  <path d="M 220 314 L 220 256" fill="none" stroke="#4a4540" stroke-width="1" marker-end="url(#ar04)"/>
+  <path d="M 280 314 L 280 256" fill="none" stroke="#4a4540" stroke-width="1" marker-end="url(#ar04)"/>
+  <path d="M 350 314 L 350 256" fill="none" stroke="#4a4540" stroke-width="1" marker-end="url(#ar04)"/>
+  <path d="M 420 314 L 420 256" fill="none" stroke="#4a4540" stroke-width="1" marker-end="url(#ar04)"/>
+  <path d="M 480 314 L 480 256" fill="none" stroke="#4a4540" stroke-width="1" marker-end="url(#ar04)"/>
+
+  <!-- FLOOR 1: ~130,000 individual studies, lightest fill -->
+  <g>
+    <rect x="50" y="316" width="600" height="50" fill="#c8c4c0" stroke="#1a1714" stroke-width="1"/>
+    <text x="350" y="334" text-anchor="middle" class="lb">Floor 1</text>
+    <text x="350" y="349" text-anchor="middle" class="sm">~130,000 individual studies — each produces a single Cohen's d</text>
+    <text x="350" y="361" text-anchor="middle" class="sm">small-sample, brief, quasi-experimental designs all enter at this level</text>
+  </g>
+
+  <!-- Right-side annotation: unit traveling up -->
+  <text x="558" y="200" class="lb">d travels up</text>
+  <path d="M 580 208 L 580 130" fill="none" stroke="#1a1714" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar04)"/>
+  <text x="588" y="170" class="sm">study d →</text>
+  <text x="588" y="183" class="sm">meta-analytic d →</text>
+  <text x="588" y="196" class="sm">corpus d</text>
+
+  <!-- Left-side annotation: students at the base -->
+  <text x="60" y="200" class="lb">~300M students</text>
+  <text x="60" y="214" class="sm">aggregated at the base</text>
+  <text x="60" y="227" class="sm">(MetaX 1.3, late 2024)</text>
+
+  <!-- Caption -->
+  <text x="350" y="394" text-anchor="middle" class="cap">Three floors of averaging compress 300 million students into one ranked list. The unit that climbs is Cohen's d.</text>
+  <text x="350" y="408" text-anchor="middle" class="sm">Floor 1 weakness propagates upward; floor 3 inherits whatever bias floor 1 carried.</text>
+</svg>

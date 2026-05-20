@@ -1,0 +1,105 @@
+<svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t13-03 d13-03">
+  <title id="t13-03">Compliance layers compared — medicine measures verified learning, teaching measures seat-time</title>
+  <desc id="d13-03">A side-by-side comparison of the compliance layers in medicine and teaching. Medicine column lists the ACCME as accreditor, roughly 200 CME credits per five-year cycle, quarterly knowledge assessments tied to clinical practice, and measures verified learning activity. Teaching column lists state PD frameworks, a clock-hour seat-time audit, no national accreditor, and measures whether the teacher was in the room. A horizontal fault line at the bottom highlights the single measurement difference.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .col { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #fdfcfb; }
+      .row { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-weight: bold; fill: #1a1714; }
+    </style>
+    <marker id="ar13c" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#c8102e"/>
+    </marker>
+  </defs>
+  <rect width="700" height="440" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="30" class="ti" text-anchor="middle">Two compliance layers, one measurement difference</text>
+  <text x="350" y="46" class="sm" text-anchor="middle">The fault line is what the audit asks at the end of the activity.</text>
+
+  <!-- Column headers (dark bars) -->
+  <rect x="60" y="62" width="120" height="30" fill="#1a1714"/>
+  <text x="120" y="82" class="col" text-anchor="middle">Dimension</text>
+
+  <rect x="180" y="62" width="240" height="30" fill="#1a1714"/>
+  <text x="300" y="82" class="col" text-anchor="middle">Medicine</text>
+
+  <rect x="420" y="62" width="220" height="30" fill="#1a1714"/>
+  <text x="530" y="82" class="col" text-anchor="middle">Teaching</text>
+
+  <!-- Row 1: Accreditor -->
+  <rect x="60" y="92" width="120" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="120" y="118" class="row" text-anchor="middle">Accreditor</text>
+  <text x="120" y="134" class="sm" text-anchor="middle">who decides</text>
+  <text x="120" y="146" class="sm" text-anchor="middle">what counts</text>
+
+  <rect x="180" y="92" width="240" height="56" fill="#fdfcfb" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="192" y="112" class="lb">ACCME</text>
+  <text x="192" y="126" class="sm">Accreditation Council for Continuing</text>
+  <text x="192" y="138" class="sm">Medical Education — single national body</text>
+
+  <rect x="420" y="92" width="220" height="56" fill="#fdfcfb" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="432" y="112" class="lb">State PD frameworks</text>
+  <text x="432" y="126" class="sm">50 states · 50 different rule sets</text>
+  <text x="432" y="138" class="sm">no equivalent national accreditor</text>
+
+  <!-- Row 2: Volume -->
+  <rect x="60" y="148" width="120" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="120" y="174" class="row" text-anchor="middle">Required volume</text>
+  <text x="120" y="190" class="sm" text-anchor="middle">over a cycle</text>
+
+  <rect x="180" y="148" width="240" height="56" fill="#fdfcfb" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="192" y="168" class="lb">~200 CME credits / 5-year cycle</text>
+  <text x="192" y="182" class="sm">ABFM example — plus quarterly</text>
+  <text x="192" y="194" class="sm">knowledge assessments</text>
+
+  <rect x="420" y="148" width="220" height="56" fill="#fdfcfb" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="432" y="168" class="lb">PD clock-hours / renewal cycle</text>
+  <text x="432" y="182" class="sm">typically 20–50 hours per year,</text>
+  <text x="432" y="194" class="sm">no quarterly assessment</text>
+
+  <!-- Row 3: Assessment cadence -->
+  <rect x="60" y="204" width="120" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="120" y="230" class="row" text-anchor="middle">Assessment</text>
+  <text x="120" y="246" class="sm" text-anchor="middle">tied to practice</text>
+
+  <rect x="180" y="204" width="240" height="56" fill="#fdfcfb" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="192" y="224" class="lb">Quarterly knowledge questions</text>
+  <text x="192" y="238" class="sm">tied to clinical reasoning;</text>
+  <text x="192" y="250" class="sm">case conferences in MOC programs</text>
+
+  <rect x="420" y="204" width="220" height="56" fill="#fdfcfb" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="432" y="224" class="lb">Sign-in sheet</text>
+  <text x="432" y="238" class="sm">attendance recorded;</text>
+  <text x="432" y="250" class="sm">no end-of-activity demonstration</text>
+
+  <!-- Row 4: What the audit asks (the fault line) -->
+  <rect x="60" y="260" width="120" height="62" fill="#c8102e" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="120" y="288" class="row" text-anchor="middle" fill="#fdfcfb">What the audit</text>
+  <text x="120" y="302" class="row" text-anchor="middle" fill="#fdfcfb">asks at the end</text>
+  <text x="120" y="314" class="sm" text-anchor="middle" fill="#fdfcfb">— the fault line —</text>
+
+  <rect x="180" y="260" width="240" height="62" fill="#fdfcfb" stroke="#c8102e" stroke-width="1.6"/>
+  <text x="192" y="282" class="lb" font-weight="bold">Did the physician complete</text>
+  <text x="192" y="296" class="lb" font-weight="bold">a verified learning activity?</text>
+  <text x="192" y="312" class="sm">measures: change in capability</text>
+
+  <rect x="420" y="260" width="220" height="62" fill="#fdfcfb" stroke="#c8102e" stroke-width="1.6"/>
+  <text x="432" y="282" class="lb" font-weight="bold">Was the teacher in the room?</text>
+  <text x="432" y="296" class="sm">measures: attendance only —</text>
+  <text x="432" y="308" class="sm">no question about end-state</text>
+  <text x="432" y="320" class="sm">capability or student response</text>
+
+  <!-- Annotation arrow connecting the two fault-line cells -->
+  <path d="M 300 326 L 300 348 L 530 348 L 530 326" fill="none" stroke="#c8102e" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ar13c)"/>
+  <text x="415" y="366" class="lb" text-anchor="middle" font-weight="bold">A system that measures attendance will get attendance.</text>
+  <text x="415" y="380" class="sm" text-anchor="middle">A system that measures learning will get something closer to learning.</text>
+
+  <!-- Bottom rule -->
+  <line x1="60" y1="404" x2="640" y2="404" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="350" y="420" class="cap" text-anchor="middle">Sources: ACCME Annual Data Report; ABFM 5-year cycle requirements; state PD framework summaries.</text>
+  <text x="350" y="434" class="cap" text-anchor="middle">The content layer is not where the fields differ. The audit question is.</text>
+</svg>

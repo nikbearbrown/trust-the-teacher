@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 13.1 — Content problem vs incentive problem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; }
+  #chart { width: 100%; min-height: 480px; position: relative; }
+  .column { background: var(--color-white); }
+  .column rect.bg { fill: #F5F2EE; stroke: var(--color-ink); }
+  @media (prefers-color-scheme: dark) { .column rect.bg { fill: #1a1a1a; } }
+  .col-title { font-family: 'EB Garamond', Georgia, serif; font-size: 18px; font-weight: 700; fill: var(--color-ink); }
+  .col-sub { font-family: 'Inter', sans-serif; font-size: 12px; fill: var(--color-secondary); }
+  .stamp-solved rect { fill: var(--color-ink); }
+  .stamp-untouched rect { fill: var(--color-secondary); }
+  .stamp text { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; fill: var(--color-white); letter-spacing: 0.05em; }
+  .item-title { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-weight: 700; fill: var(--color-ink); }
+  .item-sub { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .flow-label { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; fill: var(--color-ink); }
+  .flow-sub { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 16px; font-style: italic; max-width: 80ch; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-size: 12px; font-family: 'Inter', sans-serif; transition: opacity 150ms cubic-bezier(0.2,0.8,0.2,1); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 13.1 — Content problem vs incentive problem</h1>
+<p class="subtitle">When districts say "teachers need AI training," they are describing two problems. One is solved. The other has not been touched.</p>
+<div id="chart" role="img" aria-labelledby="ch-t ch-d"></div>
+<p class="caption">The diagnostic error: solving problem one harder while leaving problem two structurally unchanged.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const columnData = [
+  {
+    side: 'left',
+    title: '1. Content problem',
+    sub: 'Does high-quality material exist? Can a teacher access it?',
+    stamp: 'SOLVED',
+    items: [
+      { name: 'HarvardX DPI 681M',          detail: '3 modules · Goel, Levy, Svoronos' },
+      { name: 'CS50 AI & Prompt Engineering', detail: 'free audit · $150–$300 verified' },
+      { name: 'MIT OpenCourseWare',         detail: 'equivalent introductory tracks' },
+      { name: 'Stanford Online',            detail: 'course catalog, free audit' },
+      { name: 'Carnegie Mellon',            detail: 'equivalents available' }
+    ]
+  },
+  {
+    side: 'right',
+    title: '2. Incentive problem',
+    sub: 'Does the institution recognize completion?',
+    stamp: 'UNTOUCHED',
+    items: [
+      { name: 'Salary schedule',     detail: 'no line item for completion' },
+      { name: 'Licensure hours',     detail: 'state PD framework ignores it' },
+      { name: 'Evaluation rubric',   detail: 'no row any administrator reviews' },
+      { name: 'Portable credential', detail: 'district cannot read what travels' },
+      { name: 'Stipend or release',  detail: 'no budget line attached' }
+    ]
+  }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, d) {
+  tooltip.html(`<strong>${d.name}</strong><br>${d.detail}`)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 28) + 'px')
+    .style('opacity', 1);
+}
+function moveTip(event) {
+  tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px');
+}
+function hideTip() { tooltip.style('opacity', 0); }
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+
+  const totalWidth  = container.clientWidth || 800;
+  const totalHeight = 480;
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'ch-t ch-d');
+  svg.append('title').attr('id', 'ch-t').text('Two diagnoses, one budget — content problem solved, incentive problem untouched');
+  svg.append('desc').attr('id', 'ch-d').text('Two-column infographic comparing the solved content layer with the untouched incentive layer, plus an arrow showing where district spending currently flows.');
+
+  const margin = { top: 24, right: 32, bottom: 96, left: 32 };
+  const innerWidth = totalWidth - margin.left - margin.right;
+  const colGap = 32;
+  const colWidth = (innerWidth - colGap) / 2;
+
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  columnData.forEach((col, ci) => {
+    const x0 = ci === 0 ? 0 : colWidth + colGap;
+    const colG = g.append('g').attr('class', 'column').attr('transform', `translate(${x0},0)`);
+
+    // Header
+    colG.append('text').attr('class', 'col-title')
+      .attr('x', colWidth / 2).attr('y', 22).attr('text-anchor', 'middle').text(col.title);
+    colG.append('text').attr('class', 'col-sub')
+      .attr('x', colWidth / 2).attr('y', 42).attr('text-anchor', 'middle').text(col.sub);
+
+    // Stamp
+    const stampClass = col.stamp === 'SOLVED' ? 'stamp stamp-solved' : 'stamp stamp-untouched';
+    const stampW = 130, stampH = 26;
+    const stampG = colG.append('g').attr('class', stampClass)
+      .attr('transform', `translate(${(colWidth - stampW) / 2}, 56)`);
+    stampG.append('rect').attr('width', stampW).attr('height', stampH);
+    stampG.append('text').attr('x', stampW / 2).attr('y', 18).attr('text-anchor', 'middle').text(col.stamp);
+
+    // Body box
+    const bodyTop = 96;
+    const bodyHeight = 244;
+    colG.append('rect').attr('class', 'bg')
+      .attr('x', 0).attr('y', bodyTop).attr('width', colWidth).attr('height', bodyHeight)
+      .attr('stroke-width', 1);
+
+    // Items
+    const rowH = bodyHeight / col.items.length;
+    colG.selectAll('.row').data(col.items).join('g')
+      .attr('class', 'row')
+      .attr('transform', (d, i) => `translate(16, ${bodyTop + i * rowH + rowH / 2 - 8})`)
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `${d.name}: ${d.detail}`)
+      .each(function(d) {
+        const sel = d3.select(this);
+        sel.append('text').attr('class', 'item-title').attr('y', 4).text(d.name);
+        sel.append('text').attr('class', 'item-sub').attr('y', 22).text(d.detail);
+      })
+      .on('mouseover', showTip).on('mousemove', moveTip).on('mouseout', hideTip);
+  });
+
+  // Spending flow arrow
+  const flowY = margin.top + 360;
+  const cx = totalWidth / 2;
+  svg.append('defs').append('marker')
+    .attr('id', 'flowarrow').attr('markerWidth', 10).attr('markerHeight', 8)
+    .attr('refX', 9).attr('refY', 4).attr('orient', 'auto')
+    .append('polygon').attr('points', '0 0, 10 4, 0 8').attr('fill', 'var(--color-ink)');
+
+  svg.append('text').attr('class', 'flow-label')
+    .attr('x', cx).attr('y', flowY - 6).attr('text-anchor', 'middle')
+    .text('Where district AI-training dollars go');
+
+  svg.append('line')
+    .attr('x1', cx).attr('y1', flowY + 16).attr('x2', margin.left + colWidth / 2).attr('y2', flowY + 16)
+    .attr('stroke', 'var(--color-ink)').attr('stroke-width', 1.6)
+    .attr('marker-end', 'url(#flowarrow)');
+
+  svg.append('line')
+    .attr('x1', cx).attr('y1', flowY + 16)
+    .attr('x2', margin.left + colWidth + colGap + colWidth / 2).attr('y2', flowY + 16)
+    .attr('stroke', 'var(--color-secondary)').attr('stroke-width', 0.8).attr('stroke-dasharray', '3 3');
+
+  svg.append('text').attr('class', 'flow-sub')
+    .attr('x', margin.left + colWidth / 2).attr('y', flowY + 36)
+    .attr('text-anchor', 'middle')
+    .text('~all spending flows here (vendor workshops on content)');
+
+  svg.append('text').attr('class', 'flow-sub')
+    .attr('x', margin.left + colWidth + colGap + colWidth / 2).attr('y', flowY + 36)
+    .attr('text-anchor', 'middle')
+    .text('negligible flow to recognition');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

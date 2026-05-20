@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" role="img" aria-labelledby="t-c2 d-c2">
+  <title id="t-c2">ACCME and ABFM medical model mapped to the AI+1 teaching analog</title>
+  <desc id="d-c2">A side-by-side row-by-row mapping. Five structural components — Cycle length, Hour minimum, Demonstrations, Peer review, Credential authority — show the medical CME and MOC reference on the left and the proposed AI+1 teaching translation on the right.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #2a1a0e; }
+      .h2 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold; fill: #2a1a0e; }
+      .h3 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #2a1a0e; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #2a1a0e; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .eyebrow { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-weight: bold; fill: #4a4540; letter-spacing: 0.04em; }
+    </style>
+    <marker id="ar-c2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+  <rect width="700" height="460" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" text-anchor="middle" class="ti">The medical model, translated — ACCME / ABFM into AI+1 teaching</text>
+  <text x="350" y="48" text-anchor="middle" class="sm">Same structural logic; shorter cycle and lower hour floor; subject-specific demonstrations.</text>
+
+  <!-- Column headers -->
+  <text x="60" y="78" class="eyebrow">COMPONENT</text>
+  <text x="290" y="78" text-anchor="middle" class="h3">Medicine — ACCME / ABFM</text>
+  <text x="540" y="78" text-anchor="middle" class="h3">Teaching — AI+1 analog</text>
+  <line x1="40" y1="86" x2="660" y2="86" stroke="#2a1a0e" stroke-width="0.8"/>
+
+  <!-- Arrow across columns (mapped) -->
+  <text x="445" y="78" text-anchor="middle" class="eyebrow">→</text>
+
+  <!-- ROW 1: Cycle length -->
+  <text x="60" y="116" class="h3">Cycle length</text>
+  <rect x="160" y="98" width="260" height="40" fill="#f5f2ee" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="170" y="116" class="lb">5-year cycle</text>
+  <text x="170" y="130" class="sm">ABFM Continue Certification, all specialties</text>
+  <line x1="424" y1="118" x2="446" y2="118" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar-c2)"/>
+  <rect x="450" y="98" width="210" height="40" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="460" y="116" class="lb">3-year cycle</text>
+  <text x="460" y="130" class="sm">Field moves faster than medicine on AI</text>
+
+  <!-- ROW 2: Hour minimum -->
+  <text x="60" y="166" class="h3">Hour minimum</text>
+  <rect x="160" y="148" width="260" height="40" fill="#f5f2ee" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="170" y="166" class="lb">~200 CME credits / 5 yrs</text>
+  <text x="170" y="180" class="sm">+ state licensure hours layered on top</text>
+  <line x1="424" y1="168" x2="446" y2="168" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar-c2)"/>
+  <rect x="450" y="148" width="210" height="40" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="460" y="166" class="lb">50 hrs/yr × 3 yrs</text>
+  <text x="460" y="180" class="sm">Kraft 2018 absorption ceiling</text>
+
+  <!-- ROW 3: Demonstrations -->
+  <text x="60" y="216" class="h3">Demonstrations</text>
+  <rect x="160" y="198" width="260" height="40" fill="#f5f2ee" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="170" y="216" class="lb">Quarterly knowledge questions · MOC</text>
+  <text x="170" y="230" class="sm">Practice-improvement modules; case logs</text>
+  <line x1="424" y1="218" x2="446" y2="218" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar-c2)"/>
+  <rect x="450" y="198" width="210" height="40" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="460" y="216" class="lb">5 domain artifacts</text>
+  <text x="460" y="230" class="sm">Portfolio of redesigned practice</text>
+
+  <!-- ROW 4: Peer review -->
+  <text x="60" y="266" class="h3">Peer review</text>
+  <rect x="160" y="248" width="260" height="40" fill="#f5f2ee" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="170" y="266" class="lb">Specialty-board audit</text>
+  <text x="170" y="280" class="sm">Credentialed peers; structured rubric</text>
+  <line x1="424" y1="268" x2="446" y2="268" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar-c2)"/>
+  <rect x="450" y="248" width="210" height="40" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="460" y="266" class="lb">3–5 peer panel, same subject/grade</text>
+  <text x="460" y="280" class="sm">NBPTS renewal mechanism (Appx B M3)</text>
+
+  <!-- ROW 5: Credential authority -->
+  <text x="60" y="316" class="h3">Credential</text>
+  <text x="60" y="330" class="h3">authority</text>
+  <rect x="160" y="298" width="260" height="40" fill="#f5f2ee" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="170" y="316" class="lb">Specialty board + ACCME audit</text>
+  <text x="170" y="330" class="sm">Independent of pharma vendor funding</text>
+  <line x1="424" y1="318" x2="446" y2="318" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar-c2)"/>
+  <rect x="450" y="298" width="210" height="40" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="460" y="316" class="lb">University consortium</text>
+  <text x="460" y="330" class="sm">Vendor funding capped at ~10%</text>
+
+  <!-- Footer with capture-rate annotation -->
+  <line x1="40" y1="358" x2="660" y2="358" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="60" y="378" class="eyebrow">VENDOR CAPTURE RISK — STRUCTURAL DEFENSES</text>
+
+  <rect x="60" y="386" width="146" height="50" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+  <text x="133" y="403" text-anchor="middle" class="sm">Medicine: pharma ≈25%</text>
+  <text x="133" y="417" text-anchor="middle" class="sm">of ACCME revenue (2023)</text>
+  <text x="133" y="431" text-anchor="middle" class="cap">documented capture</text>
+
+  <rect x="220" y="386" width="146" height="50" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+  <text x="293" y="403" text-anchor="middle" class="sm">AI+1 ceiling: ≤10%</text>
+  <text x="293" y="417" text-anchor="middle" class="sm">vendor funding, capped</text>
+  <text x="293" y="431" text-anchor="middle" class="cap">structural majority is state $</text>
+
+  <rect x="380" y="386" width="146" height="50" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+  <text x="453" y="403" text-anchor="middle" class="sm">University seal,</text>
+  <text x="453" y="417" text-anchor="middle" class="sm">not vendor brand</text>
+  <text x="453" y="431" text-anchor="middle" class="cap">labor market reads it as PD</text>
+
+  <rect x="540" y="386" width="120" height="50" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+  <text x="600" y="403" text-anchor="middle" class="sm">COI rules,</text>
+  <text x="600" y="417" text-anchor="middle" class="sm">published &amp; enforced</text>
+  <text x="600" y="431" text-anchor="middle" class="cap">disclosure + limits</text>
+</svg>

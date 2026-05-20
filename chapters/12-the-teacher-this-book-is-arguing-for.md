@@ -56,6 +56,9 @@ Every state phone-ban law in America contains a phrase like *except for educatio
 
 The principle the language has to encode is the one the Bastani finding made concrete. The scaffolded GPT Tutor produced neutral outcomes. The unscaffolded GPT Base condition produced a seventeen-percent loss. The same word — *AI* — names both. A statute that does not distinguish them authorizes whichever one the local procurement office bought cheapest.
 
+![Three-bar chart of closed-book post-test performance: Control at 100, GPT Tutor scaffolded at 100, GPT Base unscaffolded at 83 — a 17 percent gap labeled on the right](../images/12-the-teacher-this-book-is-arguing-for-fig-03.png)
+*Figure 12.3 — Same word, two policy objects: Bastani's three-condition gap*
+
 **Fund teacher AI training through Title II-A at a 70/30 ratio.**
 
 <!-- FACT-CHECK FLAG: "Fewer than 40% of LEAs use Title II-A funds for technology-related PD" is plausible but should be pinned to SETDA Nov 2025 or USDE Title II-A summary. The 70/30 ratio itself is the chapter's authorial recommendation, not a ratio drawn from named policy literature — frame as recommendation. -->Title II-A — Supporting Effective Instruction State Grants — is currently appropriated at $2.19 billion annually. Fewer than forty percent of local education agencies use those funds for technology-related professional learning. The limiting variable in EdTech outcomes is teacher capacity, not device count. At least seventy percent of any AI-related federal expenditure should go to sustained professional development; no more than thirty percent to hardware and licensing. Hardware is not the bottleneck. The trained person who decides what the hardware is for — that is the bottleneck. The funding should follow it.
@@ -148,6 +151,9 @@ Whether the AI+1 teacher is, at scale, a configuration that survives twenty year
 
 In 2025 and into 2026, America wrote thirty-three state laws about phones in schools. We wrote almost none about training the teachers those schools depend on. In the same policy window, the FCC removed the federal connectivity subsidy that was the substitute mechanism for the devices the states were locking away. Los Angeles spent $5.2 million on pouches. New York spent $29 million. Houston spent $800,000. The Title II-A funds that would have paid for the coaching cycles sat frozen in a fourteen-district legal dispute. The AI platform licenses sat sixty-seven percent unused on the servers.
 
+![Two-column ledger contrasting funded items in the 2025-26 phone-ban window (LAUSD $5.2M, NYC $29M, Houston $800K pouches, 33 state laws) against unfunded items (Title II-A frozen in a 14-district dispute, 67 percent of AI licenses unused, FCC E-Rate hotspots rescinded, zero teacher AI training statutes)](../images/12-the-teacher-this-book-is-arguing-for-fig-04.png)
+*Figure 12.4 — The 2025-26 policy ledger: what we funded, what we did not*
+
 The phone is in the pouch. The app is on the server. The teacher is in the room, making the call the legislature could not make, doing the work the algorithm cannot do, without the preparation we have consistently failed to provide.
 
 That is the state of things. It is also the sentence the book has been building toward for eleven chapters, because it names both the problem and the place the problem can be addressed. The call is being made — imperfectly, without sufficient training, inside an evaluation system that cannot see it — by the one variable the research keeps finding at the top of the list. What the book is asking is that we take that finding seriously enough to invest in it. Not as a vision. As a policy choice, made deliberately, at the scale the evidence demands.
@@ -201,3 +207,15 @@ The teacher is already in the room. The work that remains is to build what she n
 18. Sweller, J. (1988). "Cognitive load during problem solving." *Cognitive Science* 12(2): 257–285.
 19. Schultz, W., Dayan, P., & Montague, P. R. (1997). "A Neural Substrate of Prediction and Reward." *Science* 275: 1593–1599.
 20. Ballotpedia. Cell phones in schools. https://ballotpedia.org/Cell_phones_in_schools
+
+---
+
+## Prompts
+
+### Figure 12.3 — Bastani three-condition closed-book performance
+
+Build a vertical bar chart, 700×440 viewBox, three bars left to right: Control, GPT Tutor (scaffolded), GPT Base (unscaffolded). Y-axis is percent of Control post-test performance with a strict zero baseline running from 0 to 100, ticks every 25. Control and GPT Tutor sit at 100; GPT Base sits at 83. Use warm grayscale only — `#fdfcfb` canvas, `#1a1714` ink, `#4a4540` secondary, `#8a8480` axis, `#c8c4c0` muted. The two near-equal bars take a mid-gray fill; the GPT Base bar takes the darker ink fill so the eye lands on the gap, not on the bars that match. On the right of the GPT Base bar, draw a vertical bracket between y=100 and y=83 with serifs at top and bottom, and label it `−17%` with `vs Control` beneath. Add two dashed annotation arrows: one to the left cluster reading "scaffolded condition: neutral on post-test," one to GPT Base reading "fluent in the moment, underperforms when the tool is taken away." Font stack `'EB Garamond', Georgia, 'Times New Roman', serif` throughout. Caption attributes Bastani et al., PNAS 122(26): e2422633122 (2025). Reference implementation: `images/12-the-teacher-this-book-is-arguing-for-fig-03.svg`.
+
+### Figure 12.4 — The 2025-26 policy ledger
+
+Build a two-column ledger infographic, 700×480 viewBox, that reads as a balance sheet of one policy window. Left column "What we funded" uses solid-ink header and tinted-fill rows; right column "What we did not" uses an outlined header and dashed-border rows on the canvas. Each row is `{big number, label, one-line description}`. Left rows: `$5.2M / LAUSD pouches`, `$29M / NYC pouches`, `$800K / Houston pouches`, and a fourth accent row (dark fill, light text) `33 / state laws / phone bans signed, 2024-26`. Right rows: `frozen / Title II-A funds`, `67% / AI licenses unused`, `rescinded / FCC E-Rate hotspots + bus Wi-Fi`, `0 / state laws funding teacher AI training`. Below each column, a 1px rule and an italicized subtotal line. At the bottom, a single horizontal arrow path bridging the two columns with the caption "The exemption was written. The teacher who would have used it was not funded." Warm grayscale only — same palette as fig-03. Font stack `'EB Garamond', Georgia, 'Times New Roman', serif`. Source attribution: Ballotpedia phone-ban tracker, district procurement filings, Glimpse K-12, FCC. Reference implementation: `images/12-the-teacher-this-book-is-arguing-for-fig-04.svg`.

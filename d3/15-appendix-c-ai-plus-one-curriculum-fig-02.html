@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure C.2 — Medical model mapped to AI+1 teaching analog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', -apple-system, sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 65ch; }
+  .row { display: grid; grid-template-columns: 140px 1fr 36px 1fr; gap: 12px; align-items: stretch; padding: 12px 0; border-bottom: 1px solid var(--color-border); }
+  .row.header { font-weight: 700; border-bottom: 1.5px solid var(--color-ink); }
+  .row.header > div { padding: 0; }
+  .col-component { font-family: 'EB Garamond', Georgia, serif; font-weight: 700; font-size: 14px; color: var(--color-ink); align-self: center; }
+  .col-medical, .col-teaching { padding: 12px; border: 1px solid var(--color-border); transition: border-color 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .col-medical { background: color-mix(in srgb, var(--color-secondary) 6%, transparent); }
+  .col-medical:hover, .col-teaching:hover { border-color: var(--color-red); }
+  .col-arrow { display: flex; align-items: center; justify-content: center; color: var(--color-secondary); font-family: 'JetBrains Mono', monospace; font-size: 18px; }
+  .lab { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; color: var(--color-ink); margin-bottom: 4px; }
+  .det { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--color-secondary); line-height: 1.4; }
+  .section-title { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; font-weight: 700; margin-top: 32px; margin-bottom: 12px; color: var(--color-ink); text-transform: uppercase; letter-spacing: 0.06em; font-size: 11px; }
+  .defenses { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .defense { padding: 12px; border: 1px solid var(--color-secondary); }
+  .defense .num { font-family: 'EB Garamond', Georgia, serif; font-size: 24px; font-weight: 700; color: var(--color-red); display: block; margin-bottom: 4px; }
+  .defense .head { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; color: var(--color-ink); margin-bottom: 4px; }
+  .defense .body { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--color-secondary); line-height: 1.4; }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 16px; max-width: 65ch; font-style: italic; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  @media (max-width: 600px) {
+    .row { grid-template-columns: 1fr; }
+    .col-arrow { transform: rotate(90deg); }
+    .defenses { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<h1>Figure C.2 — The medical model, translated</h1>
+<p class="subtitle">ACCME and ABFM provide the structural template. The AI+1 teaching analog inherits the logic, with a shorter cycle and lower hour floor, and tightens the vendor-capture defenses.</p>
+<div id="comparison" role="region" aria-label="Structural comparison between medical CME and AI+1 teaching"></div>
+<div class="section-title">Vendor capture risk — four structural defenses</div>
+<div class="defenses" id="defenses" role="list"></div>
+<p class="caption">The four defenses are harder than copying the medical system. They are the only version of the project worth running.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const rows = [
+  {
+    component: 'Cycle length',
+    medical: { head: '5-year cycle', body: 'ABFM Continue Certification, all specialties.' },
+    teaching: { head: '3-year cycle', body: 'Field moves faster than medicine on AI; cycle keeps the credential current.' }
+  },
+  {
+    component: 'Hour minimum',
+    medical: { head: '~200 CME credits / 5 yrs', body: 'Plus state-licensure hours layered on top.' },
+    teaching: { head: '50 hrs/yr × 3 yrs', body: 'Kraft 2018 absorption ceiling — above the threshold, structure matters more than dose.' }
+  },
+  {
+    component: 'Demonstrations',
+    medical: { head: 'Quarterly knowledge questions · MOC modules', body: 'Practice-improvement modules; case logs.' },
+    teaching: { head: 'Five-domain artifact portfolio', body: 'Subject-specific redesign · offloading assignment · equity lesson · formative defense.' }
+  },
+  {
+    component: 'Peer review',
+    medical: { head: 'Specialty-board audit', body: 'Credentialed peers from the same specialty; structured rubric.' },
+    teaching: { head: '3–5 peer panel, same subject/grade', body: 'NBPTS renewal mechanism (Appendix B Measure 3).' }
+  },
+  {
+    component: 'Credential authority',
+    medical: { head: 'Specialty board + ACCME audit', body: 'Independent of pharmaceutical vendor funding.' },
+    teaching: { head: 'University consortium', body: 'Vendor funding capped at ~10%; structural majority is state appropriation + tuition.' }
+  }
+];
+
+const defenses = [
+  { num: '1', head: 'University-issued credential', body: 'Document hangs under the university\'s seal, not the vendor\'s logo.' },
+  { num: '2', head: 'Independent accreditation', body: 'State body audits the issuing universities against published standards.' },
+  { num: '3', head: 'COI rules published', body: 'Every instructor discloses every vendor relationship at cohort start.' },
+  { num: '4', head: 'Vendor funding capped', body: '≤10% of program operating budget — well below the ACCME pharma share.' }
+];
+
+const container = d3.select('#comparison');
+
+// Header row
+const header = container.append('div').attr('class', 'row header');
+header.append('div').attr('class', 'col-component').text('Component');
+header.append('div').text('Medicine — ACCME / ABFM');
+header.append('div').attr('class', 'col-arrow').text('→');
+header.append('div').text('Teaching — AI+1 analog');
+
+// Data rows
+container.selectAll('.row.data').data(rows).join('div')
+  .attr('class', 'row data')
+  .each(function(d) {
+    const row = d3.select(this);
+    row.append('div').attr('class', 'col-component').text(d.component);
+    const mCol = row.append('div').attr('class', 'col-medical').attr('tabindex', 0).attr('aria-label', `Medicine ${d.component}: ${d.medical.head}`);
+    mCol.append('div').attr('class', 'lab').text(d.medical.head);
+    mCol.append('div').attr('class', 'det').text(d.medical.body);
+    row.append('div').attr('class', 'col-arrow').text('→');
+    const tCol = row.append('div').attr('class', 'col-teaching').attr('tabindex', 0).attr('aria-label', `Teaching ${d.component}: ${d.teaching.head}`);
+    tCol.append('div').attr('class', 'lab').text(d.teaching.head);
+    tCol.append('div').attr('class', 'det').text(d.teaching.body);
+  });
+
+const defensesEl = d3.select('#defenses');
+defensesEl.selectAll('.defense').data(defenses).join('div')
+  .attr('class', 'defense').attr('role', 'listitem')
+  .each(function(d) {
+    const el = d3.select(this);
+    el.append('span').attr('class', 'num').text(d.num);
+    el.append('div').attr('class', 'head').text(d.head);
+    el.append('div').attr('class', 'body').text(d.body);
+  });
+</script>
+</body>
+</html>

@@ -190,6 +190,9 @@ This is not a problem a better statute can solve. The distinction between techno
 
 The legislative move borrowed half of medicine's regulatory model. It wrote the rule. It skipped the training. Doctors are also closest to clinical decisions and also subject to standardized rules — but the rules are written with the profession, exceptions require trained judgment, and continuing education is mandatory. Fifty hours a year. License renewal tied to demonstrated learning. Nobody argues that doctors should figure out new treatments on their own in the exam room. The infrastructure for continuous professional development exists in medicine. It does not exist for teaching at any comparable scale.
 
+![Side-by-side four-layer stack: medicine's column shows rule, profession-written exceptions, mandatory 50-hour-per-year continuing education, and license renewal all filled; teaching's column shows the same four layer positions with only rule and exemption clause filled, and the top two layers — required training and renewal tie — drawn as empty dashed boxes](../images/01-the-ban-fig-04.png)
+*Figure 1.4 — Medicine's full regulatory stack vs. teaching's partial one: the missing layers*
+
 The phone ban is, structurally, a statute that distrusts teachers in the abstract and depends on them in the particulars. That is a structurally unstable place to leave a policy.
 
 ---
@@ -265,3 +268,23 @@ The following sources were independently verified by fact-check pass (2026-05-16
 - LAist. *Is LAUSD's cellphone ban working?* [https://laist.com/news/education/los-angeles-unified-phone-ban-end-of-first-semester-summer-starts](https://laist.com/news/education/los-angeles-unified-phone-ban-end-of-first-semester-summer-starts)
 - Hechinger Report. *Cellphone bans can help kids learn — but Black students are suspended more.* [https://hechingerreport.org/proof-points-cellphone-bans/](https://hechingerreport.org/proof-points-cellphone-bans/)
 - Pew Research Center. *Mobile Fact Sheet.* [https://www.pewresearch.org/internet/fact-sheet/mobile/](https://www.pewresearch.org/internet/fact-sheet/mobile/)
+
+---
+
+## Prompts
+
+Use this prompt with Claude to generate an interactive D3 v7 version of the
+figure in this chapter. It produces a standalone HTML file you can open in a
+browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using the prompt. They define the stack,
+naming conventions, color system, and typography the figure uses.
+
+---
+
+### Figure 1.4 — Medicine vs teaching, regulatory stack
+
+Build a two-column comparison figure with four horizontal layers per column. Left column: "Medicine — full regulatory stack." Right column: "Teaching — partial regulatory stack." Both columns share the same four layer positions, labeled in a left gutter as Layer 1 (bottom) through Layer 4 (top). Layer 1 = "The rule." Layer 2 = "Exceptions written with the profession" (medicine) / "Exemption clause" (teaching). Layer 3 = "Mandatory CE — 50 hours / year" (medicine) / "No required training" (teaching, missing). Layer 4 = "License renewal — tied to learning" (medicine) / "No renewal tie" (teaching, missing). Medicine renders all four as filled rectangles in a graduated luminance scale from the warm-neutral series (layer 1 darkest, layer 4 lightest). Teaching renders only layers 1 and 2 as filled; layers 3 and 4 are empty white rectangles with dashed `var(--color-secondary)` borders and italic gray text. Draw short dashed connector arrows in the gap between columns at the two missing-layer rows, labeled "missing." Hover any layer to reveal a tooltip explaining what that layer does. Standalone HTML, D3 v7 from the pinned CDN, EB Garamond / Inter / JetBrains Mono via Google Fonts, dark-mode aware, ResizeObserver, keyboard-reachable, `prefers-reduced-motion` honored.
+
+> Reference implementation: `d3/01-the-ban-fig-04.html`

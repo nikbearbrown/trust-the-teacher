@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure C.1 — Five-domain AI+1 curriculum map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--color-white);
+    color: var(--color-ink);
+    font-family: 'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+    padding: 24px;
+  }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 20px; max-width: 65ch; }
+  #chart { width: 100%; min-height: 440px; position: relative; }
+  .eyebrow { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.06em; fill: var(--color-secondary); text-transform: uppercase; }
+  .domain-card { fill: var(--color-white); stroke: var(--color-secondary); stroke-width: 1; transition: stroke 200ms cubic-bezier(0.2,0.8,0.2,1), stroke-width 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .domain-card.foundation { stroke: var(--color-ink); stroke-width: 1.5; fill: var(--color-white); }
+  .domain-card:hover { stroke: var(--color-red); stroke-width: 2; }
+  .domain-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: var(--color-secondary); text-transform: uppercase; }
+  .domain-title { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; font-weight: 700; fill: var(--color-ink); }
+  .domain-desc { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-ink); }
+  .artifact-card { fill: var(--color-white); stroke: var(--color-border); stroke-width: 1; }
+  .artifact-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; fill: var(--color-ink); }
+  .artifact-desc { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .flow-line { fill: none; stroke: var(--color-secondary); stroke-width: 1; stroke-dasharray: 4 3; }
+  .flow-line.active { stroke: var(--color-red); }
+  .col-rule { stroke: var(--color-border); stroke-width: 0.75; }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 12px; max-width: 65ch; font-style: italic; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 8px 12px; font-size: 12px; font-family: 'Inter', sans-serif; max-width: 280px; line-height: 1.4; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure C.1 — Five domains, one foundation</h1>
+<p class="subtitle">Domain 1 catalogs free; Domains 2 through 5 are where the credential earns its keep. Hover any domain to see the artifact it produces.</p>
+<div id="chart" role="main"></div>
+<p class="caption">Subject-specific pedagogy is the binding constraint. Generic AI training does not substitute for the track.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const domains = [
+  {
+    id: 1, title: 'AI Fundamentals', foundation: true,
+    desc: 'What an LLM is, how it generates text, its failure modes, the conceptual vocabulary that lets a teacher reason about it rather than treat it as magic.',
+    artifact: 'Defined-slate completion certificates',
+    artifactDesc: 'Five to eight HarvardX / MITx / Stanford courses, district-chosen.',
+    blurb: 'Foundation — completed once. Free content already exists at the level of the field.'
+  },
+  {
+    id: 2, title: 'Subject-Specific Pedagogy', foundation: false,
+    desc: 'Math AI, ELA AI, science AI, special-education AI, K-2 phonics AI — distinct tracks taught by people who teach the subject at the grade.',
+    artifact: 'Subject-specific assignment-redesign portfolio',
+    artifactDesc: 'Peer-reviewed in the study group, against PCK rubric.',
+    blurb: 'The track that does not exist in any current free catalog. The Charlotte Danielson / Carl Wieman / Shulman PCK constraint applies.'
+  },
+  {
+    id: 3, title: 'Cognitive Offloading', foundation: false,
+    desc: 'Bastani 2025 PNAS finding; Risko & Gilbert framework. When delegation is appropriate vs corrosive.',
+    artifact: 'Offloading-vs-engagement assignment',
+    artifactDesc: 'Documented with student-work evidence; the call no platform can make.',
+    blurb: 'The cognitive-science domain. Distinguishing the student who is using Claude to think harder from the student using it to avoid thinking.'
+  },
+  {
+    id: 4, title: 'Equity in AI Deployment', foundation: false,
+    desc: 'Harm-vector chain. Design for the floor, not the ceiling. Catch-up effects from Tutor CoPilot.',
+    artifact: 'Equity-focused lesson redesign',
+    artifactDesc: 'Floor-first design analysis attached.',
+    blurb: 'Every failure mode in this book compounds at the bottom of the distribution. The training that designs against it is the equity investment.'
+  },
+  {
+    id: 5, title: 'Evaluation & Assessment', foundation: false,
+    desc: 'Formative assessment that survives AI exposure. Closed-book moments, oral follow-ups, triangulation against teacher observation.',
+    artifact: 'Formative-assessment case-conference defense',
+    artifactDesc: 'Written or oral defense of a specific instructional decision.',
+    blurb: 'The classroom-level analog of Appendix B Measure 3. The defensibility is the deliverable.'
+  }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTooltip(event, d) {
+  tooltip
+    .html(`<strong>Domain ${d.id} — ${d.title}</strong><br>${d.blurb}`)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTooltip(event) {
+  tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px');
+}
+function hideTooltip() { tooltip.transition().duration(100).style('opacity', 0); }
+
+function draw() {
+  d3.select('#chart').selectAll('*').remove();
+  const container = document.getElementById('chart');
+  const totalWidth  = container.clientWidth  || 900;
+  const totalHeight = 440;
+  const margin = { top: 32, right: 16, bottom: 16, left: 16 };
+  const chartWidth  = totalWidth  - margin.left - margin.right;
+  const chartHeight = totalHeight - margin.top  - margin.bottom;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'fc1-t fc1-d');
+  svg.append('title').attr('id', 'fc1-t').text('AI+1 curriculum map: Domain 1 foundation feeds Domains 2 through 5');
+  svg.append('desc').attr('id', 'fc1-d').text('A foundation block on the left contains Domain 1 AI Fundamentals. Four recurring domain cards on the right list Domains 2 through 5 with their demonstration artifacts.');
+
+  const gChart = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Column geometry
+  const colGap = 24;
+  const fW = chartWidth * 0.30;
+  const rW = chartWidth - fW - colGap;
+
+  gChart.append('text').attr('class', 'eyebrow').attr('x', fW / 2).attr('y', 0).attr('text-anchor', 'middle').text('Foundation (once)');
+  gChart.append('text').attr('class', 'eyebrow').attr('x', fW + colGap + rW / 2).attr('y', 0).attr('text-anchor', 'middle').text('Recurring (every cycle)');
+
+  // Column separator
+  gChart.append('line').attr('class', 'col-rule')
+    .attr('x1', fW + colGap / 2).attr('x2', fW + colGap / 2)
+    .attr('y1', 8).attr('y2', chartHeight - 8);
+
+  // Foundation card (tall)
+  const foundY = 24;
+  const foundH = chartHeight - foundY - 16;
+  const gFound = gChart.append('g').attr('tabindex', 0)
+    .attr('aria-label', `Domain 1 ${domains[0].title} — foundation, completed once`)
+    .on('mouseover', (event) => showTooltip(event, domains[0]))
+    .on('mousemove', moveTooltip).on('mouseout', hideTooltip)
+    .on('focus', (event) => showTooltip(event, domains[0])).on('blur', hideTooltip);
+  gFound.append('rect').attr('class', 'domain-card foundation')
+    .attr('x', 0).attr('y', foundY).attr('width', fW).attr('height', foundH);
+  gFound.append('text').attr('class', 'domain-num').attr('x', 16).attr('y', foundY + 22).text('Domain 1');
+  gFound.append('text').attr('class', 'domain-title').attr('x', 16).attr('y', foundY + 44).text(domains[0].title);
+  gFound.append('foreignObject').attr('x', 16).attr('y', foundY + 56).attr('width', fW - 32).attr('height', foundH - 200)
+    .append('xhtml:div').style('font-family', "'Inter', sans-serif").style('font-size', '12px').style('color', 'var(--color-ink)').style('line-height', '1.5').html(domains[0].desc);
+  // artifact panel inside foundation
+  const artBoxY = foundY + foundH - 96;
+  gFound.append('line').attr('x1', 16).attr('x2', fW - 16).attr('y1', artBoxY - 8).attr('y2', artBoxY - 8).attr('stroke', 'var(--color-border)').attr('stroke-width', 0.75);
+  gFound.append('text').attr('class', 'eyebrow').attr('x', 16).attr('y', artBoxY + 4).text('Artifact');
+  gFound.append('text').attr('class', 'artifact-title').attr('x', 16).attr('y', artBoxY + 24).text(domains[0].artifact);
+  gFound.append('text').attr('class', 'artifact-desc').attr('x', 16).attr('y', artBoxY + 42).text(domains[0].artifactDesc);
+
+  // Recurring cards
+  const recurring = domains.slice(1);
+  const cardGap = 12;
+  const totalCardSpace = chartHeight - 24 - 16; // top eyebrow area to bottom
+  const cardH = (totalCardSpace - cardGap * (recurring.length - 1)) / recurring.length;
+  const cardX0 = fW + colGap;
+  // artifact column is inset on the right
+  const cardW = rW;
+
+  recurring.forEach((d, i) => {
+    const cardY = foundY + i * (cardH + cardGap);
+    const gCard = gChart.append('g').attr('tabindex', 0)
+      .attr('aria-label', `Domain ${d.id} ${d.title} — recurring, artifact: ${d.artifact}`)
+      .on('mouseover', (event) => showTooltip(event, d))
+      .on('mousemove', moveTooltip).on('mouseout', hideTooltip)
+      .on('focus', (event) => showTooltip(event, d)).on('blur', hideTooltip);
+
+    // Card body (left two thirds for domain content, right third for artifact)
+    const artifactW = Math.min(180, cardW * 0.40);
+    const bodyW = cardW - artifactW - 8;
+
+    gCard.append('rect').attr('class', 'domain-card')
+      .attr('x', cardX0).attr('y', cardY).attr('width', bodyW).attr('height', cardH);
+    gCard.append('text').attr('class', 'domain-num').attr('x', cardX0 + 12).attr('y', cardY + 16).text(`Domain ${d.id}`);
+    gCard.append('text').attr('class', 'domain-title').attr('x', cardX0 + 12).attr('y', cardY + 36).text(d.title);
+    gCard.append('text').attr('class', 'domain-desc').attr('x', cardX0 + 12).attr('y', cardY + 54).text(d.desc.length > 64 ? d.desc.slice(0, 64) + '…' : d.desc);
+
+    // Artifact card on the right
+    const aX = cardX0 + bodyW + 8;
+    gCard.append('rect').attr('class', 'artifact-card')
+      .attr('x', aX).attr('y', cardY).attr('width', artifactW).attr('height', cardH);
+    gCard.append('text').attr('class', 'eyebrow').attr('x', aX + artifactW / 2).attr('y', cardY + 16).attr('text-anchor', 'middle').text('Artifact');
+    gCard.append('text').attr('class', 'artifact-title').attr('x', aX + artifactW / 2).attr('y', cardY + 34).attr('text-anchor', 'middle').text(d.artifact.split(' ').slice(0, 2).join(' '));
+    gCard.append('text').attr('class', 'artifact-desc').attr('x', aX + artifactW / 2).attr('y', cardY + 50).attr('text-anchor', 'middle').text(d.artifact.split(' ').slice(2).join(' '));
+
+    // Flow arrow from foundation card to this card
+    const arrowFrom = { x: fW, y: foundY + foundH / 2 };
+    const arrowTo   = { x: cardX0, y: cardY + cardH / 2 };
+    gChart.append('path')
+      .attr('class', 'flow-line')
+      .attr('d', `M ${arrowFrom.x} ${arrowFrom.y} L ${arrowTo.x - 6} ${arrowTo.y}`)
+      .attr('aria-hidden', 'true');
+    gChart.append('path')
+      .attr('d', `M ${arrowTo.x - 6} ${arrowTo.y - 3} L ${arrowTo.x} ${arrowTo.y} L ${arrowTo.x - 6} ${arrowTo.y + 3} Z`)
+      .attr('fill', 'var(--color-secondary)')
+      .attr('aria-hidden', 'true');
+  });
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

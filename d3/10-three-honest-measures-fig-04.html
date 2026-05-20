@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 10.4 — Stroebe's four-step feedback cycle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 75ch; }
+  #chart { width: 100%; height: 520px; border: 1px solid var(--color-border); padding: 16px; }
+  .node-rect { fill: var(--color-white); stroke: var(--color-ink); stroke-width: 1.5; transition: opacity 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .node-rect:hover { stroke: var(--color-red); }
+  .node-title { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; fill: var(--color-ink); }
+  .node-body { font-family: 'Inter', sans-serif; font-size: 12px; fill: var(--color-secondary); }
+  .node-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: var(--color-secondary); font-style: italic; }
+  .loop-arrow { stroke: var(--color-ink); stroke-width: 1.75; fill: none; }
+  .center-rect { fill: var(--color-border); fill-opacity: 0.25; stroke: var(--color-ochre); stroke-width: 1.5; }
+  .center-title { font-family: 'EB Garamond', Georgia, serif; font-size: 16px; font-weight: 500; fill: var(--color-ink); }
+  .center-sub { font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; fill: var(--color-secondary); }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 16px; max-width: 75ch; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-size: 12px; max-width: 260px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 10.4 — The feedback loop that ate both signals</h1>
+<p class="subtitle">Stroebe's four propositions (2020) close into a cycle where grades and evaluations drift up together and learning, measured by anything not tied to the course grade, drifts flat.</p>
+<div id="chart" role="img" aria-labelledby="fb-title fb-desc"></div>
+<p class="caption">Each proposition is mild on its own. Closed into a loop, the four reinforce a settlement in which neither grades nor evaluations carry reliable information about teaching or learning.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const nodeData = [
+  { id: 1, angle:  -Math.PI / 2, title: '1. Students reward', body: 'good grades and easy courses with positive evaluations', tag: 'propositions 1 & 2' },
+  { id: 2, angle:   0,            title: '2. Instructors need', body: 'good evaluations for contract renewal',                  tag: 'proposition 4' },
+  { id: 3, angle:   Math.PI / 2,  title: '3. Instructors inflate', body: 'grades and lower demands to protect their scores',    tag: 'mechanism' },
+  { id: 4, angle:   Math.PI,      title: '4. Students choose', body: 'courses that promise good grades',                        tag: 'proposition 3' }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, html) {
+  tooltip.html(html)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTip(event) { tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px'); }
+function hideTip() { tooltip.transition().duration(100).style('opacity', 0); }
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+  const totalWidth  = container.clientWidth  || 800;
+  const totalHeight = container.clientHeight || 520;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width',  totalWidth)
+    .attr('height', totalHeight)
+    .attr('role', 'img')
+    .attr('aria-labelledby', 'fb-title fb-desc');
+  svg.append('title').attr('id', 'fb-title').text('Stroebe four-step feedback cycle');
+  svg.append('desc').attr('id', 'fb-desc')
+    .text('Four labeled nodes arranged as a closed loop with arrows showing how student ratings, contract incentives, grade inflation, and student course-shopping reinforce each other into a stable bad equilibrium where grades and evaluations drift up while learning stays flat.');
+
+  const defs = svg.append('defs');
+  defs.append('marker')
+    .attr('id', 'arrow-loop')
+    .attr('markerWidth', 10).attr('markerHeight', 8)
+    .attr('refX', 9).attr('refY', 4)
+    .attr('orient', 'auto')
+    .append('polygon')
+      .attr('points', '0 0, 10 4, 0 8')
+      .attr('fill', 'var(--color-ink)');
+
+  const cx = totalWidth / 2;
+  const cy = totalHeight / 2;
+  const radiusX = Math.min(totalWidth / 2 - 110, 280);
+  const radiusY = Math.min(totalHeight / 2 - 100, 200);
+
+  const nodeW = 200;
+  const nodeH = 84;
+
+  const positioned = nodeData.map(n => ({
+    ...n,
+    x: cx + Math.cos(n.angle) * radiusX - nodeW / 2,
+    y: cy + Math.sin(n.angle) * radiusY - nodeH / 2,
+    centerX: cx + Math.cos(n.angle) * radiusX,
+    centerY: cy + Math.sin(n.angle) * radiusY
+  }));
+
+  // Loop arrows — connect each node to next (clockwise: 1->2->3->4->1)
+  const order = [0, 1, 2, 3];
+  const arc = d3.arc();
+
+  for (let i = 0; i < 4; i++) {
+    const a = positioned[order[i]];
+    const b = positioned[order[(i + 1) % 4]];
+
+    // Approximate edge anchor along the line from a to b, offset by node half-size
+    const ang = Math.atan2(b.centerY - a.centerY, b.centerX - a.centerX);
+
+    // Project the anchor onto the rectangle boundary
+    function rectEdge(node, angleOut) {
+      const halfW = nodeW / 2;
+      const halfH = nodeH / 2;
+      const tx = Math.abs(halfW / Math.cos(angleOut));
+      const ty = Math.abs(halfH / Math.sin(angleOut));
+      const t = Math.min(tx, ty);
+      return [node.centerX + Math.cos(angleOut) * t, node.centerY + Math.sin(angleOut) * t];
+    }
+    const [x1, y1] = rectEdge(a, ang);
+    const [x2, y2] = rectEdge(b, ang + Math.PI);
+
+    // Curved path bowing outward away from center
+    const mx = (x1 + x2) / 2;
+    const my = (y1 + y2) / 2;
+    const dxOut = mx - cx;
+    const dyOut = my - cy;
+    const norm = Math.sqrt(dxOut * dxOut + dyOut * dyOut) || 1;
+    const bow = 36;
+    const ctrlX = mx + (dxOut / norm) * bow;
+    const ctrlY = my + (dyOut / norm) * bow;
+
+    svg.append('path')
+      .attr('class', 'loop-arrow')
+      .attr('d', `M ${x1} ${y1} Q ${ctrlX} ${ctrlY} ${x2} ${y2}`)
+      .attr('marker-end', 'url(#arrow-loop)');
+  }
+
+  // Center "stable bad equilibrium" box
+  const cw = 180;
+  const ch = 88;
+  svg.append('rect')
+    .attr('class', 'center-rect')
+    .attr('x', cx - cw / 2)
+    .attr('y', cy - ch / 2)
+    .attr('width', cw)
+    .attr('height', ch)
+    .attr('rx', 6);
+  svg.append('text')
+    .attr('class', 'center-title')
+    .attr('x', cx)
+    .attr('y', cy - 14)
+    .attr('text-anchor', 'middle')
+    .text('stable bad');
+  svg.append('text')
+    .attr('class', 'center-title')
+    .attr('x', cx)
+    .attr('y', cy + 6)
+    .attr('text-anchor', 'middle')
+    .text('equilibrium');
+  svg.append('text')
+    .attr('class', 'center-sub')
+    .attr('x', cx)
+    .attr('y', cy + 24)
+    .attr('text-anchor', 'middle')
+    .text('grades ↑ · evaluations ↑ · learning flat');
+
+  // Nodes
+  const gNodes = svg.append('g').attr('class', 'g-nodes');
+  const gNode = gNodes.selectAll('g.node')
+    .data(positioned)
+    .join('g')
+      .attr('class', 'node')
+      .attr('transform', d => `translate(${d.x},${d.y})`)
+      .attr('tabindex', 0)
+      .attr('role', 'group')
+      .attr('aria-label', d => `${d.title} ${d.body}`)
+      .on('mouseover', (event, d) => showTip(event, `<strong>${d.title}</strong><br>${d.body}<br><em>${d.tag}</em>`))
+      .on('mousemove', moveTip)
+      .on('mouseout', hideTip);
+
+  gNode.append('rect')
+    .attr('class', 'node-rect')
+    .attr('width', nodeW)
+    .attr('height', nodeH)
+    .attr('rx', 6);
+  gNode.append('text')
+    .attr('class', 'node-title')
+    .attr('x', nodeW / 2)
+    .attr('y', 22)
+    .attr('text-anchor', 'middle')
+    .text(d => d.title);
+
+  // Wrap body text manually into two lines if too long
+  gNode.each(function(d) {
+    const words = d.body.split(/\s+/);
+    const lines = [];
+    let line = '';
+    for (const w of words) {
+      const tentative = line ? `${line} ${w}` : w;
+      if (tentative.length > 32) { lines.push(line); line = w; }
+      else { line = tentative; }
+    }
+    if (line) lines.push(line);
+    const sel = d3.select(this);
+    lines.slice(0, 2).forEach((l, idx) => {
+      sel.append('text')
+        .attr('class', 'node-body')
+        .attr('x', nodeW / 2)
+        .attr('y', 42 + idx * 15)
+        .attr('text-anchor', 'middle')
+        .text(l);
+    });
+    sel.append('text')
+      .attr('class', 'node-tag')
+      .attr('x', nodeW / 2)
+      .attr('y', nodeH - 8)
+      .attr('text-anchor', 'middle')
+      .text(d.tag);
+  });
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

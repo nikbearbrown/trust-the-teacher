@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 13.4 — The one-page superintendent's memo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; }
+  #chart { width: 100%; min-height: 640px; position: relative; }
+  .paper           { fill: var(--color-white); stroke: var(--color-ink); stroke-width: 1.2; }
+  .ribbon          { fill: var(--color-ink); }
+  .letterhead      { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); letter-spacing: 0.08em; }
+  .meta            { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .doc-title       { font-family: 'EB Garamond', Georgia, serif; font-size: 18px; font-weight: 700; fill: var(--color-ink); }
+  .hairline        { stroke: var(--color-border); stroke-width: 0.6; }
+  .move-box        { fill: #F5F2EE; stroke: var(--color-ink); stroke-width: 0.8; transition: opacity 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  @media (prefers-color-scheme: dark) { .move-box { fill: #1a1a1a; } }
+  .num-circle      { fill: var(--color-ink); }
+  .num-circle.red  { fill: var(--color-red); }
+  .num-text        { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; font-weight: 700; fill: var(--color-white); }
+  .move-title      { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; font-weight: 700; fill: var(--color-ink); }
+  .move-body       { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .signal-stamp rect { fill: var(--color-ink); }
+  .signal-stamp.red rect { fill: var(--color-red); }
+  .signal-stamp text { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; fill: var(--color-white); letter-spacing: 0.04em; }
+  .budget          { font-family: 'EB Garamond', Georgia, serif; font-size: 12px; font-style: italic; fill: var(--color-secondary); }
+  .sig             { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-style: italic; fill: var(--color-ink); }
+  .day-tag         { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; fill: var(--color-secondary); }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 16px; font-style: italic; max-width: 80ch; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-size: 12px; font-family: 'Inter', sans-serif; transition: opacity 150ms cubic-bezier(0.2,0.8,0.2,1); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 13.4 — The one-page superintendent's memo</h1>
+<p class="subtitle">Three administrative decisions, one signature. New budget required: $0.</p>
+<div id="chart" role="img" aria-labelledby="ch-t ch-d"></div>
+<p class="caption">The missing document is the one that says: we see you. This counts.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const moves = [
+  {
+    n: 1,
+    day: 'Tue',
+    accent: false,
+    title: 'Issue an administrative letter recognizing completion.',
+    body: [
+      'Validated AI training — HarvardX DPI 681M, MITx, Stanford Online, Carnegie Mellon',
+      'equivalents — fulfills professional-development hours under existing district policy.',
+      'Published per-course credit ratio. One memo. One signature.'
+    ],
+    signal: 'SIGNAL: learning is valued'
+  },
+  {
+    n: 2,
+    day: null,
+    accent: false,
+    title: 'Authorize the study-group documentation pathway.',
+    body: [
+      'Ten teachers, monthly, sixty minutes. One-page template: what was tried, what changed,',
+      'what students did differently, what surprised. Uses the existing PLC structure the district',
+      'already pays for. Counts toward licensure renewal hours.'
+    ],
+    signal: 'SIGNAL: trying is valued'
+  },
+  {
+    n: 3,
+    day: 'Thu',
+    accent: true,
+    title: 'Add the AI-fluency increment tier at the next contract window.',
+    body: [
+      'One clause. Tied to demonstrated practice change — not seat-time, not certificate-collecting.',
+      'Peer-review mechanism borrowed from National Board Certification renewals,',
+      'reviewed by colleagues teaching the same subject.'
+    ],
+    signal: 'SIGNAL: practice change is valued'
+  }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, html) {
+  tooltip.html(html).style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px').style('opacity', 1);
+}
+function moveTip(event) { tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px'); }
+function hideTip() { tooltip.style('opacity', 0); }
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+
+  const totalWidth = container.clientWidth || 800;
+  const margin = { top: 24, right: 60, bottom: 60, left: 60 };
+  const paperWidth = totalWidth - margin.left - margin.right;
+  const headerH = 110;
+  const moveH = 108;
+  const movesH = moves.length * moveH + (moves.length - 1) * 10;
+  const sigH = 60;
+  const paperHeight = headerH + 30 + movesH + sigH;
+  const totalHeight = margin.top + paperHeight + margin.bottom;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'ch-t ch-d');
+  svg.append('title').attr('id', 'ch-t').text('The one-page superintendent’s memo — three moves, zero new budget');
+  svg.append('desc').attr('id', 'ch-d').text('A mockup of a one-page administrative memo stacking three prescribed moves, each annotated with new budget required: $0 and the signal it sends.');
+
+  svg.append('defs').append('marker')
+    .attr('id', 'arrow13d').attr('markerWidth', 8).attr('markerHeight', 6)
+    .attr('refX', 7).attr('refY', 3).attr('orient', 'auto')
+    .append('polygon').attr('points', '0 0, 8 3, 0 6').attr('fill', 'var(--color-ink)');
+
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Paper
+  g.append('rect').attr('class', 'paper').attr('x', 0).attr('y', 0).attr('width', paperWidth).attr('height', paperHeight);
+  // Ribbon
+  g.append('rect').attr('class', 'ribbon').attr('x', 0).attr('y', 0).attr('width', paperWidth).attr('height', 6);
+
+  // Letterhead
+  g.append('text').attr('class', 'letterhead').attr('x', 22).attr('y', 28).text('OFFICE OF THE SUPERINTENDENT');
+  g.append('text').attr('class', 'letterhead').attr('x', paperWidth - 22).attr('y', 28).attr('text-anchor', 'end').text('MEMORANDUM');
+  g.append('line').attr('class', 'hairline').attr('x1', 22).attr('y1', 38).attr('x2', paperWidth - 22).attr('y2', 38);
+
+  // Meta lines
+  g.append('text').attr('class', 'meta').attr('x', 22).attr('y', 56).text('TO: All certificated staff, principals, PD coordinators');
+  g.append('text').attr('class', 'meta').attr('x', 22).attr('y', 70).text('FROM: Superintendent');
+  g.append('text').attr('class', 'meta').attr('x', 22).attr('y', 84).text('RE: Recognition of validated AI professional development');
+  g.append('text').attr('class', 'meta').attr('x', 22).attr('y', 98).text('DATE: Effective immediately · No new budget required');
+
+  g.append('line').attr('class', 'hairline').attr('x1', 22).attr('y1', headerH).attr('x2', paperWidth - 22).attr('y2', headerH);
+
+  // Title
+  g.append('text').attr('class', 'doc-title')
+    .attr('x', paperWidth / 2).attr('y', headerH + 26)
+    .attr('text-anchor', 'middle')
+    .text('Three administrative decisions, one signature');
+
+  // Moves
+  let yCursor = headerH + 44;
+  moves.forEach((m, mi) => {
+    const moveX = 22;
+    const moveW = paperWidth - 44;
+    const mg = g.append('g').attr('transform', `translate(${moveX},${yCursor})`)
+      .attr('tabindex', 0)
+      .attr('aria-label', `Move ${m.n}: ${m.title}. ${m.signal}. New budget required: $0.`)
+      .on('mouseover', (event) => showTip(event, `<strong>Move ${m.n}</strong><br>${m.title}<br><em>${m.signal} · new budget required: $0</em>`))
+      .on('mousemove', moveTip).on('mouseout', hideTip);
+
+    mg.append('rect').attr('class', 'move-box').attr('width', moveW).attr('height', moveH);
+    const circle = mg.append('g').attr('transform', 'translate(28,26)');
+    circle.append('circle').attr('class', m.accent ? 'num-circle red' : 'num-circle').attr('r', 16);
+    circle.append('text').attr('class', 'num-text').attr('text-anchor', 'middle').attr('y', 5).text(m.n);
+
+    mg.append('text').attr('class', 'move-title').attr('x', 56).attr('y', 28).text(m.title);
+
+    m.body.forEach((ln, li) => {
+      mg.append('text').attr('class', 'move-body').attr('x', 56).attr('y', 46 + li * 14).text(ln);
+    });
+
+    // signal stamp
+    const stampClass = m.accent ? 'signal-stamp red' : 'signal-stamp';
+    const stampW = m.signal.length * 6.5 + 16;
+    const sg = mg.append('g').attr('class', stampClass).attr('transform', `translate(56,${moveH - 22})`);
+    sg.append('rect').attr('width', stampW).attr('height', 16);
+    sg.append('text').attr('x', stampW / 2).attr('y', 12).attr('text-anchor', 'middle').text(m.signal);
+
+    mg.append('text').attr('class', 'budget')
+      .attr('x', moveW - 12).attr('y', moveH - 10).attr('text-anchor', 'end')
+      .text('new budget required: $0');
+
+    // Day-tag arrow from left
+    if (m.day) {
+      g.append('text').attr('class', 'day-tag')
+        .attr('x', -22).attr('y', yCursor + 30)
+        .attr('text-anchor', 'middle').text(m.day);
+      g.append('line')
+        .attr('x1', -6).attr('y1', yCursor + 26).attr('x2', 16).attr('y2', yCursor + 26)
+        .attr('stroke', 'var(--color-ink)').attr('stroke-width', 1)
+        .attr('marker-end', 'url(#arrow13d)');
+    }
+
+    yCursor += moveH + 10;
+  });
+
+  // Signature line
+  const sigLineY = yCursor + 14;
+  g.append('line').attr('class', 'hairline')
+    .attr('x1', paperWidth - 240).attr('y1', sigLineY).attr('x2', paperWidth - 40).attr('y2', sigLineY)
+    .attr('stroke', 'var(--color-ink)').attr('stroke-width', 0.8);
+  g.append('text').attr('class', 'sig')
+    .attr('x', paperWidth - 140).attr('y', sigLineY + 18)
+    .attr('text-anchor', 'middle')
+    .text('— signed, the superintendent');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

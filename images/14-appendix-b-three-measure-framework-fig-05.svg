@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" role="img" aria-labelledby="t14-05 d14-05">
+  <title id="t14-05">Five implementation failure modes paired with structural fixes</title>
+  <desc id="d14-05">A two-column matrix. The left column names five failure modes that recur in district pilots of new evaluation frameworks: pilot becomes high-stakes, post-test gets drilled, peer panel becomes paper, union reads as additive, gain measure dominates composite. The right column states the specific structural fix that prevents each failure.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .sub { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #4a4540; font-style: italic; }
+      .col-head { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold; fill: #1a1714; }
+      .fail-num { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold; fill: #1a1714; }
+      .fail-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #1a1714; }
+      .fail-body { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .fix-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #1a1714; }
+      .fix-body { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #1a1714; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+    </style>
+    <marker id="ar14-05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="460" fill="#fdfcfb"/>
+
+  <text x="350" y="26" class="ti" text-anchor="middle">Five failure modes, five structural fixes</text>
+  <text x="350" y="42" class="sub" text-anchor="middle">The fixes are written into the pilot charter. Each one is the answer to a documented past failure.</text>
+
+  <!-- Column heads -->
+  <text x="180" y="68" class="col-head" text-anchor="middle">Failure mode</text>
+  <text x="520" y="68" class="col-head" text-anchor="middle">Structural fix</text>
+  <line x1="30" y1="78" x2="670" y2="78" stroke="#1a1714" stroke-width="0.8"/>
+
+  <!-- Five rows, y starts 86, height 70 each. -->
+
+  <!-- Row 1 -->
+  <rect x="30" y="86" width="300" height="64" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="42" y="106" class="fail-num">1.</text>
+  <text x="60" y="106" class="fail-title">Pilot becomes high-stakes</text>
+  <text x="42" y="124" class="fail-body">Year 1 formative-use promise gets</text>
+  <text x="42" y="138" class="fail-body">converted; teachers experience the</text>
+  <text x="42" y="148" class="fail-body">shift as bait-and-switch.</text>
+  <path d="M 332 118 L 366 118" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-05)"/>
+  <rect x="368" y="86" width="302" height="64" fill="#fdfcfb" stroke="#8a8480"/>
+  <text x="380" y="106" class="fix-title">Written charter, named years</text>
+  <text x="380" y="124" class="fix-body">Board-approved charter fixes the formative</text>
+  <text x="380" y="138" class="fix-body">period in years; conversion to stakes requires</text>
+  <text x="380" y="148" class="fix-body">a specific board action with public notice.</text>
+
+  <!-- Row 2 -->
+  <rect x="30" y="156" width="300" height="64" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="42" y="176" class="fail-num">2.</text>
+  <text x="60" y="176" class="fail-title">Post-test gets drilled</text>
+  <text x="42" y="194" class="fail-body">Instructional time narrows onto item</text>
+  <text x="42" y="208" class="fail-body">types on the assessment. Carrell-West</text>
+  <text x="42" y="218" class="fail-body">pathology reproduced.</text>
+  <path d="M 332 188 L 366 188" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-05)"/>
+  <rect x="368" y="156" width="302" height="64" fill="#fdfcfb" stroke="#8a8480"/>
+  <text x="380" y="176" class="fix-title">Transfer-items audit + downstream-course check</text>
+  <text x="380" y="194" class="fix-body">Conducted before procurement. Annual review</text>
+  <text x="380" y="208" class="fix-body">compares post-test scores against next-course</text>
+  <text x="380" y="218" class="fix-body">performance. Proprietary items fail the audit.</text>
+
+  <!-- Row 3 -->
+  <rect x="30" y="226" width="300" height="64" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="42" y="246" class="fail-num">3.</text>
+  <text x="60" y="246" class="fail-title">Peer panel becomes paper</text>
+  <text x="42" y="264" class="fail-body">Reviews shrink to 20 minutes,</text>
+  <text x="42" y="278" class="fail-body">rubric is applied perfunctorily,</text>
+  <text x="42" y="288" class="fail-body">determination becomes pro-forma.</text>
+  <path d="M 332 258 L 366 258" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-05)"/>
+  <rect x="368" y="226" width="302" height="64" fill="#fdfcfb" stroke="#8a8480"/>
+  <text x="380" y="246" class="fix-title">Fund the peer time, keep panels small</text>
+  <text x="380" y="264" class="fix-body">Substitute coverage on review day or a stipend</text>
+  <text x="380" y="278" class="fix-body">per reviewer. NBPTS funds it; the district analog</text>
+  <text x="380" y="288" class="fix-body">has to. Unfunded review is the failure itself.</text>
+
+  <!-- Row 4 -->
+  <rect x="30" y="296" width="300" height="64" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="42" y="316" class="fail-num">4.</text>
+  <text x="60" y="316" class="fail-title">Union reads as additive</text>
+  <text x="42" y="334" class="fail-body">New measures arrive on top of old ones</text>
+  <text x="42" y="348" class="fail-body">with no workload reduction or pay.</text>
+  <text x="42" y="358" class="fail-body">Twenty years of pattern says yes.</text>
+  <path d="M 332 328 L 366 328" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-05)"/>
+  <rect x="368" y="296" width="302" height="64" fill="#fdfcfb" stroke="#8a8480"/>
+  <text x="380" y="316" class="fix-title">Subtract something in the same announcement</text>
+  <text x="380" y="334" class="fix-body">Drop a summative observation cycle, retire SET</text>
+  <text x="380" y="348" class="fix-body">use, simplify documentation. The substitution</text>
+  <text x="380" y="358" class="fix-body">signal has to be in the same memo, not later.</text>
+
+  <!-- Row 5 -->
+  <rect x="30" y="366" width="300" height="64" fill="#f5f2ee" stroke="#8a8480" stroke-width="1.25"/>
+  <text x="42" y="386" class="fail-num">5.</text>
+  <text x="60" y="386" class="fail-title">Gain measure dominates composite</text>
+  <text x="42" y="404" class="fail-body">Quantitative gain weighted disproportionately;</text>
+  <text x="42" y="418" class="fail-body">value-added era pathology in new costume.</text>
+  <text x="42" y="428" class="fail-body">Productive-struggle teacher is penalised again.</text>
+  <path d="M 332 398 L 366 398" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-05)"/>
+  <rect x="368" y="366" width="302" height="64" fill="#fdfcfb" stroke="#8a8480" stroke-width="1.25"/>
+  <text x="380" y="386" class="fix-title">Keep the measures separate — no single composite</text>
+  <text x="380" y="404" class="fix-body">Three independent scores, three narratives. No</text>
+  <text x="380" y="418" class="fix-body">measure can produce a determination on its own.</text>
+  <text x="380" y="428" class="fix-body">Personnel decisions on integration, not composite.</text>
+
+  <text x="350" y="450" class="cap" text-anchor="middle">Each fix is written into the pilot charter before the pilot launches. Retrofitting them after a failure costs more than the fix.</text>
+</svg>

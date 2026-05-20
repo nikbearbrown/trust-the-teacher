@@ -148,6 +148,8 @@ The 5.9-hour figure describes the thirty-two percent of teachers who use AI week
 
 Hold both populations together. A teacher who used AI weekly throughout a full school year generated, by the Gallup data's most conservative reading, something in the neighborhood of six full school weeks of recovered time. Sustain that over a ten-year career — and the persistence question is genuinely open, but take the simplest version — and that is sixty school weeks. Approximately one and a half years of additional relationship and intervention time, compared to a colleague three classrooms down the hall who is working the same total hours, producing comparable outputs, and falling behind by six weeks per year.
 
+![Line chart showing cumulative school weeks recovered across a ten-year teaching career. The AI-using teacher's line rises linearly from zero to about sixty weeks by year ten — roughly one and a half school years of additional time — while the non-AI-using colleague's line stays flat at zero. The widening vertical gap between the two lines is shaded and labeled the compounding dividend.](../images/06-the-ai-dividend-fig-04.png)
+*Figure 6.4 — The compounding gap over a ten-year career*
 The colleague is not lazy. She is not less talented. She is not using the instrument — for whatever reason: no district training, an early bad experience, an administrator who told her not to bother. The dividend is not being collected because the conditions for collecting it are not in place.
 
 The gap compounds silently across days and semesters and careers, inside classrooms that look identical from the hallway. And it distributes unequally in a specific and predictable direction. Schools in districts that invest in AI training collect the dividend. Schools in districts that don't, don't. The students at the bottom of the equity distribution lose twice: once by attending schools less likely to fund training, and again by sitting in classrooms where the teacher has six fewer weeks per year to do the work that changes outcomes. A facially neutral arrangement — AI is available to every teacher — produces a sharply unequal result because the conditions for capturing the benefit are not equally distributed.
@@ -177,3 +179,23 @@ The variable that diverged is the one nobody put a line item against.
 - Demszky, D., & Hill, H. C. (2021). The NCTE Transcripts: A Dataset of Elementary Math Classroom Transcripts and methods for measuring conversational uptake. [https://nlp.stanford.edu/~ddemszky/](https://nlp.stanford.edu/~ddemszky/)
 - Lortie, D. C. (1975). *Schoolteacher: A Sociological Study.* University of Chicago Press.
 - Dell'Acqua, F., et al. (2023). Navigating the Jagged Technological Frontier. *Harvard Business School Working Paper 24-013*. [https://www.hbs.edu/faculty/Pages/item.aspx?num=64700](https://www.hbs.edu/faculty/Pages/item.aspx?num=64700)
+
+---
+
+## Prompts
+
+Use this prompt with Claude to generate an interactive D3 v7 version of the
+figure in this chapter. It produces a standalone HTML file you can open in a
+browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using the prompt. They define the stack,
+naming conventions, color system, and typography the figure uses.
+
+---
+
+### Figure 6.4 — The compounding gap over a ten-year career
+
+Build a single-panel D3 v7 line chart of cumulative recovered school weeks over a ten-year teaching career. Two series share the axes: x is years 0–10, y is cumulative weeks 0–65. Both use `d3.scaleLinear`. Series A (AI-using teacher) rises linearly at six weeks per year to sixty by year ten; Series B (non-using colleague) is flat at zero. Render A as a solid line in `var(--color-red)` with year-marker dots; render B as a dashed line in `var(--color-secondary)`. Fill the area between the lines with `var(--color-fill)` so the gap reads as a region, not a difference. Annotate the endpoint "60 weeks ≈ 1.5 school years," label the shaded region "The compounding dividend," and place series labels at the right edge. Deliverable: one standalone HTML file with inline CSS/JS, D3 7.9.0 from the pinned cdnjs CDN, accessible markup (`role="img"`, `<title>`, `<desc>`, `aria-label` on dots), hover-and-focus tooltips, `ResizeObserver` redraw, and a `prefers-reduced-motion` guard. No hex literals in the script — colors flow through CSS variables that flip under `prefers-color-scheme: dark`.
+
+> Reference implementation: `d3/06-the-ai-dividend-fig-04.html`

@@ -1,0 +1,88 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttt05f5-t ttt05f5-d">
+  <title id="ttt05f5-t">Three objects, not two: how policy keeps collapsing distinct teacher–AI conditions into one average</title>
+  <desc id="ttt05f5-d">A three-panel infographic showing the trained teacher with AI, the untrained teacher with AI, and the trained teacher without AI, each with a brief description of what the operator can and cannot do. Below, the binary with-AI vs. without-AI framing is shown as the conflation the field keeps making.</desc>
+  <defs>
+    <marker id="ttt05f5-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+    <marker id="ttt05f5-arrow-mute" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4a4540"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Three objects, not two: what the binary framing keeps averaging together</text>
+  <text x="350" y="50" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#4a4540" text-anchor="middle">policy asks "with-AI or without-AI"; the data lives in three distinct conditions</text>
+
+  <!-- THREE PANELS -->
+  <!-- Panel A: Trained teacher WITH AI -->
+  <rect x="24" y="74" width="212" height="184" fill="#f5f2ee" stroke="#1a1714" stroke-width="1.25"/>
+  <text x="130" y="94" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">OBJECT 1</text>
+  <text x="130" y="114" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Trained teacher</text>
+  <text x="130" y="130" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">with AI</text>
+  <line x1="40" y1="142" x2="220" y2="142" stroke="#8a8480" stroke-width="0.75"/>
+  <text x="40" y="160" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Can do</text>
+  <text x="40" y="176" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— diagnose misconceptions</text>
+  <text x="40" y="190" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— differentiate at three levels</text>
+  <text x="40" y="204" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— Socratic probing in real time</text>
+  <text x="40" y="226" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Cannot avoid</text>
+  <text x="40" y="242" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— deciding when each move</text>
+  <text x="40" y="256" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">&#160;&#160;&#160;applies, student by student</text>
+
+  <!-- Panel B: Untrained teacher WITH AI -->
+  <rect x="244" y="74" width="212" height="184" fill="#f5f2ee" stroke="#1a1714" stroke-width="1.25"/>
+  <text x="350" y="94" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">OBJECT 2</text>
+  <text x="350" y="114" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Untrained teacher</text>
+  <text x="350" y="130" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">with AI</text>
+  <line x1="260" y1="142" x2="440" y2="142" stroke="#8a8480" stroke-width="0.75"/>
+  <text x="260" y="160" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Can do</text>
+  <text x="260" y="176" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— paste the first draft output</text>
+  <text x="260" y="190" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— auto-grade what scales easily</text>
+  <text x="260" y="204" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— accept the default suggestion</text>
+  <text x="260" y="226" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Cannot do</text>
+  <text x="260" y="242" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— read the wrong-note</text>
+  <text x="260" y="256" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">&#160;&#160;&#160;pattern the tool surfaces</text>
+
+  <!-- Panel C: Trained teacher WITHOUT AI -->
+  <rect x="464" y="74" width="212" height="184" fill="#f5f2ee" stroke="#1a1714" stroke-width="1.25"/>
+  <text x="570" y="94" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#4a4540" text-anchor="middle">OBJECT 3</text>
+  <text x="570" y="114" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Trained teacher</text>
+  <text x="570" y="130" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">without AI</text>
+  <line x1="480" y1="142" x2="660" y2="142" stroke="#8a8480" stroke-width="0.75"/>
+  <text x="480" y="160" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Can do</text>
+  <text x="480" y="176" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— everything pedagogy alone</text>
+  <text x="480" y="190" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">&#160;&#160;&#160;has ever been able to do</text>
+  <text x="480" y="204" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— at a 30-student scale</text>
+  <text x="480" y="226" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">Cannot do</text>
+  <text x="480" y="242" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">— three differentiated drafts</text>
+  <text x="480" y="256" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">&#160;&#160;&#160;in the time of one</text>
+
+  <!-- Bracket lines mapping to the binary -->
+  <!-- A and B collapse into "with-AI" -->
+  <line x1="130" y1="266" x2="130" y2="288" stroke="#4a4540" stroke-width="1" fill="none"/>
+  <line x1="350" y1="266" x2="350" y2="288" stroke="#4a4540" stroke-width="1" fill="none"/>
+  <line x1="130" y1="288" x2="350" y2="288" stroke="#4a4540" stroke-width="1" fill="none"/>
+  <line x1="240" y1="288" x2="240" y2="306" stroke="#4a4540" stroke-width="1" fill="none" marker-end="url(#ttt05f5-arrow-mute)"/>
+
+  <!-- C maps to "without-AI" -->
+  <line x1="570" y1="266" x2="570" y2="306" stroke="#4a4540" stroke-width="1" fill="none" marker-end="url(#ttt05f5-arrow-mute)"/>
+
+  <!-- Binary framing band -->
+  <rect x="120" y="312" width="240" height="40" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="240" y="330" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">"with-AI"</text>
+  <text x="240" y="344" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#4a4540" text-anchor="middle">trained and untrained averaged together</text>
+
+  <rect x="450" y="312" width="240" height="40" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="570" y="330" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">"without-AI"</text>
+  <text x="570" y="344" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#4a4540" text-anchor="middle">the comparison the studies report</text>
+
+  <!-- Arrow showing the conflation -->
+  <path d="M 360 332 L 448 332" stroke="#1a1714" stroke-width="1" fill="none" stroke-dasharray="4 3" marker-end="url(#ttt05f5-arrow)"/>
+  <text x="404" y="326" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" fill="#1a1714" text-anchor="middle">averaged</text>
+
+  <!-- Bottom callout -->
+  <text x="350" y="380" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">The field studies two conditions and reports one number.</text>
+  <text x="350" y="396" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714" text-anchor="middle">The number is small because the average is hiding Object 1 inside Object 2.</text>
+  <text x="350" y="414" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#4a4540" text-anchor="middle">It is the appendectomy meta-analysis again, told one chapter later.</text>
+</svg>

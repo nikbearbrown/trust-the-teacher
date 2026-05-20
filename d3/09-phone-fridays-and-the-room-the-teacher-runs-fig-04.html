@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 9.4 — The five components, as a load-bearing stack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #2a1a0e;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--color-white);
+    color: var(--color-ink);
+    font-family: 'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+    padding: 24px;
+  }
+  h1 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  p.subtitle {
+    color: var(--color-secondary);
+    font-size: 13px;
+    margin-bottom: 24px;
+    max-width: 65ch;
+  }
+  #chart { width: 100%; min-height: 520px; }
+  .stack-row { cursor: pointer; }
+  .stack-row .row-fill { transition: fill 200ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .stack-row .row-border { stroke: var(--color-ink); stroke-width: 1.2; fill: none; }
+  .row-accent { fill: var(--color-ochre); }
+  .row-title {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 14px;
+    font-weight: 700;
+    fill: var(--color-ink);
+  }
+  .row-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    fill: var(--color-secondary);
+  }
+  .row-foundation .row-title, .row-foundation .row-desc { fill: var(--color-white); }
+  .axis-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .load-path { stroke: var(--color-ink); stroke-width: 1.2; fill: none; }
+  .load-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--color-ink);
+  }
+  .collapse-arrow { stroke: var(--color-ochre); stroke-width: 1.2; fill: none; }
+  .collapse-arrow-head { fill: var(--color-ochre); }
+  .collapse-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    fill: var(--color-secondary);
+  }
+  .key-divider { stroke: var(--color-border); stroke-width: 1; }
+  .key-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    fill: var(--color-ink);
+  }
+  .key-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    fill: var(--color-secondary);
+  }
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    background: var(--color-ink);
+    color: var(--color-white);
+    padding: 8px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    max-width: 280px;
+  }
+  .legend {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-left: 3px solid var(--color-ochre);
+    background: var(--color-white);
+    font-size: 13px;
+    color: var(--color-ink);
+    max-width: 65ch;
+  }
+  .legend strong { font-weight: 700; }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<h1>Figure 9.4 — The five components, as a load-bearing stack</h1>
+<p class="subtitle">Each row names one component of the third model. The stack stands when all five are present. Remove any middle layer and the structure collapses back to one of the two failure modes the chapter has already named.</p>
+<div id="chart" role="main"></div>
+<div class="legend">
+  <strong>How to read this.</strong> Hover a row to surface its content. Layer 1 is the foundation the prohibition statutes already get right. Layers 2–4 are what the third model adds. Layer 5 is what keeps the call from collapsing the first time a parent challenges it.
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const components = [
+  {
+    id: 5,
+    title: '5 — Institutional backup',
+    desc: 'Principal backs the call. AUP defines the exemption with enough specificity to be teachable. Building-level coherence, not solo improvisation.',
+    collapse: 'teacher is alone; the first parent call breaks the call'
+  },
+  {
+    id: 4,
+    title: '4 — Trained discretion',
+    desc: 'The teacher has been prepared to tell AI-assisted learning from cognitive offloading. Without this, Layer 2 is just scheduled distraction time.',
+    collapse: 'permissive Fridays with better branding'
+  },
+  {
+    id: 3,
+    title: '3 — Teacher contextual discretion',
+    desc: 'Lesson-level call: what is the device for, with this group, for this assignment? Which students need the alternative track? When does the screen close?',
+    collapse: 'scripted block, no real adjustment'
+  },
+  {
+    id: 2,
+    title: '2 — Scheduled structured-tech time',
+    desc: 'A protected block when devices come out by design, not by exception. The surface on which the educational exemption operates as a lesson.',
+    collapse: 'discretion has no time to live in'
+  },
+  {
+    id: 1,
+    title: '1 — Default-off (the foundation)',
+    desc: 'Devices are presumed absent. Use is the exception, not the assumption. What the prohibition statutes get right — and the third model keeps.',
+    collapse: 'back to total permissiveness'
+  }
+];
+
+const keyLines = [
+  'LAUSD pouches: bet Layer 1 alone could carry the structure. NYC 2006–15: same bet, without infrastructure.',
+  'Stillwater 524.5: Layers 1 + 5 solid; 2, 3, 4 absent. Finland 2025 / Estonia AI Leap: all five components present.'
+];
+
+const tooltip = d3.select('body')
+  .append('div')
+    .attr('class', 'tooltip')
+    .attr('role', 'tooltip');
+
+function showTooltip(event, d) {
+  tooltip
+    .html(`<strong>${d.title}</strong><br>${d.desc}<br><em>Remove → ${d.collapse}.</em>`)
+    .style('left', (event.pageX + 14) + 'px')
+    .style('top',  (event.pageY - 12) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTooltip(event) {
+  tooltip
+    .style('left', (event.pageX + 14) + 'px')
+    .style('top',  (event.pageY - 12) + 'px');
+}
+function hideTooltip() {
+  tooltip.transition().duration(100).style('opacity', 0);
+}
+
+function draw() {
+  d3.select('#chart').selectAll('*').remove();
+  const container = document.getElementById('chart');
+  const totalWidth  = container.clientWidth  || 800;
+  const totalHeight = Math.max(520, totalWidth * 0.66);
+
+  const margin = { top: 56, right: 220, bottom: 80, left: 120 };
+  const chartWidth  = totalWidth  - margin.left - margin.right;
+  const chartHeight = totalHeight - margin.top  - margin.bottom;
+
+  const svg = d3.select('#chart')
+    .append('svg')
+      .attr('width',  totalWidth)
+      .attr('height', totalHeight)
+      .attr('viewBox', `0 0 ${totalWidth} ${totalHeight}`)
+      .attr('role', 'img')
+      .attr('aria-labelledby', 'chart-title chart-desc');
+
+  svg.append('title').attr('id', 'chart-title').text('The five components of the third model, as a load-bearing stack');
+  svg.append('desc').attr('id', 'chart-desc').text('A five-row stack with the default-off rule at the base, scheduled tech time, contextual discretion, and trained discretion in the middle, and institutional backup at the top. Side arrows indicate what each layer is doing and what its removal would collapse the structure into.');
+
+  // Marker definitions
+  const defs = svg.append('defs');
+  defs.append('marker')
+      .attr('id', 'arrow-load')
+      .attr('markerWidth', 9).attr('markerHeight', 7)
+      .attr('refX', 8).attr('refY', 3.5)
+      .attr('orient', 'auto')
+    .append('polygon')
+      .attr('points', '0 0, 9 3.5, 0 7')
+      .style('fill', 'var(--color-ink)');
+  defs.append('marker')
+      .attr('id', 'arrow-collapse')
+      .attr('markerWidth', 9).attr('markerHeight', 7)
+      .attr('refX', 8).attr('refY', 3.5)
+      .attr('orient', 'auto')
+    .append('polygon')
+      .attr('points', '0 0, 9 3.5, 0 7')
+      .attr('class', 'collapse-arrow-head');
+
+  // Top + base axis labels
+  svg.append('text')
+    .attr('class', 'axis-label')
+    .attr('x', margin.left)
+    .attr('y', margin.top - 12)
+    .text('Top — what holds the call when challenged');
+
+  svg.append('text')
+    .attr('class', 'axis-label')
+    .attr('x', margin.left)
+    .attr('y', margin.top + chartHeight + 24)
+    .text('Base — what the policy already gets right');
+
+  // Stack scales: 5 rows, top of array is top of stack
+  const yScaleBand = d3.scaleBand()
+    .domain(components.map(c => c.id))
+    .range([margin.top, margin.top + chartHeight])
+    .padding(0.06);
+  const rowHeight = yScaleBand.bandwidth();
+
+  const gStack = svg.append('g').attr('class', 'g-stack');
+
+  const rows = gStack.selectAll('.stack-row')
+    .data(components)
+    .join('g')
+      .attr('class', d => 'stack-row' + (d.id === 1 ? ' row-foundation' : ''))
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `${d.title}. ${d.desc}`);
+
+  // Row fill
+  rows.append('rect')
+      .attr('class', 'row-fill')
+      .attr('x', margin.left)
+      .attr('y', d => yScaleBand(d.id))
+      .attr('width', chartWidth)
+      .attr('height', rowHeight)
+      .style('fill', d => d.id === 1 ? 'var(--color-ink)' : d.id === 5 ? '#F0EBE3' : 'var(--color-white)');
+
+  // Ochre left accent on every non-foundation row
+  rows.filter(d => d.id !== 1).append('rect')
+      .attr('class', 'row-accent')
+      .attr('x', margin.left)
+      .attr('y', d => yScaleBand(d.id))
+      .attr('width', 6)
+      .attr('height', rowHeight);
+
+  // Row border
+  rows.append('rect')
+      .attr('class', 'row-border')
+      .attr('x', margin.left)
+      .attr('y', d => yScaleBand(d.id))
+      .attr('width', chartWidth)
+      .attr('height', rowHeight);
+
+  // Row title + desc
+  rows.append('text')
+      .attr('class', 'row-title')
+      .attr('x', margin.left + 18)
+      .attr('y', d => yScaleBand(d.id) + 22)
+      .text(d => d.title);
+
+  rows.append('text')
+      .attr('class', 'row-desc')
+      .attr('x', margin.left + 18)
+      .attr('y', d => yScaleBand(d.id) + 40)
+      .text(d => d.desc.length > 92 ? d.desc.slice(0, 89) + '...' : d.desc);
+
+  rows
+    .on('mouseover', (event, d) => showTooltip(event, d))
+    .on('mousemove', moveTooltip)
+    .on('mouseout',  hideTooltip)
+    .on('focus',     function(event, d) { showTooltip({ pageX: event.target.getBoundingClientRect().right, pageY: event.target.getBoundingClientRect().top + window.scrollY }, d); })
+    .on('blur',      hideTooltip)
+    .on('keydown',   function(event, d) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        showTooltip({ pageX: event.target.getBoundingClientRect().right, pageY: event.target.getBoundingClientRect().top + window.scrollY }, d);
+      }
+    });
+
+  // Left "load path" arrow pressing down
+  const loadX = margin.left - 28;
+  svg.append('line')
+    .attr('class', 'load-path')
+    .attr('x1', loadX)
+    .attr('y1', margin.top + 4)
+    .attr('x2', loadX)
+    .attr('y2', margin.top + chartHeight - 4)
+    .attr('marker-end', 'url(#arrow-load)');
+
+  svg.append('text')
+    .attr('class', 'load-label')
+    .attr('text-anchor', 'middle')
+    .attr('transform', `translate(${loadX - 12}, ${margin.top + chartHeight / 2}) rotate(-90)`)
+    .text('load of the call presses down');
+
+  // Right-side collapse arrows + labels — one per row
+  const collapseX0 = margin.left + chartWidth + 4;
+  const collapseX1 = collapseX0 + 28;
+
+  svg.append('text')
+    .attr('class', 'axis-label')
+    .attr('text-anchor', 'start')
+    .attr('x', collapseX0 - 4)
+    .attr('y', margin.top - 12)
+    .text('Remove this layer →');
+
+  const gCollapse = svg.append('g').attr('class', 'g-collapse');
+
+  gCollapse.selectAll('.collapse-arrow')
+    .data(components)
+    .join('line')
+      .attr('class', 'collapse-arrow')
+      .attr('x1', collapseX0)
+      .attr('y1', d => yScaleBand(d.id) + rowHeight / 2)
+      .attr('x2', collapseX1)
+      .attr('y2', d => yScaleBand(d.id) + rowHeight / 2)
+      .attr('marker-end', 'url(#arrow-collapse)');
+
+  gCollapse.selectAll('.collapse-label')
+    .data(components)
+    .join('text')
+      .attr('class', 'collapse-label')
+      .attr('x', collapseX1 + 6)
+      .attr('y', d => yScaleBand(d.id) + rowHeight / 2 + 4)
+      .text(d => d.collapse);
+
+  // Diagnostic key footer
+  const keyY = margin.top + chartHeight + 44;
+  svg.append('line')
+    .attr('class', 'key-divider')
+    .attr('x1', margin.left)
+    .attr('y1', keyY - 16)
+    .attr('x2', margin.left + chartWidth)
+    .attr('y2', keyY - 16);
+
+  svg.append('text')
+    .attr('class', 'key-title')
+    .attr('x', margin.left)
+    .attr('y', keyY)
+    .text('Diagnostic key for the district comparisons below:');
+
+  keyLines.forEach((line, i) => {
+    svg.append('text')
+      .attr('class', 'key-line')
+      .attr('x', margin.left)
+      .attr('y', keyY + 18 + i * 16)
+      .text(line);
+  });
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

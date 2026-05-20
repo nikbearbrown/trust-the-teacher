@@ -1,0 +1,89 @@
+<svg viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t13-04 d13-04">
+  <title id="t13-04">The one-page superintendent's memo — three moves, zero new budget</title>
+  <desc id="d13-04">A mockup of a one-page administrative memo from a superintendent stacking three prescribed moves. Move one: an administrative letter recognizing HarvardX, MITx, Stanford Online, and Carnegie Mellon completion at a published credit ratio (signals learning is valued). Move two: a study-group documentation pathway using existing PLC structure with a one-page monthly template (signals trying is valued). Move three: an AI-fluency salary-increment tier with peer review borrowed from National Board Certification (signals practice change is valued). Each move is annotated with "new budget required: $0" and the signal it sends.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .head { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #4a4540; }
+      .stamp { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-weight: bold; fill: #fdfcfb; }
+      .sig { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-style: italic; fill: #1a1714; }
+      .num { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #fdfcfb; }
+    </style>
+    <marker id="ar13d" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="560" fill="#fdfcfb"/>
+
+  <!-- The paper / page mockup -->
+  <rect x="80" y="40" width="540" height="500" fill="#fdfcfb" stroke="#1a1714" stroke-width="1.2"/>
+  <!-- letterhead ribbon -->
+  <rect x="80" y="40" width="540" height="6" fill="#1a1714"/>
+
+  <!-- Letterhead -->
+  <text x="100" y="68" class="head">OFFICE OF THE SUPERINTENDENT</text>
+  <text x="600" y="68" class="head" text-anchor="end">MEMORANDUM</text>
+  <line x1="100" y1="76" x2="600" y2="76" stroke="#c8c4c0" stroke-width="0.6"/>
+
+  <text x="100" y="94" class="sm">TO: All certificated staff, principals, PD coordinators</text>
+  <text x="100" y="108" class="sm">FROM: Superintendent</text>
+  <text x="100" y="122" class="sm">RE: Recognition of validated AI professional development</text>
+  <text x="100" y="136" class="sm">DATE: Effective immediately · No new budget required</text>
+
+  <line x1="100" y1="146" x2="600" y2="146" stroke="#c8c4c0" stroke-width="0.6"/>
+
+  <!-- Title -->
+  <text x="350" y="170" class="ti" text-anchor="middle">Three administrative decisions, one signature</text>
+
+  <!-- Move 1 -->
+  <rect x="100" y="184" width="500" height="92" fill="#f5f2ee" stroke="#1a1714" stroke-width="0.8"/>
+  <circle cx="124" cy="206" r="14" fill="#1a1714"/>
+  <text x="124" y="211" class="num" text-anchor="middle">1</text>
+  <text x="148" y="206" class="lb" font-weight="bold">Issue an administrative letter recognizing completion.</text>
+  <text x="148" y="222" class="sm">Validated AI training — HarvardX DPI 681M, MITx, Stanford Online, Carnegie Mellon</text>
+  <text x="148" y="234" class="sm">equivalents — fulfills professional-development hours under existing district policy.</text>
+  <text x="148" y="246" class="sm">Published per-course credit ratio. One memo. One signature.</text>
+  <rect x="148" y="254" width="180" height="16" fill="#1a1714"/>
+  <text x="238" y="266" class="stamp" text-anchor="middle">SIGNAL: learning is valued</text>
+  <text x="430" y="266" class="sm" font-style="italic">new budget required: $0</text>
+
+  <!-- Move 2 -->
+  <rect x="100" y="284" width="500" height="92" fill="#f5f2ee" stroke="#1a1714" stroke-width="0.8"/>
+  <circle cx="124" cy="306" r="14" fill="#1a1714"/>
+  <text x="124" y="311" class="num" text-anchor="middle">2</text>
+  <text x="148" y="306" class="lb" font-weight="bold">Authorize the study-group documentation pathway.</text>
+  <text x="148" y="322" class="sm">Ten teachers, monthly, sixty minutes. One-page template: what was tried, what changed,</text>
+  <text x="148" y="334" class="sm">what students did differently, what surprised. Uses the existing PLC structure the district</text>
+  <text x="148" y="346" class="sm">already pays for. Counts toward licensure renewal hours.</text>
+  <rect x="148" y="354" width="180" height="16" fill="#1a1714"/>
+  <text x="238" y="366" class="stamp" text-anchor="middle">SIGNAL: trying is valued</text>
+  <text x="430" y="366" class="sm" font-style="italic">new budget required: $0</text>
+
+  <!-- Move 3 -->
+  <rect x="100" y="384" width="500" height="92" fill="#f5f2ee" stroke="#1a1714" stroke-width="0.8"/>
+  <circle cx="124" cy="406" r="14" fill="#c8102e"/>
+  <text x="124" y="411" class="num" text-anchor="middle">3</text>
+  <text x="148" y="406" class="lb" font-weight="bold">Add the AI-fluency increment tier at the next contract window.</text>
+  <text x="148" y="422" class="sm">One clause. Tied to demonstrated practice change — not seat-time, not certificate-collecting.</text>
+  <text x="148" y="434" class="sm">Peer-review mechanism borrowed from National Board Certification renewals,</text>
+  <text x="148" y="446" class="sm">reviewed by colleagues teaching the same subject.</text>
+  <rect x="148" y="454" width="220" height="16" fill="#c8102e"/>
+  <text x="258" y="466" class="stamp" text-anchor="middle">SIGNAL: practice change is valued</text>
+  <text x="430" y="466" class="sm" font-style="italic">new budget required: $0</text>
+
+  <!-- Bottom: signature line + caption -->
+  <line x1="380" y1="510" x2="580" y2="510" stroke="#1a1714" stroke-width="0.8"/>
+  <text x="480" y="524" class="sig" text-anchor="middle">— signed, the superintendent</text>
+
+  <!-- Annotation arrow from outside -->
+  <path d="M 60 220 L 76 220" fill="none" stroke="#1a1714" stroke-width="1" marker-end="url(#ar13d)"/>
+  <text x="40" y="216" class="sm" text-anchor="middle">Tue</text>
+  <path d="M 60 420 L 76 420" fill="none" stroke="#1a1714" stroke-width="1" marker-end="url(#ar13d)"/>
+  <text x="40" y="416" class="sm" text-anchor="middle">Thu</text>
+
+  <!-- Caption -->
+  <text x="350" y="552" class="cap" text-anchor="middle">The missing document is the one that says: we see you. This counts.</text>
+</svg>

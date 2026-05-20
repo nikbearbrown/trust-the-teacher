@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" role="img" aria-labelledby="t-c3 d-c3">
+  <title id="t-c3">MVP versus Full Version of the AI+1 curriculum — side-by-side comparison</title>
+  <desc id="d-c3">Two-column comparison of the minimum viable district-level version and the state-funded full version across five dimensions: scale, funding source, credential issuer, timeline, and peer panel composition. The MVP scale is six teachers at one school; the full version scales to a thousand new credentialed teachers per year.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #2a1a0e; }
+      .h2 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 14px; font-weight: bold; fill: #2a1a0e; }
+      .h3 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #2a1a0e; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #2a1a0e; }
+      .num { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; fill: #2a1a0e; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .eyebrow { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-weight: bold; fill: #4a4540; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+  <rect width="700" height="460" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" text-anchor="middle" class="ti">The seed and what grows from it — MVP versus Full Version</text>
+  <text x="350" y="48" text-anchor="middle" class="sm">Same logical structure; differs in scale, funding source, credential authority.</text>
+
+  <!-- Column headers -->
+  <rect x="40" y="64" width="290" height="44" fill="#f5f2ee" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="185" y="84" text-anchor="middle" class="h2">MVP</text>
+  <text x="185" y="100" text-anchor="middle" class="sm">district-level, deployable next academic year</text>
+
+  <rect x="370" y="64" width="290" height="44" fill="#f5f2ee" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="515" y="84" text-anchor="middle" class="h2">Full Version</text>
+  <text x="515" y="100" text-anchor="middle" class="sm">state-funded, five-year build to steady state</text>
+
+  <!-- Row dividers -->
+  <line x1="40" y1="118" x2="660" y2="118" stroke="#c8c4c0" stroke-width="0.5"/>
+
+  <!-- ROW: SCALE -->
+  <text x="350" y="138" text-anchor="middle" class="eyebrow">SCALE</text>
+  <g transform="translate(40,148)">
+    <rect width="290" height="48" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+    <text x="20" y="22" class="num">6</text>
+    <text x="50" y="20" class="lb">teachers</text>
+    <text x="50" y="34" class="sm">one school · one cohort</text>
+    <text x="170" y="22" class="num">1</text>
+    <text x="200" y="20" class="lb">building</text>
+    <text x="200" y="34" class="sm">volunteers only</text>
+  </g>
+  <g transform="translate(370,148)">
+    <rect width="290" height="48" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+    <text x="14" y="22" class="num">100–200</text>
+    <text x="14" y="36" class="sm">pilot cohort (Year 2)</text>
+    <text x="160" y="22" class="num">→ 1,000/yr</text>
+    <text x="160" y="36" class="sm">steady state (Year 5+)</text>
+  </g>
+
+  <!-- ROW: FUNDING -->
+  <text x="350" y="218" text-anchor="middle" class="eyebrow">FUNDING SOURCE</text>
+  <g transform="translate(40,228)">
+    <rect width="290" height="48" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+    <text x="14" y="22" class="num">$0</text>
+    <text x="14" y="36" class="sm">marginal new dollars</text>
+    <text x="120" y="22" class="lb">+ Title II-A reallocation</text>
+    <text x="120" y="36" class="sm">+ substitute coverage only</text>
+  </g>
+  <g transform="translate(370,228)">
+    <rect width="290" height="48" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+    <text x="14" y="22" class="num">~$100M/yr</text>
+    <text x="14" y="36" class="sm">state appropriation</text>
+    <text x="160" y="22" class="lb">large state (CA/TX scale)</text>
+    <text x="160" y="36" class="sm">order of magnitude below edtech</text>
+  </g>
+
+  <!-- ROW: CREDENTIAL -->
+  <text x="350" y="298" text-anchor="middle" class="eyebrow">CREDENTIAL ISSUER</text>
+  <g transform="translate(40,308)">
+    <rect width="290" height="48" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+    <text x="14" y="22" class="lb">Building principal seal</text>
+    <text x="14" y="36" class="sm">portfolio recognized as PD hours</text>
+    <text x="14" y="46" class="cap">— a demonstration, not a credential of record —</text>
+  </g>
+  <g transform="translate(370,308)">
+    <rect width="290" height="48" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+    <text x="14" y="22" class="lb">University consortium</text>
+    <text x="14" y="36" class="sm">DigiErko model · state-recognized AI+1</text>
+    <text x="14" y="46" class="cap">— labor-market-legible professional qualification —</text>
+  </g>
+
+  <!-- ROW: TIMELINE -->
+  <text x="350" y="378" text-anchor="middle" class="eyebrow">TIMELINE</text>
+  <g transform="translate(40,388)">
+    <rect width="290" height="32" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+    <text x="14" y="20" class="num">10</text>
+    <text x="40" y="18" class="lb">months</text>
+    <text x="40" y="28" class="sm">one academic year, Mon → June</text>
+  </g>
+  <g transform="translate(370,388)">
+    <rect width="290" height="32" fill="#fdfcfb" stroke="#8a8480" stroke-width="0.75"/>
+    <text x="14" y="20" class="num">5</text>
+    <text x="30" y="18" class="lb">years</text>
+    <text x="30" y="28" class="sm">Year 1 design → Year 5 scaled</text>
+  </g>
+
+  <!-- ROW: PEER PANEL (compact, side by side as inline text below) -->
+  <text x="350" y="430" text-anchor="middle" class="eyebrow">PEER PANEL</text>
+  <g transform="translate(40,438)">
+    <text x="0" y="10" class="sm">3 cohort members + principal · structured rubric</text>
+  </g>
+  <g transform="translate(370,438)">
+    <text x="0" y="10" class="sm">3–5 credentialed peers, same subject/grade · funded release</text>
+  </g>
+</svg>

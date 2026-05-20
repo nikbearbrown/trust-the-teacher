@@ -212,3 +212,93 @@ for f in chapters/*-updated.md; do mv "$f" "${f/-updated/}"; done
 Nik Bear Brown
 **bear@bearbrown.co**
 [nikbearbrown.com](https://www.nikbearbrown.com) · [bearbrown.co](https://www.bearbrown.co/) · [skepticism.ai](https://www.skepticism.ai)
+
+---
+
+## What This Book Is
+
+This book is twelve chapters of evidence, structured as an argument. It covers the policy backdrop (the smartphone bans, the educational exemption, the EdTech industry), the research evidence (what predicts learning, what professional training accomplishes, what the AI dividend looks like, what cognitive offloading does to students given AI without scaffolding), and the work that remains (how to train teachers in AI the way medicine trains doctors, how to govern technology through professional discretion rather than statute, how to evaluate teachers honestly, what equity requires, and what the AI-trained classroom looks like when the conditions are met).
+
+The vocabulary the book teaches: *implementation gap*, *cognitive offloading*, *the fluency trap*, *the AI dividend*, *the within-thirty argument*, *the educational exemption*, *the AI+1 teacher*, *the three honest measures*. These are the terms a serious conversation about AI in schools requires. Most of them are not in the current policy vocabulary. They need to be.
+
+---
+
+## How to Read It
+
+The twelve chapters move through three movements.
+
+**Movement I — The Wrong Answers (Chapters 1–3).** What we did instead of investing in teachers, and why it didn't work.
+
+- **Chapter 1: The Ban.** Why removing the phone was right, what removing the phone alone cannot do, and who pays when we stop there.
+- **Chapter 2: The App.** What the EdTech industry got right, what it got wrong, and the finding nobody is advertising.
+- **Chapter 3: The Clause That Runs the Country.** Four words in every phone ban law — *except for educational purposes* — and why no one has finished writing them.
+
+**Movement II — The Evidence (Chapters 4–7).** What the research actually shows about teachers, tools, and learning.
+
+- **Chapter 4: The Teacher Variable.** What forty years of education research shows about the one thing that actually predicts whether students learn.
+- **Chapter 5: The Professional Tool.** What surgeons, farmers, scientists, and artists can teach us about what happens when trained professionals get the right instruments.
+- **Chapter 6: The AI Dividend.** Six weeks per year, and what trained teachers do with the time.
+- **Chapter 7: The Cognitive Offloading Problem.** What happens when students get the tool without the teacher.
+
+**Movement III — The Work (Chapters 8–12).** What trusting teachers actually requires.
+
+- **Chapter 8: Train Like a Doctor.** What medicine built for continuous professional development, and how to build it for teaching.
+- **Chapter 9: Phone Fridays and the Room the Teacher Runs.** What teacher discretion over technology actually looks like, and the infrastructure that makes it possible.
+- **Chapter 10: Three Honest Measures.** Why student satisfaction is not enough, and a framework that could actually work.
+- **Chapter 11: The Equity Argument.** Why every problem in this book lands hardest on the students who can least afford it.
+- **Chapter 12: The Teacher This Book Is Arguing For.** What the AI+1 classroom looks like, who is responsible for building it, and the work that remains.
+
+---
+
+## Table of Contents
+
+| Chapter | Title | File |
+|---------|-------|------|
+| Intro | Introduction | [chapters/00-introduction.md](chapters/00-introduction.md) |
+| 0 | The Gap | [chapters/00-prologue.md](chapters/00-prologue.md) |
+| 1 | Chapter 1: The Ban | [chapters/01-the-ban.md](chapters/01-the-ban.md) |
+| 2 | Chapter 2: The App | [chapters/02-the-app.md](chapters/02-the-app.md) |
+| 3 | The Clause That Runs the Country | [chapters/03-the-clause-that-runs-the-country.md](chapters/03-the-clause-that-runs-the-country.md) |
+| 4 | The Teacher Variable | [chapters/04-the-teacher-variable.md](chapters/04-the-teacher-variable.md) |
+| 5 | The Professional Tool | [chapters/05-the-professional-tool.md](chapters/05-the-professional-tool.md) |
+| 6 | The Clock on the Wall | [chapters/06-the-ai-dividend.md](chapters/06-the-ai-dividend.md) |
+| 7 | The Cognitive Offloading Problem | [chapters/07-the-cognitive-offloading-problem.md](chapters/07-the-cognitive-offloading-problem.md) |
+| 8 | Train Like a Doctor | [chapters/08-train-like-a-doctor.md](chapters/08-train-like-a-doctor.md) |
+| 9 | The Room the Teacher Runs | [chapters/09-phone-fridays-and-the-room-the-teacher-runs.md](chapters/09-phone-fridays-and-the-room-the-teacher-runs.md) |
+| 10 | Three Honest Measures | [chapters/10-three-honest-measures.md](chapters/10-three-honest-measures.md) |
+| 11 | The Equity Argument | [chapters/11-the-equity-argument.md](chapters/11-the-equity-argument.md) |
+| 12 | The Teacher This Book Is Arguing For | [chapters/12-the-teacher-this-book-is-arguing-for.md](chapters/12-the-teacher-this-book-is-arguing-for.md) |
+| 13 | The Fix That Costs Almost Nothing | [chapters/13-the-fix.md](chapters/13-the-fix.md) |
+| App | Appendix B — The Three-Measure Evaluation Framework | [chapters/14-appendix-b-three-measure-framework.md](chapters/14-appendix-b-three-measure-framework.md) |
+| App | Appendix C — The AI+1 Teacher Training Curriculum | [chapters/15-appendix-c-ai-plus-one-curriculum.md](chapters/15-appendix-c-ai-plus-one-curriculum.md) |
+
+---
+
+## Signature Simulations
+
+<!-- TODO: populate from chapter content -->
+
+---
+
+## The +1 Layer
+
+This book contains a chapter explaining how to use the LLM Exercise blocks embedded across the chapters. Each exercise is a structured prompt the reader can paste into an LLM tool of their choice; the chapter explains the pattern and when each variant applies.
+
+---
+
+## Copyright
+
+Copyright © 2026 Nik Bear Brown. All rights reserved.
+
+Published by Bear Brown, LLC.
+
+No part of this publication may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the publisher, except in the case of brief quotations in critical reviews and certain other noncommercial uses permitted by copyright law.
+
+ISBN: [INSERT ISBN]
+
+First edition: 2026
+
+Cover and interior design by Bear Brown, LLC.
+
+For permissions, classroom adoption inquiries, and bulk orders: bear@bearbrown.co
+

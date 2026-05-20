@@ -26,6 +26,8 @@ In 2009, an educational researcher named John Hattie published a book that set o
 A meta-analysis, for readers who haven't encountered the form, is a study of studies. Rather than running a new experiment, a meta-analyst gathers every experiment that has been run on a given question, converts each study's results to a common unit called an effect size, and averages them. The common unit is a statistic called Cohen's d. An effect size of d = 0.10 is small. An effect size of d = 0.50 is medium. An effect size of d = 0.80 is large. These are the rough conventions — rough enough that what they mean in practice depends entirely on what is being measured.
 
 A meta-meta-analysis, which is what Hattie built, averages the meta-analyses the same way a meta-analysis averages individual studies. It is a three-story building of aggregation. <!-- FACT-CHECK FLAG: see factchecks/04-the-teacher-variable-assertions.md — MetaX reports ~300M students; visiblelearning.com marketing materials now cite ~400M. Pick the source. -->
+![Three-story building of aggregation showing approximately 130,000 individual studies on the ground floor feeding upward into about 2,100 meta-analyses on the second floor, which in turn feed into a single meta-meta-analysis on the narrow top floor labeled Visible Learning, with arrows marking that Cohen's d is the unit traveling up each level and a left-side annotation noting that approximately 300 million students sit at the base of the stack](../images/04-the-teacher-variable-fig-04.png)
+*Figure 4.4 — Three floors of averaging compress 300M students into one ranked list*
 By the time *Visible Learning: The Sequel* appeared in 2023, the corpus had expanded to more than 2,100 meta-analyses, approximately 130,000 underlying studies, and roughly 300 million students. The live database is updated through late 2024. It is, in sheer scope, unlike anything else in the field.
 
 Hattie's interpretive device is a single number: d = 0.40. He calls this the "hinge point" — roughly the average effect size across all his ranked influences, the value that corresponds to approximately one year's normal academic growth. Anything above the hinge is above average. Anything below it is below average. This framing has done more work in American professional development than any other single statistic, mostly appearing in PowerPoint slides that use it to declare large categories of education "meaningful" or "meaningless" depending on which side of the line they fall.
@@ -204,3 +206,23 @@ It is not the device. It has never been the device. The device is the smaller cl
 16. Kraft, M. A., Blazar, D., & Hogan, D. (2018). "The Effect of Teacher Coaching on Instruction and Achievement: A Meta-Analysis of the Causal Evidence." *Review of Educational Research* 88(4): 547–588.
 17. SETDA (Nov 5 2025). "Improving Professional Learning Systems to Better Support Today's Educators: How Title II, Part A Offers a Model for State and Local Leadership." https://www.setda.org/wp-content/uploads/2025/11/Improving-Professional-Learning-Systems-to-Better-Support-Todays-Educators-2.pdf
 18. RAND Europe (Jan 2026). "Harnessing the Benefits of EdTech: What Research Tells Us About Using Digital Technology to Support Pupils." https://www.rand.org/pubs/commentary/2026/01/harnessing-the-benefits-of-edtech-what-research-tells.html
+
+---
+
+## Prompts
+
+Use this prompt with Claude to generate an interactive D3 v7 version of the
+infographic in this chapter. It produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using this prompt. They define the stack,
+naming conventions, color system, and typography the figure uses.
+
+---
+
+### Figure 4.4 — Three-story building of aggregation
+
+Build a single-panel D3 v7 infographic visualizing the meta-meta-analytic stack behind Hattie's *Visible Learning*. Render three vertically stacked floor rectangles — narrowest on top, widest on the bottom. Top floor (var(--color-ink) fill): "Floor 3 — 1 meta-meta-analysis. Average d ≈ 0.42; hinge d = 0.40." Middle (var(--color-secondary)): "Floor 2 — ~2,100 meta-analyses." Bottom (var(--color-border)): "Floor 1 — ~130,000 individual studies." Connect adjacent floors with three thin upward arrows each (one shared marker def by id), suggesting many-to-one aggregation. Right gutter: a single dashed vertical arrow labeled "Cohen's d travels up." Left gutter: "~300M students at the base" with secondary line "MetaX 1.3, late 2024." Each floor is a focusable group with `tabindex="0"`, `aria-label`, and a hover/focus tooltip naming the critique at that level (Slavin on Floor 1 weakness, Wecker on Floor 2 overlap, design-noise at Floor 3). Use EB Garamond for in-figure prose, Inter for floor labels. No hex literals — pull every color from `var(--color-*)`. Include `role="img"`, `<title>`, `<desc>`, dark-mode media query, ResizeObserver redraw, and `(event, d)` handler signatures. Suppress transitions under `prefers-reduced-motion: reduce`.
+
+> Reference implementation: `d3/04-the-teacher-variable-fig-04.html`

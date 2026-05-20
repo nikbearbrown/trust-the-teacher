@@ -1,0 +1,95 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t13-02 d13-02">
+  <title id="t13-02">Per-student annual spending — ASSISTments, prevailing EdTech, proposed reallocation</title>
+  <desc id="d13-02">A horizontal bar chart of three per-student annual spending patterns. ASSISTments costs about $46 per student per year, almost entirely teacher time and coaching, with statistically significant math gains. Prevailing district EdTech procurement runs roughly $1,000 per student per year with about two-thirds of licenses never opened. A proposed reallocation spends $150 on a HarvardX verified certificate and reserves $850 per teacher. Bars share a zero baseline.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .val { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #1a1714; }
+    </style>
+    <marker id="ar13b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="420" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="30" class="ti" text-anchor="middle">Per-student annual spending — three patterns</text>
+  <text x="350" y="46" class="sm" text-anchor="middle">Shared zero baseline. Bar length = dollars per student per year.</text>
+
+  <!-- X-axis: scale 0 to 1100, mapped to x=240..640 (400 px wide).  px/$ = 400/1100 ≈ 0.3636 -->
+  <!-- ASSISTments $46 → 16.7 px; EdTech $1000 → 363.6 px; Reallocation total $1000 with split at $150 (54.5 px) -->
+
+  <!-- Axis line -->
+  <line x1="240" y1="92" x2="240" y2="320" stroke="#1a1714" stroke-width="1"/>
+  <line x1="240" y1="320" x2="640" y2="320" stroke="#1a1714" stroke-width="1"/>
+  <!-- X ticks -->
+  <g>
+    <line x1="240" y1="320" x2="240" y2="324" stroke="#4a4540"/>
+    <text x="240" y="337" class="sm" text-anchor="middle">$0</text>
+    <line x1="331" y1="320" x2="331" y2="324" stroke="#4a4540"/>
+    <text x="331" y="337" class="sm" text-anchor="middle">$250</text>
+    <line x1="422" y1="320" x2="422" y2="324" stroke="#4a4540"/>
+    <text x="422" y="337" class="sm" text-anchor="middle">$500</text>
+    <line x1="513" y1="320" x2="513" y2="324" stroke="#4a4540"/>
+    <text x="513" y="337" class="sm" text-anchor="middle">$750</text>
+    <line x1="604" y1="320" x2="604" y2="324" stroke="#4a4540"/>
+    <text x="604" y="337" class="sm" text-anchor="middle">$1,000</text>
+  </g>
+
+  <!-- Light gridlines -->
+  <g opacity="0.5">
+    <line x1="331" y1="92" x2="331" y2="320" stroke="#d4d4d4" stroke-width="0.6"/>
+    <line x1="422" y1="92" x2="422" y2="320" stroke="#d4d4d4" stroke-width="0.6"/>
+    <line x1="513" y1="92" x2="513" y2="320" stroke="#d4d4d4" stroke-width="0.6"/>
+    <line x1="604" y1="92" x2="604" y2="320" stroke="#d4d4d4" stroke-width="0.6"/>
+  </g>
+
+  <!-- Row 1: ASSISTments — $46 -->
+  <text x="232" y="118" class="lb" text-anchor="end" font-weight="bold">ASSISTments</text>
+  <text x="232" y="132" class="sm" text-anchor="end">free software,</text>
+  <text x="232" y="144" class="sm" text-anchor="end">teacher time + coaching</text>
+  <rect x="240" y="106" width="16.7" height="36" fill="#1a1714"/>
+  <text x="262" y="129" class="val">$46</text>
+  <text x="262" y="143" class="sm">statistically significant math gains (state assessments)</text>
+
+  <!-- Row 2: Prevailing EdTech — $1000 -->
+  <text x="232" y="174" class="lb" text-anchor="end" font-weight="bold">Prevailing EdTech</text>
+  <text x="232" y="188" class="sm" text-anchor="end">vendor licenses,</text>
+  <text x="232" y="200" class="sm" text-anchor="end">workshops</text>
+  <rect x="240" y="162" width="363.6" height="36" fill="#4a4540"/>
+  <!-- Two-thirds "never opened" shaded portion -->
+  <rect x="361.8" y="162" width="241.8" height="36" fill="#8a8480" stroke="#1a1714" stroke-width="0.4" stroke-dasharray="3 2"/>
+  <text x="612" y="185" class="val">$1,000</text>
+  <text x="482" y="185" class="sm" text-anchor="middle" fill="#fdfcfb" font-weight="bold">~⅔ of licenses never opened</text>
+
+  <!-- Row 3: Proposed reallocation — $150 + $850 -->
+  <text x="232" y="230" class="lb" text-anchor="end" font-weight="bold">Proposed reallocation</text>
+  <text x="232" y="244" class="sm" text-anchor="end">HarvardX cert +</text>
+  <text x="232" y="256" class="sm" text-anchor="end">reserved per teacher</text>
+  <rect x="240" y="218" width="54.5" height="36" fill="#c8102e"/>
+  <rect x="294.5" y="218" width="309.1" height="36" fill="#fdfcfb" stroke="#1a1714" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="267" y="241" class="val" fill="#fdfcfb">$150</text>
+  <text x="449" y="241" class="sm" text-anchor="middle" font-weight="bold">$850 reserved (peer time, study groups, stipends)</text>
+
+  <!-- Annotation arrow -->
+  <path d="M 256 90 L 256 70 L 612 70 L 612 162" fill="none" stroke="#1a1714" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar13b)"/>
+  <text x="434" y="64" class="lb" text-anchor="middle">Same district, same teacher count — 22× spending, no comparable outcome evidence</text>
+
+  <!-- Legend / footnotes -->
+  <g transform="translate(60, 360)">
+    <rect x="0" y="0" width="14" height="10" fill="#1a1714"/>
+    <text x="20" y="9" class="sm">teacher time / coaching</text>
+    <rect x="160" y="0" width="14" height="10" fill="#4a4540"/>
+    <text x="180" y="9" class="sm">used vendor seats</text>
+    <rect x="295" y="0" width="14" height="10" fill="#8a8480" stroke="#1a1714" stroke-width="0.4" stroke-dasharray="3 2"/>
+    <text x="315" y="9" class="sm">unused vendor seats</text>
+    <rect x="440" y="0" width="14" height="10" fill="#c8102e"/>
+    <text x="460" y="9" class="sm">HarvardX verified cert ($150)</text>
+  </g>
+
+  <!-- Caption -->
+  <text x="350" y="402" class="cap" text-anchor="middle">Sources: ASSISTments per-student cost figure from Roschelle et al. (2016); prevailing EdTech procurement and unused-license rate from district audits.</text>
+</svg>

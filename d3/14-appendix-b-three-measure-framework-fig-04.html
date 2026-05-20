@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure B.4 — Implementation timeline swimlane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+    --color-panel:     #F5F2EE;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+      --color-panel:     #1A1714;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 65ch; }
+  #chart { width: 100%; min-height: 540px; }
+  .lane-label-bg { fill: var(--color-panel); stroke: var(--color-secondary); }
+  .lane-track    { fill: var(--color-white); stroke: var(--color-border); }
+  .lane-title    { font-family: 'EB Garamond', Georgia, serif; font-size: 11px; font-weight: 700; fill: var(--color-ink); }
+  .lane-sub      { font-family: 'EB Garamond', Georgia, serif; font-size: 10px; fill: var(--color-secondary); }
+  .axis-label    { font-family: 'EB Garamond', Georgia, serif; font-size: 11px; font-weight: 700; fill: var(--color-ink); }
+  .axis-sub      { font-family: 'EB Garamond', Georgia, serif; font-size: 10px; fill: var(--color-secondary); }
+  .axis-rule     { stroke: var(--color-ink); stroke-width: 0.8; }
+  .col-divider   { stroke: var(--color-border); stroke-dasharray: 2 2; }
+  .milestone     { font-family: 'EB Garamond', Georgia, serif; font-size: 10px; fill: var(--color-ink); }
+  .progress      { stroke: var(--color-ink); stroke-width: 1; fill: none; }
+  .progress.dashed { stroke-dasharray: 3 2; }
+  .dot           { fill: var(--color-ink); transition: r 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .dot.open      { fill: var(--color-white); stroke: var(--color-ink); }
+  .dot:hover, .dot.active { r: 7; }
+  .caption       { font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 11px; fill: var(--color-secondary); margin-top: 12px; max-width: 65ch; }
+  .tooltip       { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-family: 'Inter', sans-serif; font-size: 12px; max-width: 280px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure B.4 — Implementation timeline (Week 1 to Year 3+)</h1>
+<p class="subtitle">Six parallel tracks. Superintendent action, legal review, pilot school, Measure 2 build, Measure 3 cycle, board engagement. Personnel-decision integration is the work of Year 3, not Year 1.</p>
+<div id="chart" role="img" aria-labelledby="chart-title chart-desc"></div>
+<p class="caption">Filled dots: milestones with a written artifact. Open dots: dependent on upstream completion. Solid lines: sequence within a lane. Dashed lines: waiting or monitoring.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const stages = [
+  { id: 'w1',  label: 'Week 1',          sub: '(the Monday after)' },
+  { id: 'm1',  label: 'Month 1',         sub: 'memos issued' },
+  { id: 'm3',  label: 'Month 3',         sub: 'pilot live' },
+  { id: 'y1',  label: 'Year 1',          sub: 'artifacts produced' },
+  { id: 'y23', label: 'Year 2 / Year 3+', sub: 'expansion' }
+];
+
+const lanes = [
+  { id: 'super', title: 'Superintendent',  sub: ['cabinet, memos,', 'authorisation'],
+    events: [
+      { stage: 'w1',  label: 'Convene cabinet',          tooltip: 'Distribute Appendix B and Chapter 10. Frame as change of use, not replacement.' },
+      { stage: 'm1',  label: 'Internal memo issued',     tooltip: 'On-the-record memo: ASA statement cited, use of student-eval data is changing.' },
+      { stage: 'y1',  label: 'Year-1 review',            tooltip: 'Review the three artifacts: gain report, portfolios, synthesis report. Decide on expansion.' },
+      { stage: 'y23', label: 'Generalise district-wide', tooltip: 'Year 2 expands to second school; Year 3 begins personnel integration negotiations.', text: true }
+    ],
+    flow: [{ from: 'm1', to: 'y1', dashed: true }, { from: 'y1', to: 'y23', dashed: false }]
+  },
+  { id: 'legal', title: 'Legal review', sub: ['comparative exposure', 'assessment'],
+    events: [
+      { stage: 'w1', label: 'Counsel briefed',     tooltip: 'Counsel reviews ASA statement, Boring-Stark evidence, current use in personnel decisions.' },
+      { stage: 'm1', label: 'Use-change memo',     tooltip: 'Written communication: individual SET scores no longer primary basis for renewal or tenure.' },
+      { stage: 'y1', label: 'Renewals re-audited', tooltip: 'First contract-renewal cycle under new use protocol; legal records the patterns.', open: true },
+      { stage: 'y23', label: 'Standing policy',   tooltip: 'Use-change memo becomes board policy.', text: true }
+    ],
+    flow: [{ from: 'w1', to: 'm1', dashed: true }]
+  },
+  { id: 'pilot', title: 'Pilot school', sub: ['one volunteer principal', '+ faculty'],
+    events: [
+      { stage: 'w1', label: 'Pilot identified',   tooltip: 'Criterion: volunteer leadership. A principal who has read Chapter 10 and a faculty that will engage.' },
+      { stage: 'm1', label: 'Faculty engaged',    tooltip: 'Opt-in at the teacher level for the first year. Participating teachers get formative information.' },
+      { stage: 'm3', label: 'Pilot live',          tooltip: 'Measure 1 routed through new protocol; Measure 2 pre-test administered; Measure 3 growth area identified.' },
+      { stage: 'y1', label: 'Synthesis report',   tooltip: 'Curriculum office + principal produce public report. Pilot is, by design, transparent.' },
+      { stage: 'y23', label: '+ second school',  tooltip: 'Year 2 expands to a second pilot school applying what Year 1 learned.', text: true }
+    ],
+    flow: [{ from: 'm1', to: 'm3', dashed: true }, { from: 'm3', to: 'y1', dashed: false }, { from: 'y1', to: 'y23', dashed: false }]
+  },
+  { id: 'm2', title: 'Measure 2 build', sub: ['common pre/post +', 'transfer-items audit'],
+    events: [
+      { stage: 'm1', label: 'Instrument selected', tooltip: 'Curriculum office conducts explicit transfer-items audit with department teachers participating.', open: true },
+      { stage: 'm3', label: 'Pre-test administered', tooltip: 'External grading by cross-section pairing; one prep period of grading each.' },
+      { stage: 'y1', label: 'Gain report (formative)', tooltip: 'Section-level gains with transfer-items subscore reported separately. No personnel attachment in Year 1.' },
+      { stage: 'y23', label: 'Validity audit', tooltip: 'Post-test compared to performance in the subsequent course; Carrell-West check.', text: true }
+    ],
+    flow: [{ from: 'm3', to: 'y1', dashed: false }]
+  },
+  { id: 'm3', title: 'Measure 3 cycle', sub: ['growth → PD →', 'evidence → panel'],
+    events: [
+      { stage: 'm3', label: 'Growth area named', tooltip: 'AI-specific practice is a defensible default growth area for most teachers in 2026.' },
+      { stage: 'y1', label: 'Portfolio + panel',  tooltip: 'Three peers from same subject area; rubric adapted from NBPTS renewal model.' },
+      { stage: 'y23', label: 'Scale peer review capacity', tooltip: 'Fund peer time explicitly. Substitute coverage on review day or a stipend.', text: true }
+    ],
+    flow: [{ from: 'm3', to: 'y1', dashed: false }]
+  },
+  { id: 'board', title: 'Board engagement', sub: ['endorsement,', 'expansion, charter'],
+    events: [
+      { stage: 'm1', label: 'Pilot endorsement', tooltip: 'Light endorsement: pilot at one school, formative use only, no personnel-decision stakes during the pilot.' },
+      { stage: 'y1', label: 'Public report',     tooltip: 'Pilot synthesis presented in public session. Continued endorsement depends on a defensible report.' },
+      { stage: 'y23', label: 'Charter for expansion', tooltip: 'Year 2 charter expands to second school; Year 3 begins personnel-decision integration.', text: true }
+    ],
+    flow: [{ from: 'm1', to: 'y1', dashed: true }]
+  }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, d) {
+  tooltip.html(`<strong>${d.label}</strong><br/>${d.tooltip}`)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTip(event) { tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px'); }
+function hideTip() { tooltip.transition().duration(100).style('opacity', 0); }
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+  const totalWidth  = container.clientWidth || 700;
+  const totalHeight = 540;
+  const margin = { top: 64, right: 24, bottom: 32, left: 24 };
+  const innerW = totalWidth - margin.left - margin.right;
+  const innerH = totalHeight - margin.top - margin.bottom;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'chart-title chart-desc');
+  svg.append('title').attr('id', 'chart-title').text('Implementation timeline swimlane: six tracks from Week 1 to Year 3 and beyond');
+  svg.append('desc').attr('id', 'chart-desc').text('Horizontal swimlane chart with superintendent, legal, pilot, Measure 2, Measure 3, and board engagement tracks plotted across five time stages.');
+
+  const defs = svg.append('defs');
+  defs.append('marker')
+    .attr('id', 'arrowEnd4').attr('markerWidth', 8).attr('markerHeight', 6)
+    .attr('refX', 7).attr('refY', 3).attr('orient', 'auto')
+    .append('polygon').attr('points', '0 0, 8 3, 0 6').attr('fill', 'currentColor');
+
+  const gChart = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const labelW = 140;
+  const tracksW = innerW - labelW;
+  const xScalePoint = d3.scalePoint()
+    .domain(stages.map(s => s.id))
+    .range([labelW + 56, innerW - 60])
+    .padding(0);
+
+  // Stage headers
+  stages.forEach((s, i) => {
+    const x = xScalePoint(s.id);
+    gChart.append('text').attr('class', 'axis-label').attr('x', x).attr('y', -34).attr('text-anchor', 'middle').text(s.label);
+    gChart.append('text').attr('class', 'axis-sub').attr('x', x).attr('y', -20).attr('text-anchor', 'middle').text(s.sub);
+    if (i > 0) {
+      gChart.append('line').attr('class', 'col-divider')
+        .attr('x1', x).attr('x2', x).attr('y1', -12).attr('y2', innerH - 8);
+    }
+  });
+  // Axis baseline
+  gChart.append('line').attr('class', 'axis-rule').attr('x1', labelW).attr('x2', innerW).attr('y1', -8).attr('y2', -8);
+
+  // scaleBand for lane tracks
+  const yScaleBand = d3.scaleBand()
+    .domain(lanes.map(l => l.id))
+    .range([0, innerH - 16])
+    .paddingInner(0.08);
+
+  const laneG = gChart.selectAll('.lane')
+    .data(lanes, l => l.id)
+    .join('g')
+      .attr('class', 'lane')
+      .attr('transform', l => `translate(0, ${yScaleBand(l.id)})`);
+
+  // Lane label cell
+  laneG.append('rect')
+    .attr('class', 'lane-label-bg')
+    .attr('x', 0).attr('y', 0)
+    .attr('width', labelW - 8).attr('height', yScaleBand.bandwidth());
+  laneG.append('text').attr('class', 'lane-title').attr('x', 12).attr('y', 22).text(l => l.title);
+  laneG.each(function (l) {
+    d3.select(this).selectAll('.lane-sub')
+      .data(l.sub)
+      .join('text')
+        .attr('class', 'lane-sub')
+        .attr('x', 12)
+        .attr('y', (_, i) => 38 + i * 12)
+        .text(t => t);
+  });
+
+  // Lane track
+  laneG.append('rect')
+    .attr('class', 'lane-track')
+    .attr('x', labelW).attr('y', 0)
+    .attr('width', innerW - labelW).attr('height', yScaleBand.bandwidth());
+
+  // Flow lines
+  laneG.each(function (l) {
+    const sel = d3.select(this);
+    const midY = yScaleBand.bandwidth() / 2;
+    (l.flow || []).forEach(f => {
+      const x1 = xScalePoint(f.from);
+      const x2 = xScalePoint(f.to);
+      sel.append('path')
+        .attr('class', f.dashed ? 'progress dashed' : 'progress')
+        .attr('d', `M ${x1 + 6} ${midY} L ${x2 - 6} ${midY}`)
+        .attr('marker-end', f.dashed ? null : 'url(#arrowEnd4)');
+    });
+
+    // Events
+    l.events.forEach(ev => {
+      const x = xScalePoint(ev.stage);
+      if (ev.text) {
+        // Text-only milestone (right of swimlane, in last column area)
+        sel.append('text').attr('class', 'milestone').attr('x', x).attr('y', midY + 4).attr('text-anchor', 'middle').text(ev.label);
+      } else {
+        const evWithLabel = { ...ev };
+        sel.append('circle')
+          .attr('class', ev.open ? 'dot open' : 'dot')
+          .attr('cx', x).attr('cy', midY).attr('r', 5)
+          .attr('tabindex', 0)
+          .attr('aria-label', `${ev.label}: ${ev.tooltip}`)
+          .on('mouseover', function (event) { d3.select(this).classed('active', true); showTip(event, evWithLabel); })
+          .on('mousemove', moveTip)
+          .on('mouseout', function () { d3.select(this).classed('active', false); hideTip(); });
+        sel.append('text').attr('class', 'milestone').attr('x', x).attr('y', midY + 22).attr('text-anchor', 'middle').text(ev.label);
+      }
+    });
+  });
+
+  // Bottom baseline
+  gChart.append('line').attr('class', 'axis-rule')
+    .attr('x1', labelW).attr('x2', innerW)
+    .attr('y1', innerH - 8).attr('y2', innerH - 8);
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

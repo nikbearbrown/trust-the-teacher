@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" role="img" aria-labelledby="t-c1 d-c1">
+  <title id="t-c1">Five-domain AI+1 curriculum map — Domain 1 foundation feeding Domains 2 through 5</title>
+  <desc id="d-c1">A horizontal flow diagram. Domain 1 AI Fundamentals sits at the left as a once-and-done foundation block. Four recurring domains stack to the right — Domain 2 Subject-Specific Pedagogy, Domain 3 Cognitive Offloading, Domain 4 Equity, Domain 5 Evaluation and Assessment — each labeled with its demonstration artifact.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #2a1a0e; }
+      .h2 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold; fill: #2a1a0e; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #2a1a0e; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .eyebrow { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-weight: bold; fill: #4a4540; letter-spacing: 0.04em; }
+    </style>
+    <marker id="ar-c1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+  <rect width="700" height="460" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" text-anchor="middle" class="ti">Five domains, one foundation — what every AI+1 teacher must demonstrate</text>
+  <text x="350" y="48" text-anchor="middle" class="sm">Domain 1 is the once-and-done prerequisite. Domains 2 through 5 recur every cycle.</text>
+
+  <!-- Foundation column eyebrow -->
+  <text x="120" y="76" text-anchor="middle" class="eyebrow">FOUNDATION (ONCE)</text>
+  <text x="490" y="76" text-anchor="middle" class="eyebrow">RECURRING (EVERY CYCLE)</text>
+
+  <!-- Vertical separator -->
+  <line x1="240" y1="60" x2="240" y2="410" stroke="#c8c4c0" stroke-width="0.75"/>
+
+  <!-- DOMAIN 1 — foundation block (tall, left side) -->
+  <rect x="40" y="90" width="180" height="290" fill="#f5f2ee" stroke="#2a1a0e" stroke-width="1.25"/>
+  <text x="130" y="112" text-anchor="middle" class="h2">Domain 1</text>
+  <text x="130" y="128" text-anchor="middle" class="lb">AI Fundamentals</text>
+  <line x1="60" y1="138" x2="200" y2="138" stroke="#8a8480" stroke-width="0.5"/>
+
+  <text x="130" y="158" text-anchor="middle" class="sm">What an LLM is.</text>
+  <text x="130" y="172" text-anchor="middle" class="sm">What it is doing</text>
+  <text x="130" y="186" text-anchor="middle" class="sm">when it generates text.</text>
+  <text x="130" y="200" text-anchor="middle" class="sm">Failure modes,</text>
+  <text x="130" y="214" text-anchor="middle" class="sm">conceptual vocabulary.</text>
+
+  <text x="130" y="244" text-anchor="middle" class="sm">Free content already exists:</text>
+  <text x="130" y="258" text-anchor="middle" class="sm">HarvardX · MITx · Stanford</text>
+  <text x="130" y="272" text-anchor="middle" class="sm">CS50 · Bok Center · HBP</text>
+
+  <line x1="60" y1="290" x2="200" y2="290" stroke="#8a8480" stroke-width="0.5"/>
+  <text x="130" y="308" text-anchor="middle" class="eyebrow">ARTIFACT</text>
+  <text x="130" y="324" text-anchor="middle" class="sm">Defined-slate</text>
+  <text x="130" y="338" text-anchor="middle" class="sm">completion certificates</text>
+  <text x="130" y="358" text-anchor="middle" class="cap">5–8 courses, district-chosen</text>
+
+  <!-- Arrows from Domain 1 to each Domain 2–5 -->
+  <line x1="222" y1="148" x2="278" y2="118" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar-c1)"/>
+  <line x1="222" y1="200" x2="278" y2="200" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar-c1)"/>
+  <line x1="222" y1="248" x2="278" y2="282" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar-c1)"/>
+  <line x1="222" y1="318" x2="278" y2="364" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ar-c1)"/>
+
+  <!-- DOMAIN 2 -->
+  <rect x="280" y="96" width="200" height="68" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="292" y="114" class="h2">Domain 2</text>
+  <text x="292" y="128" class="lb">Subject-Specific Pedagogy</text>
+  <text x="292" y="143" class="sm">Math, ELA, science, SPED, K-2 phonics —</text>
+  <text x="292" y="156" class="sm">distinct tracks; PCK is binding constraint.</text>
+
+  <!-- Artifact pill for D2 -->
+  <rect x="492" y="108" width="180" height="44" fill="#f5f2ee" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="582" y="123" text-anchor="middle" class="eyebrow">ARTIFACT</text>
+  <text x="582" y="138" text-anchor="middle" class="sm">Subject-specific</text>
+  <text x="582" y="150" text-anchor="middle" class="sm">assignment-redesign portfolio</text>
+
+  <!-- DOMAIN 3 -->
+  <rect x="280" y="178" width="200" height="68" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="292" y="196" class="h2">Domain 3</text>
+  <text x="292" y="210" class="lb">Cognitive Offloading</text>
+  <text x="292" y="225" class="sm">Bastani 2025 PNAS · Risko &amp; Gilbert.</text>
+  <text x="292" y="238" class="sm">When delegation helps vs corrodes.</text>
+
+  <rect x="492" y="190" width="180" height="44" fill="#f5f2ee" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="582" y="205" text-anchor="middle" class="eyebrow">ARTIFACT</text>
+  <text x="582" y="220" text-anchor="middle" class="sm">Offloading-vs-engagement</text>
+  <text x="582" y="232" text-anchor="middle" class="sm">assignment + student work</text>
+
+  <!-- DOMAIN 4 -->
+  <rect x="280" y="260" width="200" height="68" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="292" y="278" class="h2">Domain 4</text>
+  <text x="292" y="292" class="lb">Equity in AI Deployment</text>
+  <text x="292" y="307" class="sm">Harm-vector chain. Design for the floor,</text>
+  <text x="292" y="320" class="sm">not the ceiling. Tutor CoPilot catch-up.</text>
+
+  <rect x="492" y="272" width="180" height="44" fill="#f5f2ee" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="582" y="287" text-anchor="middle" class="eyebrow">ARTIFACT</text>
+  <text x="582" y="302" text-anchor="middle" class="sm">Equity-focused</text>
+  <text x="582" y="314" text-anchor="middle" class="sm">lesson redesign + analysis</text>
+
+  <!-- DOMAIN 5 -->
+  <rect x="280" y="342" width="200" height="68" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="292" y="360" class="h2">Domain 5</text>
+  <text x="292" y="374" class="lb">Evaluation &amp; Assessment</text>
+  <text x="292" y="389" class="sm">Formative assessment that survives AI:</text>
+  <text x="292" y="402" class="sm">closed-book, oral defense, triangulation.</text>
+
+  <rect x="492" y="354" width="180" height="44" fill="#f5f2ee" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="582" y="369" text-anchor="middle" class="eyebrow">ARTIFACT</text>
+  <text x="582" y="384" text-anchor="middle" class="sm">Formative-assessment</text>
+  <text x="582" y="396" text-anchor="middle" class="sm">case-conference defense</text>
+
+  <!-- Footer caption -->
+  <line x1="40" y1="426" x2="660" y2="426" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="350" y="446" text-anchor="middle" class="cap">Domain 1 catalogs free; Domains 2 through 5 are where the credential earns its keep.</text>
+</svg>

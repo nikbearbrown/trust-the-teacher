@@ -5,50 +5,50 @@
     </marker>
   </defs>
   <rect x="0" y="0" width="700" height="420" fill="#fdfcfb"/>
-  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1714">The cognitive division of labor — Tier 1 vs. Tier 4</text>
-  <text x="350" y="50" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#4a4540">From the Irreducibly Human framework — what the algorithm handles vs. what only the teacher can</text>
+  <text x="350" y="32" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1714">The cognitive division of labor — Tier 1 vs. Tier 4</text>
+  <text x="350" y="50" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#4a4540">From the Irreducibly Human framework — what the algorithm handles vs. what only the teacher can</text>
 
   <!-- Left column: AI handles -->
   <rect x="32" y="72" width="300" height="304" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
-  <text x="182" y="98" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1714">Tier 1: AI handles well</text>
-  <text x="182" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">(pattern recognition at scale)</text>
+  <text x="182" y="98" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1714">Tier 1: AI handles well</text>
+  <text x="182" y="114" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">(pattern recognition at scale)</text>
 
-  <text x="48" y="142" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Pattern recognition across many cases</text>
-  <text x="48" y="164" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Recall of stored content</text>
-  <text x="48" y="186" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Factual content delivery</text>
-  <text x="48" y="208" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Routine first-pass feedback</text>
-  <text x="48" y="230" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Summarization and translation</text>
-  <text x="48" y="252" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Generating differentiated reading</text>
-  <text x="48" y="266" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  levels from a single source</text>
-  <text x="48" y="288" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Producing practice problems at a</text>
-  <text x="48" y="302" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  specified difficulty level</text>
-  <text x="48" y="324" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Surfacing dashboard signal — which</text>
-  <text x="48" y="338" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  students are stuck on which paragraph</text>
+  <text x="48" y="142" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Pattern recognition across many cases</text>
+  <text x="48" y="164" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Recall of stored content</text>
+  <text x="48" y="186" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Factual content delivery</text>
+  <text x="48" y="208" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Routine first-pass feedback</text>
+  <text x="48" y="230" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Summarization and translation</text>
+  <text x="48" y="252" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Generating differentiated reading</text>
+  <text x="48" y="266" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  levels from a single source</text>
+  <text x="48" y="288" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Producing practice problems at a</text>
+  <text x="48" y="302" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  specified difficulty level</text>
+  <text x="48" y="324" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Surfacing dashboard signal — which</text>
+  <text x="48" y="338" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  students are stuck on which paragraph</text>
 
-  <text x="182" y="368" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" text-anchor="middle" fill="#4a4540">Having these done by machine is not a loss.</text>
+  <text x="182" y="368" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" text-anchor="middle" fill="#4a4540">Having these done by machine is not a loss.</text>
 
   <!-- Arrow between columns -->
   <line x1="340" y1="220" x2="365" y2="220" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
 
   <!-- Right column: Teacher handles -->
   <rect x="372" y="72" width="296" height="304" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
-  <text x="520" y="98" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1714">Tier 4: only the teacher can</text>
-  <text x="520" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">(judgment in this room, this day)</text>
+  <text x="520" y="98" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1714">Tier 4: only the teacher can</text>
+  <text x="520" y="114" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">(judgment in this room, this day)</text>
 
-  <text x="388" y="142" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Audit whether the AI's output</text>
-  <text x="388" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  actually answers the question</text>
-  <text x="388" y="178" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Interpret what a confused answer</text>
-  <text x="388" y="192" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  reveals about student thinking</text>
-  <text x="388" y="214" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Choose which question to ask</text>
-  <text x="388" y="228" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  this student right now</text>
-  <text x="388" y="250" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Decide which five students to pull</text>
-  <text x="388" y="264" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  to the back table — and which not</text>
-  <text x="388" y="286" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Decide this lesson earns devices</text>
-  <text x="388" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  and that lesson does not</text>
-  <text x="388" y="322" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Hour-by-hour relational adjustment</text>
-  <text x="388" y="336" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  from knowing this child this year</text>
+  <text x="388" y="142" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Audit whether the AI's output</text>
+  <text x="388" y="156" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  actually answers the question</text>
+  <text x="388" y="178" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Interpret what a confused answer</text>
+  <text x="388" y="192" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  reveals about student thinking</text>
+  <text x="388" y="214" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Choose which question to ask</text>
+  <text x="388" y="228" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  this student right now</text>
+  <text x="388" y="250" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Decide which five students to pull</text>
+  <text x="388" y="264" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  to the back table — and which not</text>
+  <text x="388" y="286" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Decide this lesson earns devices</text>
+  <text x="388" y="300" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  and that lesson does not</text>
+  <text x="388" y="322" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">• Hour-by-hour relational adjustment</text>
+  <text x="388" y="336" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" fill="#1a1714">  from knowing this child this year</text>
 
-  <text x="520" y="368" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" text-anchor="middle" fill="#4a4540">These are the moves the educational exemption protects.</text>
+  <text x="520" y="368" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" text-anchor="middle" fill="#4a4540">These are the moves the educational exemption protects.</text>
 
-  <text x="350" y="402" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">The exemption only means anything when there is a trained teacher available to exercise it.</text>
+  <text x="350" y="402" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">The exemption only means anything when there is a trained teacher available to exercise it.</text>
 </svg>

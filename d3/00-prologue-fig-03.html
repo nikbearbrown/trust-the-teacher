@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 0.3 — K-12 educator AI PD access</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 65ch; }
+  #chart { width: 100%; min-height: 420px; }
+  .axis text { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: var(--color-secondary); }
+  .axis path, .axis line { stroke: var(--color-secondary); shape-rendering: crispEdges; }
+  .segment { transition: opacity 200ms cubic-bezier(0.2,0.8,0.2,1); cursor: pointer; }
+  .segment-border { fill: none; stroke: var(--color-ink); stroke-width: 0.75; pointer-events: none; }
+  .segment-value { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; }
+  .segment-header { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-weight: 500; fill: var(--color-ink); }
+  .segment-sub { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .cumulative-tick { stroke: var(--color-secondary); }
+  .cumulative-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: var(--color-secondary); }
+  .annotation-line { stroke: var(--color-ink); stroke-dasharray: 4 3; fill: none; }
+  .annotation-headline { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; font-weight: 500; fill: var(--color-ink); }
+  .annotation-text { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 16px; max-width: 65ch; font-style: italic; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-size: 12px; font-family: 'Inter', sans-serif; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 0.3 — How thin the "trained" tier actually is</h1>
+<p class="subtitle">K-12 educator AI professional-development access (Education Week, 2026). Hover or focus a segment to read its share.</p>
+<div id="chart" role="img" aria-labelledby="chart-title chart-desc"></div>
+<p class="caption">"We're at a disadvantage." The phrase educators used, unprompted, when describing their own situation. Not 44 percent inadequate. 44 percent none.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const tierData = [
+  { tier: 'No PD',         sub: 'none at all',         pct: 44, role: 'severe',       textOn: 'light', detail: 'No AI professional development of any kind.' },
+  { tier: 'One workshop',  sub: 'exactly one',         pct: 29, role: 'limited',      textOn: 'light', detail: 'Single one-off session, no follow-up.' },
+  { tier: 'Intermediate',  sub: 'scattered exposure',  pct: 19, role: 'partial',      textOn: 'dark',  detail: 'Multiple workshops or informal exposure, not systematic.' },
+  { tier: 'Systematic',    sub: 'ongoing, structured', pct: 8,  role: 'trained',      textOn: 'dark',  detail: 'Ongoing, structured, integrated training.' }
+];
+
+// Cumulative for stacking
+let acc = 0;
+tierData.forEach(d => { d.x0 = acc; acc += d.pct; d.x1 = acc; });
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+
+function showTooltip(event, d) {
+  tooltip.html(`<strong>${d.tier} — ${d.pct}%</strong><br><span style="opacity:0.8">${d.detail}</span>`)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top', (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTooltip(event) {
+  tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px');
+}
+function hideTooltip() {
+  tooltip.transition().duration(100).style('opacity', 0);
+}
+
+function colorFor(role) {
+  switch (role) {
+    case 'severe':   return 'var(--color-ink)';
+    case 'limited':  return 'var(--color-secondary)';
+    case 'partial':  return 'var(--color-border)';
+    case 'trained':  return 'var(--color-ochre)';
+    default:         return 'var(--color-secondary)';
+  }
+}
+
+function draw() {
+  d3.select('#chart').selectAll('*').remove();
+  const container = document.getElementById('chart');
+  const totalWidth  = container.clientWidth  || 800;
+  const totalHeight = 420;
+  const margin = { top: 96, right: 32, bottom: 120, left: 32 };
+  const chartWidth  = totalWidth  - margin.left - margin.right;
+  const chartHeight = 80;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'chart-title chart-desc');
+  svg.append('title').attr('id', 'chart-title').text('K-12 educator AI professional-development access');
+  svg.append('desc').attr('id', 'chart-desc').text('Horizontal segmented bar showing four tiers of K-12 educator AI training access: 44% none, 29% one workshop, 19% intermediate, 8% systematic.');
+
+  const gChart = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const xScaleLinear = d3.scaleLinear().domain([0, 100]).range([0, chartWidth]);
+
+  // Segment rects
+  gChart.selectAll('.segment')
+    .data(tierData)
+    .join('rect')
+      .attr('class', 'segment')
+      .attr('x', d => xScaleLinear(d.x0))
+      .attr('y', 0)
+      .attr('width', d => xScaleLinear(d.x1) - xScaleLinear(d.x0))
+      .attr('height', chartHeight)
+      .attr('fill', d => colorFor(d.role))
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `${d.tier}: ${d.pct} percent`)
+      .on('mouseover', showTooltip)
+      .on('mousemove', moveTooltip)
+      .on('mouseout', hideTooltip);
+
+  // Single border around the whole bar
+  gChart.append('rect')
+    .attr('class', 'segment-border')
+    .attr('x', 0).attr('y', 0)
+    .attr('width', chartWidth).attr('height', chartHeight);
+
+  // In-segment percentage labels
+  gChart.selectAll('.segment-value')
+    .data(tierData)
+    .join('text')
+      .attr('class', 'segment-value')
+      .attr('x', d => (xScaleLinear(d.x0) + xScaleLinear(d.x1)) / 2)
+      .attr('y', chartHeight / 2 + 5)
+      .attr('text-anchor', 'middle')
+      .attr('fill', d => d.textOn === 'dark' ? 'var(--color-ink)' : 'var(--color-white)')
+      .text(d => `${d.pct}%`);
+
+  // Above-segment headers
+  gChart.selectAll('.segment-header')
+    .data(tierData)
+    .join('text')
+      .attr('class', 'segment-header')
+      .attr('x', d => (xScaleLinear(d.x0) + xScaleLinear(d.x1)) / 2)
+      .attr('y', -28)
+      .attr('text-anchor', 'middle')
+      .text(d => d.tier);
+
+  gChart.selectAll('.segment-sub')
+    .data(tierData)
+    .join('text')
+      .attr('class', 'segment-sub')
+      .attr('x', d => (xScaleLinear(d.x0) + xScaleLinear(d.x1)) / 2)
+      .attr('y', -14)
+      .attr('text-anchor', 'middle')
+      .text(d => d.sub);
+
+  // Cumulative ticks below
+  const cumulativeMarks = [0, ...tierData.map(d => d.x1)];
+  gChart.selectAll('.cumulative-tick')
+    .data(cumulativeMarks)
+    .join('line')
+      .attr('class', 'cumulative-tick')
+      .attr('x1', d => xScaleLinear(d)).attr('x2', d => xScaleLinear(d))
+      .attr('y1', chartHeight).attr('y2', chartHeight + 10)
+      .attr('aria-hidden', 'true');
+
+  gChart.selectAll('.cumulative-label')
+    .data(cumulativeMarks)
+    .join('text')
+      .attr('class', 'cumulative-label')
+      .attr('x', d => xScaleLinear(d))
+      .attr('y', chartHeight + 24)
+      .attr('text-anchor', 'middle')
+      .text(d => `${d}%`);
+
+  // Annotations — left side (44% no PD) and right side (8% systematic)
+  // Left annotation
+  const leftAnchorX = xScaleLinear(22);
+  gChart.append('path')
+    .attr('class', 'annotation-line')
+    .attr('d', `M ${leftAnchorX} ${chartHeight + 60} L ${leftAnchorX} ${chartHeight + 40}`);
+  gChart.append('text')
+    .attr('class', 'annotation-headline')
+    .attr('x', leftAnchorX).attr('y', chartHeight + 76)
+    .attr('text-anchor', 'middle').text('Nearly half');
+  gChart.append('text')
+    .attr('class', 'annotation-text')
+    .attr('x', leftAnchorX).attr('y', chartHeight + 92)
+    .attr('text-anchor', 'middle').text('have received zero AI training of any kind.');
+
+  // Right annotation — points at 8% segment
+  const rightAnchorX = xScaleLinear(96);
+  gChart.append('path')
+    .attr('class', 'annotation-line')
+    .attr('d', `M ${rightAnchorX} ${chartHeight + 60} L ${rightAnchorX} ${chartHeight + 40}`);
+  gChart.append('text')
+    .attr('class', 'annotation-headline')
+    .attr('x', rightAnchorX).attr('y', chartHeight + 76)
+    .attr('text-anchor', 'middle').text('8% of the profession');
+  gChart.append('text')
+    .attr('class', 'annotation-text')
+    .attr('x', rightAnchorX).attr('y', chartHeight + 92)
+    .attr('text-anchor', 'middle').text('has the training the moment requires.');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

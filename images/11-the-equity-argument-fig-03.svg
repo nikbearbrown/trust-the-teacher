@@ -5,46 +5,46 @@
     </marker>
   </defs>
   <rect x="0" y="0" width="700" height="420" fill="#fdfcfb"/>
-  <text x="350" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1714">Tutor CoPilot — the catch-up shape by tutor-rating tercile</text>
-  <text x="350" y="50" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#4a4540">Wang, Ribeiro, Robinson, Loeb &amp; Demszky (2024) — 900 tutors, ~1,000 K-12 students, $20/tutor/year</text>
+  <text x="350" y="32" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1714">Tutor CoPilot — the catch-up shape by tutor-rating tercile</text>
+  <text x="350" y="50" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#4a4540">Wang, Ribeiro, Robinson, Loeb &amp; Demszky (2024) — 900 tutors, ~1,000 K-12 students, $20/tutor/year</text>
 
   <!-- Axes -->
   <line x1="100" y1="340" x2="620" y2="340" stroke="#1a1714" stroke-width="1"/>
   <line x1="100" y1="100" x2="100" y2="340" stroke="#1a1714" stroke-width="1"/>
 
   <!-- Y-axis label and ticks: 0, 2, 4, 6, 8, 10 pp -->
-  <text x="40" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#1a1714" transform="rotate(-90, 40, 220)">Gain in topic mastery (pp)</text>
+  <text x="40" y="220" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#1a1714" transform="rotate(-90, 40, 220)">Gain in topic mastery (pp)</text>
   <line x1="96" y1="340" x2="100" y2="340" stroke="#1a1714" stroke-width="1"/>
-  <text x="92" y="344" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">0</text>
+  <text x="92" y="344" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">0</text>
   <line x1="96" y1="292" x2="100" y2="292" stroke="#1a1714" stroke-width="1"/>
-  <text x="92" y="296" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">2</text>
+  <text x="92" y="296" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">2</text>
   <line x1="96" y1="244" x2="100" y2="244" stroke="#1a1714" stroke-width="1"/>
-  <text x="92" y="248" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">4</text>
+  <text x="92" y="248" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">4</text>
   <line x1="96" y1="196" x2="100" y2="196" stroke="#1a1714" stroke-width="1"/>
-  <text x="92" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">6</text>
+  <text x="92" y="200" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">6</text>
   <line x1="96" y1="148" x2="100" y2="148" stroke="#1a1714" stroke-width="1"/>
-  <text x="92" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">8</text>
+  <text x="92" y="152" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">8</text>
   <line x1="96" y1="100" x2="100" y2="100" stroke="#1a1714" stroke-width="1"/>
-  <text x="92" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">10</text>
+  <text x="92" y="104" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="end" fill="#4a4540">10</text>
 
   <!-- Bottom-tercile bar: +9 pp → top at 340-9*24=340-216=124 -->
   <rect x="170" y="124" width="100" height="216" fill="#1a1714" stroke="#1a1714"/>
-  <text x="220" y="118" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">+9 pp</text>
-  <text x="220" y="358" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#1a1714">Bottom tercile</text>
-  <text x="220" y="372" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">(lower-rated tutors)</text>
+  <text x="220" y="118" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">+9 pp</text>
+  <text x="220" y="358" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#1a1714">Bottom tercile</text>
+  <text x="220" y="372" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">(lower-rated tutors)</text>
 
   <!-- Middle-tercile bar: ~+4 pp → top at 340-96=244 -->
   <rect x="310" y="244" width="100" height="96" fill="#4a4540" stroke="#1a1714"/>
-  <text x="360" y="238" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">+4 pp</text>
-  <text x="360" y="358" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#1a1714">Middle tercile</text>
-  <text x="360" y="372" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">(study average)</text>
+  <text x="360" y="238" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">+4 pp</text>
+  <text x="360" y="358" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#1a1714">Middle tercile</text>
+  <text x="360" y="372" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">(study average)</text>
 
   <!-- Top-tercile bar: ~+1 pp → top at 340-24=316 -->
   <rect x="450" y="316" width="100" height="24" fill="#c8c4c0" stroke="#1a1714"/>
-  <text x="500" y="310" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">~+1 pp</text>
-  <text x="500" y="358" font-family="Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#1a1714">Top tercile</text>
-  <text x="500" y="372" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">(higher-rated tutors)</text>
+  <text x="500" y="310" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1714">~+1 pp</text>
+  <text x="500" y="358" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="11" text-anchor="middle" fill="#1a1714">Top tercile</text>
+  <text x="500" y="372" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">(higher-rated tutors)</text>
 
   <!-- Inline note -->
-  <text x="350" y="402" font-family="Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">Lower-rated tutors disproportionately work in under-resourced settings. The tool lifts the floor more than the ceiling.</text>
+  <text x="350" y="402" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="10" text-anchor="middle" fill="#4a4540">Lower-rated tutors disproportionately work in under-resourced settings. The tool lifts the floor more than the ceiling.</text>
 </svg>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 0.2 — Clock-speed mismatch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 65ch; }
+  #chart { width: 100%; min-height: 460px; }
+  .axis text { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: var(--color-secondary); }
+  .axis path, .axis line { stroke: var(--color-secondary); shape-rendering: crispEdges; }
+  .track { stroke: var(--color-ink); stroke-width: 1.25; }
+  .track.secondary { stroke: var(--color-secondary); }
+  .release-dot { fill: var(--color-red); transition: r 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .pd-stage-dot { fill: var(--color-secondary); }
+  .pd-stage-dot.delivered { fill: none; stroke: var(--color-ink); stroke-width: 1.5; }
+  .pd-stage-segment { stroke: var(--color-secondary); stroke-opacity: 0.35; stroke-width: 3; }
+  .lane-label { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; font-weight: 500; fill: var(--color-ink); }
+  .lane-sub { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .tick-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: var(--color-secondary); }
+  .annotation-line { stroke: var(--color-ink); stroke-dasharray: 4 3; fill: none; }
+  .annotation-text { font-family: 'Inter', sans-serif; font-size: 12px; fill: var(--color-ink); }
+  .delivery-band { fill: var(--color-ochre); fill-opacity: 0.10; }
+  .delivery-band-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; fill: var(--color-ochre); }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 16px; max-width: 65ch; font-style: italic; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-size: 12px; font-family: 'Inter', sans-serif; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 0.2 — Two clocks running at incompatible speeds</h1>
+<p class="subtitle">Generative-AI capability releases (top lane) versus institutional professional-development cycles (bottom lane), 18 months. Hover any marker for detail.</p>
+<div id="chart" role="img" aria-labelledby="chart-title chart-desc"></div>
+<p class="caption">A structural mismatch, not a failure of will. No teacher can attend workshops that have not yet been funded, designed, scheduled, or delivered.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const RELEASE_COUNT = 14;
+const releaseData = d3.range(RELEASE_COUNT).map(i => ({
+  month: (18 / (RELEASE_COUNT - 1)) * i,
+  version: `v${i + 1}`,
+  label: `Capability release v${i + 1}`,
+  cadenceNote: '~4–6 weeks between releases'
+}));
+
+const pdStages = [
+  { month: 0,  stage: 'funded',     label: 'Funding approved' },
+  { month: 3,  stage: 'designed',   label: 'Module designed' },
+  { month: 8,  stage: 'scheduled',  label: 'Workshop scheduled' },
+  { month: 15, stage: 'delivered',  label: 'Module delivered (already overtaken twice)' }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+
+function showTooltip(event, d) {
+  const sub = d.version ? d.cadenceNote : `Month ${d.month}`;
+  tooltip.html(`<strong>${d.label}</strong><br><span style="opacity:0.7">${sub}</span>`)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top', (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTooltip(event) {
+  tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px');
+}
+function hideTooltip() {
+  tooltip.transition().duration(100).style('opacity', 0);
+}
+
+function draw() {
+  d3.select('#chart').selectAll('*').remove();
+  const container = document.getElementById('chart');
+  const totalWidth  = container.clientWidth  || 800;
+  const totalHeight = 460;
+  const margin = { top: 64, right: 48, bottom: 72, left: 80 };
+  const chartWidth  = totalWidth  - margin.left - margin.right;
+  const chartHeight = totalHeight - margin.top  - margin.bottom;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'chart-title chart-desc');
+  svg.append('title').attr('id', 'chart-title').text('Clock-speed mismatch between AI releases and institutional PD');
+  svg.append('desc').attr('id', 'chart-desc').text('Two parallel timelines across 18 months: 14 AI capability releases above versus a single annual PD module passing through funded, designed, scheduled, and delivered stages below.');
+
+  const gChart = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const xScaleLinear = d3.scaleLinear().domain([0, 18]).range([0, chartWidth]);
+
+  // Lane y-positions
+  const yRelease = chartHeight * 0.28;
+  const yPD = chartHeight * 0.72;
+
+  // Lane labels
+  gChart.append('text').attr('class', 'lane-label').attr('x', 0).attr('y', yRelease - 26).text('AI capability releases');
+  gChart.append('text').attr('class', 'lane-sub').attr('x', 0).attr('y', yRelease - 10).text('cadence: 4–6 weeks');
+  gChart.append('text').attr('class', 'lane-label').attr('x', 0).attr('y', yPD - 26).text('Institutional PD cycle');
+  gChart.append('text').attr('class', 'lane-sub').attr('x', 0).attr('y', yPD - 10).text('cadence: annual at best, biennial typical');
+
+  // Delivery-window band — emphasises the gap at the right
+  const deliveredMonth = pdStages[pdStages.length - 1].month;
+  gChart.append('rect')
+    .attr('class', 'delivery-band')
+    .attr('x', xScaleLinear(deliveredMonth - 1.5))
+    .attr('y', -8)
+    .attr('width', xScaleLinear(deliveredMonth + 1.5) - xScaleLinear(deliveredMonth - 1.5))
+    .attr('height', chartHeight + 16)
+    .attr('aria-hidden', 'true');
+  gChart.append('text')
+    .attr('class', 'delivery-band-label')
+    .attr('x', xScaleLinear(deliveredMonth))
+    .attr('y', 4)
+    .attr('text-anchor', 'middle')
+    .text('delivery window');
+
+  // Tracks
+  gChart.append('line').attr('class', 'track')
+    .attr('x1', 0).attr('x2', chartWidth)
+    .attr('y1', yRelease).attr('y2', yRelease);
+  gChart.append('line').attr('class', 'track secondary')
+    .attr('x1', 0).attr('x2', chartWidth)
+    .attr('y1', yPD).attr('y2', yPD);
+
+  // PD progress segments
+  for (let i = 0; i < pdStages.length - 1; i++) {
+    gChart.append('line')
+      .attr('class', 'pd-stage-segment')
+      .attr('x1', xScaleLinear(pdStages[i].month))
+      .attr('x2', xScaleLinear(pdStages[i + 1].month))
+      .attr('y1', yPD).attr('y2', yPD);
+  }
+
+  // Release dots
+  gChart.selectAll('.release-dot')
+    .data(releaseData)
+    .join('circle')
+      .attr('class', 'release-dot')
+      .attr('cx', d => xScaleLinear(d.month))
+      .attr('cy', yRelease)
+      .attr('r', 5)
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `${d.label} at month ${d.month.toFixed(1)}`)
+      .on('mouseover', showTooltip)
+      .on('mousemove', moveTooltip)
+      .on('mouseout', hideTooltip);
+
+  // PD stage dots
+  gChart.selectAll('.pd-stage-dot')
+    .data(pdStages)
+    .join('circle')
+      .attr('class', d => `pd-stage-dot ${d.stage}`)
+      .attr('cx', d => xScaleLinear(d.month))
+      .attr('cy', yPD)
+      .attr('r', d => d.stage === 'delivered' ? 7 : 4)
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `${d.label} at month ${d.month}`)
+      .on('mouseover', showTooltip)
+      .on('mousemove', moveTooltip)
+      .on('mouseout', hideTooltip);
+
+  // PD stage labels
+  gChart.selectAll('.pd-stage-text')
+    .data(pdStages)
+    .join('text')
+      .attr('class', 'tick-label')
+      .attr('x', d => xScaleLinear(d.month))
+      .attr('y', yPD - 12)
+      .attr('text-anchor', 'middle')
+      .style('font-weight', d => d.stage === 'delivered' ? 700 : 400)
+      .text(d => d.stage);
+
+  // Release version labels — sparse
+  const sparseReleases = releaseData.filter((d, i) => i === 0 || (i + 1) % 3 === 0 || i === releaseData.length - 1);
+  gChart.selectAll('.release-tick')
+    .data(sparseReleases)
+    .join('text')
+      .attr('class', 'tick-label')
+      .attr('x', d => xScaleLinear(d.month))
+      .attr('y', yRelease - 12)
+      .attr('text-anchor', 'middle')
+      .text(d => d.version);
+
+  // Month axis at bottom
+  const xAxisMonth = d3.axisBottom(xScaleLinear)
+    .tickValues([0, 6, 12, 18])
+    .tickFormat(d => `month ${d}`);
+  gChart.append('g')
+    .attr('class', 'axis')
+    .attr('transform', `translate(0,${chartHeight + 8})`)
+    .call(xAxisMonth);
+
+  // "Overtaken twice" annotation — arrows from delivered stage up to two recent releases
+  const lateReleases = releaseData.filter(d => d.month > deliveredMonth - 3 && d.month <= deliveredMonth);
+  if (lateReleases.length >= 2) {
+    const target1 = lateReleases[lateReleases.length - 2];
+    const target2 = lateReleases[lateReleases.length - 1];
+
+    [target1, target2].forEach((target, idx) => {
+      gChart.append('path')
+        .attr('class', 'annotation-line')
+        .attr('d', `M ${xScaleLinear(deliveredMonth)} ${yPD - 10}
+                    L ${xScaleLinear(target.month)} ${yRelease + 12}`)
+        .attr('marker-end', null);
+    });
+
+    gChart.append('text')
+      .attr('class', 'annotation-text')
+      .attr('x', xScaleLinear(deliveredMonth) - 20)
+      .attr('y', (yRelease + yPD) / 2)
+      .attr('text-anchor', 'end')
+      .text('overtaken twice');
+  }
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

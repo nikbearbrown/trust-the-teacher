@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 440" role="img" aria-labelledby="t12-03 d12-03">
+  <title id="t12-03">Bastani three-condition closed-book post-test performance — Control, GPT Tutor, GPT Base</title>
+  <desc id="d12-03">Vertical bar chart of closed-book post-test scores across three conditions. Control and GPT Tutor (scaffolded) sit near 100 percent of baseline; GPT Base (unscaffolded) drops to 83 — a seventeen-percent gap relative to control.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .val { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #1a1714; }
+      .gap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+    </style>
+    <marker id="ar03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+    <marker id="ar03s" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4a4540"/>
+    </marker>
+  </defs>
+  <rect width="700" height="440" fill="#fdfcfb"/>
+
+  <!-- Title block -->
+  <text x="350" y="32" text-anchor="middle" class="ti">The same word, two policy objects — Bastani et al. (2025), closed-book post-test</text>
+  <text x="350" y="50" text-anchor="middle" class="sm">Three conditions. Scaffolded AI is neutral. Unscaffolded AI loses seventeen percent.</text>
+
+  <!-- Y-axis -->
+  <line x1="120" y1="84" x2="120" y2="340" stroke="#8a8480" stroke-width="1"/>
+  <line x1="120" y1="340" x2="620" y2="340" stroke="#8a8480" stroke-width="1"/>
+
+  <!-- Y ticks: 0 → 340, 25 → 276, 50 → 212, 75 → 148, 100 → 84 (256 px / 100 units = 2.56 px/unit) -->
+  <line x1="118" y1="340" x2="120" y2="340" stroke="#4a4540"/>
+  <text x="114" y="343" text-anchor="end" class="sm">0</text>
+  <line x1="118" y1="276" x2="120" y2="276" stroke="#4a4540"/>
+  <text x="114" y="279" text-anchor="end" class="sm">25</text>
+  <line x1="118" y1="212" x2="120" y2="212" stroke="#4a4540"/>
+  <text x="114" y="215" text-anchor="end" class="sm">50</text>
+  <line x1="118" y1="148" x2="120" y2="148" stroke="#4a4540"/>
+  <text x="114" y="151" text-anchor="end" class="sm">75</text>
+  <line x1="118" y1="84" x2="120" y2="84" stroke="#4a4540"/>
+  <text x="114" y="87" text-anchor="end" class="sm">100</text>
+
+  <!-- Y-axis title (rotated) -->
+  <text x="50" y="212" text-anchor="middle" class="sm" transform="rotate(-90 50 212)">Closed-book performance (% of Control)</text>
+
+  <!-- Light gridline at 100 reference -->
+  <line x1="120" y1="84" x2="620" y2="84" stroke="#c8c4c0" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+  <!-- Bars — three conditions. Control 100 → h=256; GPT Tutor 100 → h=256; GPT Base 83 → h=212.48 (y=127.52) -->
+  <!-- Bar width 90, gap 70, x starts 170 -->
+  <g>
+    <!-- Control: 100 -->
+    <rect x="170" y="84" width="90" height="256" fill="#4a4540" stroke="#1a1714" stroke-width="0.5"/>
+    <text x="215" y="78" text-anchor="middle" class="val">100</text>
+
+    <!-- GPT Tutor (scaffolded): ~100 (neutral) -->
+    <rect x="330" y="84" width="90" height="256" fill="#4a4540" stroke="#1a1714" stroke-width="0.5"/>
+    <text x="375" y="78" text-anchor="middle" class="val">100</text>
+
+    <!-- GPT Base (unscaffolded): 83 -->
+    <rect x="490" y="127.52" width="90" height="212.48" fill="#1a1714" stroke="#1a1714" stroke-width="0.5"/>
+    <text x="535" y="121" text-anchor="middle" class="val">83</text>
+  </g>
+
+  <!-- Condition labels under bars -->
+  <text x="215" y="360" text-anchor="middle" class="lb">Control</text>
+  <text x="215" y="375" text-anchor="middle" class="sm">no AI access</text>
+  <text x="215" y="389" text-anchor="middle" class="sm">during practice</text>
+
+  <text x="375" y="360" text-anchor="middle" class="lb">GPT Tutor</text>
+  <text x="375" y="375" text-anchor="middle" class="sm">scaffolded —</text>
+  <text x="375" y="389" text-anchor="middle" class="sm">prompts that teach</text>
+
+  <text x="535" y="360" text-anchor="middle" class="lb">GPT Base</text>
+  <text x="535" y="375" text-anchor="middle" class="sm">unscaffolded —</text>
+  <text x="535" y="389" text-anchor="middle" class="sm">answers on demand</text>
+
+  <!-- -17% gap annotation: bracket between top of control (84) and top of GPT Base (127.52) -->
+  <!-- Horizontal reference dashed line from 100 across to right of bar 3 -->
+  <line x1="580" y1="84" x2="610" y2="84" stroke="#1a1714" stroke-width="1" stroke-dasharray="3 2"/>
+  <line x1="580" y1="127.52" x2="610" y2="127.52" stroke="#1a1714" stroke-width="1"/>
+  <!-- vertical bracket -->
+  <line x1="605" y1="84" x2="605" y2="127.52" stroke="#1a1714" stroke-width="1.5"/>
+  <line x1="603" y1="84" x2="607" y2="84" stroke="#1a1714" stroke-width="1.5"/>
+  <line x1="603" y1="127.52" x2="607" y2="127.52" stroke="#1a1714" stroke-width="1.5"/>
+  <!-- gap label -->
+  <text x="615" y="105" class="gap">−17%</text>
+  <text x="615" y="118" class="sm">vs Control</text>
+
+  <!-- Annotation pulling out the policy implication — arrow from bar 1/2 cluster -->
+  <path d="M 295 180 C 295 160 305 145 325 145" fill="none" stroke="#4a4540" stroke-width="0.8" marker-end="url(#ar03s)"/>
+  <text x="270" y="200" text-anchor="end" class="sm">scaffolded condition:</text>
+  <text x="270" y="214" text-anchor="end" class="sm">neutral on post-test</text>
+
+  <!-- Annotation: GPT Base drop -->
+  <path d="M 460 175 C 470 175 478 145 488 140" fill="none" stroke="#1a1714" stroke-width="0.8" marker-end="url(#ar03)"/>
+  <text x="455" y="166" text-anchor="end" class="lb">unscaffolded:</text>
+  <text x="455" y="180" text-anchor="end" class="sm">fluent in the moment,</text>
+  <text x="455" y="194" text-anchor="end" class="sm">underperforms when</text>
+  <text x="455" y="208" text-anchor="end" class="sm">the tool is taken away</text>
+
+  <!-- Caption -->
+  <text x="350" y="418" text-anchor="middle" class="cap">A statute that does not distinguish these conditions authorizes whichever one the procurement office bought cheapest.</text>
+  <text x="350" y="432" text-anchor="middle" class="cap">Source: Bastani et al., PNAS 122(26): e2422633122 (2025).</text>
+</svg>

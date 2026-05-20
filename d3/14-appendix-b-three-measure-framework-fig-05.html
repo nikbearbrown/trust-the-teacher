@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure B.5 — Five failure modes, five structural fixes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+    --color-panel:     #F5F2EE;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+      --color-panel:     #1A1714;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 65ch; }
+  #chart { width: 100%; min-height: 460px; }
+  .fail-card { fill: var(--color-panel); stroke: var(--color-secondary); transition: stroke-width 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .fix-card  { fill: var(--color-white); stroke: var(--color-secondary); transition: stroke-width 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .fail-card.last, .fix-card.last { stroke-width: 1.25; }
+  .fail-card.highlight, .fix-card.highlight { stroke: var(--color-ink); stroke-width: 1.5; }
+  .col-head    { font-family: 'EB Garamond', Georgia, serif; font-size: 12px; font-weight: 700; fill: var(--color-ink); }
+  .fail-num    { font-family: 'EB Garamond', Georgia, serif; font-size: 12px; font-weight: 700; fill: var(--color-ink); }
+  .fail-title  { font-family: 'EB Garamond', Georgia, serif; font-size: 11px; font-weight: 700; fill: var(--color-ink); }
+  .fail-body   { font-family: 'EB Garamond', Georgia, serif; font-size: 10px; fill: var(--color-secondary); }
+  .fix-title   { font-family: 'EB Garamond', Georgia, serif; font-size: 11px; font-weight: 700; fill: var(--color-ink); }
+  .fix-body    { font-family: 'EB Garamond', Georgia, serif; font-size: 10px; fill: var(--color-ink); }
+  .link        { stroke: var(--color-ink); stroke-width: 1; fill: none; transition: stroke-width 200ms cubic-bezier(0.2,0.8,0.2,1); }
+  .axis-rule   { stroke: var(--color-ink); stroke-width: 0.8; }
+  .caption     { font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 11px; fill: var(--color-secondary); margin-top: 12px; max-width: 65ch; }
+  .tooltip     { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-family: 'Inter', sans-serif; font-size: 12px; max-width: 300px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure B.5 — Five failure modes, five structural fixes</h1>
+<p class="subtitle">Each fix is written into the pilot charter before the pilot launches. Retrofitting after a failure costs more than the fix.</p>
+<div id="chart" role="img" aria-labelledby="chart-title chart-desc"></div>
+<p class="caption">Hover any row to see the failure and its paired fix together. The last row is bolded — it is the failure mode the others quietly route back into if not actively prevented.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const rowsData = [
+  {
+    id: 1,
+    failTitle: 'Pilot becomes high-stakes',
+    failBody: ['Year 1 formative-use promise gets', 'converted; teachers experience the', 'shift as bait-and-switch.'],
+    fixTitle: 'Written charter, named years',
+    fixBody:  ['Board-approved charter fixes the formative', 'period in years; conversion to stakes requires', 'a specific board action with public notice.'],
+    tooltip:  'The political coalition supporting the pilot fractures when formative-use promises convert without notice. The written charter is the only thing that survives the conversion pressure.'
+  },
+  {
+    id: 2,
+    failTitle: 'Post-test gets drilled',
+    failBody: ['Instructional time narrows onto item', 'types on the assessment. Carrell-West', 'pathology reproduced.'],
+    fixTitle: 'Transfer-items audit + downstream-course check',
+    fixBody:  ['Conducted before procurement. Annual review', 'compares post-test scores against next-course', 'performance. Proprietary items fail the audit.'],
+    tooltip:  'Drilled fluency without transfer is exactly the failure Carrell-West documented at Air Force Academy. The Calc I final passes; Calc II fails.'
+  },
+  {
+    id: 3,
+    failTitle: 'Peer panel becomes paper',
+    failBody: ['Reviews shrink to 20 minutes, rubric', 'is applied perfunctorily, determination', 'becomes pro-forma.'],
+    fixTitle: 'Fund the peer time, keep panels small',
+    fixBody:  ['Substitute coverage on review day or a stipend', 'per reviewer. NBPTS funds it; the district analog', 'has to. Unfunded review is the failure itself.'],
+    tooltip:  'Unfunded peer review is the failure mode the appendix exists to design against. The structural fix is funding, not a new vendor product.'
+  },
+  {
+    id: 4,
+    failTitle: 'Union reads as additive',
+    failBody: ['New measures arrive on top of old', 'ones with no workload reduction or pay.', 'Twenty years of pattern says yes.'],
+    fixTitle: 'Subtract something in the same announcement',
+    fixBody:  ['Drop a summative observation cycle, retire SET', 'use, simplify documentation. The substitution', 'signal has to be in the same memo, not later.'],
+    tooltip:  'Without an explicit subtraction in the same memo, the new measures are experienced as load. The substitution is the political-economy move.'
+  },
+  {
+    id: 5,
+    failTitle: 'Gain measure dominates composite',
+    failBody: ['Quantitative gain weighted disproportionately;', 'value-added era pathology in new costume.', 'Productive-struggle teacher penalised again.'],
+    fixTitle: 'Keep the measures separate — no single composite',
+    fixBody:  ['Three independent scores, three narratives. No', 'measure can produce a determination on its own.', 'Personnel decisions on integration, not composite.'],
+    tooltip:  'This is the load-bearing fix. If the three measures collapse back into a single composite, the productive-struggle teacher gets penalised exactly as she would under the current system.',
+    last: true
+  }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, d) {
+  tooltip.html(`<strong>Failure ${d.id} — ${d.failTitle}</strong><br/>${d.tooltip}`)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTip(event) { tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px'); }
+function hideTip() { tooltip.transition().duration(100).style('opacity', 0); }
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+  const totalWidth  = container.clientWidth || 700;
+  const totalHeight = 460;
+  const margin = { top: 56, right: 24, bottom: 32, left: 24 };
+  const innerW = totalWidth - margin.left - margin.right;
+  const gap = 36;
+  const colWidth = (innerW - gap) / 2;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'chart-title chart-desc');
+  svg.append('title').attr('id', 'chart-title').text('Five failure modes paired with five structural fixes');
+  svg.append('desc').attr('id', 'chart-desc').text('Two-column matrix mapping each pilot failure mode on the left to the structural fix on the right.');
+
+  const defs = svg.append('defs');
+  defs.append('marker')
+    .attr('id', 'arrowEnd5').attr('markerWidth', 8).attr('markerHeight', 6)
+    .attr('refX', 7).attr('refY', 3).attr('orient', 'auto')
+    .append('polygon').attr('points', '0 0, 8 3, 0 6').attr('fill', 'currentColor');
+
+  const gChart = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Column headers
+  gChart.append('text').attr('class', 'col-head').attr('x', colWidth / 2).attr('y', -22).attr('text-anchor', 'middle').text('Failure mode');
+  gChart.append('text').attr('class', 'col-head').attr('x', colWidth + gap + colWidth / 2).attr('y', -22).attr('text-anchor', 'middle').text('Structural fix');
+  gChart.append('line').attr('class', 'axis-rule').attr('x1', 0).attr('x2', innerW).attr('y1', -12).attr('y2', -12);
+
+  const rowHeight = 66;
+  const rowGap = 6;
+  const yScaleBand = d3.scaleBand()
+    .domain(rowsData.map(d => d.id))
+    .range([0, (rowHeight + rowGap) * rowsData.length])
+    .paddingInner(rowGap / (rowHeight + rowGap));
+
+  const rowG = gChart.selectAll('.row')
+    .data(rowsData, d => d.id)
+    .join('g')
+      .attr('class', 'row')
+      .attr('transform', d => `translate(0, ${yScaleBand(d.id)})`);
+
+  rowG.append('rect')
+    .attr('class', d => d.last ? 'fail-card last' : 'fail-card')
+    .attr('x', 0).attr('y', 0)
+    .attr('width', colWidth).attr('height', rowHeight)
+    .attr('tabindex', 0)
+    .attr('aria-label', d => `Failure ${d.id}: ${d.failTitle}. Fix: ${d.fixTitle}`)
+    .on('mouseover', function (event, d) {
+      const parent = d3.select(this.parentNode);
+      parent.select('.fail-card').classed('highlight', true);
+      parent.select('.fix-card').classed('highlight', true);
+      parent.select('.link').attr('stroke-width', 1.5);
+      showTip(event, d);
+    })
+    .on('mousemove', moveTip)
+    .on('mouseout', function () {
+      const parent = d3.select(this.parentNode);
+      parent.select('.fail-card').classed('highlight', false);
+      parent.select('.fix-card').classed('highlight', false);
+      parent.select('.link').attr('stroke-width', 1);
+      hideTip();
+    });
+
+  rowG.append('text').attr('class', 'fail-num').attr('x', 12).attr('y', 20).text(d => `${d.id}.`);
+  rowG.append('text').attr('class', 'fail-title').attr('x', 32).attr('y', 20).text(d => d.failTitle);
+  rowG.each(function (d) {
+    d3.select(this).selectAll('.fail-body')
+      .data(d.failBody)
+      .join('text')
+        .attr('class', 'fail-body')
+        .attr('x', 12)
+        .attr('y', (_, i) => 38 + i * 12)
+        .text(t => t);
+  });
+
+  rowG.append('path')
+    .attr('class', 'link')
+    .attr('d', `M ${colWidth} ${rowHeight / 2} L ${colWidth + gap} ${rowHeight / 2}`)
+    .attr('marker-end', 'url(#arrowEnd5)');
+
+  rowG.append('rect')
+    .attr('class', d => d.last ? 'fix-card last' : 'fix-card')
+    .attr('x', colWidth + gap).attr('y', 0)
+    .attr('width', colWidth).attr('height', rowHeight);
+
+  rowG.append('text').attr('class', 'fix-title').attr('x', colWidth + gap + 12).attr('y', 20).text(d => d.fixTitle);
+  rowG.each(function (d) {
+    d3.select(this).selectAll('.fix-body')
+      .data(d.fixBody)
+      .join('text')
+        .attr('class', 'fix-body')
+        .attr('x', colWidth + gap + 12)
+        .attr('y', (_, i) => 38 + i * 12)
+        .text(t => t);
+  });
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

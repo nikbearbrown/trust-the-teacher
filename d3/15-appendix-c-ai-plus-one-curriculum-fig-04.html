@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure C.4 — Ten-month MVP pacing guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', -apple-system, sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 20px; max-width: 65ch; }
+  #chart { width: 100%; min-height: 500px; position: relative; }
+  .axis text { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: var(--color-secondary); }
+  .axis path, .axis line { stroke: var(--color-secondary); shape-rendering: crispEdges; }
+  .phase-band { fill: color-mix(in srgb, var(--color-secondary) 4%, transparent); }
+  .phase-band.review { fill: color-mix(in srgb, var(--color-red) 4%, transparent); }
+  .phase-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; fill: var(--color-secondary); text-transform: uppercase; }
+  .domain-bar { stroke: var(--color-ink); stroke-width: 0.75; transition: opacity 200ms cubic-bezier(0.2,0.8,0.2,1); cursor: pointer; }
+  .domain-bar.foundation { fill: var(--color-ink); }
+  .domain-bar.domain { fill: var(--color-secondary); }
+  .domain-bar.synthesis { fill: color-mix(in srgb, var(--color-secondary) 60%, var(--color-white)); }
+  .domain-bar.review { fill: var(--color-ink); }
+  .domain-bar:hover { opacity: 0.78; }
+  .bar-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; fill: var(--color-white); pointer-events: none; }
+  .bar-label.dark { fill: var(--color-ink); }
+  .bar-sub { font-family: 'Inter', sans-serif; font-size: 10px; fill: var(--color-secondary); }
+  .artifact-eyebrow { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.06em; fill: var(--color-secondary); text-transform: uppercase; }
+  .artifact-stem { stroke: var(--color-ink); stroke-width: 0.6; stroke-dasharray: 3 2; }
+  .artifact-dot { fill: var(--color-red); }
+  .artifact-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 11px; fill: var(--color-ink); }
+  .artifact-note { font-family: 'EB Garamond', Georgia, serif; font-size: 10px; font-style: italic; fill: var(--color-secondary); }
+  .meeting-dot { stroke: var(--color-ink); stroke-width: 1; }
+  .meeting-dot.open { fill: var(--color-white); }
+  .meeting-dot.solid { fill: var(--color-ink); }
+  .legend-text { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 12px; max-width: 65ch; font-style: italic; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 8px 12px; font-size: 12px; font-family: 'Inter', sans-serif; max-width: 260px; line-height: 1.4; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure C.4 — Ten-month MVP pacing</h1>
+<p class="subtitle">Monday after, to portfolio review. One cohort meeting per month, sixty minutes, one artifact produced. Hover any bar to see the deliverable.</p>
+<div id="chart" role="main"></div>
+<p class="caption">Hours come from the AI dividend on administrative load — not added on top of a saturated workday.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const bars = [
+  { id: 'D1', start: 1, end: 3, label: 'Domain 1 — AI Fundamentals', kind: 'foundation',
+    detail: 'HarvardX / MITx / Stanford self-paced. 2–3 hrs/week.',
+    blurb: 'Months 1–3: each teacher completes a defined slate of free courses. Cohort meetings debug what survived contact with the room.' },
+  { id: 'D2', start: 4, end: 4, label: 'D2', kind: 'domain',
+    detail: 'Subject-specific pedagogy',
+    blurb: 'Month 4: subject-specific assignment redesign. PCK-anchored.' },
+  { id: 'D3', start: 5, end: 5, label: 'D3', kind: 'domain',
+    detail: 'Cognitive offloading',
+    blurb: 'Month 5: offloading-vs-engagement assignment with student-work evidence. Bastani redesign in practice.' },
+  { id: 'D4', start: 6, end: 6, label: 'D4', kind: 'domain',
+    detail: 'Equity',
+    blurb: 'Month 6: equity-focused lesson redesign. Floor-first design analysis attached.' },
+  { id: 'D5', start: 7, end: 7, label: 'D5', kind: 'domain',
+    detail: 'Assessment',
+    blurb: 'Month 7: formative-assessment defense. Closed-book / oral follow-up redesign.' },
+  { id: 'SY', start: 8, end: 8, label: 'Synthesis', kind: 'synthesis',
+    detail: 'Portfolio assembly',
+    blurb: 'Month 8: artifacts bound; cohort prepares for review.' },
+  { id: 'PR', start: 9, end: 10, label: 'Peer panel review', kind: 'review',
+    detail: '3 portfolios × 2 sessions',
+    blurb: 'Months 9–10: structured rubric, written feedback, determinations recorded as Measure 3 portfolios.' }
+];
+
+const artifacts = [
+  { month: 3,  title: 'One-page reflection',           note: '+ certificate slate' },
+  { month: 4,  title: 'Assignment redesign',           note: 'subject-specific' },
+  { month: 5,  title: 'Offloading assignment',         note: '+ student work' },
+  { month: 6,  title: 'Equity-focused redesign',       note: 'floor-first design' },
+  { month: 7,  title: 'Formative defense',             note: 'case-conference' },
+  { month: 8,  title: 'Full portfolio assembled',      note: '5 artifacts bound' },
+  { month: 10, title: 'Building-level certificate',    note: 'Appendix B Measure 3' }
+];
+
+const meetings = [
+  { month: 1,  kind: 'open' }, { month: 2, kind: 'open' }, { month: 3, kind: 'open' },
+  { month: 4,  kind: 'solid' }, { month: 5, kind: 'solid' }, { month: 6, kind: 'solid' },
+  { month: 7,  kind: 'solid' }, { month: 8, kind: 'solid' },
+  { month: 9,  kind: 'panel' }, { month: 10, kind: 'panel' }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, d) {
+  tooltip.html(`<strong>${d.label}</strong><br>${d.blurb}`)
+    .style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTip(event) { tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px'); }
+function hideTip() { tooltip.transition().duration(100).style('opacity', 0); }
+
+function draw() {
+  d3.select('#chart').selectAll('*').remove();
+  const container = document.getElementById('chart');
+  const totalWidth  = container.clientWidth  || 900;
+  const totalHeight = 500;
+  const margin = { top: 40, right: 24, bottom: 80, left: 24 };
+  const cw = totalWidth - margin.left - margin.right;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'fc4-t fc4-d');
+  svg.append('title').attr('id', 'fc4-t').text('Ten-month MVP pacing guide');
+  svg.append('desc').attr('id', 'fc4-d').text('Horizontal Gantt-style timeline across ten months showing Domain 1 coursework, Domains 2 through 5 monthly rotation, synthesis, and peer panel review with artifact deliverables.');
+
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const x = d3.scaleLinear().domain([0.5, 10.5]).range([20, cw - 20]);
+
+  // Phase bands
+  g.append('rect').attr('class', 'phase-band')
+    .attr('x', x(0.5)).attr('y', 8).attr('width', x(3.5) - x(0.5)).attr('height', 200);
+  g.append('rect').attr('class', 'phase-band review')
+    .attr('x', x(8.5)).attr('y', 8).attr('width', x(10.5) - x(8.5)).attr('height', 200);
+
+  g.append('text').attr('class', 'phase-label').attr('text-anchor', 'middle').attr('x', x(2)).attr('y', 24).text('Phase A · Foundation');
+  g.append('text').attr('class', 'phase-label').attr('text-anchor', 'middle').attr('x', x(6)).attr('y', 24).text('Phase B · Domain rotation');
+  g.append('text').attr('class', 'phase-label').attr('text-anchor', 'middle').attr('x', x(9.5)).attr('y', 24).text('Phase C · Peer review');
+
+  const xAxis = d3.axisTop(x).tickValues(d3.range(1, 11)).tickFormat(d3.format('d')).tickSize(4);
+  g.append('g').attr('class', 'axis').attr('transform', `translate(0,8)`).call(xAxis);
+  g.append('text').attr('class', 'phase-label').attr('x', 0).attr('y', -16).text('Month');
+
+  const barY = 60;
+  const barH = 36;
+  bars.forEach(b => {
+    const bx = x(b.start - 0.45);
+    const bw = x(b.end + 0.45) - bx;
+    const gBar = g.append('g').attr('tabindex', 0)
+      .attr('aria-label', `${b.label}, months ${b.start} to ${b.end}: ${b.detail}`)
+      .on('mouseover', (e) => showTip(e, b)).on('mousemove', moveTip).on('mouseout', hideTip)
+      .on('focus', (e) => showTip(e, b)).on('blur', hideTip);
+    gBar.append('rect').attr('class', `domain-bar ${b.kind}`)
+      .attr('x', bx).attr('y', barY).attr('width', bw).attr('height', barH);
+
+    const labelClass = b.kind === 'synthesis' ? 'bar-label dark' : 'bar-label';
+    gBar.append('text').attr('class', labelClass)
+      .attr('x', bx + bw / 2).attr('y', barY + barH / 2 + 4).attr('text-anchor', 'middle')
+      .text(b.label);
+    gBar.append('text').attr('class', 'bar-sub')
+      .attr('x', bx + bw / 2).attr('y', barY + barH + 14).attr('text-anchor', 'middle')
+      .text(b.detail);
+  });
+
+  const artY = 180;
+  g.append('text').attr('class', 'artifact-eyebrow').attr('x', 0).attr('y', artY).text('Artifact delivered');
+  g.append('line').attr('x1', 0).attr('x2', cw).attr('y1', artY + 8).attr('y2', artY + 8).attr('stroke', 'var(--color-border)').attr('stroke-width', 0.5);
+
+  artifacts.forEach(a => {
+    const ax = x(a.month);
+    g.append('line').attr('class', 'artifact-stem')
+      .attr('x1', ax).attr('x2', ax).attr('y1', barY + barH).attr('y2', artY + 24);
+    g.append('circle').attr('class', 'artifact-dot').attr('cx', ax).attr('cy', artY + 24).attr('r', 4);
+    g.append('text').attr('class', 'artifact-eyebrow').attr('x', ax).attr('y', artY + 44).attr('text-anchor', 'middle').text(`M${a.month}`);
+    g.append('text').attr('class', 'artifact-label').attr('x', ax).attr('y', artY + 60).attr('text-anchor', 'middle').text(a.title);
+    g.append('text').attr('class', 'artifact-note').attr('x', ax).attr('y', artY + 74).attr('text-anchor', 'middle').text(a.note);
+  });
+
+  const meetY = artY + 110;
+  g.append('text').attr('class', 'artifact-eyebrow').attr('x', 0).attr('y', meetY).text('Cohort meeting cadence');
+  g.append('line').attr('x1', 0).attr('x2', cw).attr('y1', meetY + 8).attr('y2', meetY + 8).attr('stroke', 'var(--color-border)').attr('stroke-width', 0.5);
+  meetings.forEach(m => {
+    const mx = x(m.month);
+    const r = m.kind === 'panel' ? 6 : 4.5;
+    g.append('circle')
+      .attr('class', `meeting-dot ${m.kind === 'open' ? 'open' : 'solid'}`)
+      .attr('cx', mx).attr('cy', meetY + 24).attr('r', r)
+      .attr('aria-label', `Month ${m.month} ${m.kind} meeting`);
+  });
+
+  const lY = meetY + 50;
+  const legend = g.append('g').attr('transform', `translate(0, ${lY})`);
+  legend.append('circle').attr('class', 'meeting-dot open').attr('cx', 8).attr('cy', 0).attr('r', 4.5);
+  legend.append('text').attr('class', 'legend-text').attr('x', 20).attr('y', 4).text('orientation / debug, 60 min');
+  legend.append('circle').attr('class', 'meeting-dot solid').attr('cx', 220).attr('cy', 0).attr('r', 4.5);
+  legend.append('text').attr('class', 'legend-text').attr('x', 232).attr('y', 4).text('domain meeting + artifact');
+  legend.append('circle').attr('class', 'meeting-dot solid').attr('cx', 410).attr('cy', 0).attr('r', 6);
+  legend.append('text').attr('class', 'legend-text').attr('x', 424).attr('y', 4).text('portfolio panel, 90 min');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 10.3 — The Carrell-West reversal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 24px; max-width: 75ch; }
+  #chart { width: 100%; height: 480px; border: 1px solid var(--color-border); padding: 16px; }
+  .axis text { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: var(--color-secondary); }
+  .axis path, .axis line { stroke: var(--color-secondary); shape-rendering: crispEdges; }
+  .gridline { stroke: var(--color-border); stroke-opacity: 0.6; stroke-dasharray: 2,3; }
+  .eval-bar { fill: var(--color-border); opacity: 0.45; }
+  .eval-bar.high { fill: var(--color-ochre); opacity: 0.30; }
+  .eval-label { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .line-less { stroke: var(--color-red); stroke-width: 2.5; fill: none; }
+  .line-exp  { stroke: var(--color-ink); stroke-width: 2.5; stroke-dasharray: 7,4; fill: none; }
+  .pt-less { fill: var(--color-red); }
+  .pt-exp { fill: var(--color-white); stroke: var(--color-ink); stroke-width: 2; }
+  .endpoint-label { font-family: 'Inter', sans-serif; font-size: 12px; fill: var(--color-ink); }
+  .endpoint-sub { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-secondary); }
+  .crossover { stroke: var(--color-ochre); stroke-width: 1.5; stroke-dasharray: 3,2; fill: none; }
+  .crossover-label { font-family: 'Inter', sans-serif; font-style: italic; font-size: 11px; fill: var(--color-ochre); }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 16px; max-width: 75ch; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 6px 10px; font-size: 12px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure 10.3 — The Carrell-West reversal</h1>
+<p class="subtitle">Air Force Academy random assignment, common downstream finals: evaluations tracked the first-course grade and inverted the downstream signal.</p>
+<div id="chart" role="img" aria-labelledby="cw-title cw-desc"></div>
+<p class="caption">Less-experienced instructors earned higher Calc I grades and higher student evaluations; experienced PhD faculty earned lower Calc I grades and lower evaluations, but their students did better in Calc II and Calc III. The instrument rewarded the instructors whose students were comfortable, not the ones whose students were learning.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const courseData = [
+  { course: 'Calc I',   x: 0, less: 0.78, exp: 0.32, evalLess: 4.3, evalExp: 3.6 },
+  { course: 'Calc II',  x: 1, less: 0.38, exp: 0.62, evalLess: null, evalExp: null },
+  { course: 'Calc III', x: 2, less: 0.28, exp: 0.78, evalLess: null, evalExp: null }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, html) {
+  tooltip.html(html)
+    .style('left', (event.pageX + 12) + 'px')
+    .style('top',  (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTip(event) { tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px'); }
+function hideTip() { tooltip.transition().duration(100).style('opacity', 0); }
+
+function draw() {
+  const container = document.getElementById('chart');
+  d3.select('#chart').selectAll('*').remove();
+  const totalWidth  = container.clientWidth  || 800;
+  const totalHeight = container.clientHeight || 480;
+  const margin = { top: 84, right: 180, bottom: 64, left: 88 };
+  const chartWidth  = totalWidth  - margin.left - margin.right;
+  const chartHeight = totalHeight - margin.top  - margin.bottom;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width',  totalWidth)
+    .attr('height', totalHeight)
+    .attr('role', 'img')
+    .attr('aria-labelledby', 'cw-title cw-desc');
+  svg.append('title').attr('id', 'cw-title').text('The Carrell-West reversal');
+  svg.append('desc').attr('id', 'cw-desc')
+    .text('Two crossing lines compare Calc I, Calc II, and Calc III grades for students taught by less-experienced and experienced instructors; background bars show inversely tracking student evaluation ratings.');
+
+  const gChart = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const xScalePoint = d3.scalePoint()
+    .domain(courseData.map(d => d.course))
+    .range([0, chartWidth])
+    .padding(0.25);
+
+  const yScaleLinear = d3.scaleLinear()
+    .domain([0, 1])
+    .range([chartHeight, 0]);
+
+  // Gridlines
+  gChart.append('g').attr('class', 'gridlines')
+    .selectAll('line')
+    .data(courseData)
+    .join('line')
+      .attr('class', 'gridline')
+      .attr('x1', d => xScalePoint(d.course))
+      .attr('x2', d => xScalePoint(d.course))
+      .attr('y1', 0)
+      .attr('y2', chartHeight)
+      .attr('aria-hidden', 'true');
+
+  // Evaluation bars in margin above the chart
+  const evalY = -56;
+  const evalHeight = 22;
+  const calcIx = xScalePoint('Calc I');
+
+  // less-experienced eval bar (higher)
+  gChart.append('rect')
+    .attr('class', 'eval-bar high')
+    .attr('x', calcIx - 70)
+    .attr('y', evalY)
+    .attr('width', 140 * (4.3 / 5.0))
+    .attr('height', evalHeight)
+    .attr('tabindex', 0)
+    .attr('aria-label', 'Less-experienced instructor mean evaluation: 4.3 of 5')
+    .on('mouseover', (event) => showTip(event, '<strong>Less-experienced</strong>: 4.3 / 5 evaluation'))
+    .on('mousemove', moveTip).on('mouseout', hideTip);
+  gChart.append('text')
+    .attr('class', 'eval-label')
+    .attr('x', calcIx - 70)
+    .attr('y', evalY - 4)
+    .text('evaluation 4.3 (less-experienced)');
+
+  // experienced eval bar (lower)
+  gChart.append('rect')
+    .attr('class', 'eval-bar')
+    .attr('x', calcIx - 70)
+    .attr('y', evalY + evalHeight + 4)
+    .attr('width', 140 * (3.6 / 5.0))
+    .attr('height', evalHeight)
+    .attr('tabindex', 0)
+    .attr('aria-label', 'Experienced PhD instructor mean evaluation: 3.6 of 5')
+    .on('mouseover', (event) => showTip(event, '<strong>Experienced PhD</strong>: 3.6 / 5 evaluation'))
+    .on('mousemove', moveTip).on('mouseout', hideTip);
+  gChart.append('text')
+    .attr('class', 'eval-label')
+    .attr('x', calcIx - 70)
+    .attr('y', evalY + evalHeight + 4 + evalHeight + 12)
+    .text('evaluation 3.6 (experienced)');
+
+  // x-axis
+  gChart.append('g').attr('class', 'axis')
+    .attr('transform', `translate(0,${chartHeight})`)
+    .call(d3.axisBottom(xScalePoint));
+  gChart.append('text')
+    .attr('x', chartWidth / 2)
+    .attr('y', chartHeight + 44)
+    .attr('text-anchor', 'middle')
+    .attr('font-family', "'Inter', sans-serif")
+    .attr('font-size', 12)
+    .attr('fill', 'var(--color-secondary)')
+    .text('Course in the calculus sequence');
+
+  // y-axis
+  gChart.append('g').attr('class', 'axis')
+    .call(d3.axisLeft(yScaleLinear).ticks(5).tickFormat(d3.format('.1f')));
+  gChart.append('text')
+    .attr('transform', `rotate(-90)`)
+    .attr('x', -chartHeight / 2)
+    .attr('y', -56)
+    .attr('text-anchor', 'middle')
+    .attr('font-family', "'Inter', sans-serif")
+    .attr('font-size', 12)
+    .attr('fill', 'var(--color-secondary)')
+    .text('Section mean grade (standardized)');
+
+  // Line generators
+  const lineLess = d3.line()
+    .x(d => xScalePoint(d.course))
+    .y(d => yScaleLinear(d.less));
+  const lineExp = d3.line()
+    .x(d => xScalePoint(d.course))
+    .y(d => yScaleLinear(d.exp));
+
+  gChart.append('path').datum(courseData).attr('class', 'line-less').attr('d', lineLess);
+  gChart.append('path').datum(courseData).attr('class', 'line-exp').attr('d', lineExp);
+
+  // Crossover marker (between Calc I and Calc II)
+  const crossoverX = (xScalePoint('Calc I') + xScalePoint('Calc II')) / 2;
+  const crossoverY = yScaleLinear(0.55);
+  gChart.append('circle')
+    .attr('class', 'crossover')
+    .attr('cx', crossoverX)
+    .attr('cy', crossoverY)
+    .attr('r', 16);
+  gChart.append('text')
+    .attr('class', 'crossover-label')
+    .attr('x', crossoverX)
+    .attr('y', crossoverY + 30)
+    .attr('text-anchor', 'middle')
+    .text('crossover');
+
+  // Data points
+  gChart.selectAll('.pt-less')
+    .data(courseData).join('circle')
+      .attr('class', 'pt-less')
+      .attr('cx', d => xScalePoint(d.course))
+      .attr('cy', d => yScaleLinear(d.less))
+      .attr('r', 5)
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `Less-experienced ${d.course}: ${d.less.toFixed(2)}`)
+      .on('mouseover', (event, d) => showTip(event, `<strong>Less-experienced — ${d.course}</strong><br>grade: ${d.less.toFixed(2)}`))
+      .on('mousemove', moveTip).on('mouseout', hideTip);
+  gChart.selectAll('.pt-exp')
+    .data(courseData).join('circle')
+      .attr('class', 'pt-exp')
+      .attr('cx', d => xScalePoint(d.course))
+      .attr('cy', d => yScaleLinear(d.exp))
+      .attr('r', 5)
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `Experienced PhD ${d.course}: ${d.exp.toFixed(2)}`)
+      .on('mouseover', (event, d) => showTip(event, `<strong>Experienced PhD — ${d.course}</strong><br>grade: ${d.exp.toFixed(2)}`))
+      .on('mousemove', moveTip).on('mouseout', hideTip);
+
+  // Endpoint labels
+  const endX = xScalePoint('Calc III') + 14;
+  gChart.append('text')
+    .attr('class', 'endpoint-label')
+    .attr('x', endX)
+    .attr('y', yScaleLinear(0.28) + 4)
+    .text('Less-experienced');
+  gChart.append('text')
+    .attr('class', 'endpoint-sub')
+    .attr('x', endX)
+    .attr('y', yScaleLinear(0.28) + 20)
+    .text('(taught to the test)');
+  gChart.append('text')
+    .attr('class', 'endpoint-label')
+    .attr('x', endX)
+    .attr('y', yScaleLinear(0.78) + 4)
+    .text('Experienced PhD');
+  gChart.append('text')
+    .attr('class', 'endpoint-sub')
+    .attr('x', endX)
+    .attr('y', yScaleLinear(0.78) + 20)
+    .text('(taught for transfer)');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

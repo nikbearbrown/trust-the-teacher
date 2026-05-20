@@ -49,6 +49,9 @@ Students taught introductory calculus by less-experienced instructors got *highe
 
 The student evaluation ratings tracked the first-course grades, not the downstream performance. The instructors with the worse evaluations were producing the better long-run learning.
 
+![Crossover lines comparing Calc I, Calc II, and Calc III grades. Students of less-experienced instructors start highest in Calc I and fall below the experienced PhD faculty's students by Calc II and Calc III. Background evaluation bars show the inverse pattern — the instructors whose students did worse downstream received the higher student evaluation ratings.](../images/10-three-honest-measures-fig-03.png)
+*Figure 10.3 — The Carrell-West reversal: evaluations track the first-course grade, not downstream learning*
+
 The mechanism is one any honest teacher will recognize. Less-experienced instructors taught to the test of *this* course. They drilled the specific problem types that would appear on the final and produced students who could execute those types — fluently, quickly, successfully — but without the foundational understanding that transfers when you encounter calculus in a new context in a different course. Experienced instructors taught for transfer. Their students struggled in the moment, did better in the next course, and rated their first-semester instructor lower than the instructor who had drilled them to a comfortable grade.
 
 Both outcomes, for the same reason. The discomfort of being asked to actually understand the material is the same discomfort that produces transfer. Student evaluations cannot tell the difference between "this instructor was ineffective" and "this instructor was making me learn something I did not yet know I would need." The instrument measures comfort. The instrument rewards comfort. Where comfort and learning diverge — which is often — the instrument selects against learning.
@@ -98,6 +101,10 @@ There is one more thing to name before the constructive proposal, because it is 
 Departments tie contract renewal to minimum evaluation thresholds. Students rate easier courses and higher grades more favorably. Instructors learn what their evaluators reward — there is no profession on earth that does not learn this — and grade more leniently to protect their scores. Grades inflate. The signal value of grades degrades. The signal value of evaluations degrades, because evaluations are now measuring lenient grading rather than teaching. The institution arrives at an equilibrium where neither grades nor evaluations convey reliable information about student learning or instructor quality. Both metrics are still administered. Both are still used for high-stakes decisions. Both are now substantially noise.
 
 Wolfgang Stroebe laid out the four-proposition model in 2020 in *Basic and Applied Social Psychology*, and the empirical literature broadly supports all four. Students reward good grades with positive evaluations. Students reward easy courses with positive evaluations. Students choose courses that promise good grades. Instructors want, and structurally need, good evaluations. Together, the four propositions predict a stable bad equilibrium: instructors inflate grades to protect their scores; students shop for instructors who inflate; the average evaluation drifts up; the average grade drifts up; learning, measured by anything not tied to the course grade, drifts flat.
+
+![Four labeled nodes arranged in a closed clockwise loop: students reward good grades and easy courses with positive evaluations, instructors need good evaluations for contract renewal, instructors inflate grades and lower demands, students shop for inflators. The loop closes around a centered "stable bad equilibrium" caption noting that grades and evaluations drift up while learning stays flat.](../images/10-three-honest-measures-fig-04.png)
+*Figure 10.4 — Stroebe's four-step feedback cycle*
+
 
 The empirical signature of this mechanism at scale is visible in UK higher education. Institutions competing for fee-paying students — where the market mechanism is present — showed sustained grade inflation from 2010 onward. Scottish institutions, which do not charge tuition fees to Scottish or EU students, showed the least. The market mechanism produces the pressure; where the pressure is weaker, the inflation is weaker. The instrument was already not measuring learning. The feedback loop ensures it is no longer measuring satisfaction honestly either — what it measures, at equilibrium, is the negotiated settlement between the instructor's incentive to inflate and the student's adjustment of expectations to the new normal. A measurement system that has consumed its own signal cannot be repaired by adjusting the instrument. It has to be replaced.
 
@@ -272,3 +279,27 @@ What is keeping the instrument in place is not the evidence for it, because the 
 - Accreditation Council for Continuing Medical Education (ACCME). *Standards for Integrity and Independence in Accredited Continuing Education.* [https://accme.org](https://accme.org)
 - Kraft, M. A., Blazar, D., & Hogan, D. (2018). The Effect of Teacher Coaching on Instruction and Achievement: A Meta-Analysis of the Causal Evidence. *Review of Educational Research*, 88(4), 547–588. [https://scholar.harvard.edu/files/mkraft/files/kraft_blazar_hogan_2018_teacher_coaching.pdf](https://scholar.harvard.edu/files/mkraft/files/kraft_blazar_hogan_2018_teacher_coaching.pdf)
 - State Educational Technology Directors Association (SETDA, November 2025). *Improving Professional Learning Systems to Better Support Today's Educators.* [https://www.setda.org/wp-content/uploads/2025/11/Improving-Professional-Learning-Systems-to-Better-Support-Todays-Educators-2.pdf](https://www.setda.org/wp-content/uploads/2025/11/Improving-Professional-Learning-Systems-to-Better-Support-Todays-Educators-2.pdf)
+
+---
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the new figures in this chapter. Each produces a standalone HTML file you can open in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into your Claude project context before using these prompts. They define the stack, naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 10.3 — The Carrell-West reversal
+
+Build a single-panel D3 v7 line chart showing two intersecting trajectories across three courses (Calc I, Calc II, Calc III). Channels: x-position is course (categorical band, ordered Calc I → Calc III); y-position is section mean grade (quantitative linear, standardized 0–1). Line A "Less-experienced (taught to the test)" — values 0.78, 0.38, 0.28 — uses `var(--color-red)` with solid stroke and filled circle markers. Line B "Experienced PhD (taught for transfer)" — values 0.32, 0.62, 0.78 — uses `var(--color-ink)` with dashed stroke and hollow circle markers. Mark the crossover between Calc I and Calc II with a small ochre dashed circle and italic "crossover" label. Above the plot area, render two background evaluation bars (4.3/5 and 3.6/5) anchored above the Calc I tick to make the inverse-tracking signal visible. Endpoint labels at the right margin in `var(--color-ink)`/`var(--color-secondary)`. Standalone HTML, D3 7.9.0 from the pinned CDN, inline CSS/JS, accessible markup (role="img", title, desc), tooltip on hover, ResizeObserver redraw.
+
+> Reference implementation: `d3/10-three-honest-measures-fig-03.html`
+
+---
+
+### Figure 10.4 — Stroebe's four-step feedback cycle
+
+Build a single-panel D3 v7 closed-loop infographic with four nodes arranged on a centered ellipse (top, right, bottom, left). Channels: position encodes step order around the cycle; arrows encode direction (clockwise from node 1). Node 1 "Students reward good grades and easy courses with positive evaluations" (propositions 1 & 2). Node 2 "Instructors need good evaluations for contract renewal" (proposition 4). Node 3 "Instructors inflate grades and lower demands to protect their scores" (mechanism). Node 4 "Students choose courses that promise good grades" (proposition 3). Each node is a rounded rect with `var(--color-white)` fill, `var(--color-ink)` border, bold Inter title, secondary Inter body text wrapped to two lines, and a JetBrains Mono tag line. Connect the nodes with four curved paths bowing outward, each ending in an arrowhead marker filled with `var(--color-ink)`. In the geometric center, render a smaller ochre-bordered "stable bad equilibrium" callout with the line "grades ↑ · evaluations ↑ · learning flat". Standalone HTML, D3 7.9.0 from the pinned CDN, inline CSS/JS, accessible (role="img", title, desc, per-node tabindex and aria-label), tooltips on hover, ResizeObserver redraw, prefers-reduced-motion respected.
+
+> Reference implementation: `d3/10-three-honest-measures-fig-04.html`

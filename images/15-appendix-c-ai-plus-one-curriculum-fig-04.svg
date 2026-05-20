@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" role="img" aria-labelledby="t-c4 d-c4">
+  <title id="t-c4">Ten-month MVP pacing guide — Gantt-style timeline of domains and artifacts</title>
+  <desc id="d-c4">A horizontal pacing guide across ten months of one academic year. Months one through three cover Domain 1 coursework. Months four through eight cycle Domains 2 through 5 with one artifact per month. Months nine and ten run the peer-panel portfolio review. Artifact deliverables are labeled at each stage.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #2a1a0e; }
+      .h2 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold; fill: #2a1a0e; }
+      .lb { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #2a1a0e; }
+      .sm { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .tick { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .eyebrow { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-weight: bold; fill: #4a4540; letter-spacing: 0.04em; }
+    </style>
+    <marker id="ar-c4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+  <rect width="700" height="480" fill="#fdfcfb"/>
+
+  <!-- Title -->
+  <text x="350" y="32" text-anchor="middle" class="ti">Ten-month MVP pacing — Monday after, to portfolio review</text>
+  <text x="350" y="48" text-anchor="middle" class="sm">One cohort meeting per month, sixty minutes, one artifact produced.</text>
+
+  <!-- Month axis -->
+  <!-- x scale: months 1..10 across 600 px from x=60 to x=660 (60 px per month) -->
+  <text x="60" y="82" class="eyebrow">MONTH</text>
+
+  <!-- Month gridlines + labels -->
+  <g class="tick">
+    <text x="90" y="100" text-anchor="middle">1</text>
+    <text x="150" y="100" text-anchor="middle">2</text>
+    <text x="210" y="100" text-anchor="middle">3</text>
+    <text x="270" y="100" text-anchor="middle">4</text>
+    <text x="330" y="100" text-anchor="middle">5</text>
+    <text x="390" y="100" text-anchor="middle">6</text>
+    <text x="450" y="100" text-anchor="middle">7</text>
+    <text x="510" y="100" text-anchor="middle">8</text>
+    <text x="570" y="100" text-anchor="middle">9</text>
+    <text x="630" y="100" text-anchor="middle">10</text>
+  </g>
+  <line x1="60" y1="108" x2="660" y2="108" stroke="#2a1a0e" stroke-width="0.8"/>
+
+  <!-- Background phase bands (subtle) -->
+  <rect x="60" y="112" width="180" height="280" fill="#f5f2ee" opacity="0.4"/>
+  <rect x="240" y="112" width="300" height="280" fill="#fdfcfb"/>
+  <rect x="540" y="112" width="120" height="280" fill="#f5f2ee" opacity="0.4"/>
+
+  <!-- Phase labels at top of bands -->
+  <text x="150" y="126" text-anchor="middle" class="eyebrow">PHASE A · FOUNDATION</text>
+  <text x="390" y="126" text-anchor="middle" class="eyebrow">PHASE B · DOMAIN ROTATION</text>
+  <text x="600" y="126" text-anchor="middle" class="eyebrow">PHASE C · PEER REVIEW</text>
+
+  <!-- DOMAIN 1 BAR — months 1-3, spans x=60..240, row y=140 -->
+  <rect x="64" y="140" width="172" height="32" fill="#2a1a0e" opacity="0.85"/>
+  <text x="150" y="160" text-anchor="middle" class="lb" fill="#fdfcfb">Domain 1 — AI Fundamentals</text>
+  <text x="150" y="186" text-anchor="middle" class="sm">HarvardX / MITx / Stanford · self-paced</text>
+
+  <!-- DOMAIN 2 — month 4 -->
+  <rect x="244" y="140" width="56" height="32" fill="#4a4540"/>
+  <text x="272" y="160" text-anchor="middle" class="sm" fill="#fdfcfb">D2</text>
+  <text x="272" y="186" text-anchor="middle" class="sm">Pedagogy</text>
+
+  <!-- DOMAIN 3 — month 5 -->
+  <rect x="304" y="140" width="56" height="32" fill="#4a4540"/>
+  <text x="332" y="160" text-anchor="middle" class="sm" fill="#fdfcfb">D3</text>
+  <text x="332" y="186" text-anchor="middle" class="sm">Offloading</text>
+
+  <!-- DOMAIN 4 — month 6 -->
+  <rect x="364" y="140" width="56" height="32" fill="#4a4540"/>
+  <text x="392" y="160" text-anchor="middle" class="sm" fill="#fdfcfb">D4</text>
+  <text x="392" y="186" text-anchor="middle" class="sm">Equity</text>
+
+  <!-- DOMAIN 5 — month 7 -->
+  <rect x="424" y="140" width="56" height="32" fill="#4a4540"/>
+  <text x="452" y="160" text-anchor="middle" class="sm" fill="#fdfcfb">D5</text>
+  <text x="452" y="186" text-anchor="middle" class="sm">Assessment</text>
+
+  <!-- Catch-up / synthesis — month 8 -->
+  <rect x="484" y="140" width="56" height="32" fill="#8a8480"/>
+  <text x="512" y="160" text-anchor="middle" class="sm" fill="#fdfcfb">Synth.</text>
+  <text x="512" y="186" text-anchor="middle" class="sm">portfolio assembly</text>
+
+  <!-- PEER PANEL — months 9-10 -->
+  <rect x="544" y="140" width="112" height="32" fill="#2a1a0e" opacity="0.85"/>
+  <text x="600" y="160" text-anchor="middle" class="lb" fill="#fdfcfb">Peer panel review</text>
+  <text x="600" y="186" text-anchor="middle" class="sm">3 portfolios × 2 sessions</text>
+
+  <!-- ARTIFACTS LAYER -->
+  <text x="60" y="220" class="eyebrow">ARTIFACT DELIVERED</text>
+  <line x1="60" y1="228" x2="660" y2="228" stroke="#c8c4c0" stroke-width="0.5"/>
+
+  <!-- artifact tick marks + labels -->
+  <!-- Month 3 — reflection -->
+  <line x1="210" y1="172" x2="210" y2="244" stroke="#2a1a0e" stroke-width="0.6" stroke-dasharray="3 2"/>
+  <circle cx="210" cy="244" r="3.5" fill="#2a1a0e"/>
+  <text x="210" y="262" text-anchor="middle" class="sm">M3</text>
+  <text x="210" y="276" text-anchor="middle" class="lb">One-page</text>
+  <text x="210" y="290" text-anchor="middle" class="lb">reflection</text>
+  <text x="210" y="304" text-anchor="middle" class="cap">+ certificate slate</text>
+
+  <!-- Month 4 — D2 -->
+  <line x1="272" y1="172" x2="272" y2="244" stroke="#2a1a0e" stroke-width="0.6" stroke-dasharray="3 2"/>
+  <circle cx="272" cy="244" r="3.5" fill="#2a1a0e"/>
+  <text x="272" y="262" text-anchor="middle" class="sm">M4</text>
+  <text x="272" y="276" text-anchor="middle" class="lb">Assignment</text>
+  <text x="272" y="290" text-anchor="middle" class="lb">redesign</text>
+  <text x="272" y="304" text-anchor="middle" class="cap">subject-specific</text>
+
+  <!-- Month 5 — D3 -->
+  <line x1="332" y1="172" x2="332" y2="244" stroke="#2a1a0e" stroke-width="0.6" stroke-dasharray="3 2"/>
+  <circle cx="332" cy="244" r="3.5" fill="#2a1a0e"/>
+  <text x="332" y="262" text-anchor="middle" class="sm">M5</text>
+  <text x="332" y="276" text-anchor="middle" class="lb">Offloading</text>
+  <text x="332" y="290" text-anchor="middle" class="lb">assignment</text>
+  <text x="332" y="304" text-anchor="middle" class="cap">+ student work</text>
+
+  <!-- Month 6 — D4 -->
+  <line x1="392" y1="172" x2="392" y2="244" stroke="#2a1a0e" stroke-width="0.6" stroke-dasharray="3 2"/>
+  <circle cx="392" cy="244" r="3.5" fill="#2a1a0e"/>
+  <text x="392" y="262" text-anchor="middle" class="sm">M6</text>
+  <text x="392" y="276" text-anchor="middle" class="lb">Equity-focused</text>
+  <text x="392" y="290" text-anchor="middle" class="lb">lesson redesign</text>
+  <text x="392" y="304" text-anchor="middle" class="cap">floor-first design</text>
+
+  <!-- Month 7 — D5 -->
+  <line x1="452" y1="172" x2="452" y2="244" stroke="#2a1a0e" stroke-width="0.6" stroke-dasharray="3 2"/>
+  <circle cx="452" cy="244" r="3.5" fill="#2a1a0e"/>
+  <text x="452" y="262" text-anchor="middle" class="sm">M7</text>
+  <text x="452" y="276" text-anchor="middle" class="lb">Formative</text>
+  <text x="452" y="290" text-anchor="middle" class="lb">defense</text>
+  <text x="452" y="304" text-anchor="middle" class="cap">case-conference</text>
+
+  <!-- Month 8 — synthesis -->
+  <line x1="512" y1="172" x2="512" y2="244" stroke="#2a1a0e" stroke-width="0.6" stroke-dasharray="3 2"/>
+  <circle cx="512" cy="244" r="3.5" fill="#2a1a0e"/>
+  <text x="512" y="262" text-anchor="middle" class="sm">M8</text>
+  <text x="512" y="276" text-anchor="middle" class="lb">Full portfolio</text>
+  <text x="512" y="290" text-anchor="middle" class="lb">assembled</text>
+  <text x="512" y="304" text-anchor="middle" class="cap">5 artifacts bound</text>
+
+  <!-- Month 10 — credential -->
+  <line x1="630" y1="172" x2="630" y2="244" stroke="#2a1a0e" stroke-width="0.6" stroke-dasharray="3 2"/>
+  <circle cx="630" cy="244" r="3.5" fill="#2a1a0e"/>
+  <text x="630" y="262" text-anchor="middle" class="sm">M10</text>
+  <text x="630" y="276" text-anchor="middle" class="lb">Building-level</text>
+  <text x="630" y="290" text-anchor="middle" class="lb">certificate</text>
+  <text x="630" y="304" text-anchor="middle" class="cap">Appx B Measure 3</text>
+
+  <!-- COHORT MEETING CADENCE ROW -->
+  <text x="60" y="346" class="eyebrow">COHORT MEETING CADENCE</text>
+  <line x1="60" y1="354" x2="660" y2="354" stroke="#c8c4c0" stroke-width="0.5"/>
+  <g>
+    <circle cx="90" cy="372" r="4" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="150" cy="372" r="4" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="210" cy="372" r="4" fill="#fdfcfb" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="272" cy="372" r="4" fill="#2a1a0e"/>
+    <circle cx="332" cy="372" r="4" fill="#2a1a0e"/>
+    <circle cx="392" cy="372" r="4" fill="#2a1a0e"/>
+    <circle cx="452" cy="372" r="4" fill="#2a1a0e"/>
+    <circle cx="512" cy="372" r="4" fill="#2a1a0e"/>
+    <circle cx="570" cy="372" r="5.5" fill="#2a1a0e"/>
+    <circle cx="630" cy="372" r="5.5" fill="#2a1a0e"/>
+  </g>
+  <text x="60" y="392" class="sm">○ orientation / debug — 60 min</text>
+  <text x="280" y="392" class="sm">● domain meeting + artifact</text>
+  <text x="490" y="392" class="sm">● portfolio panel — 90 min</text>
+
+  <!-- Asymmetric load footnote bar -->
+  <line x1="40" y1="416" x2="660" y2="416" stroke="#c8c4c0" stroke-width="0.75"/>
+  <text x="60" y="436" class="eyebrow">PRECONDITION</text>
+  <text x="60" y="452" class="sm">Hours come from the AI dividend on administrative load — not added on top of a saturated workday.</text>
+  <text x="60" y="466" class="cap">written commitment from the district: reclaimed time stays protected for credentialing work</text>
+</svg>

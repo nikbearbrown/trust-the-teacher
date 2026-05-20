@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" role="img" aria-labelledby="t14-02 d14-02">
+  <title id="t14-02">Six design features of Measure 2, paired with the failure mode each prevents</title>
+  <desc id="d14-02">Two-column layout. Left column lists six design features of the student-learning-gains measure. Right column lists the specific failure mode that would emerge if each feature were removed. Arrows from each feature to its paired failure mode.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .sub { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #4a4540; font-style: italic; }
+      .col-head { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold; fill: #1a1714; }
+      .feature { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #1a1714; }
+      .feat-detail { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .fail { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #1a1714; }
+      .fail-cite { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; font-style: italic; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+    </style>
+    <marker id="ar14-02" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="480" fill="#fdfcfb"/>
+
+  <text x="350" y="28" class="ti" text-anchor="middle">Measure 2 — six design features, each preventing a specific failure mode</text>
+  <text x="350" y="44" class="sub" text-anchor="middle">Remove the feature; the failure mode arrives by Year 2.</text>
+
+  <!-- Column headers -->
+  <text x="160" y="74" class="col-head" text-anchor="middle">Design feature</text>
+  <text x="540" y="74" class="col-head" text-anchor="middle">If removed → failure mode</text>
+  <line x1="40" y1="82" x2="660" y2="82" stroke="#1a1714" stroke-width="0.8"/>
+
+  <!-- Six rows. y starts at 96, height 60 each -->
+  <!-- Row 1: Common pre/post -->
+  <rect x="40" y="92" width="240" height="56" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="52" y="112" class="feature">1. Common pre/post items</text>
+  <text x="52" y="128" class="feat-detail">Same external instrument across</text>
+  <text x="52" y="142" class="feat-detail">all sections of the same course.</text>
+  <path d="M 286 120 L 414 120" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-02)"/>
+  <rect x="420" y="92" width="240" height="56" fill="#fdfcfb" stroke="#8a8480"/>
+  <text x="432" y="112" class="fail">Teacher optimises to her own</text>
+  <text x="432" y="126" class="fail">items, not the underlying skill.</text>
+  <text x="432" y="142" class="fail-cite">(Item validity collapses.)</text>
+
+  <!-- Row 2: External grading -->
+  <rect x="40" y="154" width="240" height="56" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="52" y="174" class="feature">2. External grading</text>
+  <text x="52" y="190" class="feat-detail">Cross-section pairing, or central</text>
+  <text x="52" y="204" class="feat-detail">scoring panel paid by the hour.</text>
+  <path d="M 286 182 L 414 182" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-02)"/>
+  <rect x="420" y="154" width="240" height="56" fill="#fdfcfb" stroke="#8a8480"/>
+  <text x="432" y="174" class="fail">Lenient self-marking inflates</text>
+  <text x="432" y="188" class="fail">gain scores; grade inflation.</text>
+  <text x="432" y="204" class="fail-cite">(Stroebe 2020.)</text>
+
+  <!-- Row 3: Section-level reporting -->
+  <rect x="40" y="216" width="240" height="56" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="52" y="236" class="feature">3. Section-level reporting</text>
+  <text x="52" y="252" class="feat-detail">Unit is the section, not the</text>
+  <text x="52" y="266" class="feat-detail">teacher's career composite.</text>
+  <path d="M 286 244 L 414 244" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-02)"/>
+  <rect x="420" y="216" width="240" height="56" fill="#fdfcfb" stroke="#8a8480"/>
+  <text x="432" y="236" class="fail">Noise mistaken for signal. A</text>
+  <text x="432" y="250" class="fail">teacher labelled bottom 5%</text>
+  <text x="432" y="264" class="fail-cite">averages out the next year (MET).</text>
+
+  <!-- Row 4: Pre-test as ability control -->
+  <rect x="40" y="278" width="240" height="56" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="52" y="298" class="feature">4. Pre-test as ability control</text>
+  <text x="52" y="314" class="feat-detail">Report the gain (distance travelled),</text>
+  <text x="52" y="328" class="feat-detail">not the raw post-test score.</text>
+  <path d="M 286 306 L 414 306" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-02)"/>
+  <rect x="420" y="278" width="240" height="56" fill="#fdfcfb" stroke="#8a8480"/>
+  <text x="432" y="298" class="fail">Sections that started behind</text>
+  <text x="432" y="312" class="fail">get penalised for their starting</text>
+  <text x="432" y="326" class="fail-cite">place; sorting, not teaching.</text>
+
+  <!-- Row 5: Transfer items -->
+  <rect x="40" y="340" width="240" height="56" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="52" y="360" class="feature">5. Transfer items on post-test</text>
+  <text x="52" y="376" class="feat-detail">Application items the teacher</text>
+  <text x="52" y="390" class="feat-detail">cannot drill toward.</text>
+  <path d="M 286 368 L 414 368" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-02)"/>
+  <rect x="420" y="340" width="240" height="56" fill="#fdfcfb" stroke="#8a8480" stroke-width="1.5"/>
+  <text x="432" y="360" class="fail">Drilled fluency without transfer.</text>
+  <text x="432" y="374" class="fail">Calc I final passes; Calc II fails.</text>
+  <text x="432" y="390" class="fail-cite">(Carrell-West 2010.)</text>
+
+  <!-- Row 6: No individual stakes (initially) -->
+  <rect x="40" y="402" width="240" height="56" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="52" y="422" class="feature">6. No individual stakes (yr 1–3)</text>
+  <text x="52" y="438" class="feat-detail">Formative use only during the</text>
+  <text x="52" y="452" class="feat-detail">first three cycles. The FINEEC rule.</text>
+  <path d="M 286 430 L 414 430" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-02)"/>
+  <rect x="420" y="402" width="240" height="56" fill="#fdfcfb" stroke="#8a8480"/>
+  <text x="432" y="422" class="fail">High-stakes backlash; teaching</text>
+  <text x="432" y="436" class="fail">to the test; narrowed curriculum.</text>
+  <text x="432" y="452" class="fail-cite">(NCLB era, replayed.)</text>
+</svg>

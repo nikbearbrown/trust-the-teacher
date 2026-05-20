@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure C.5 — Year 1–5 state-level scaling timeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-white:     #FFFFFF;
+    --color-ink:       #121212;
+    --color-red:       #C8102E;
+    --color-secondary: #545454;
+    --color-border:    #D4D4D4;
+    --color-ochre:     #C8860E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-white:     #111111;
+      --color-ink:       #F0EBE3;
+      --color-red:       #E8243A;
+      --color-secondary: #A0978C;
+      --color-border:    #2E2E2E;
+      --color-ochre:     #D49A30;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--color-white); color: var(--color-ink); font-family: 'Inter', -apple-system, sans-serif; padding: 24px; }
+  h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+  p.subtitle { color: var(--color-secondary); font-size: 13px; margin-bottom: 20px; max-width: 65ch; }
+  #chart { width: 100%; min-height: 540px; position: relative; }
+  .axis text { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: var(--color-secondary); }
+  .axis path, .axis line { stroke: var(--color-secondary); shape-rendering: crispEdges; }
+  .workstream-label { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; font-weight: 700; fill: var(--color-ink); }
+  .ws-cell { stroke: var(--color-ink); stroke-width: 0.75; transition: opacity 200ms cubic-bezier(0.2,0.8,0.2,1); cursor: pointer; }
+  .ws-cell.primary { fill: var(--color-ink); }
+  .ws-cell.middle  { fill: var(--color-secondary); }
+  .ws-cell.light   { fill: color-mix(in srgb, var(--color-secondary) 50%, var(--color-white)); }
+  .ws-cell.maintenance { fill: var(--color-white); stroke: var(--color-border); stroke-width: 0.75; }
+  .ws-cell:hover { opacity: 0.78; }
+  .ws-text { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--color-white); pointer-events: none; }
+  .ws-text.dark { fill: var(--color-ink); }
+  .year-line { stroke: var(--color-border); stroke-width: 0.5; }
+  .eyebrow { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.06em; fill: var(--color-secondary); text-transform: uppercase; }
+  .trajectory-line { fill: none; stroke: var(--color-red); stroke-width: 2; }
+  .trajectory-dot { fill: var(--color-red); stroke: var(--color-white); stroke-width: 1.25; }
+  .trajectory-label { font-family: 'EB Garamond', Georgia, serif; font-size: 12px; font-weight: 700; fill: var(--color-ink); }
+  .annotation { font-family: 'EB Garamond', Georgia, serif; font-size: 11px; font-style: italic; fill: var(--color-secondary); }
+  .annotation-arrow { stroke: var(--color-ink); stroke-width: 0.75; stroke-dasharray: 3 2; fill: none; }
+  .caption { color: var(--color-secondary); font-size: 13px; margin-top: 12px; max-width: 65ch; font-style: italic; }
+  .tooltip { position: absolute; pointer-events: none; opacity: 0; background: var(--color-ink); color: var(--color-white); padding: 8px 12px; font-size: 12px; font-family: 'Inter', sans-serif; max-width: 260px; line-height: 1.4; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<h1>Figure C.5 — Five years to a state-level program</h1>
+<p class="subtitle">Year 1 forms the consortium. Year 2 runs the pilot. Years 3 through 5 scale and seed the tutor-teacher network in every building. Hover any block to read the workstream detail.</p>
+<div id="chart" role="main"></div>
+<p class="caption">A 100,000-teacher state reaches 10 percent credentialed in a decade, 25 percent in fifteen years, critical mass within twenty.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const workstreams = [
+  {
+    id: 'design', label: 'Design',
+    blocks: [
+      { year: 1, label: 'consortium forms', kind: 'primary',
+        blurb: 'Year 1: three to five universities convene to design the AI+1 credential program jointly. State funds the design year explicitly. Output: published standard, curriculum framework, demonstration components, peer-panel rubric, COI policies.' },
+      { year: 2, label: 'standard revision', kind: 'maintenance', span: 4,
+        blurb: 'Years 2 onward: accreditation body oversees universities issuing the credential against the published standard. Standard re-opens for revision on a defined cadence.' }
+    ]
+  },
+  {
+    id: 'cohorts', label: 'Cohorts',
+    blocks: [
+      { year: 2, label: 'pilot · 100–200', kind: 'middle',
+        blurb: 'Year 2: first cohort of 100–200 teachers, weighted toward low-income districts and high-demand subjects. The cohort runs the full three-year credential cycle.' },
+      { year: 3, label: '+300 / yr', kind: 'light',
+        blurb: 'Year 3: second cohort scales to roughly three hundred new participants. The pilot cohort continues its cycle.' },
+      { year: 4, label: '+500 / yr', kind: 'middle',
+        blurb: 'Year 4: pilot cohort completes the credential. Cohort size scales to ~500 new participants. Pilot members return to buildings as state-recognized AI+1 specialists.' },
+      { year: 5, label: '1,000 / yr', kind: 'primary',
+        blurb: 'Year 5+: steady state at ~1,000 new credentialed teachers per year. A 100,000-teacher state reaches 10% credentialed in a decade.' }
+    ]
+  },
+  {
+    id: 'tutor', label: 'Tutor net.',
+    blocks: [
+      { year: 3, label: 'network seeded', kind: 'light',
+        blurb: 'Year 3: pilot graduates return as in-building coaches. Network begins seeded in pilot-cohort buildings.' },
+      { year: 4, label: 'every building', kind: 'middle',
+        blurb: 'Year 4: network extends to every building in the state. One section of load coverage per building.' },
+      { year: 5, label: 'formula appropriation', kind: 'primary',
+        blurb: 'Year 5+: state funds the network as a formula appropriation to districts, ~$15K–25K per building per year, with required release time for AI+1 coaching.' }
+    ]
+  }
+];
+
+const trajectory = [
+  { year: 1, cumulative: 0,    label: '0' },
+  { year: 2, cumulative: 150,  label: '~150' },
+  { year: 3, cumulative: 450,  label: '~450' },
+  { year: 4, cumulative: 900,  label: '~900' },
+  { year: 5, cumulative: 1800, label: '~1,800' }
+];
+
+const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+function showTip(event, d) {
+  tooltip.html(`<strong>Year ${d.year} — ${d.label}</strong><br>${d.blurb}`)
+    .style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px')
+    .transition().duration(150).style('opacity', 1);
+}
+function moveTip(event) { tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px'); }
+function hideTip() { tooltip.transition().duration(100).style('opacity', 0); }
+
+function draw() {
+  d3.select('#chart').selectAll('*').remove();
+  const container = document.getElementById('chart');
+  const totalWidth  = container.clientWidth  || 900;
+  const totalHeight = 540;
+  const margin = { top: 40, right: 32, bottom: 24, left: 96 };
+  const cw = totalWidth - margin.left - margin.right;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalWidth).attr('height', totalHeight)
+    .attr('role', 'img').attr('aria-labelledby', 'fc5-t fc5-d');
+  svg.append('title').attr('id', 'fc5-t').text('Year 1 through 5 state-level scaling timeline');
+  svg.append('desc').attr('id', 'fc5-d').text('Top: three workstream rows (Design, Cohorts, Tutor network) across years 1 through 5. Bottom: cumulative credentialed-teacher trajectory from 0 in Year 1 to approximately 1,800 by Year 5, trending toward steady state of 1,000 new per year.');
+
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Year scale: 1..5
+  const x = d3.scaleLinear().domain([1, 5]).range([0, cw]);
+  const yearTicks = [1, 2, 3, 4, 5];
+
+  // Year header axis
+  yearTicks.forEach(y => {
+    g.append('text').attr('class', 'eyebrow').attr('text-anchor', 'middle')
+      .attr('x', x(y) + (cw / 4) / 2).attr('y', -20)
+      .text(`Year ${y}${y === 5 ? '+' : ''}`);
+  });
+  // top horizontal rule
+  g.append('line').attr('x1', 0).attr('x2', cw).attr('y1', -12).attr('y2', -12).attr('stroke', 'var(--color-ink)').attr('stroke-width', 0.8);
+
+  // Year vertical separators
+  [2, 3, 4, 5].forEach(y => {
+    g.append('line').attr('class', 'year-line')
+      .attr('x1', x(y)).attr('x2', x(y))
+      .attr('y1', -6).attr('y2', 168);
+  });
+
+  // Workstreams
+  const rowH = 44;
+  const rowGap = 8;
+  const cellW = cw / 5;
+
+  workstreams.forEach((ws, i) => {
+    const rowY = i * (rowH + rowGap) + 8;
+
+    // Workstream label (in left margin)
+    svg.append('text').attr('class', 'workstream-label')
+      .attr('x', margin.left - 12)
+      .attr('y', margin.top + rowY + rowH / 2 + 4)
+      .attr('text-anchor', 'end')
+      .text(ws.label);
+
+    ws.blocks.forEach(block => {
+      const span = block.span || 1;
+      const bx = x(block.year) - cellW / 2 + cellW * 0.05;
+      const bw = cellW * span - cellW * 0.10;
+      const fullBlock = { ...block, workstream: ws.label };
+
+      const gCell = g.append('g').attr('tabindex', 0)
+        .attr('aria-label', `${ws.label} workstream, Year ${block.year}: ${block.label}`)
+        .on('mouseover', (e) => showTip(e, fullBlock))
+        .on('mousemove', moveTip).on('mouseout', hideTip)
+        .on('focus', (e) => showTip(e, fullBlock)).on('blur', hideTip);
+
+      gCell.append('rect').attr('class', `ws-cell ${block.kind}`)
+        .attr('x', bx).attr('y', rowY).attr('width', bw).attr('height', rowH);
+
+      const textClass = (block.kind === 'maintenance' || block.kind === 'light') ? 'ws-text dark' : 'ws-text';
+      gCell.append('text').attr('class', textClass)
+        .attr('x', bx + bw / 2).attr('y', rowY + rowH / 2 + 4).attr('text-anchor', 'middle')
+        .text(block.label);
+    });
+  });
+
+  // Trajectory chart below
+  const chY0 = 200;
+  g.append('text').attr('class', 'eyebrow').attr('x', 0).attr('y', chY0).text('Cumulative credentialed AI+1 teachers');
+  g.append('line').attr('x1', 0).attr('x2', cw).attr('y1', chY0 + 8).attr('y2', chY0 + 8).attr('stroke', 'var(--color-border)').attr('stroke-width', 0.5);
+
+  const chartY = chY0 + 20;
+  const chartH = 200;
+  const yScale = d3.scaleLinear().domain([0, 2000]).range([chartH, 0]);
+  const xTraj = d3.scaleLinear().domain([1, 5]).range([0, cw]);
+
+  // y axis
+  const yAxis = d3.axisLeft(yScale).ticks(5).tickFormat(d3.format(','));
+  g.append('g').attr('class', 'axis').attr('transform', `translate(0, ${chartY})`).call(yAxis);
+
+  // x axis
+  const xAxis = d3.axisBottom(xTraj).tickValues(yearTicks).tickFormat(d => `end Y${d}`);
+  g.append('g').attr('class', 'axis').attr('transform', `translate(0, ${chartY + chartH})`).call(xAxis);
+
+  // Trajectory line + dots
+  const line = d3.line().x(d => xTraj(d.year)).y(d => chartY + yScale(d.cumulative)).curve(d3.curveMonotoneX);
+  g.append('path').datum(trajectory).attr('class', 'trajectory-line').attr('d', line);
+
+  trajectory.forEach(p => {
+    g.append('circle').attr('class', 'trajectory-dot')
+      .attr('cx', xTraj(p.year)).attr('cy', chartY + yScale(p.cumulative)).attr('r', 4);
+    g.append('text').attr('class', 'trajectory-label')
+      .attr('x', xTraj(p.year)).attr('y', chartY + yScale(p.cumulative) - 10).attr('text-anchor', 'middle')
+      .text(p.label);
+  });
+
+  // Steady-state annotation
+  const annoX = xTraj(5) - 60;
+  const annoY = chartY + yScale(1800) - 40;
+  g.append('path').attr('class', 'annotation-arrow')
+    .attr('d', `M ${annoX} ${annoY} Q ${annoX + 30} ${annoY + 10} ${xTraj(5) - 6} ${chartY + yScale(1800) - 6}`);
+  g.append('text').attr('class', 'annotation').attr('text-anchor', 'end')
+    .attr('x', annoX).attr('y', annoY - 4)
+    .text('steady state: +1,000 / yr');
+}
+
+draw();
+const ro = new ResizeObserver(() => draw());
+ro.observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

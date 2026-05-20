@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" role="img" aria-labelledby="t14-01 d14-01">
+  <title id="t14-01">Three-measure framework — what each measures, defensible use, forbidden use</title>
+  <desc id="d14-01">Three columns. Measure 1 student wellbeing, Measure 2 student learning gains, Measure 3 teacher learning. Each column states what the measure tracks, the defensible use, and the forbidden use. A binding caption notes that none is sufficient alone.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .col-head { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .col-num { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #4a4540; font-style: italic; }
+      .row-head { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #1a1714; }
+      .body { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #1a1714; }
+      .forbidden { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; font-style: italic; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+      .bind { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #1a1714; }
+    </style>
+    <marker id="ar14-01" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="460" fill="#fdfcfb"/>
+
+  <text x="350" y="28" class="ti" text-anchor="middle">The three-measure framework — none is sufficient alone</text>
+  <text x="350" y="44" class="cap" text-anchor="middle">Each measure used only for what it can defensibly measure; the forbidden use is named explicitly.</text>
+
+  <!-- Three columns, 200 wide each, x=30, 250, 470 -->
+  <!-- Column 1: Wellbeing -->
+  <rect x="30" y="64" width="200" height="320" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="130" y="84" class="col-num" text-anchor="middle">Measure 1</text>
+  <text x="130" y="102" class="col-head" text-anchor="middle">Student Wellbeing</text>
+  <line x1="46" y1="112" x2="214" y2="112" stroke="#8a8480"/>
+
+  <text x="46" y="130" class="row-head">What it measures</text>
+  <text x="46" y="146" class="body">Relational climate.</text>
+  <text x="46" y="160" class="body">Respect, intellectual</text>
+  <text x="46" y="174" class="body">challenge, treatment</text>
+  <text x="46" y="188" class="body">of students as people.</text>
+
+  <text x="46" y="214" class="row-head">Defensible use</text>
+  <text x="46" y="230" class="body">Formative feedback to</text>
+  <text x="46" y="244" class="body">the teacher; aggregate</text>
+  <text x="46" y="258" class="body">monitoring at the</text>
+  <text x="46" y="272" class="body">department level.</text>
+
+  <text x="46" y="298" class="row-head">Forbidden use</text>
+  <text x="46" y="314" class="forbidden">Individual score as</text>
+  <text x="46" y="326" class="forbidden">primary input to</text>
+  <text x="46" y="338" class="forbidden">tenure, contract,</text>
+  <text x="46" y="350" class="forbidden">salary, promotion.</text>
+  <text x="46" y="372" class="cap">(ASA 2019)</text>
+
+  <!-- Column 2: Learning Gains -->
+  <rect x="250" y="64" width="200" height="320" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+  <text x="350" y="84" class="col-num" text-anchor="middle">Measure 2</text>
+  <text x="350" y="102" class="col-head" text-anchor="middle">Student Learning Gains</text>
+  <line x1="266" y1="112" x2="434" y2="112" stroke="#8a8480"/>
+
+  <text x="266" y="130" class="row-head">What it measures</text>
+  <text x="266" y="146" class="body">Distance the section</text>
+  <text x="266" y="160" class="body">travelled. Common</text>
+  <text x="266" y="174" class="body">pre/post, externally</text>
+  <text x="266" y="188" class="body">graded, transfer items.</text>
+
+  <text x="266" y="214" class="row-head">Defensible use</text>
+  <text x="266" y="230" class="body">Section-level reporting</text>
+  <text x="266" y="244" class="body">to the teaching team.</text>
+  <text x="266" y="258" class="body">Formative for first</text>
+  <text x="266" y="272" class="body">three cycles, minimum.</text>
+
+  <text x="266" y="298" class="row-head">Forbidden use</text>
+  <text x="266" y="314" class="forbidden">Year-over-year</text>
+  <text x="266" y="326" class="forbidden">individual decisions on</text>
+  <text x="266" y="338" class="forbidden">single-section noisy</text>
+  <text x="266" y="350" class="forbidden">value-added estimates.</text>
+  <text x="266" y="372" class="cap">(MET Project warning)</text>
+
+  <!-- Column 3: Teacher Learning -->
+  <rect x="470" y="64" width="200" height="320" fill="#f5f2ee" stroke="#1a1714" stroke-width="1.5"/>
+  <text x="570" y="84" class="col-num" text-anchor="middle">Measure 3 — the missing one</text>
+  <text x="570" y="102" class="col-head" text-anchor="middle">Teacher Learning</text>
+  <line x1="486" y1="112" x2="654" y2="112" stroke="#8a8480"/>
+
+  <text x="486" y="130" class="row-head">What it measures</text>
+  <text x="486" y="146" class="body">Documented annual</text>
+  <text x="486" y="160" class="body">cycle: growth area,</text>
+  <text x="486" y="174" class="body">PD engaged, evidence,</text>
+  <text x="486" y="188" class="body">peer panel review.</text>
+
+  <text x="486" y="214" class="row-head">Defensible use</text>
+  <text x="486" y="230" class="body">Portfolio archive;</text>
+  <text x="486" y="244" class="body">basis for differential</text>
+  <text x="486" y="258" class="body">recognition once the</text>
+  <text x="486" y="272" class="body">infrastructure matures.</text>
+
+  <text x="486" y="298" class="row-head">Forbidden use</text>
+  <text x="486" y="314" class="forbidden">Treating PD attendance</text>
+  <text x="486" y="326" class="forbidden">as evidence of practice</text>
+  <text x="486" y="338" class="forbidden">change. The August</text>
+  <text x="486" y="350" class="forbidden">workshop log fails.</text>
+  <text x="486" y="372" class="cap">(ABFM model analog)</text>
+
+  <!-- Binding caption with arrows tying the three columns together -->
+  <path d="M 130 392 L 130 410 L 570 410 L 570 392" fill="none" stroke="#1a1714" stroke-width="1" stroke-dasharray="3 2"/>
+  <path d="M 350 410 L 350 392" fill="none" stroke="#1a1714" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ar14-01)"/>
+  <rect x="220" y="416" width="260" height="28" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+  <text x="350" y="434" class="bind" text-anchor="middle">Used together. None is sufficient alone.</text>
+</svg>
