@@ -207,22 +207,4 @@ It is not the device. It has never been the device. The device is the smaller cl
 17. SETDA (Nov 5 2025). "Improving Professional Learning Systems to Better Support Today's Educators: How Title II, Part A Offers a Model for State and Local Leadership." https://www.setda.org/wp-content/uploads/2025/11/Improving-Professional-Learning-Systems-to-Better-Support-Todays-Educators-2.pdf
 18. RAND Europe (Jan 2026). "Harnessing the Benefits of EdTech: What Research Tells Us About Using Digital Technology to Support Pupils." https://www.rand.org/pubs/commentary/2026/01/harnessing-the-benefits-of-edtech-what-research-tells.html
 
----
 
-## Prompts
-
-Use this prompt with Claude to generate an interactive D3 v7 version of the
-infographic in this chapter. It produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using this prompt. They define the stack,
-naming conventions, color system, and typography the figure uses.
-
----
-
-### Figure 4.4 — Three-story building of aggregation
-
-Build a single-panel D3 v7 infographic visualizing the meta-meta-analytic stack behind Hattie's *Visible Learning*. Render three vertically stacked floor rectangles — narrowest on top, widest on the bottom. Top floor (var(--color-ink) fill): "Floor 3 — 1 meta-meta-analysis. Average d ≈ 0.42; hinge d = 0.40." Middle (var(--color-secondary)): "Floor 2 — ~2,100 meta-analyses." Bottom (var(--color-border)): "Floor 1 — ~130,000 individual studies." Connect adjacent floors with three thin upward arrows each (one shared marker def by id), suggesting many-to-one aggregation. Right gutter: a single dashed vertical arrow labeled "Cohen's d travels up." Left gutter: "~300M students at the base" with secondary line "MetaX 1.3, late 2024." Each floor is a focusable group with `tabindex="0"`, `aria-label`, and a hover/focus tooltip naming the critique at that level (Slavin on Floor 1 weakness, Wecker on Floor 2 overlap, design-noise at Floor 3). Use EB Garamond for in-figure prose, Inter for floor labels. No hex literals — pull every color from `var(--color-*)`. Include `role="img"`, `<title>`, `<desc>`, dark-mode media query, ResizeObserver redraw, and `(event, d)` handler signatures. Suppress transitions under `prefers-reduced-motion: reduce`.
-
-> Reference implementation: `d3/04-the-teacher-variable-fig-04.html`
