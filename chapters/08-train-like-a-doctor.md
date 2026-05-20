@@ -280,18 +280,4 @@ Why has the medical CME system held up as well as it has under fifty years of su
 - U.S. Department of Education. (2024). *State and District Use of Title II, Part A Funds in 2023–24*. https://www.ed.gov/media/document/state-and-district-use-of-title-ii-part-funds-2023-24-109457.pdf
 - Yoon, K. S., Duncan, T., Lee, S. W.-Y., Scarloss, B., & Shapley, K. (2007). *Reviewing the evidence on how teacher professional development affects student achievement* (Issues & Answers Report, REL 2007–No. 033). Regional Educational Laboratory Southwest. https://files.eric.ed.gov/fulltext/ED498548.pdf
 
----
 
-## Prompts
-
-Use this prompt with Claude to generate an interactive D3 v7 version of the figure in this chapter. The output is a standalone HTML file you can open in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into your Claude project context before using the prompt. They define the stack, naming conventions, color system, and typography the figure uses.
-
----
-
-### Figure 8.4 — Effect size vs. contact hours
-
-Build a single two-line chart in D3 v7 showing how effect size on instructional practice (Cohen's d) varies with professional development contact hours. X-axis: contact hours, linear 0 to 80. Y-axis: effect size d, linear 0 to 0.6, zero baseline. Curve 1 — workshop-format PD: flat near d ≈ 0.02 across the full x range, rendered in var(--color-secondary) with a dashed stroke. Curve 2 — sustained coaching (Kraft, Blazar & Hogan 2018): a saturating curve rising from (0, 0) to (~10, 0.49), then plateau with a tiny declining drift above 15 hours; render in var(--color-red), solid 2.5px stroke, monotone-x interpolation. Add a dashed vertical reference line in var(--color-ochre) at x = 14 hours, labeled "Yoon (2007): 14-hour threshold — below = null on student achievement." Mark the (10h, d=0.49) plateau point with a filled circle and a leader-line annotation reading "d ≈ 0.49 at ~10 hours · Kraft, Blazar & Hogan (2018)." Add a secondary annotation along the coaching plateau reading "Plateau: more hours, no reliable extra gain." Standalone HTML, D3 7.9.0 from the pinned cdnjs CDN, inline CSS/JS, accessible (role="img", title, desc, aria-label on the plateau marker), ResizeObserver redraw, hover tooltip with `(event, d)` signature, prefers-reduced-motion respected.
-
-> Reference implementation: `d3/08-train-like-a-doctor-fig-04.html`
