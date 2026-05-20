@@ -272,18 +272,4 @@ There is also something puzzling, and a little wonderful, about a finding this c
 - Wang, R. E., Ribeiro, A. T., Robinson, C. D., Loeb, S., & Demszky, D. (2024). Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise. arXiv:2410.03017. [https://arxiv.org/abs/2410.03017](https://arxiv.org/abs/2410.03017)
 - Nickow, A., Oreopoulos, P., & Quan, V. (2020). The Impressive Effects of Tutoring on PreK-12 Learning: A Systematic Review and Meta-Analysis of the Experimental Evidence. *NBER Working Paper 27476*. [https://www.nber.org/papers/w27476](https://www.nber.org/papers/w27476)
 
----
 
-## Prompts
-
-Use this prompt with Claude to generate an interactive D3 v7 version of the new infographic in this chapter. It produces a standalone HTML file you can open in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into your Claude project context before using this prompt. They define the stack, naming conventions, color system, and typography the figure uses.
-
----
-
-### Figure 5.5 — Three objects, not two
-
-Build a three-panel infographic that names the three distinct operator conditions the chapter argues policy must distinguish, and then shows the binary collapse the field keeps performing. Layout: three equal-width labelled panels arranged left-to-right above a two-box "binary framing" band, connected by bracket lines. Panel 1 ("Object 1 — Trained teacher with AI") and panel 2 ("Object 2 — Untrained teacher with AI") share a single bracket that descends into a "with-AI" box; panel 3 ("Object 3 — Trained teacher without AI") connects directly to a "without-AI" box beside it. Each panel contains two sections — "Can do" and "Cannot do / Cannot avoid" — with three short bullets in the first and one in the second. Highlight panel 1 with a `var(--color-red)` frame to mark the condition the cross-profession evidence predicts. Between the two binary boxes draw a dashed red line labelled "averaged" to mark the conflation. Below the binary band, render a two-line closing in EB Garamond: a bold sentence ("The field studies two conditions and reports one number.") and an italic continuation ("The number is small because the average is hiding Object 1 inside Object 2."). Standalone HTML, D3 v7 from the pinned CDN, inline CSS/JS, accessible (role, title, desc, keyboard-reachable panel hit areas with tooltips), responsive via ResizeObserver, `prefers-reduced-motion` honoured. All colors via `var(--color-*)`; no hardcoded hex.
-
-> Reference implementation: `d3/05-the-professional-tool-fig-05.html`
