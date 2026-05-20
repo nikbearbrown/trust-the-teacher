@@ -180,22 +180,4 @@ The variable that diverged is the one nobody put a line item against.
 - Lortie, D. C. (1975). *Schoolteacher: A Sociological Study.* University of Chicago Press.
 - Dell'Acqua, F., et al. (2023). Navigating the Jagged Technological Frontier. *Harvard Business School Working Paper 24-013*. [https://www.hbs.edu/faculty/Pages/item.aspx?num=64700](https://www.hbs.edu/faculty/Pages/item.aspx?num=64700)
 
----
 
-## Prompts
-
-Use this prompt with Claude to generate an interactive D3 v7 version of the
-figure in this chapter. It produces a standalone HTML file you can open in a
-browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using the prompt. They define the stack,
-naming conventions, color system, and typography the figure uses.
-
----
-
-### Figure 6.4 — The compounding gap over a ten-year career
-
-Build a single-panel D3 v7 line chart of cumulative recovered school weeks over a ten-year teaching career. Two series share the axes: x is years 0–10, y is cumulative weeks 0–65. Both use `d3.scaleLinear`. Series A (AI-using teacher) rises linearly at six weeks per year to sixty by year ten; Series B (non-using colleague) is flat at zero. Render A as a solid line in `var(--color-red)` with year-marker dots; render B as a dashed line in `var(--color-secondary)`. Fill the area between the lines with `var(--color-fill)` so the gap reads as a region, not a difference. Annotate the endpoint "60 weeks ≈ 1.5 school years," label the shaded region "The compounding dividend," and place series labels at the right edge. Deliverable: one standalone HTML file with inline CSS/JS, D3 7.9.0 from the pinned cdnjs CDN, accessible markup (`role="img"`, `<title>`, `<desc>`, `aria-label` on dots), hover-and-focus tooltips, `ResizeObserver` redraw, and a `prefers-reduced-motion` guard. No hex literals in the script — colors flow through CSS variables that flip under `prefers-color-scheme: dark`.
-
-> Reference implementation: `d3/06-the-ai-dividend-fig-04.html`
