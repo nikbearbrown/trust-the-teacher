@@ -241,29 +241,3 @@ The framework is a multi-year project. The change of use is a one-page memo. The
 ---
 
 **Tags:** evaluation framework, three honest measures, SET reform, Carrell-West, Boring-Stark, ASA statement, Maintenance of Certification, peer panel review, district implementation guide, principal action plan
-
----
-
-## Prompts
-
-Each prompt asks for the structural commitment, not the cosmetic detail. Use these to redraw the figures for a different district, audience, or measure portfolio. The reference implementation is the version that ships with this appendix; the prompt is what to vary.
-
-### Prompt B.1 — Three-measure framework overview
-
-Draw three side-by-side columns, one per measure (Wellbeing, Learning Gains, Teacher Learning). Each column states three things: what it measures, the defensible use, and the forbidden use, in that fixed vertical order. Treat the third column as the load-bearing one — give it a heavier border or an italic eyebrow that names it the missing measure. At the foot, draw a small binding box centred under the columns, connected upward by dashed leader lines, with a single sentence asserting that the three are used together. No icons, no colour-coding by measure; the typographic hierarchy carries the structure. Warm grayscale only; EB Garamond throughout; viewBox 700×460. *Reference implementation: figure B.1 in this appendix.*
-
-### Prompt B.2 — Design features paired with failure modes
-
-Build a two-column matrix where the left column lists a numbered set of design features and the right column lists, row-for-row, the specific failure mode that arrives if the feature is removed. Each row is a horizontal pair connected by a short arrow from feature to failure. Beneath each failure, a brief italic citation names the source. Use warm grayscale panel tint for the feature column and white for the failure column so the eye reads feature-first. Lean on the rhetorical move *if this is removed, this returns* — the figure is a structural argument, not a list. EB Garamond throughout; viewBox 700×480. *Reference implementation: figure B.2 in this appendix.*
-
-### Prompt B.3 — Cyclical annual cycle wheel
-
-Render an annular wheel split into four equal quadrant wedges around a centred disc that labels the cycle name. Each wedge holds one of four sequential components with the same internal layout: numeral, short title, two-line gloss. Curved arrows along the outside of the wheel show clockwise flow between wedges, with the last arrow looping back to the first. Two faint year labels (Year N on the left, Year N+1 on the right, with short dashed leaders) make explicit that this is a loop, not a one-off. Use `d3.arc` with `padAngle` for the wedge geometry. Warm grayscale only; EB Garamond throughout; viewBox 700×460. *Reference implementation: figure B.3 in this appendix.*
-
-### Prompt B.4 — Implementation swimlane
-
-Draw a horizontal swimlane with six labelled lanes stacked top-to-bottom and five time stages running left-to-right. Each lane shows a sequence of milestones plotted at the stage at which they occur, connected by solid lines where the sequence is causal and dashed lines where the lane is in monitoring mode. Filled dots mean a written artifact exists at that milestone; open dots mean a milestone contingent on upstream completion. Use `scaleBand` for the lane tracks and `scalePoint` for the stage axis. Lane label cells go on the left at fixed width; the time axis sits above the lanes with stage names and subtitles. Warm grayscale only; EB Garamond throughout; viewBox 700×540 (height extended for swimlane). *Reference implementation: figure B.4 in this appendix.*
-
-### Prompt B.5 — Failure modes matrix
-
-Build a numbered two-column matrix mapping five recurring failure modes (left) to the specific structural fix that prevents each (right). Each row is a horizontal pair connected by a short arrow. The left column carries a warm grayscale panel tint; the right column is white. The fix column should be wordier than the failure column — it is doing the work — but kept to three short lines max. Treat the last row as the load-bearing one and draw its borders slightly thicker. The caption beneath says the fixes belong in the pilot charter before launch, not after a failure. Warm grayscale only; EB Garamond throughout; viewBox 700×460. *Reference implementation: figure B.5 in this appendix.*
