@@ -30,7 +30,7 @@ The first question: do personal smartphones disrupt learning during the school d
 
 Sit with that for a moment, because it's doing structural work. The students least able to resist distraction, least scaffolded at home, most subject to the ambient pull of a notification — those students, specifically, are the ones the phone ban helps most when it removes the phone from their hand. This is a *progressive* finding at the level of in-classroom learning. The ban closes the gap. It levels up the students who are farthest behind.
 
-![Timeline of one school day from 8 a.m. to 3 p.m., with 51 small dots scattered above the axis marking individual phone pickups, and class-period bands shaded beneath the axis to show where 23% of notifications arrive](images/01-the-ban-fig-02.png)
+![Timeline of one school day from 8 a.m. to 3 p.m., with 51 small dots scattered above the axis marking individual phone pickups, and class-period bands shaded beneath the axis to show where 23% of notifications arrive](../images/01-the-ban-fig-02.png)
 *Figure 1.02 — The median teenager's attention auction, hour by hour*
 
 The Common Sense Media 2023 *Constant Companion* study filled in the mechanical picture. The median teenager was picking up the phone fifty-one times a day during school hours.
@@ -108,7 +108,7 @@ This is what progressive-in-the-classroom and regressive-at-the-household-level 
 
 ## Two subtractions, one household, nobody adding them up
 
-![Two-layer timeline showing state phone-ban enactments stacked above a 2020–2026 axis (Florida 2023, California/Ohio/Louisiana 2024, New York/Texas/Arkansas and fifteen more 2025) and the E-Rate hotspot funding arc below (2020 baseline, 2024 expansion, September 30 2025 FCC 25-63 rescission), with a collision box at the bottom naming the denied requests](images/01-the-ban-fig-03.png)
+![Two-layer timeline showing state phone-ban enactments stacked above a 2020–2026 axis (Florida 2023, California/Ohio/Louisiana 2024, New York/Texas/Arkansas and fifteen more 2025) and the E-Rate hotspot funding arc below (2020 baseline, 2024 expansion, September 30 2025 FCC 25-63 rescission), with a collision box at the bottom naming the denied requests](../images/01-the-ban-fig-03.png)
 *Figure 1.03 — The double subtraction: state and federal cuts converging on the same household*
 
 In September 2025, on a 2–1 vote, the Federal Communications Commission adopted an Order on Reconsideration that removed off-premises Wi-Fi hotspots and school-bus Wi-Fi from E-Rate eligibility. E-Rate is the federal program that subsidizes internet connectivity for schools and libraries, funded through the Universal Service Fund. The 2024 expansion under the previous FCC had added off-premises connectivity — the hotspot programs designed to follow students home — to the program's scope. The 2025 majority read the same authorizing statute differently and rolled it back.
