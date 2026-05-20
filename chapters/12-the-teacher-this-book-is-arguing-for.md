@@ -18,7 +18,7 @@ On Thursday afternoon she runs an AI-assisted formative check — a quiz generat
 
 That is one week. None of it is exotic.
 
-![Five-day grid showing what AI handles and what the teacher handles each day of an AI+1 classroom week](images/12-the-teacher-this-book-is-arguing-for-fig-01.png)
+![Five-day grid showing what AI handles and what the teacher handles each day of an AI+1 classroom week](../images/12-the-teacher-this-book-is-arguing-for-fig-01.png)
 *Figure 12.01 — One week in the AI+1 classroom: what AI handles, what the teacher handles*
 
 The differentiation tool is one of half a dozen platforms — Diffit, MagicSchool, a direct Claude prompt — that take a primary source and return reading-level-adjusted versions in under a minute. The formative tool is in the same family as Khanmigo and the Eedi platform. <!-- FACT-CHECK FLAG: d ≈ 0.82 classroom-discussion figure is stable in Hattie editions but should be pinned to specific MetaX retrieval date or Visible Learning: The Sequel (2023). MetaX has had recent recalibrations across other influences. -->The structured discussion protocol is older than any of this — it is the "classroom discussion" effect that sits at *d* ≈ 0.82 in the Hattie meta-analysis, which has been near the top of the rankings for a decade waiting for teachers who had the time to design it. And the Tuesday move with Marcus is the oldest move in teaching. It is what *teaching* meant before the word had to compete with *content delivery.*
@@ -174,7 +174,7 @@ The conditions that make the AI+1 classroom possible are not mysterious. They ar
 | Sustained subject-specific training — seventh-grade humanities, AP physics, K-2 phonics versions built by people who teach those subjects with AI | Generic district-wide AI workshops led by vendors with no grade or subject anchoring |
 | Building-level coherence and admin backing — principals who read the lesson plans and back the teacher's call when a parent phones | AUPs that route every contextual decision to the principal's office without preparation for the call |
 
-![Three directives Trust the teacher Train the teacher Measure what matters each linked to the chapter that earns it](images/12-the-teacher-this-book-is-arguing-for-fig-02.png)
+![Three directives Trust the teacher Train the teacher Measure what matters each linked to the chapter that earns it](../images/12-the-teacher-this-book-is-arguing-for-fig-02.png)
 *Figure 12.02 — Three sentences, three chapters: what the directive rests on*
 
 The teacher is already in the room. The work that remains is to build what she needs to do her job.
