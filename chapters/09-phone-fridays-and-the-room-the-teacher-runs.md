@@ -183,23 +183,4 @@ We have not been. The argument of this book is that we should be. The room she r
 - State Educational Technology Directors Association (SETDA, November 2025). *Improving Professional Learning Systems to Better Support Today's Educators.* [https://www.setda.org/wp-content/uploads/2025/11/Improving-Professional-Learning-Systems-to-Better-Support-Todays-Educators-2.pdf](https://www.setda.org/wp-content/uploads/2025/11/Improving-Professional-Learning-Systems-to-Better-Support-Todays-Educators-2.pdf)
 - Brown, N. B. *Irreducibly Human: What AI Can and Can't Do.* Bear Brown & Company. [https://irreducibly.xyz](https://irreducibly.xyz)
 
----
-
-## Prompts
-
-Use this prompt with Claude to generate an interactive D3 v7 version of the
-infographic in this chapter. It produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using this prompt. They define the stack,
-naming conventions, color system, and typography the figure uses.
-
----
-
-### Figure 9.4 — The five components, as a load-bearing stack
-
-Build a single-panel D3 v7 infographic of the third model as a five-row vertical stack. Base to top: (1) Default-off, (2) Scheduled structured-tech time, (3) Teacher contextual discretion, (4) Trained discretion, (5) Institutional backup. Each row is full-width with a 1.2px `var(--color-ink)` border and a 6px `var(--color-ochre)` left accent — except Layer 1, filled `var(--color-ink)` with white text. Inside each row, place a bold EB Garamond title and Inter 12px description. Left of the stack, draw a vertical `var(--color-ink)` "load of the call presses down" arrow with marker arrowhead, label rotated -90°. Right of each row, draw a short horizontal `var(--color-ochre)` arrow ending in a one-line collapse outcome. Above and below the stack, render uppercase axis labels naming top and base. Hover or focus on a row reveals a tooltip with full description plus collapse outcome. Beneath the stack, a diagnostic-key footer pins LAUSD, NYC 2006–15, Stillwater 524.5, Finland 2025, and Estonia against the five layers. Standalone HTML, D3 7.9.0 from cdnjs, EB Garamond / Inter / JetBrains Mono via Google Fonts, dark-mode aware, ResizeObserver redraw, `prefers-reduced-motion` respected, ARIA `role="img"` with title and desc, no hardcoded hex.
-
-> Reference implementation: `d3/09-phone-fridays-and-the-room-the-teacher-runs-fig-04.html`
 
