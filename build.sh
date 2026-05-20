@@ -1,18 +1,14 @@
 #!/bin/bash
 set -e
-
 BOOK_SLUG="trust-the-teacher"
 METADATA="metadata.yaml"
 OUTPUT_DIR="output"
-
 mkdir -p "$OUTPUT_DIR"
 
-# Compile chapters in filename order
-# 00-frontmatter → 01-introduction → 02..NN chapters → 99-back-matter
-cat $METADATA chapters/*.md > "$OUTPUT_DIR/combined.md"
-
 # EPUB (primary — upload this to KDP)
-pandoc "$OUTPUT_DIR/combined.md" \
+pandoc chapters/*.md \
+  --metadata-file="$METADATA" \
+  --resource-path=".:chapters" \
   --from markdown \
   --to epub3 \
   --epub-cover-image=cover.jpg \
@@ -22,7 +18,9 @@ pandoc "$OUTPUT_DIR/combined.md" \
   --output="$OUTPUT_DIR/$BOOK_SLUG.epub"
 
 # HTML (proofing — mirrors EPUB cascade exactly)
-pandoc "$OUTPUT_DIR/combined.md" \
+pandoc chapters/*.md \
+  --metadata-file="$METADATA" \
+  --resource-path=".:chapters" \
   --from markdown \
   --to html5 \
   --standalone \
