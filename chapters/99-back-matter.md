@@ -2,98 +2,36 @@
 
 ## Acknowledgments
 
-This rough draft acknowledges the readers, students, collaborators, reviewers, and AI-assisted production workflows that help turn a book from a directory of files into a usable learning object. Specific names should be added after manuscript review.
+Thanks to the readers, students, collaborators, and tool builders whose questions shaped this book. Their practical confusion is often the best guide to what a textbook needs to explain.
 
 ---
 
 ## About the Author
 
-**Nik Bear Brown** is an Associate Teaching Professor in the College of Engineering at Northeastern University. He has taught artificial intelligence, computer science, statistics, applied mathematics, programming, visualization, web systems, game programming, and AI fluency across Northeastern, UCLA, Santa Monica College, ITT, and the Art Institutes Hollywood. His Ph.D. is in computer science from UCLA, with a major field in computational and systems biology and minor fields in artificial intelligence and statistics. He also holds a Master's in Information Design and Data Visualization and an MBA from Northeastern University.
-
-[nikbearbrown.com](https://www.nikbearbrown.com) · [irreducibly.xyz](https://irreducibly.xyz) · [bearbrown.co](https://www.bearbrown.co/)
+**Nik Bear Brown** teaches data science, AI, and visualization at Northeastern University. His work spans machine learning, generative AI, data visualization, and the design of AI-assisted production pipelines. He is the author of the *with LLMs* textbook series and the architect of the **Brutalist** system for AI-assisted creative production. He works in Boston and writes occasionally at his website.
 
 ---
 
 ## Notes
 
-Notes are organized by chapter in the production draft.
-
-### Chapter 1
-
-- Sources to be finalized during editorial review for "Chapter 1: The Ban".
-
-### Chapter 2
-
-- Sources to be finalized during editorial review for "Chapter 2: The App".
-
-### Chapter 3
-
-- Sources to be finalized during editorial review for "The Clause That Runs the Country".
-
-### Chapter 4
-
-- Sources to be finalized during editorial review for "The Teacher Variable".
-
-### Chapter 5
-
-- Sources to be finalized during editorial review for "The Professional Tool".
-
-### Chapter 6
-
-- Sources to be finalized during editorial review for "The Clock on the Wall".
-
-### Chapter 7
-
-- Sources to be finalized during editorial review for "The Cognitive Offloading Problem".
-
-### Chapter 8
-
-- Sources to be finalized during editorial review for "Train Like a Doctor".
-
-### Chapter 9
-
-- Sources to be finalized during editorial review for "The Room the Teacher Runs".
-
-### Chapter 10
-
-- Sources to be finalized during editorial review for "Three Honest Measures".
-
-### Chapter 11
-
-- Sources to be finalized during editorial review for "The Equity Argument".
-
-### Chapter 12
-
-- Sources to be finalized during editorial review for "The Teacher This Book Is Arguing For".
-- On the closing claim — "the moment the algorithm cannot produce, the legislature cannot mandate, and the platform cannot replace": this is an education-policy instance of an argument made, in 2026, from an entirely different vantage. Leo XIV's encyclical *Magnifica Humanitas* warns against reducing "the mystery of the person … into data and performance," and holds that what is most human is given rather than produced. The teacher hearing the wrong note in Marcus's reasoning is what that resistance looks like at the scale of a single desk on a Tuesday.
-
-### Chapter 13
-
-- Sources to be finalized during editorial review for "The Fix That Costs Almost Nothing".
-
+Endnotes may be added by chapter in future editions. For the current Kindle and online release, chapter-level notes are kept close to the relevant discussion whenever possible.
 
 ---
 
 ## References
 
-A full bibliography will be compiled after fact-checking. Use a consistent citation style across the manuscript.
+References and further reading may be added by chapter in future editions. Where a chapter relies on a specific source, dataset, paper, or tool, the citation should appear near the relevant passage or in a chapter-level notes section.
 
 ---
 
 ## No Index
 
-This book is designed primarily for Kindle, online reading, and integration with **Medhavy** / **Medhavi**, the AI-powered intelligent textbook system. In those environments, search, links, adaptive navigation, glossary lookup, and generated study paths do more useful work than a static print index. A print index can be commissioned later if the book receives a print edition, but this draft intentionally omits one.
+This edition does not include a traditional index because it is intended primarily for Kindle and online reading. Digital search, hyperlinks, table-of-contents navigation, and Medhavy integration provide the discovery functions that an index would ordinarily support in print.
 
----
+## Medhavy Integration
 
-## Glossary
+These books are intended to be integrated with Medhavy: https://www.medhavy.com/
 
-- **Clause.** Short definition to be completed during final editorial pass.
-- **Country.** Short definition to be completed during final editorial pass.
-- **Teacher.** Short definition to be completed during final editorial pass.
-- **Variable.** Short definition to be completed during final editorial pass.
-- **Professional.** Short definition to be completed during final editorial pass.
-- **Clock.** Short definition to be completed during final editorial pass.
-- **Cognitive.** Short definition to be completed during final editorial pass.
-- **Offloading.** Short definition to be completed during final editorial pass.
-- **Train.** Short definition to be completed during final editorial pass.
+Medhavy, also known as Medhavi, comes from the Sanskrit मेधावी, meaning intelligent or intellectually brilliant. It is the AI-powered intelligent textbook system that helps readers search, review, question, and learn from these books.
+
+Come learn something with us.
