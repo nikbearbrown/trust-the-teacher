@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2560" width="1600" height="2560" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision">
+  <g id="background"><rect x="0" y="0" width="1600" height="2560" fill="#F6D24A"/></g>
+  <g id="symbol-fragments" transform="rotate(3, 800, 830)">
+    <polygon points="806,254 927,266 915,367 798,354" fill="#191919"/>
+    <polygon points="259,232 391,242 379,359 245,358" fill="#191919"/>
+    <polygon points="1210,721 1386,735 1384,759 1187,755" fill="#191919"/>
+    <polygon points="343,246 461,252 432,400 326,391" fill="#191919"/>
+    <polygon points="255,232 422,251 393,393 234,382" fill="#191919"/>
+    <polygon points="963,247 1068,254 1051,284 960,273" fill="#191919"/>
+    <polygon points="300,196 406,208 379,276 293,270" fill="#191919"/>
+    <polygon points="615,199 830,222 805,293 613,293" fill="#191919"/>
+    <polygon points="370,365 469,368 446,529 354,528" fill="#191919"/>
+    <polygon points="249,1039 412,1045 394,1193 249,1175" fill="#191919"/>
+    <polygon points="221,464 479,484 470,585 217,563" fill="#191919"/>
+    <polygon points="942,219 1135,224 1113,271 920,271" fill="#191919"/>
+    <polygon points="885,261 992,282 990,310 884,296" fill="#191919"/>
+    <polygon points="305,1416 535,1433 506,1485 290,1481" fill="#E85B3A"/>
+  </g>
+  <g id="title-letterforms">
+    <text x="120" y="1510" font-family="Arial Black, Arial, sans-serif" font-size="250" font-weight="900" letter-spacing="0" fill="#191919">TRUST</text>
+    <text x="120" y="1768" font-family="Arial Black, Arial, sans-serif" font-size="250" font-weight="900" letter-spacing="0" fill="#E85B3A">THE</text>
+    <text x="120" y="2026" font-family="Arial Black, Arial, sans-serif" font-size="250" font-weight="900" letter-spacing="0" fill="#191919" textLength="1300" lengthAdjust="spacingAndGlyphs">TEACHER</text>
+  </g>
+</svg>

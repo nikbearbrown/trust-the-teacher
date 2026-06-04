@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" role="img" aria-labelledby="t14-04 d14-04">
+  <title id="t14-04">Implementation timeline — six parallel tracks from Week 1 to Year 3+</title>
+  <desc id="d14-04">A horizontal swimlane chart. Six tracks run in parallel: superintendent actions, legal review, pilot school launch, Measure 2 instrument build, Measure 3 cycle launch, and board engagement milestones. Each track shows the sequence of events from Week 1 through Year 3 and beyond.</desc>
+  <defs>
+    <style>
+      .ti { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1714; }
+      .sub { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; fill: #4a4540; font-style: italic; }
+      .lane-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #1a1714; }
+      .axis-label { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 11px; font-weight: bold; fill: #1a1714; }
+      .axis-sub { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #4a4540; }
+      .milestone { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; fill: #1a1714; }
+      .cap { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 10px; font-style: italic; fill: #4a4540; }
+    </style>
+    <marker id="ar14-04" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+    </marker>
+  </defs>
+  <rect width="700" height="480" fill="#fdfcfb"/>
+
+  <text x="350" y="26" class="ti" text-anchor="middle">Implementation timeline — six tracks, Week 1 to Year 3+</text>
+  <text x="350" y="42" class="sub" text-anchor="middle">What the superintendent does Monday; what the framework looks like by Year 3.</text>
+
+  <!-- Time axis: 5 columns. -->
+  <!-- Lane x-axis: header band y=58–82, tracks start y=92 -->
+  <!-- Column boundaries: 160, 260, 380, 500, 620 (5 cols) — but we want anchor centers -->
+  <!-- Col centers: Week 1 → 200, Month 1 → 295, Month 3 → 405, Year 1 → 515, Year 2+ → 625 -->
+  <!-- Lane label column: 32–150 -->
+
+  <!-- Header band -->
+  <line x1="156" y1="58" x2="156" y2="430" stroke="#8a8480" stroke-width="0.5"/>
+  <line x1="252" y1="58" x2="252" y2="430" stroke="#c8c4c0" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <line x1="350" y1="58" x2="350" y2="430" stroke="#c8c4c0" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <line x1="460" y1="58" x2="460" y2="430" stroke="#c8c4c0" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <line x1="570" y1="58" x2="570" y2="430" stroke="#c8c4c0" stroke-width="0.5" stroke-dasharray="2 2"/>
+
+  <text x="200" y="72" class="axis-label" text-anchor="middle">Week 1</text>
+  <text x="200" y="84" class="axis-sub" text-anchor="middle">(the Monday after)</text>
+  <text x="295" y="72" class="axis-label" text-anchor="middle">Month 1</text>
+  <text x="295" y="84" class="axis-sub" text-anchor="middle">memos issued</text>
+  <text x="405" y="72" class="axis-label" text-anchor="middle">Month 3</text>
+  <text x="405" y="84" class="axis-sub" text-anchor="middle">pilot live</text>
+  <text x="515" y="72" class="axis-label" text-anchor="middle">Year 1</text>
+  <text x="515" y="84" class="axis-sub" text-anchor="middle">artifacts produced</text>
+  <text x="625" y="72" class="axis-label" text-anchor="middle">Year 2 / Year 3+</text>
+  <text x="625" y="84" class="axis-sub" text-anchor="middle">expansion</text>
+
+  <line x1="156" y1="92" x2="680" y2="92" stroke="#1a1714" stroke-width="0.8"/>
+
+  <!-- Six lanes, each 54px tall. y from 96 to 96+54*6 = 420. -->
+  <!-- Lane 1: Superintendent -->
+  <rect x="20" y="96" width="136" height="54" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="28" y="118" class="lane-title">Superintendent</text>
+  <text x="28" y="132" class="axis-sub">cabinet, memos,</text>
+  <text x="28" y="144" class="axis-sub">authorisation</text>
+  <rect x="156" y="96" width="524" height="54" fill="#fdfcfb" stroke="#c8c4c0"/>
+  <!-- Milestones -->
+  <circle cx="200" cy="123" r="5" fill="#1a1714"/>
+  <text x="200" y="142" class="milestone" text-anchor="middle">Convene cabinet</text>
+  <circle cx="295" cy="123" r="5" fill="#1a1714"/>
+  <text x="295" y="142" class="milestone" text-anchor="middle">Internal memo issued</text>
+  <line x1="295" y1="123" x2="515" y2="123" stroke="#1a1714" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="515" cy="123" r="5" fill="#1a1714"/>
+  <text x="515" y="142" class="milestone" text-anchor="middle">Year-1 review</text>
+  <path d="M 522 123 L 615 123" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-04)"/>
+  <text x="625" y="120" class="milestone" text-anchor="middle">Generalise</text>
+  <text x="625" y="132" class="milestone" text-anchor="middle">district-wide</text>
+
+  <!-- Lane 2: Legal -->
+  <rect x="20" y="150" width="136" height="54" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="28" y="172" class="lane-title">Legal review</text>
+  <text x="28" y="186" class="axis-sub">comparative exposure</text>
+  <text x="28" y="198" class="axis-sub">assessment</text>
+  <rect x="156" y="150" width="524" height="54" fill="#fdfcfb" stroke="#c8c4c0"/>
+  <circle cx="200" cy="177" r="5" fill="#1a1714"/>
+  <text x="200" y="196" class="milestone" text-anchor="middle">Counsel briefed</text>
+  <line x1="207" y1="177" x2="288" y2="177" stroke="#1a1714" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="295" cy="177" r="5" fill="#1a1714"/>
+  <text x="295" y="196" class="milestone" text-anchor="middle">Use-change memo</text>
+  <text x="515" y="180" class="milestone" text-anchor="middle">Renewals</text>
+  <text x="515" y="192" class="milestone" text-anchor="middle">re-audited</text>
+  <circle cx="515" cy="177" r="3.5" fill="#fdfcfb" stroke="#1a1714"/>
+  <text x="625" y="180" class="milestone" text-anchor="middle">Standing</text>
+  <text x="625" y="192" class="milestone" text-anchor="middle">policy</text>
+
+  <!-- Lane 3: Pilot school -->
+  <rect x="20" y="204" width="136" height="54" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="28" y="226" class="lane-title">Pilot school</text>
+  <text x="28" y="240" class="axis-sub">one volunteer</text>
+  <text x="28" y="252" class="axis-sub">principal + faculty</text>
+  <rect x="156" y="204" width="524" height="54" fill="#fdfcfb" stroke="#c8c4c0"/>
+  <circle cx="200" cy="231" r="5" fill="#1a1714"/>
+  <text x="200" y="250" class="milestone" text-anchor="middle">Pilot identified</text>
+  <circle cx="295" cy="231" r="5" fill="#1a1714"/>
+  <text x="295" y="250" class="milestone" text-anchor="middle">Faculty engaged</text>
+  <line x1="302" y1="231" x2="398" y2="231" stroke="#1a1714" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="405" cy="231" r="5" fill="#1a1714"/>
+  <text x="405" y="250" class="milestone" text-anchor="middle">Pilot live</text>
+  <line x1="412" y1="231" x2="508" y2="231" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="515" cy="231" r="5" fill="#1a1714"/>
+  <text x="515" y="250" class="milestone" text-anchor="middle">Synthesis report</text>
+  <path d="M 522 231 L 615 231" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-04)"/>
+  <text x="625" y="240" class="milestone" text-anchor="middle">+ second school</text>
+
+  <!-- Lane 4: Measure 2 instrument -->
+  <rect x="20" y="258" width="136" height="54" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="28" y="280" class="lane-title">Measure 2 build</text>
+  <text x="28" y="294" class="axis-sub">common pre/post +</text>
+  <text x="28" y="306" class="axis-sub">transfer-items audit</text>
+  <rect x="156" y="258" width="524" height="54" fill="#fdfcfb" stroke="#c8c4c0"/>
+  <text x="295" y="282" class="milestone" text-anchor="middle">Instrument selected</text>
+  <circle cx="295" cy="287" r="3.5" fill="#fdfcfb" stroke="#1a1714"/>
+  <circle cx="405" cy="287" r="5" fill="#1a1714"/>
+  <text x="405" y="306" class="milestone" text-anchor="middle">Pre-test administered</text>
+  <line x1="412" y1="287" x2="508" y2="287" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="515" cy="287" r="5" fill="#1a1714"/>
+  <text x="515" y="306" class="milestone" text-anchor="middle">Gain report (formative)</text>
+  <path d="M 522 287 L 615 287" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-04)"/>
+  <text x="625" y="296" class="milestone" text-anchor="middle">Validity audit</text>
+
+  <!-- Lane 5: Measure 3 cycle -->
+  <rect x="20" y="312" width="136" height="54" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="28" y="334" class="lane-title">Measure 3 cycle</text>
+  <text x="28" y="348" class="axis-sub">growth → PD →</text>
+  <text x="28" y="360" class="axis-sub">evidence → panel</text>
+  <rect x="156" y="312" width="524" height="54" fill="#fdfcfb" stroke="#c8c4c0"/>
+  <circle cx="405" cy="341" r="5" fill="#1a1714"/>
+  <text x="405" y="360" class="milestone" text-anchor="middle">Growth area named</text>
+  <line x1="412" y1="341" x2="508" y2="341" stroke="#1a1714" stroke-width="1"/>
+  <circle cx="515" cy="341" r="5" fill="#1a1714"/>
+  <text x="515" y="360" class="milestone" text-anchor="middle">Portfolio + panel</text>
+  <path d="M 522 341 L 615 341" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-04)"/>
+  <text x="625" y="350" class="milestone" text-anchor="middle">Scale peer</text>
+  <text x="625" y="362" class="milestone" text-anchor="middle">review capacity</text>
+
+  <!-- Lane 6: Board engagement -->
+  <rect x="20" y="366" width="136" height="54" fill="#f5f2ee" stroke="#8a8480"/>
+  <text x="28" y="388" class="lane-title">Board engagement</text>
+  <text x="28" y="402" class="axis-sub">endorsement,</text>
+  <text x="28" y="414" class="axis-sub">expansion, charter</text>
+  <rect x="156" y="366" width="524" height="54" fill="#fdfcfb" stroke="#c8c4c0"/>
+  <circle cx="295" cy="395" r="5" fill="#1a1714"/>
+  <text x="295" y="414" class="milestone" text-anchor="middle">Pilot endorsement</text>
+  <line x1="302" y1="395" x2="508" y2="395" stroke="#1a1714" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="515" cy="395" r="5" fill="#1a1714"/>
+  <text x="515" y="414" class="milestone" text-anchor="middle">Public report</text>
+  <path d="M 522 395 L 615 395" stroke="#1a1714" stroke-width="1" marker-end="url(#ar14-04)"/>
+  <text x="625" y="404" class="milestone" text-anchor="middle">Charter for</text>
+  <text x="625" y="416" class="milestone" text-anchor="middle">expansion</text>
+
+  <line x1="156" y1="420" x2="680" y2="420" stroke="#1a1714" stroke-width="0.8"/>
+
+  <text x="350" y="448" class="cap" text-anchor="middle">Solid line = sequence within a lane. Dashed line = waiting / monitoring. Filled dot = milestone with a written artifact.</text>
+  <text x="350" y="464" class="cap" text-anchor="middle">Personnel-decision integration is the work of Year 3 and later; formative use covers Years 1 and 2.</text>
+</svg>
